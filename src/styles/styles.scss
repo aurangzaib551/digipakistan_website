@@ -22,6 +22,15 @@ body {
   }
 }
 
+// Slider Next TXT
+.sr-only {
+  display: none;
+}
+
+.mt {
+  margin-top: 85px;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -40,6 +49,29 @@ body {
 
 .outline {
   outline: none !important;
+}
+
+@media only screen and (max-width: 345px) {
+  .mt {
+    margin-top: 75px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .mt {
+    margin-top: 65px;
+  }
+}
+
+// Slider
+
+@media only screen and (min-height: 800px) {
+  .slider {
+    .img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 // Variables

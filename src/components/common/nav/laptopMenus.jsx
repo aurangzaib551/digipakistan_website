@@ -130,11 +130,6 @@ const LaptopMenus = () => {
                   </li>
                   <li>
                     <Link to="/" className="items-sub">
-                      Vice Chacellor Punjab University (PU)
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/" className="items-sub">
                       About Us
                     </Link>
                   </li>

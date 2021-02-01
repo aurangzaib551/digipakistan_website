@@ -10,12 +10,12 @@ const Menus = () => {
   return (
     <>
       <ul className="d-flex align-items-center list-unstyled mb-0 me-4 me-xxl-0 navbar-items">
-        <li className="navbar-items-li">
+        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slow">
           <Link to="/" className="item px-3 py-2 d-inline-block">
             Home
           </Link>
         </li>
-        <li className="px-3 py-2 d-flex navbar-items-li position-relative">
+        <li className="px-3 py-2 d-flex navbar-items-li position-relative animate__animated animate__fadeInRight animate__slower">
           Available Programs <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
             <li
@@ -312,22 +312,22 @@ const Menus = () => {
             </li>
           </ul>
         </li>
-        <li className="navbar-items-li">
+        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slow">
           <a href=" " className="px-3 py-2 d-inline-block">
             Become Marketing Partner
           </a>
         </li>
-        <li className="navbar-items-li">
+        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slower">
           <Link to="/" className="item px-3 py-2 d-inline-block">
             Admission Process
           </Link>
         </li>
-        <li className="navbar-items-li">
+        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slower">
           <Link to="/" className="item px-3 py-2 d-inline-block">
             FAQ's
           </Link>
         </li>
-        <li className="px-3 py-2 navbar-items-li d-flex position-relative">
+        <li className="px-3 py-2 navbar-items-li d-flex position-relative animate__animated animate__fadeInRight animate__slower">
           About <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
@@ -352,11 +352,6 @@ const Menus = () => {
             </li>
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
               <Link to="/" className="sub-menu-link d-inline-block">
-                Vice Chancellor Punjab University Message (PU)
-              </Link>
-            </li>
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <Link to="/" className="sub-menu-link d-inline-block">
                 About Us
               </Link>
             </li>
@@ -367,7 +362,7 @@ const Menus = () => {
             </li>
           </ul>
         </li>
-        <li className="navbar-items-li">
+        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slow">
           <Link to="/" className="item px-3 py-2 d-inline-block">
             Contact Us
           </Link>
