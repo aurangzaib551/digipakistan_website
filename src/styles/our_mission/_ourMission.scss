@@ -1,0 +1,33 @@
+.our-mission {
+  iframe {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .our-mission {
+    p {
+      text-align: justify;
+    }
+
+    iframe {
+      height: 65vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .our-mission {
+    iframe {
+      height: 65vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .our-mission {
+    iframe {
+      height: 200px;
+    }
+  }
+}

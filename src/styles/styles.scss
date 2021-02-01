@@ -31,6 +31,12 @@ body {
   margin-top: 85px;
 }
 
+.slider {
+  img {
+    height: 635px;
+  }
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -65,7 +71,16 @@ body {
 
 // Slider
 
-@media only screen and (min-height: 800px) {
+@media only screen and (min-width: 1560px) and (min-height: 800px) {
+  .slider {
+    .img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 1560px) {
   .slider {
     .img {
       width: 100%;
@@ -79,3 +94,9 @@ body {
 
 // Navbar
 @import "./nav/nav";
+
+// Our Mission
+@import "./our_mission/ourMission";
+
+// Available Programs
+@import "./available_programs/availablePrograms";

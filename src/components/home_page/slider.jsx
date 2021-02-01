@@ -15,7 +15,6 @@ const Slider = () => {
           src="https://i.ibb.co/NnyXBMZ/700-height-banner.png"
           alt="First slide"
           width="100%"
-          height="635"
         />
       </Carousel.Item>
       <Carousel.Item>
@@ -24,7 +23,6 @@ const Slider = () => {
           src="https://i.ibb.co/Np423Gp/700-height-banner-2.png"
           alt="Third slide"
           width="100%"
-          height="635"
         />
       </Carousel.Item>
     </Carousel>
