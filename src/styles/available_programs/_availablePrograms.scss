@@ -1,9 +1,9 @@
 .available-programs {
   .paper {
+    position: relative;
     width: 32%;
     transition: all 0.5s;
     cursor: pointer;
-    height: 100% !important;
 
     .title {
       font-size: 14px;
@@ -22,10 +22,77 @@
   }
 }
 
+@media only screen and (max-width: 1203px) {
+  .available-programs {
+    .paper {
+      .associate-img {
+        width: 90px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1002px) {
+  .available-programs {
+    .paper {
+      .title {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .available-programs {
     .paper {
       width: 100%;
+
+      .title {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 335px) {
+  .available-programs {
+    .paper {
+      .technical-img {
+        width: 70px;
+      }
+
+      .title {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 296px) {
+  .available-programs {
+    .paper {
+      .technical-img {
+        width: 60px;
+      }
+
+      .title {
+        font-size: 12px;
+      }
+
+      .tech-sec-img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .total-course {
+        img {
+          width: 17px;
+        }
+
+        p {
+          font-size: 13px;
+        }
+      }
     }
   }
 }

@@ -8,6 +8,7 @@ const LaptopMenus = () => {
   // State
   const [availableProgram, setAvailableProgram] = useState(false);
   const [about, setAbout] = useState(false);
+  const [joinDigiPakistan, setJoinDigiPAKISTAN] = useState(false);
 
   // Closing Nav
   const handleClose = () => {
@@ -44,6 +45,7 @@ const LaptopMenus = () => {
                 onClick={() => {
                   setAvailableProgram((prevState) => !prevState);
                   setAbout(false);
+                  setJoinDigiPAKISTAN(false);
                 }}
               >
                 Available Programs{" "}
@@ -74,15 +76,41 @@ const LaptopMenus = () => {
               )}
             </li>
             <li>
-              <Link
-                to="/"
-                className={availableProgram ? "items-link mt-3" : "items-link"}
+              <p
+                className="items-link mb-0 pointer"
+                onClick={() => {
+                  setJoinDigiPAKISTAN((prevState) => !prevState);
+                  setAbout(false);
+                  setAvailableProgram(false);
+                }}
               >
-                Become Marketing Partner
-              </Link>
+                Join DigiPAKISTAN{" "}
+                {joinDigiPakistan ? (
+                  <span className="fw-bold plus-minus">-</span>
+                ) : (
+                  <span className="fw-bold plus-minus">+</span>
+                )}
+              </p>
+              {joinDigiPakistan && (
+                <ul className="list-unstyled mb-0">
+                  <li>
+                    <Link to="/" className="items-sub">
+                      Become an Instructor
+                    </Link>
+                  </li>
+                  <li>
+                    <a href=" " className="items-sub">
+                      Become Marketing Partner
+                    </a>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
-              <Link to="/" className="items-link">
+              <Link
+                to="/"
+                className={joinDigiPakistan ? "items-link mt-3" : "items-link"}
+              >
                 Admission Process
               </Link>
             </li>
@@ -97,6 +125,7 @@ const LaptopMenus = () => {
                 onClick={() => {
                   setAbout((prevState) => !prevState);
                   setAvailableProgram(false);
+                  setJoinDigiPAKISTAN(false);
                 }}
               >
                 About

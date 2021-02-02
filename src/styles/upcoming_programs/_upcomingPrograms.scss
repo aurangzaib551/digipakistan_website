@@ -1,0 +1,48 @@
+.upcoming-programs {
+  outline {
+    outline: none !important;
+  }
+
+  .slick-next:before,
+  .slick-next {
+    margin-right: 5px;
+    right: -5px;
+  }
+
+  .slick-prev:before,
+  .slick-prev {
+    margin-left: 5px;
+    left: -5px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+  }
+
+  .slick-list {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .slick-width {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .slick-list {
+    width: 84%;
+  }
+  .upcoming-programs {
+    .slick-width {
+      .upcomimg-course-img {
+        width: 83% !important;
+      }
+    }
+  }
+}

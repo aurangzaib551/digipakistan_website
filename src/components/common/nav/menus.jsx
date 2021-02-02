@@ -312,10 +312,20 @@ const Menus = () => {
             </li>
           </ul>
         </li>
-        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slow">
-          <a href=" " className="px-3 py-2 d-inline-block">
-            Become Marketing Partner
-          </a>
+        <li className="px-3 py-2 navbar-items-li d-flex position-relative animate__animated animate__fadeInRight animate__slow">
+          Join DigiPAKISTAN <AngleDownIcon className="angle-down" />
+          <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
+            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+              <Link to="/" className="sub-menu-link d-inline-block">
+                Become an Instructor
+              </Link>
+            </li>
+            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+              <a href=" " className="sub-menu-link d-inline-block">
+                Provincial Minister Message
+              </a>
+            </li>
+          </ul>
         </li>
         <li className="navbar-items-li animate__animated animate__fadeInRight animate__slower">
           <Link to="/" className="item px-3 py-2 d-inline-block">

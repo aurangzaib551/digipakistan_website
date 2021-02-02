@@ -14,7 +14,7 @@ import $ from "jquery";
 const Nav = () => {
   // Media Query
   const isLaptop = useMediaQuery({
-    query: "(max-width: 1170px)",
+    query: "(max-width: 1132px)",
   });
 
   const isXSmall = useMediaQuery({

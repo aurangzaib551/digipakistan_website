@@ -89,6 +89,12 @@ body {
   }
 }
 
+@media only screen and (max-width: 576px) {
+  .text-justify {
+    text-align: justify !important;
+  }
+}
+
 // Variables
 @import "./variables";
 
@@ -100,3 +106,12 @@ body {
 
 // Available Programs
 @import "./available_programs/availablePrograms";
+
+// Upcoming Programs
+@import "./upcoming_programs/upcomingPrograms";
+
+// Youtube Channel
+@import "./youtube_channel/youtubeChannel";
+
+// Join DigiPAKISTAN
+@import "./join_digiPakistan/joinDigiPakistan";
