@@ -44,21 +44,21 @@ const YoutubeChannel = () => {
           <div className="col-lg-3 ps-3 videos pb-3 mt-4 mt-lg-0">
             {youtube.items.map((video, ind) => {
               return (
-                <div className="d-flex align-items-start mt-3">
+                <div
+                  onClick={() =>
+                    setYoutube({
+                      ...youtube,
+                      videoId: video.snippet.resourceId.videoId,
+                    })
+                  }
+                  className="d-flex align-items-start mt-3 pointer youtube-thumbnail"
+                >
                   <img
                     src={video.snippet.thumbnails.default.url}
                     alt="d"
                     width="100"
                   />
-                  <p
-                    onClick={() =>
-                      setYoutube({
-                        ...youtube,
-                        videoId: video.snippet.resourceId.videoId,
-                      })
-                    }
-                    className="mb-0 text-white fw-bold small mx-2 link"
-                  >
+                  <p className="mb-0 text-white fw-bold small mx-2 link">
                     {video.snippet.title}
                   </p>
                 </div>

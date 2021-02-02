@@ -1,12 +1,15 @@
 .youtube-channel {
   background-color: $black;
 
-  .link {
-    transition: all 0.3s;
-    cursor: pointer;
+  .youtube-thumbnail {
+    .link {
+      transition: all 0.3s;
+    }
 
     &:hover {
-      color: $primary !important;
+      .link {
+        color: $primary !important;
+      }
     }
   }
 

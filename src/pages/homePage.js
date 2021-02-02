@@ -7,6 +7,9 @@ import YoutubeChannel from "../components/home_page/youtubeChannel";
 import TrainerCertified from "../components/home_page/trainerCertified";
 import FreelancingPlatforms from "../components/home_page/freelancingPlatforms";
 import JoinDigiPAKISTAN from "../components/home_page/joinDigiPAKISTAN";
+import Supporters from "../components/home_page/supporters";
+import Footer from "../components/common/footer/footer";
+import Copyright from "../components/common/footer/copyright";
 
 const HomePage = () => {
   return (
@@ -19,6 +22,9 @@ const HomePage = () => {
       <TrainerCertified />
       <FreelancingPlatforms />
       <JoinDigiPAKISTAN />
+      <Supporters />
+      <Footer />
+      <Copyright />
     </>
   );
 };

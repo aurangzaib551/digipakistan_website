@@ -4,12 +4,14 @@ import FadeLoader from "./loader/loader";
 const Nav = lazy(() => import("./components/common/nav/nav"));
 const HomePage = lazy(() => import("./pages/homePage"));
 const NotFound = lazy(() => import("./pages/notFound"));
+const Message = lazy(() => import("./pages/message"));
 
 const App = () => {
   return (
     <Suspense fallback={<FadeLoader />}>
       <BrowserRouter>
         <Nav />
+        <Message />
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/not-found" component={NotFound} />

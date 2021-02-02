@@ -1,0 +1,64 @@
+.message {
+  position: fixed;
+  width: 700px;
+  background-color: $primary;
+  top: 110px;
+  z-index: 11;
+  transition: all 0.7s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $secondary;
+  }
+
+  .close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    color: white;
+    background-color: $secondary;
+    border-radius: 50%;
+    transition: all 0.7s;
+
+    .close-icon {
+      font-size: 20px;
+    }
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .message {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .message {
+    width: 90%;
+    top: 103px;
+  }
+  .txt {
+    font-size: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 345px) {
+  .message {
+    top: 95px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .message {
+    top: 87px;
+  }
+}
