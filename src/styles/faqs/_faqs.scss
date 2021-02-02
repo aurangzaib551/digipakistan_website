@@ -1,0 +1,48 @@
+.banner-faqs {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://i.ibb.co/ZhBRKwj/faq.jpg");
+  height: 450px;
+  width: 100%;
+  background-position: top 60% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.faqs-questions-and-answers {
+  .question {
+    border-left: 4px solid $secondary;
+    background-color: #dedcdc;
+
+    .q {
+      color: $primary;
+    }
+  }
+
+  .answer {
+    border-left: 4px solid grey;
+    background-color: #eee;
+
+    .a {
+      color: grey;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .banner-faqs {
+    height: 350px;
+    background-position: center center;
+  }
+}
+
+@media only screen and (max-width: 882px) {
+  .banner-faqs {
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .banner-faqs {
+    height: 200px;
+  }
+}

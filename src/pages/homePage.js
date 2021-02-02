@@ -9,7 +9,7 @@ import FreelancingPlatforms from "../components/home_page/freelancingPlatforms";
 import JoinDigiPAKISTAN from "../components/home_page/joinDigiPAKISTAN";
 import Supporters from "../components/home_page/supporters";
 import Footer from "../components/common/footer/footer";
-import Copyright from "../components/common/footer/copyright";
+import Copyright from "../components/common/copyright/copyright";
 
 const HomePage = () => {
   return (

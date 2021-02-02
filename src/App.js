@@ -5,20 +5,26 @@ const Nav = lazy(() => import("./components/common/nav/nav"));
 const HomePage = lazy(() => import("./pages/homePage"));
 const NotFound = lazy(() => import("./pages/notFound"));
 const Message = lazy(() => import("./pages/message"));
+const AdmissionProcess = lazy(() => import("./pages/admissionProcess"));
+const FAQs = lazy(() => import("./pages/faqs"));
+const GoToTop = lazy(() => import("./pages/goToTop"));
 
 const App = () => {
   return (
-    <Suspense fallback={<FadeLoader />}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Suspense fallback={<FadeLoader />}>
         <Nav />
         <Message />
         <Switch>
           <Route path="/" exact component={HomePage} />
+          <Route path="/admissionProcess" exact component={AdmissionProcess} />
+          <Route path="/faqs" exact component={FAQs} />
           <Route path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>
-      </BrowserRouter>
-    </Suspense>
+        <GoToTop />
+      </Suspense>
+    </BrowserRouter>
   );
 };
 

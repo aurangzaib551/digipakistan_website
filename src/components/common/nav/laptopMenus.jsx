@@ -108,14 +108,14 @@ const LaptopMenus = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="/admissionProcess"
                 className={joinDigiPakistan ? "items-link mt-3" : "items-link"}
               >
                 Admission Process
               </Link>
             </li>
             <li>
-              <Link to="/" className="items-link">
+              <Link to="/faqs" className="items-link">
                 FAQ's
               </Link>
             </li>

@@ -328,12 +328,15 @@ const Menus = () => {
           </ul>
         </li>
         <li className="navbar-items-li animate__animated animate__fadeInRight animate__slower">
-          <Link to="/" className="item px-3 py-2 d-inline-block">
+          <Link
+            to="/admissionProcess"
+            className="item px-3 py-2 d-inline-block"
+          >
             Admission Process
           </Link>
         </li>
         <li className="navbar-items-li animate__animated animate__fadeInRight animate__slower">
-          <Link to="/" className="item px-3 py-2 d-inline-block">
+          <Link to="/faqs" className="item px-3 py-2 d-inline-block">
             FAQ's
           </Link>
         </li>

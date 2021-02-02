@@ -1,0 +1,60 @@
+.top {
+  position: fixed;
+  text-decoration: none;
+  bottom: 15px;
+  right: 17px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #02a39b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top i {
+  color: white;
+}
+
+.top i::before {
+  content: "";
+  animation: circle 1.7s infinite;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.top i::after {
+  content: "\f062";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+@keyframes circle {
+  0% {
+    clip-path: circle(5% at 50% 50%);
+  }
+  50% {
+    clip-path: circle(50% at 50% 50%);
+  }
+  100% {
+    clip-path: circle(100% at 50% 50%);
+  }
+}

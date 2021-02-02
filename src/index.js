@@ -10,6 +10,7 @@ import thunk from "redux-thunk";
 import rootReducer from "./store/reducers/rootReducer";
 import fbConfig from "./config/fbConfig";
 import "animate.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const store = createStore(
   rootReducer,

@@ -10,6 +10,7 @@ import Badge from "@material-ui/core/Badge";
 import MenuIcon from "@material-ui/icons/MenuRounded";
 import IconButton from "@material-ui/core/IconButton";
 import $ from "jquery";
+import { useLocation } from "react-router-dom";
 
 const Nav = () => {
   // Media Query
@@ -27,6 +28,13 @@ const Nav = () => {
       $(".menu-laptop").addClass("open-nav");
     }, 400);
   };
+
+  // Object Destructuring
+  const { pathname } = useLocation();
+
+  if (pathname) {
+    $(".menu-laptop").removeClass("open-nav");
+  }
   return (
     <>
       <AppBar position="fixed" className="bg-white custom-navbar">
