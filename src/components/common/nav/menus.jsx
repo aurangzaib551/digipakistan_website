@@ -17,7 +17,7 @@ const Menus = ({ firstLoad }) => {
               : "navbar-items-li"
           }
         >
-          <Link to="/" className="item px-3 py-2 d-inline-block">
+          <Link to="/" className="item px-3 py-2 d-block">
             Home
           </Link>
         </li>
@@ -333,16 +333,16 @@ const Menus = ({ firstLoad }) => {
         >
           Join DigiPAKISTAN <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+            <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/joinDigiPAKISTAN/becomeAnInstructor"
-                className="sub-menu-link d-inline-block"
+                className="sub-menu-link ps-3 pe-5 d-block"
               >
                 Become an Instructor
               </Link>
             </li>
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <a href=" " className="sub-menu-link d-inline-block">
+            <li className="sub-menus-li rounded text-nowrap">
+              <a href=" " className="sub-menu-link ps-3 pe-5 d-block">
                 Become Marketing Partner
               </a>
             </li>
@@ -355,10 +355,7 @@ const Menus = ({ firstLoad }) => {
               : "navbar-items-li"
           }
         >
-          <Link
-            to="/admissionProcess"
-            className="item px-3 py-2 d-inline-block"
-          >
+          <Link to="/admissionProcess" className="item px-3 py-2 d-block">
             Admission Process
           </Link>
         </li>
@@ -369,7 +366,7 @@ const Menus = ({ firstLoad }) => {
               : "navbar-items-li"
           }
         >
-          <Link to="/faqs" className="item px-3 py-2 d-inline-block">
+          <Link to="/faqs" className="item px-3 py-2 d-block">
             FAQ's
           </Link>
         </li>
@@ -382,50 +379,50 @@ const Menus = ({ firstLoad }) => {
         >
           About <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+            <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/provincialMinisterMessage"
-                className="sub-menu-link d-inline-block"
+                className="sub-menu-link ps-3 pe-5  d-block"
               >
                 Provincial Minister Message
               </Link>
             </li>
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+            <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/directorGeneralMessage"
-                className="sub-menu-link d-inline-block"
+                className="sub-menu-link ps-3 pe-5  d-block"
               >
                 Director General (DG) Message
               </Link>
             </li>
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+            <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/chairmanHECPunjabMessage"
-                className="sub-menu-link d-inline-block"
+                className="sub-menu-link ps-3 pe-5  d-block"
               >
                 Chairman HEC Punjab Message
               </Link>
             </li>
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+            <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/chairmanPECMessage"
-                className="sub-menu-link d-inline-block"
+                className="sub-menu-link ps-3 pe-5  d-block"
               >
                 Chairman PEC Message
               </Link>
             </li>
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+            <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/aboutUs"
-                className="sub-menu-link d-inline-block"
+                className="sub-menu-link ps-3 pe-5  d-block"
               >
                 About Us
               </Link>
             </li>
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+            <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/advisoryBody"
-                className="sub-menu-link d-inline-block"
+                className="sub-menu-link ps-3 pe-5 d-block"
               >
                 Advisory Board
               </Link>
@@ -439,7 +436,7 @@ const Menus = ({ firstLoad }) => {
               : "navbar-items-li"
           }
         >
-          <Link to="/contactUs" className="item px-3 py-2 d-inline-block">
+          <Link to="/contactUs" className="item px-3 py-2 d-block">
             Contact Us
           </Link>
         </li>
