@@ -12,7 +12,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0">
+        <p className="ms-3 mb-0 text-justify">
           <strong>DigiPakistan</strong> is the First Online{" "}
           <strong>National Initiative</strong> launched with the aim to provide
           Skill Development Training to empower youth of the nation. In order to
@@ -31,7 +31,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0">
+        <p className="ms-3 mb-0 text-justify">
           It is a great opportunity for you to get hands on training on
           invaluable courses that are taught by expert trainers. This training
           will equip you with knowledge and skills to be self-sustainable by
@@ -48,13 +48,15 @@ const QuestionsAndAnswers = () => {
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
         <div className="mt-1">
-          <p className="ms-3 mb-0">There are three Modules offered by us:</p>
+          <p className="ms-3 mb-0 text-justify">
+            There are three Modules offered by us:
+          </p>
           <ul className="m-3">
             <li>Technical Programs (3 Months)</li>
             <li>Non-Technical Programs (3 Months)</li>
             <li>Associate Certification Programs (6 Months)</li>
           </ul>
-          <p className="ms-3 mb-0">
+          <p className="ms-3 mb-0 text-justify">
             We'll continuously update maximum high tech programs at DigiPAKISTAN
             Initiative with time. As we are searching for best Trainers in
             Pakistan to teach you.
@@ -71,7 +73,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           Yes, All trainees who successfully complete training will be awarded a
           training certificate.
         </p>
@@ -85,7 +87,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           Minimum Matric can apply to this program for Digital &amp; Prosperous
           Pakistan.
         </p>
@@ -157,7 +159,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           Yes Students can apply in maximum 3 programs at the same time.
         </p>
       </div>
@@ -170,7 +172,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           All you have to pay is one time nominal registration charges for seat
           confirmation of each course.
         </p>
@@ -182,7 +184,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           Duration of Fast Track Technical &amp; Non-Technical Programs are 3
           months. And Associate Certification Program is 6 Months.
         </p>
@@ -194,7 +196,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           No, there will not be any entry test due to Covid19.
         </p>
       </div>
@@ -207,7 +209,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           No. You cannot change course after registration or shortlisting.
           Please choose your course carefully while registering online.
         </p>
@@ -221,7 +223,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           Yes there will be limited seats in this program which will be on first
           come first serve bases. In the First Batch, DigiPAKISTAN have only
           50,000 seats for Students across the country & Overseas Pakistanis.
@@ -237,7 +239,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           There is minimum Matric educational requirement to take the
           DigiPAKISTAN training and we encourage everyone who can read, write
           and understand English or know a little bit use of Computer to take
@@ -252,7 +254,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">No stipend will be given.</p>
+        <p className="ms-3 mb-0 mt-1 text-justify">No stipend will be given.</p>
       </div>
 
       <div className="question d-flex mt-4 p-4 rounded">
@@ -263,7 +265,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           Yes, because we are training youth online.
         </p>
       </div>
@@ -276,7 +278,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           Yes, Overseas can also apply for this National Program &amp; can
           Secure there Seat.
         </p>
@@ -290,7 +292,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           A student can enrol up to three programs at the same time.
         </p>
       </div>
@@ -304,7 +306,7 @@ const QuestionsAndAnswers = () => {
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
         <div className="mt-1">
-          <p className="ms-3 mb-0">
+          <p className="ms-3 mb-0 text-justify">
             According to course completion criteria, trainees will need to
             secure 70% score to become eligible for Certificate. Each component
             (Video, Quiz and Hands-on Exercise) carries a certain percentage of
@@ -331,7 +333,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           To access the DigiPAKISTAN program, you need to have a good stable
           internet connection at home along with a desktop, laptop, or an
           android phone.
@@ -344,7 +346,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           This is an online training program, Once you get enrolled you will be
           able to access DigiPAKISTAN online learning management system.
         </p>
@@ -356,7 +358,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           All the videos and learning material for each module will be available
           on Online Learning Platform. You can self-pace the training or you can
           follow the announced time table which will be available on Portal.
@@ -371,7 +373,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 text-justify">
           It will not offer jobs to trainees, rather, it will offer skill-based
           trainings, which will enable them to get projects from freelance
           markets or will be enough to get jobs internationally.
@@ -386,7 +388,7 @@ const QuestionsAndAnswers = () => {
       </div>
       <div className="answer d-flex mt-2 p-4 rounded mb-5">
         <h3 className="fw-bold mb-0 a">A.</h3>
-        <p className="ms-3 mb-0 mt-1">
+        <p className="ms-3 mb-0 mt-1 word-break text-justify">
           In case of queries you can dial{" "}
           <a href="tel:042-35974881">042-35974881</a> /{" "}
           <a href="042-35974882">042-35974882</a> and can email at{" "}

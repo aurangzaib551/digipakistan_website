@@ -28,6 +28,90 @@
   }
 }
 
+.faq-help.help-open {
+  left: 0;
+}
+.faq-help {
+  height: 50px;
+  width: 300px;
+  background-color: $primary;
+  border-radius: 0.3rem;
+  position: fixed;
+  top: 150px;
+  left: -243px;
+  transition: all 0.5s;
+  overflow: hidden;
+
+  .message-help {
+    .animation {
+      animation: moving 16s infinite ease-out;
+    }
+
+    p {
+      position: absolute;
+      top: 14px;
+
+      &:nth-of-type(2) {
+        top: 66px;
+      }
+
+      &:nth-of-type(3) {
+        top: 106px;
+      }
+
+      &:nth-of-type(4) {
+        top: 146px;
+      }
+
+      &:nth-of-type(5) {
+        top: 186px;
+      }
+
+      &:nth-of-type(6) {
+        top: 226px;
+      }
+    }
+  }
+
+  .faqs-help-btn {
+    height: 100%;
+    width: 70px;
+    border-left: 3px solid white;
+
+    .icon-help {
+      font-size: 30px;
+    }
+  }
+}
+
+@keyframes moving {
+  0%,
+  10% {
+    margin-top: 0px;
+  }
+  20%,
+  24% {
+    margin-top: -52px;
+  }
+  34%,
+  39% {
+    margin-top: -92px;
+  }
+
+  49%,
+  54% {
+    margin-top: -132px;
+  }
+  64%,
+  69% {
+    margin-top: -172px;
+  }
+  85%,
+  100% {
+    margin-top: -212px;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .banner-faqs {
     height: 350px;

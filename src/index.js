@@ -25,6 +25,11 @@ const store = createStore(
   )
 );
 
+window.onbeforeunload = () => {
+  window.sessionStorage.removeItem("First Load");
+  window.sessionStorage.removeItem("Msg");
+};
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

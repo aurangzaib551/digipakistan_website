@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import FadeLoader from "./loader/loader";
 const Nav = lazy(() => import("./components/common/nav/nav"));
@@ -10,11 +10,28 @@ const FAQs = lazy(() => import("./pages/faqs"));
 const GoToTop = lazy(() => import("./pages/goToTop"));
 
 const App = () => {
+  // State
+  const [firstLoad, setFirstLoad] = useState(false);
+
+  useEffect(() => {
+    if (window.sessionStorage.getItem("First Load") === null) {
+      window.sessionStorage.setItem("First Load", 1);
+      setFirstLoad(true);
+    } else {
+      setFirstLoad(false);
+    }
+  }, []);
+
+  if (firstLoad) {
+    setTimeout(() => {
+      setFirstLoad(false);
+    }, 3000);
+  }
   return (
     <BrowserRouter>
       <Suspense fallback={<FadeLoader />}>
-        <Nav />
-        <Message />
+        <Nav firstLoad={firstLoad} />
+        <Message firstLoad={firstLoad} />
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/admissionProcess" exact component={AdmissionProcess} />

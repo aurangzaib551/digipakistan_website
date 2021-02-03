@@ -12,7 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import $ from "jquery";
 import { useLocation } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ firstLoad }) => {
   // Media Query
   const isLaptop = useMediaQuery({
     query: "(max-width: 1132px)",
@@ -47,7 +47,7 @@ const Nav = () => {
 
           {isXSmall ? null : <Logo />}
 
-          {isLaptop ? null : <Menus />}
+          {isLaptop ? null : <Menus firstLoad={firstLoad} />}
 
           <Badge
             badgeContent="Admissions Open"

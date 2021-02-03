@@ -2,14 +2,26 @@ import React, { useState } from "react";
 import CloseIcon from "@material-ui/icons/CloseRounded";
 import IconButton from "@material-ui/core/IconButton";
 
-const Message = () => {
-  const [msg, setMsg] = useState(true);
+const Message = ({ firstLoad }) => {
+  const [msg, setMsg] = useState(
+    window.sessionStorage.getItem("Msg") ? false : true
+  );
+
+  if (msg === false) {
+    window.sessionStorage.setItem("Msg", true);
+  }
 
   return (
     <>
       {msg && (
         <div className="d-flex justify-content-center">
-          <div className="message rounded animate__animated animate__fadeInDown animate__slow">
+          <div
+            className={
+              firstLoad
+                ? "message rounded animate__animated animate__fadeInDown animate__slow"
+                : "message rounded"
+            }
+          >
             <IconButton
               onClick={() =>
                 setTimeout(() => {

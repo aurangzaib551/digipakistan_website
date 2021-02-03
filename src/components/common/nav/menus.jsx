@@ -3,19 +3,31 @@ import { Link, useHistory } from "react-router-dom";
 import AngleDownIcon from "@material-ui/icons/KeyboardArrowDownRounded";
 import AngleRightIcon from "@material-ui/icons/KeyboardArrowRightRounded";
 
-const Menus = () => {
+const Menus = ({ firstLoad }) => {
   // Object Destructuring
   const { push } = useHistory();
 
   return (
     <>
       <ul className="d-flex align-items-center list-unstyled mb-0 me-4 me-xxl-0 navbar-items">
-        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slow">
+        <li
+          className={
+            firstLoad
+              ? "navbar-items-li animate__animated animate__fadeInRight animate__slow"
+              : "navbar-items-li"
+          }
+        >
           <Link to="/" className="item px-3 py-2 d-inline-block">
             Home
           </Link>
         </li>
-        <li className="px-3 py-2 d-flex navbar-items-li position-relative animate__animated animate__fadeInRight animate__slower">
+        <li
+          className={
+            firstLoad
+              ? "px-3 py-2 d-flex navbar-items-li position-relative animate__animated animate__fadeInRight animate__slower"
+              : "px-3 py-2 d-flex navbar-items-li position-relative"
+          }
+        >
           Available Programs <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
             <li
@@ -312,7 +324,13 @@ const Menus = () => {
             </li>
           </ul>
         </li>
-        <li className="px-3 py-2 navbar-items-li d-flex position-relative animate__animated animate__fadeInRight animate__slow">
+        <li
+          className={
+            firstLoad
+              ? "px-3 py-2 navbar-items-li d-flex position-relative animate__animated animate__fadeInRight animate__slow"
+              : "px-3 py-2 navbar-items-li d-flex position-relative"
+          }
+        >
           Join DigiPAKISTAN <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
@@ -327,7 +345,13 @@ const Menus = () => {
             </li>
           </ul>
         </li>
-        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slower">
+        <li
+          className={
+            firstLoad
+              ? "navbar-items-li animate__animated animate__fadeInRight animate__slower"
+              : "navbar-items-li"
+          }
+        >
           <Link
             to="/admissionProcess"
             className="item px-3 py-2 d-inline-block"
@@ -335,12 +359,24 @@ const Menus = () => {
             Admission Process
           </Link>
         </li>
-        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slower">
+        <li
+          className={
+            firstLoad
+              ? "navbar-items-li animate__animated animate__fadeInRight animate__slower"
+              : "navbar-items-li"
+          }
+        >
           <Link to="/faqs" className="item px-3 py-2 d-inline-block">
             FAQ's
           </Link>
         </li>
-        <li className="px-3 py-2 navbar-items-li d-flex position-relative animate__animated animate__fadeInRight animate__slower">
+        <li
+          className={
+            firstLoad
+              ? "px-3 py-2 navbar-items-li d-flex position-relative animate__animated animate__fadeInRight animate__slower"
+              : "px-3 py-2 navbar-items-li d-flex position-relative"
+          }
+        >
           About <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
@@ -375,7 +411,13 @@ const Menus = () => {
             </li>
           </ul>
         </li>
-        <li className="navbar-items-li animate__animated animate__fadeInRight animate__slow">
+        <li
+          className={
+            firstLoad
+              ? "navbar-items-li animate__animated animate__fadeInRight animate__slow"
+              : "navbar-items-li"
+          }
+        >
           <Link to="/" className="item px-3 py-2 d-inline-block">
             Contact Us
           </Link>

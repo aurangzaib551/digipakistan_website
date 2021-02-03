@@ -45,6 +45,7 @@ const YoutubeChannel = () => {
             {youtube.items.map((video, ind) => {
               return (
                 <div
+                  key={ind}
                   onClick={() =>
                     setYoutube({
                       ...youtube,
