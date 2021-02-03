@@ -8,6 +8,7 @@ const Message = lazy(() => import("./pages/message"));
 const AdmissionProcess = lazy(() => import("./pages/admissionProcess"));
 const FAQs = lazy(() => import("./pages/faqs"));
 const GoToTop = lazy(() => import("./pages/goToTop"));
+const ContactUs = lazy(() => import("./pages/contactUs"));
 
 const App = () => {
   // State
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/" exact component={HomePage} />
           <Route path="/admissionProcess" exact component={AdmissionProcess} />
           <Route path="/faqs" exact component={FAQs} />
+          <Route path="/contactUs" exact component={ContactUs} />
           <Route path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>

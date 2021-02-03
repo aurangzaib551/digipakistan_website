@@ -1,0 +1,35 @@
+.contact-us {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://i.ibb.co/0V5BhdH/Contact-Us.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 920px;
+  width: 100%;
+
+  .address {
+    background-color: $secondary;
+    color: white;
+    height: 600px;
+
+    .link {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1560px) {
+  .contact-us {
+    height: auto;
+
+    .address {
+      height: auto;
+    }
+  }
+}

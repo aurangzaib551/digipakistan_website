@@ -171,7 +171,10 @@ const LaptopMenus = () => {
               )}
             </li>
             <li>
-              <Link to="/" className={about ? "items-link mt-3" : "items-link"}>
+              <Link
+                to="/contactUs"
+                className={about ? "items-link mt-3" : "items-link"}
+              >
                 Contact Us
               </Link>
             </li>

@@ -418,7 +418,7 @@ const Menus = ({ firstLoad }) => {
               : "navbar-items-li"
           }
         >
-          <Link to="/" className="item px-3 py-2 d-inline-block">
+          <Link to="/contactUs" className="item px-3 py-2 d-inline-block">
             Contact Us
           </Link>
         </li>
