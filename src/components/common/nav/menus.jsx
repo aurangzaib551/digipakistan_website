@@ -31,7 +31,7 @@ const Menus = ({ firstLoad }) => {
           Available Programs <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
             <li
-              onClick={() => push("/a")}
+              onClick={() => push("/fastTrackTechnicalProgram")}
               className="ps-3 pe-5 sub-menus-li rounded text-nowrap"
             >
               Fast Track Technical Program{" "}
@@ -190,7 +190,7 @@ const Menus = ({ firstLoad }) => {
               </ul>
             </li>
             <li
-              onClick={() => push("/a")}
+              onClick={() => push("/fastTrackNonTechnicalProgram")}
               className="ps-3 pe-5 sub-menus-li rounded text-nowrap"
             >
               Fast Track Non-Technical Program
@@ -274,7 +274,7 @@ const Menus = ({ firstLoad }) => {
               </ul>
             </li>
             <li
-              onClick={() => push("/a")}
+              onClick={() => push("/associateCertificationProgram")}
               className="ps-3 pe-5 sub-menus-li rounded text-nowrap"
             >
               Associate Certification Program
@@ -334,13 +334,16 @@ const Menus = ({ firstLoad }) => {
           Join DigiPAKISTAN <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <Link to="/" className="sub-menu-link d-inline-block">
+              <Link
+                to="/joinDigiPAKISTAN/becomeAnInstructor"
+                className="sub-menu-link d-inline-block"
+              >
                 Become an Instructor
               </Link>
             </li>
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
               <a href=" " className="sub-menu-link d-inline-block">
-                Provincial Minister Message
+                Become Marketing Partner
               </a>
             </li>
           </ul>
@@ -380,32 +383,50 @@ const Menus = ({ firstLoad }) => {
           About <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <Link to="/" className="sub-menu-link d-inline-block">
+              <Link
+                to="/about/provincialMinisterMessage"
+                className="sub-menu-link d-inline-block"
+              >
                 Provincial Minister Message
               </Link>
             </li>
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <Link to="/" className="sub-menu-link d-inline-block">
+              <Link
+                to="/about/directorGeneralMessage"
+                className="sub-menu-link d-inline-block"
+              >
                 Director General (DG) Message
               </Link>
             </li>
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <Link to="/" className="sub-menu-link d-inline-block">
+              <Link
+                to="/about/chairmanHECPunjabMessage"
+                className="sub-menu-link d-inline-block"
+              >
                 Chairman HEC Punjab Message
               </Link>
             </li>
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <Link to="/" className="sub-menu-link d-inline-block">
+              <Link
+                to="/about/chairmanPECMessage"
+                className="sub-menu-link d-inline-block"
+              >
                 Chairman PEC Message
               </Link>
             </li>
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <Link to="/" className="sub-menu-link d-inline-block">
+              <Link
+                to="/about/aboutUs"
+                className="sub-menu-link d-inline-block"
+              >
                 About Us
               </Link>
             </li>
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <Link to="/" className="sub-menu-link d-inline-block">
+              <Link
+                to="/about/advisoryBody"
+                className="sub-menu-link d-inline-block"
+              >
                 Advisory Board
               </Link>
             </li>

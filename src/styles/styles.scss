@@ -72,6 +72,13 @@ body {
   border-color: #02a39b !important;
 }
 
+.form-control {
+  &:focus {
+    border-color: #02a39b;
+    box-shadow: 0 0 5px 0.25rem #02a39b;
+  }
+}
+
 @media only screen and (max-width: 345px) {
   .mt {
     margin-top: 75px;
@@ -107,6 +114,14 @@ body {
 @media only screen and (max-width: 576px) {
   .text-justify {
     text-align: justify !important;
+  }
+
+  // Become An Instructor
+  .become-an-instructor {
+    .MuiInputLabel-formControl {
+      width: 300px;
+      line-height: 1.4;
+    }
   }
 }
 
@@ -148,3 +163,9 @@ body {
 
 // Contact Us
 @import "./contact_us/contactUs";
+
+// All About Pages StyleSheet
+@import "./about/about";
+
+// All Fast Track Styles
+@import "./all_program/allProgram";

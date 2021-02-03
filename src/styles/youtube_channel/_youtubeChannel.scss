@@ -4,6 +4,7 @@
   .youtube-thumbnail {
     .link {
       transition: all 0.3s;
+      font-size: 14px;
     }
 
     &:hover {
@@ -47,11 +48,16 @@
       background-color: $primary;
     }
 
-    .link {
-      font-size: 16px;
+    .youtube-thumbnail {
+      .link {
+        transition: all 0.3s;
+      }
+
       &:hover {
-        color: white !important;
-        text-decoration: underline;
+        .link {
+          color: white !important;
+          text-decoration: underline;
+        }
       }
     }
   }

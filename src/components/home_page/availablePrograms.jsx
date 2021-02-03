@@ -2,6 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import { useMediaQuery } from "react-responsive";
+import { useHistory } from "react-router-dom";
 
 const AvailablePrograms = () => {
   // Media Query
@@ -9,12 +10,23 @@ const AvailablePrograms = () => {
     query: "(max-width: 992px)",
   });
 
+  // Object Destructuring
+  const { push } = useHistory();
+
+  const go = (link) => {
+    push(link);
+  };
+
   return (
     <Container>
       <div className="available-programs">
         <h1 className="fw-bold text-center mx-3">Available Programs</h1>
         <div className="d-flex flex-column flex-lg-row justify-content-between mb-3 flex-wrap">
-          <Paper elevation={5} className="p-3 border mt-4 paper">
+          <Paper
+            elevation={5}
+            onClick={() => go("/fastTrackTechnicalProgram")}
+            className="p-3 border mt-4 paper"
+          >
             <div className="d-flex">
               <img
                 src="https://i.ibb.co/9YZzbr5/technical.png"
@@ -139,7 +151,11 @@ const AvailablePrograms = () => {
               )}
             </div>
           </Paper>
-          <Paper elevation={5} className="p-3 mt-4 border paper">
+          <Paper
+            elevation={5}
+            onClick={() => go("/fastTrackNonTechnicalProgram")}
+            className="p-3 mt-4 border paper"
+          >
             <div className="d-flex">
               <img
                 src="https://i.ibb.co/5TL95M1/non-technical.png"
@@ -184,7 +200,11 @@ const AvailablePrograms = () => {
               <p className="mb-0 mt-2 px-2">Enterprenership</p>
             </div>
           </Paper>
-          <Paper elevation={5} className="p-3 mt-4 border paper">
+          <Paper
+            elevation={5}
+            onClick={() => go("/associateCertificationProgram")}
+            className="p-3 mt-4 border paper"
+          >
             <div className="d-flex">
               <img
                 src="https://i.ibb.co/8swpxtt/associate.png"

@@ -1,8 +1,17 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
 
 const JoinDigiPAKISTAN = () => {
+  // Object Destructuring
+  const { push } = useHistory();
+
+  const go = (link) => {
+    setTimeout(() => {
+      push(link);
+    }, 400);
+  };
   return (
     <Container>
       <div className="row pb-5">
@@ -14,7 +23,11 @@ const JoinDigiPAKISTAN = () => {
             income. Become a Marketing Partner Promote DigiPakistan Programs on
             different social media platforms &amp; earn{" "}
           </p>
-          <Button variant="contained" className="custom-button">
+          <Button
+            onClick={() => go("/joinDigiPAKISTAN/becomeAnInstructor")}
+            variant="contained"
+            className="custom-button"
+          >
             Start Teaching
           </Button>
         </div>

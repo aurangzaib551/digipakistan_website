@@ -4,7 +4,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 
-const LaptopMenus = () => {
+const LaptopMenus = ({ closeNav }) => {
   // State
   const [availableProgram, setAvailableProgram] = useState(false);
   const [about, setAbout] = useState(false);
@@ -16,8 +16,32 @@ const LaptopMenus = () => {
       $(".menu-laptop").removeClass("open-nav");
       setAbout(false);
       setAvailableProgram(false);
+      setJoinDigiPAKISTAN(false);
     }, 400);
   };
+
+  const closeAbout = () => {
+    setAbout(false);
+    closeNav();
+  };
+
+  const closeJoinDigiPAKISTAN = () => {
+    setJoinDigiPAKISTAN(false);
+    closeNav();
+  };
+
+  const closeAvailablePrograms = () => {
+    setAvailableProgram(false);
+    closeNav();
+  };
+
+  const closeNavbar = () => {
+    closeNav();
+    setAbout(false);
+    setAvailableProgram(false);
+    setJoinDigiPAKISTAN(false);
+  };
+
   return (
     <>
       <div className="laptop-menu-items">
@@ -35,7 +59,7 @@ const LaptopMenus = () => {
           </div>
           <ul className="list-unstyled items">
             <li>
-              <Link to="/" className="items-link">
+              <Link to="/" onClick={closeNavbar} className="items-link">
                 Home
               </Link>
             </li>
@@ -57,18 +81,24 @@ const LaptopMenus = () => {
               </p>
               {availableProgram && (
                 <ul className="list-unstyled mb-0">
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeAvailablePrograms}>
+                    <Link to="/fastTrackTechnicalProgram" className="items-sub">
                       Fast Track Technical Program
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeAvailablePrograms}>
+                    <Link
+                      to="/fastTrackNonTechnicalProgram"
+                      className="items-sub"
+                    >
                       Fast Track Non-Technical Program
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeAvailablePrograms}>
+                    <Link
+                      to="/associateCertificationProgram"
+                      className="items-sub"
+                    >
                       Associate Certification Program
                     </Link>
                   </li>
@@ -93,12 +123,15 @@ const LaptopMenus = () => {
               </p>
               {joinDigiPakistan && (
                 <ul className="list-unstyled mb-0">
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeJoinDigiPAKISTAN}>
+                    <Link
+                      to="/joinDigiPAKISTAN/becomeAnInstructor"
+                      className="items-sub"
+                    >
                       Become an Instructor
                     </Link>
                   </li>
-                  <li>
+                  <li onClick={closeJoinDigiPAKISTAN}>
                     <a href=" " className="items-sub">
                       Become Marketing Partner
                     </a>
@@ -109,13 +142,14 @@ const LaptopMenus = () => {
             <li>
               <Link
                 to="/admissionProcess"
+                onClick={closeNavbar}
                 className={joinDigiPakistan ? "items-link mt-3" : "items-link"}
               >
                 Admission Process
               </Link>
             </li>
             <li>
-              <Link to="/faqs" className="items-link">
+              <Link to="/faqs" onClick={closeNavbar} className="items-link">
                 FAQ's
               </Link>
             </li>
@@ -137,33 +171,42 @@ const LaptopMenus = () => {
               </p>
               {about && (
                 <ul className="list-unstyled mb-0">
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeAbout}>
+                    <Link
+                      to="/about/provincialMinisterMessage"
+                      className="items-sub"
+                    >
                       Provincial Minister Message
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeAbout}>
+                    <Link
+                      to="/about/directorGeneralMessage"
+                      className="items-sub"
+                    >
                       Director General (DG) Message
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeAbout}>
+                    <Link
+                      to="/about/chairmanHECPunjabMessage"
+                      className="items-sub"
+                    >
                       Chairman HEC Punjab Message
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeAbout}>
+                    <Link to="/about/chairmanPECMessage" className="items-sub">
                       Chairman PEC Message
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeAbout}>
+                    <Link to="/about/aboutUs" className="items-sub">
                       About Us
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/" className="items-sub">
+                  <li onClick={closeAbout}>
+                    <Link to="/about/advisoryBody" className="items-sub">
                       Advisory Board
                     </Link>
                   </li>
@@ -173,6 +216,7 @@ const LaptopMenus = () => {
             <li>
               <Link
                 to="/contactUs"
+                onClick={closeNavbar}
                 className={about ? "items-link mt-3" : "items-link"}
               >
                 Contact Us

@@ -9,6 +9,28 @@ const AdmissionProcess = lazy(() => import("./pages/admissionProcess"));
 const FAQs = lazy(() => import("./pages/faqs"));
 const GoToTop = lazy(() => import("./pages/goToTop"));
 const ContactUs = lazy(() => import("./pages/contactUs"));
+const ProvincialMinisterMessage = lazy(() =>
+  import("./pages/provincialMinisterMessage")
+);
+const DirectorGeneralMessage = lazy(() =>
+  import("./pages/directorGeneralMessage")
+);
+const ChairmanHECPunjabMessage = lazy(() =>
+  import("./pages/chairmanHECPunjabMessage")
+);
+const ChairmanPECMessage = lazy(() => import("./pages/chairmanPECMessage"));
+const AboutUs = lazy(() => import("./pages/aboutUs"));
+const AdvisoryBody = lazy(() => import("./pages/advisoryBody"));
+const BecomeAnInstructor = lazy(() => import("./pages/becomeAnInstructor"));
+const FastTrackTechnicalProgram = lazy(() =>
+  import("./pages/fastTrackTechnicalProgram")
+);
+const FastTrackNonTechnicalProgram = lazy(() =>
+  import("./pages/fastTrackNonTechnicalProgram")
+);
+const AssociateCertificationProgram = lazy(() =>
+  import("./pages/associateCertificationProgram")
+);
 
 const App = () => {
   // State
@@ -35,9 +57,46 @@ const App = () => {
         <Message firstLoad={firstLoad} />
         <Switch>
           <Route path="/" exact component={HomePage} />
-          <Route path="/admissionProcess" exact component={AdmissionProcess} />
-          <Route path="/faqs" exact component={FAQs} />
-          <Route path="/contactUs" exact component={ContactUs} />
+          <Route path="/admissionProcess" component={AdmissionProcess} />
+          <Route path="/faqs" component={FAQs} />
+          <Route path="/contactUs" component={ContactUs} />
+          <Route
+            path="/joinDigiPAKISTAN/becomeAnInstructor"
+            component={BecomeAnInstructor}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram"
+            exact
+            component={FastTrackTechnicalProgram}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram"
+            exact
+            component={FastTrackNonTechnicalProgram}
+          />
+          <Route
+            path="/associateCertificationProgram"
+            exact
+            component={AssociateCertificationProgram}
+          />
+          <Route
+            path="/about/provincialMinisterMessage"
+            component={ProvincialMinisterMessage}
+          />
+          <Route
+            path="/about/directorGeneralMessage"
+            component={DirectorGeneralMessage}
+          />
+          <Route
+            path="/about/chairmanHECPunjabMessage"
+            component={ChairmanHECPunjabMessage}
+          />
+          <Route
+            path="/about/chairmanPECMessage"
+            component={ChairmanPECMessage}
+          />
+          <Route path="/about/advisoryBody" component={AdvisoryBody} />
+          <Route path="/about/aboutUs" component={AboutUs} />
           <Route path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>
