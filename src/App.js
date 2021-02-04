@@ -31,6 +31,159 @@ const FastTrackNonTechnicalProgram = lazy(() =>
 const AssociateCertificationProgram = lazy(() =>
   import("./pages/associateCertificationProgram")
 );
+const CompTIAItFundamentals = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/compTIAItFundamentals"
+  )
+);
+const MicrosoftFrontEndDevelopment = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/microsoftFrontEndDevelopment"
+  )
+);
+const AspDotNetWebApplications = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/aspDotNetWebApplications"
+  )
+);
+const PHPLaravel = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/phpLaravel"
+  )
+);
+const MERNStack = lazy(() =>
+  import("./components/course_outlines/fast_track_technical_programs/mernStack")
+);
+const SQLServerSpecialist = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/sqlServerSpecialist"
+  )
+);
+const OracleDatabaseAdministrator = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/orcaleDatabaseAdministrator"
+  )
+);
+const AndroidAppsDevelopment = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/androidAppsDevelopment"
+  )
+);
+const KotlinAppsDevelopment = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/kotlinAppsDevelopment"
+  )
+);
+const IOSAppsDevelopment = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/iOSAppsDevelopment"
+  )
+);
+const XamarinAppsDevelopment = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/xamarinAppsDevelopment"
+  )
+);
+const ReactNativeWebAndAppsDevelopment = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/reactNativeWebAndAppsDevelopment"
+  )
+);
+const GameDevelopment = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/gameDevelopment"
+  )
+);
+const CiscoCCNANetworking = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/ciscoCCNANetworking"
+  )
+);
+const ComptiaSecurity = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/comptiaSecurity"
+  )
+);
+const CertifiedEthicalHacking = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/certifiedEthicalHacking"
+  )
+);
+const PenetrationTestingSecurityAnalyst = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/penetrationTestingSecurityAnalyst"
+  )
+);
+const CertifiedHackingForensicInvestigator = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/certifiedHackingForensicInvestigator"
+  )
+);
+const CertifiedInformationSystemsAuditor = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/certifiedInformationSystemsAuditor"
+  )
+);
+const CertifiedInformationSecurityManager = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/certifiedInformationSecurityManager"
+  )
+);
+const AWSPractitioner = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/awsPractitioner"
+  )
+);
+const AWSSolutionArchitect = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/awsSolutionArchitect"
+  )
+);
+const AWSSysOpsAdministrator = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/awsSysOpsAdministrator"
+  )
+);
+const AWSDeveloperAssociate = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/awsDeveloperAssociate"
+  )
+);
+const MicrosoftAzureCloudFundamentals = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/microsoftAzureCloudFundamentals"
+  )
+);
+const MicrosoftCloudAdministrator = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/microsoftCloudAdministrator"
+  )
+);
+const PythonForEveryone = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/pythonForEveryone"
+  )
+);
+const MachineLearningAndAI = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/machineLearningAndAI"
+  )
+);
+const DataScience = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/dataScience"
+  )
+);
+const BigDataAndHeadoopEcosystem = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/bigDataAndHeadoopEcosystem"
+  )
+);
+const GoogleCloudEngineer = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_technical_programs/googleCloudEngineer"
+  )
+);
 
 const App = () => {
   // State
@@ -68,6 +221,130 @@ const App = () => {
             path="/fastTrackTechnicalProgram"
             exact
             component={FastTrackTechnicalProgram}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/comptiaItFundamentals"
+            component={CompTIAItFundamentals}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/microsoftFrontEndDevelopment"
+            component={MicrosoftFrontEndDevelopment}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/aspDotNetWebApplications"
+            component={AspDotNetWebApplications}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/phpLaravel"
+            component={PHPLaravel}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/mernStack"
+            component={MERNStack}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/sqlServerSpecialist"
+            component={SQLServerSpecialist}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/oracleDatabaseAdministrator"
+            component={OracleDatabaseAdministrator}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/androidAppsDevelopment"
+            component={AndroidAppsDevelopment}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/kotlinAppsDevelopment"
+            component={KotlinAppsDevelopment}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/iOSAppsDevelopment"
+            component={IOSAppsDevelopment}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/xamarinAppsDevelopment"
+            component={XamarinAppsDevelopment}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/reactNativeWebAndAppsDevelopment"
+            component={ReactNativeWebAndAppsDevelopment}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/gameDevelopment"
+            component={GameDevelopment}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/ciscoCCNANetworking"
+            component={CiscoCCNANetworking}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/comptiaSecurity"
+            component={ComptiaSecurity}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/ceh"
+            component={CertifiedEthicalHacking}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/ecsa"
+            component={PenetrationTestingSecurityAnalyst}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/chfi"
+            component={CertifiedHackingForensicInvestigator}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/cisa"
+            component={CertifiedInformationSystemsAuditor}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/cism"
+            component={CertifiedInformationSecurityManager}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/awsPractitioner"
+            component={AWSPractitioner}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/awsSolutionArchitect"
+            component={AWSSolutionArchitect}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/awsSysOpsAdministrator"
+            component={AWSSysOpsAdministrator}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/awsDeveloperAssociate"
+            component={AWSDeveloperAssociate}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/microsoftAzureCloudFundamentals"
+            component={MicrosoftAzureCloudFundamentals}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/microsoftCloudAdministrator"
+            component={MicrosoftCloudAdministrator}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/pythonForEverone"
+            component={PythonForEveryone}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/machineLearningAndAI"
+            component={MachineLearningAndAI}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/dataScience"
+            component={DataScience}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/bigDataAndHeadoopEcosystem"
+            component={BigDataAndHeadoopEcosystem}
+          />
+          <Route
+            path="/fastTrackTechnicalProgram/googleCloudEngineer"
+            component={GoogleCloudEngineer}
           />
           <Route
             path="/fastTrackNonTechnicalProgram"

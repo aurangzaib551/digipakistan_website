@@ -35,13 +35,6 @@ const LaptopMenus = ({ closeNav }) => {
     closeNav();
   };
 
-  const closeNavbar = () => {
-    closeNav();
-    setAbout(false);
-    setAvailableProgram(false);
-    setJoinDigiPAKISTAN(false);
-  };
-
   return (
     <>
       <div className="laptop-menu-items">
@@ -59,7 +52,7 @@ const LaptopMenus = ({ closeNav }) => {
           </div>
           <ul className="list-unstyled items">
             <li>
-              <Link to="/" onClick={closeNavbar} className="items-link">
+              <Link to="/" onClick={handleClose} className="items-link">
                 Home
               </Link>
             </li>
@@ -142,14 +135,14 @@ const LaptopMenus = ({ closeNav }) => {
             <li>
               <Link
                 to="/admissionProcess"
-                onClick={closeNavbar}
+                onClick={handleClose}
                 className={joinDigiPakistan ? "items-link mt-3" : "items-link"}
               >
                 Admission Process
               </Link>
             </li>
             <li>
-              <Link to="/faqs" onClick={closeNavbar} className="items-link">
+              <Link to="/faqs" onClick={handleClose} className="items-link">
                 FAQ's
               </Link>
             </li>
@@ -216,7 +209,7 @@ const LaptopMenus = ({ closeNav }) => {
             <li>
               <Link
                 to="/contactUs"
-                onClick={closeNavbar}
+                onClick={handleClose}
                 className={about ? "items-link mt-3" : "items-link"}
               >
                 Contact Us

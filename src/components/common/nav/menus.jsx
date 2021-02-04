@@ -30,171 +30,267 @@ const Menus = ({ firstLoad }) => {
         >
           Available Programs <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
-            <li
-              onClick={() => push("/fastTrackTechnicalProgram")}
-              className="ps-3 pe-5 sub-menus-li rounded text-nowrap"
-            >
-              Fast Track Technical Program{" "}
-              <AngleRightIcon className="angle-right" />
+            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+              <span onClick={() => push("/fastTrackTechnicalProgram")}>
+                Fast Track Technical Program{" "}
+                <AngleRightIcon className="angle-right" />
+              </span>
               <ul className="next-sub-menus sub-menus-scroll rounded list-unstyled border">
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/comptiaItFundamentals"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     CompTIA IT Fundamentals
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/microsoftFrontEndDevelopment"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Microsoft Front End Web Development
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/aspDotNetWebApplications"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     ASP.NET Web Applications
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/phpLaravel"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     PHP Laravel
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/mernStack"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     MERN Stack
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/sqlServerSpecialist"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     SQL Server Specialist
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/oracleDatabaseAdministrator"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Oracle Database Administrator (OCP : 12C DBA)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/androidAppsDevelopment"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Android Apps Development
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/kotlinAppsDevelopment"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Kotlin Mobile Apps Development
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/iOSAppsDevelopment"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     iOS Apps Development
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/xamarinAppsDevelopment"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Xamarin Mobile Apps Development
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/reactNativeWebAndAppsDevelopment"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     React Native Web &amp; Apps Development
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/gameDevelopment"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Game Development
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/ciscoCCNANetworking"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Cisco CCNA Networking
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/comptiaSecurity"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     CompTIA Security + (SYO - 601)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/ceh"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Certified Ethical Hacking (CEH)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/chfi"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Certified Hacking Forensic Investigator (CHFI)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/ecsa"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Penetration Testing Security Analyst (ECSA)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/cisa"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Certified Information Systems Auditor (CISA)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/cism"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Certified Information Security Manager (CISM)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/awsPractitioner"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     AWS Practitioner
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/awsSolutionArchitect"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
+                    AWS Solution Architect
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/fastTrackTechnicalProgram/awsSysOpsAdministrator"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     AWS SysOps Administrator
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/awsDeveloperAssociate"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     AWS Developer Associate
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/microsoftAzureCloudFundamentals"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Microsoft Azure Cloud Fundamentals
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/microsoftCloudAdministrator"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Microsoft Cloud Administrator 103 - 104
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/googleCloudEngineer"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Google Cloud Engineer
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/pythonForEverone"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Python for Everyone
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/machineLearningAndAI"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Machine Learning &amp; AI
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/dataScience"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Data Science
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackTechnicalProgram/bigDataAndHeadoopEcosystem"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Big Data &amp; Headoop Ecosystem
                   </Link>
                 </li>
               </ul>
             </li>
-            <li
-              onClick={() => push("/fastTrackNonTechnicalProgram")}
-              className="ps-3 pe-5 sub-menus-li rounded text-nowrap"
-            >
-              Fast Track Non-Technical Program
-              <AngleRightIcon className="angle-right" />
+            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+              <span onClick={() => push("/fastTrackNonTechnicalProgram")}>
+                Fast Track Non-Technical Program
+                <AngleRightIcon className="angle-right" />
+              </span>
               <ul className="next-sub-menus sub-menus-scroll rounded list-unstyled border">
                 <li>
                   <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
@@ -273,11 +369,10 @@ const Menus = ({ firstLoad }) => {
                 </li>
               </ul>
             </li>
-            <li
-              onClick={() => push("/associateCertificationProgram")}
-              className="ps-3 pe-5 sub-menus-li rounded text-nowrap"
-            >
-              Associate Certification Program
+            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
+              <span onClick={() => push("/associateCertificationProgram")}>
+                Associate Certification Program
+              </span>
               <AngleRightIcon className="angle-right" />
               <ul className="next-sub-menus rounded list-unstyled border">
                 <li>
