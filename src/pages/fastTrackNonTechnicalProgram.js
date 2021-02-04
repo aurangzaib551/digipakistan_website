@@ -3,8 +3,17 @@ import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Copyright from "../components/common/copyright/copyright";
+import { useHistory } from "react-router-dom";
 
 const FastTrackNonTechnicalProgram = () => {
+  // Object Destructuring
+  const { push } = useHistory();
+
+  const go = (link) => {
+    setTimeout(() => {
+      push(link);
+    }, 400);
+  };
   return (
     <>
       <div className="all-programs-bg mt d-flex flex-column justify-content-center px-lg-5">
@@ -18,7 +27,10 @@ const FastTrackNonTechnicalProgram = () => {
         </p>
       </div>
       <Container className="d-flex all-programs flex-wrap justify-content-center pb-5">
-        <ButtonBase className="box mx-3 outline mt-5 ">
+        <ButtonBase
+          onClick={() => go("/fastTrackNonTechnicalProgram/quickBooks")}
+          className="box mx-3 outline mt-5 "
+        >
           <Paper
             elevation={10}
             className="h-100 w-100 p-3 paper border-top border-4 border-success align-items-center d-flex"
@@ -28,7 +40,10 @@ const FastTrackNonTechnicalProgram = () => {
           </Paper>
         </ButtonBase>
 
-        <ButtonBase className="box mx-3 outline mt-5 ">
+        <ButtonBase
+          onClick={() => go("/fastTrackNonTechnicalProgram/saperp")}
+          className="box mx-3 outline mt-5 "
+        >
           <Paper
             elevation={10}
             className="h-100 w-100 p-3 paper border-top border-4 three-color align-items-center d-flex"
@@ -38,7 +53,12 @@ const FastTrackNonTechnicalProgram = () => {
           </Paper>
         </ButtonBase>
 
-        <ButtonBase className="box mx-3 outline mt-5 ">
+        <ButtonBase
+          onClick={() =>
+            go("/fastTrackNonTechnicalProgram/projectManagementProfessional")
+          }
+          className="box mx-3 outline mt-5 "
+        >
           <Paper
             elevation={10}
             className="h-100 w-100 p-3 paper border-top border-4 four-color align-items-center d-flex"
@@ -48,7 +68,10 @@ const FastTrackNonTechnicalProgram = () => {
           </Paper>
         </ButtonBase>
 
-        <ButtonBase className="box mx-3 outline mt-5 ">
+        <ButtonBase
+          onClick={() => go("/fastTrackNonTechnicalProgram/amazonFBABusiness")}
+          className="box mx-3 outline mt-5 "
+        >
           <Paper
             elevation={10}
             className="h-100 w-100 p-3 paper border-top border-4 five-color align-items-center d-flex"
@@ -58,7 +81,12 @@ const FastTrackNonTechnicalProgram = () => {
           </Paper>
         </ButtonBase>
 
-        <ButtonBase className="box mx-3 outline mt-5 ">
+        <ButtonBase
+          onClick={() =>
+            go("/fastTrackNonTechnicalProgram/searchEngineOptimization")
+          }
+          className="box mx-3 outline mt-5 "
+        >
           <Paper
             elevation={10}
             className="h-100 w-100 p-3 paper border-top border-4 seven-color align-items-center d-flex"
@@ -70,7 +98,10 @@ const FastTrackNonTechnicalProgram = () => {
           </Paper>
         </ButtonBase>
 
-        <ButtonBase className="box mx-3 outline mt-5 ">
+        <ButtonBase
+          onClick={() => go("/fastTrackNonTechnicalProgram/digitalMarketing")}
+          className="box mx-3 outline mt-5 "
+        >
           <Paper
             elevation={10}
             className="h-100 w-100 p-3 paper border-top border-4 eight-color align-items-center d-flex"
@@ -80,7 +111,12 @@ const FastTrackNonTechnicalProgram = () => {
           </Paper>
         </ButtonBase>
 
-        <ButtonBase className="box mx-3 outline mt-5 ">
+        <ButtonBase
+          onClick={() =>
+            go("/fastTrackNonTechnicalProgram/socialMediaMarketing")
+          }
+          className="box mx-3 outline mt-5 "
+        >
           <Paper
             elevation={10}
             className="h-100 w-100 p-3 paper border-top border-4 nine-color align-items-center d-flex"
@@ -90,7 +126,10 @@ const FastTrackNonTechnicalProgram = () => {
           </Paper>
         </ButtonBase>
 
-        <ButtonBase className="box mx-3 outline mt-5 ">
+        <ButtonBase
+          onClick={() => go("/fastTrackNonTechnicalProgram/graphicDesign")}
+          className="box mx-3 outline mt-5 "
+        >
           <Paper
             elevation={10}
             className="h-100 w-100 p-3 paper border-top border-4 thirteen-color align-items-center d-flex"
@@ -100,7 +139,10 @@ const FastTrackNonTechnicalProgram = () => {
           </Paper>
         </ButtonBase>
 
-        <ButtonBase className="box mx-3 outline mt-5 ">
+        <ButtonBase
+          onClick={() => go("/fastTrackNonTechnicalProgram/uiux")}
+          className="box mx-3 outline mt-5 "
+        >
           <Paper
             elevation={10}
             className="h-100 w-100 p-3 paper border-top border-4 ten-color align-items-center d-flex"

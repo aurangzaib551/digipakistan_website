@@ -184,7 +184,49 @@ const GoogleCloudEngineer = lazy(() =>
     "./components/course_outlines/fast_track_technical_programs/googleCloudEngineer"
   )
 );
-
+const QuickBooks = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/quickBooks"
+  )
+);
+const SAPERP = lazy(() =>
+  import("./components/course_outlines/fast_track_non_technical_program/saperp")
+);
+const ProjectManagementProfessional = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/projectManagementProfessional"
+  )
+);
+const AmazonFBABusiness = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/amazonFBABusiness"
+  )
+);
+const SearchEngineOptimization = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/searchEngineOptimzation"
+  )
+);
+const DigitalMarketing = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/digitalMarketing"
+  )
+);
+const SocialMediaMarketing = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/socialMediaMarketing"
+  )
+);
+const GraphicDesign = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/graphicDesign"
+  )
+);
+const UIANDUX = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/uiAndUx"
+  )
+);
 const App = () => {
   // State
   const [firstLoad, setFirstLoad] = useState(false);
@@ -350,6 +392,42 @@ const App = () => {
             path="/fastTrackNonTechnicalProgram"
             exact
             component={FastTrackNonTechnicalProgram}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/quickBooks"
+            component={QuickBooks}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/saperp"
+            component={SAPERP}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/projectManagementProfessional"
+            component={ProjectManagementProfessional}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/amazonFBABusiness"
+            component={AmazonFBABusiness}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/searchEngineOptimization"
+            component={SearchEngineOptimization}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/digitalMarketing"
+            component={DigitalMarketing}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/socialMediaMarketing"
+            component={SocialMediaMarketing}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/graphicDesign"
+            component={GraphicDesign}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/uiux"
+            component={UIANDUX}
           />
           <Route
             path="/associateCertificationProgram"

@@ -293,47 +293,74 @@ const Menus = ({ firstLoad }) => {
               </span>
               <ul className="next-sub-menus sub-menus-scroll rounded list-unstyled border">
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/quickBooks"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Quick Books ERP
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/saperp"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     SAP ERP
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/projectManagementProfessional"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Project Management Professional (PMP)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/amazonFBABusiness"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Amazon FBA Business
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/searchEngineOptimization"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Search Engine Optimization (SEO)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/digitalMarketing"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Digital Marketing
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/socialMediaMarketing"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Social Media Marketing (SMM)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/graphicDesign"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Graphic Design
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/uiux"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     UI / UX Designing
                   </Link>
                 </li>
