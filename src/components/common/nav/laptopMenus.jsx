@@ -126,7 +126,7 @@ const LaptopMenus = ({ closeNav }) => {
                   </li>
                   <li onClick={closeJoinDigiPAKISTAN}>
                     <a href=" " className="items-sub">
-                      Become Marketing Partner
+                      Become a Marketing Partner
                     </a>
                   </li>
                 </ul>

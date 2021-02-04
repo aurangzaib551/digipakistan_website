@@ -438,7 +438,7 @@ const Menus = ({ firstLoad }) => {
             </li>
             <li className="sub-menus-li rounded text-nowrap">
               <a href=" " className="sub-menu-link ps-3 pe-5 d-block">
-                Become Marketing Partner
+                Become a Marketing Partner
               </a>
             </li>
           </ul>
