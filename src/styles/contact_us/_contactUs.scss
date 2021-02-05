@@ -21,6 +21,19 @@
         color: $primary;
       }
     }
+
+    .icon-link {
+      transition: all 0.3s;
+      color: white;
+
+      .icon {
+        font-size: 50px;
+      }
+
+      &:hover {
+        color: $primary;
+      }
+    }
   }
 }
 
