@@ -421,42 +421,66 @@ const Menus = ({ firstLoad }) => {
               <AngleRightIcon className="angle-right" />
               <ul className="next-sub-menus rounded list-unstyled border">
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/associateCertificationProgram/digitalForensicCyberSecurity"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Digital Forensic Cyber Security
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/associateCertificationProgram/penetrationTestingCyberSecurity"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Penetration Testing Cyber Security
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/associateCertificationProgram/cissp"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     CISSP Cyber Security Professional
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/associateCertificationProgram/artificialIntelligence"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Artificial Intelligence
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/associateCertificationProgram/awsCloudComputing"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     AWS Cloud Computing
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/associateCertificationProgram/internetOfThings"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Internet of Things (IoT)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/associateCertificationProgram/blockchainTechnology"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     BlockChain Technology
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/associateCertificationProgram/fullStackWebDevelopment"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Full Stack Web Development (MCSA)
                   </Link>
                 </li>

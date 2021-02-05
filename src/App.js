@@ -257,6 +257,46 @@ const Enterpreneurship = lazy(() =>
     "./components/course_outlines/fast_track_non_technical_program/enterpreneurship"
   )
 );
+const DigitalForensicCyberSecurity = lazy(() =>
+  import(
+    "./components/course_outlines/associate_certifications_programs/digitalForensicCyberSecurity"
+  )
+);
+const PenetrationTestingCyberSecurity = lazy(() =>
+  import(
+    "./components/course_outlines/associate_certifications_programs/penetrationTestingCyberSecurity"
+  )
+);
+const CISSP = lazy(() =>
+  import(
+    "./components/course_outlines/associate_certifications_programs/certifiedInformationSystemsSecurityProfessional"
+  )
+);
+const AWSCloudComputing = lazy(() =>
+  import(
+    "./components/course_outlines/associate_certifications_programs/awsCloudComputing"
+  )
+);
+const BlockChainTechnology = lazy(() =>
+  import(
+    "./components/course_outlines/associate_certifications_programs/blockchainTechnology"
+  )
+);
+const FullStackWebDevelopment = lazy(() =>
+  import(
+    "./components/course_outlines/associate_certifications_programs/fullStackWebDevelopment"
+  )
+);
+const InternetOfThings = lazy(() =>
+  import(
+    "./components/course_outlines/associate_certifications_programs/internetOfThings"
+  )
+);
+const ArtificialIntelligence = lazy(() =>
+  import(
+    "./components/course_outlines/associate_certifications_programs/artificialIntelligence"
+  )
+);
 
 const App = () => {
   // State
@@ -488,6 +528,38 @@ const App = () => {
             path="/associateCertificationProgram"
             exact
             component={AssociateCertificationProgram}
+          />
+          <Route
+            path="/associateCertificationProgram/digitalForensicCyberSecurity"
+            component={DigitalForensicCyberSecurity}
+          />
+          <Route
+            path="/associateCertificationProgram/penetrationTestingCyberSecurity"
+            component={PenetrationTestingCyberSecurity}
+          />
+          <Route
+            path="/associateCertificationProgram/cissp"
+            component={CISSP}
+          />
+          <Route
+            path="/associateCertificationProgram/artificialIntelligence"
+            component={ArtificialIntelligence}
+          />
+          <Route
+            path="/associateCertificationProgram/awsCloudComputing"
+            component={AWSCloudComputing}
+          />
+          <Route
+            path="/associateCertificationProgram/internetOfThings"
+            component={InternetOfThings}
+          />
+          <Route
+            path="/associateCertificationProgram/blockchainTechnology"
+            component={BlockChainTechnology}
+          />
+          <Route
+            path="/associateCertificationProgram/fullStackWebDevelopment"
+            component={FullStackWebDevelopment}
           />
           <Route
             path="/about/provincialMinisterMessage"
