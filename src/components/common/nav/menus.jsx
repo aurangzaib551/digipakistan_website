@@ -365,32 +365,50 @@ const Menus = ({ firstLoad }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/interiorDesigning"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Interior Designing
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/3dMayaMaxAnimation"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     3D Maya Max Animation
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/videoEditing"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Video Editing
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/autocad"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     AutoCad
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/microsoftOffice365"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Microsoft Office 365
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="ps-3 pe-5 next-sub-menus-link">
+                  <Link
+                    to="/fastTrackNonTechnicalProgram/enterpreneurship"
+                    className="ps-3 pe-5 next-sub-menus-link"
+                  >
                     Enterpreneurship
                   </Link>
                 </li>

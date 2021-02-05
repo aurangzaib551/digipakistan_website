@@ -227,6 +227,37 @@ const UIANDUX = lazy(() =>
     "./components/course_outlines/fast_track_non_technical_program/uiAndUx"
   )
 );
+const InteriorDesign = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/interiorDesign"
+  )
+);
+const MayaMaxAnimation = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/3dMayaMaxAnimation"
+  )
+);
+const VideoEditing = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/videoEditing"
+  )
+);
+const AutoCad = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/autocad"
+  )
+);
+const MicrosoftOffice365 = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/microsoftOffice365"
+  )
+);
+const Enterpreneurship = lazy(() =>
+  import(
+    "./components/course_outlines/fast_track_non_technical_program/enterpreneurship"
+  )
+);
+
 const App = () => {
   // State
   const [firstLoad, setFirstLoad] = useState(false);
@@ -428,6 +459,30 @@ const App = () => {
           <Route
             path="/fastTrackNonTechnicalProgram/uiux"
             component={UIANDUX}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/interiorDesigning"
+            component={InteriorDesign}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/3dMayaMaxAnimation"
+            component={MayaMaxAnimation}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/videoEditing"
+            component={VideoEditing}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/autocad"
+            component={AutoCad}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/microsoftOffice365"
+            component={MicrosoftOffice365}
+          />
+          <Route
+            path="/fastTrackNonTechnicalProgram/enterpreneurship"
+            component={Enterpreneurship}
           />
           <Route
             path="/associateCertificationProgram"
