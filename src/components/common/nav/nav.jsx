@@ -10,8 +10,14 @@ import Badge from "@material-ui/core/Badge";
 import MenuIcon from "@material-ui/icons/MenuRounded";
 import IconButton from "@material-ui/core/IconButton";
 import $ from "jquery";
+import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const Nav = ({ firstLoad }) => {
+const Nav = ({ firstLoad, signOut, uid }) => {
+  // Object Destructuring
+  const { push, replace } = useHistory();
+
   // Media Query
   const isLaptop = useMediaQuery({
     query: "(max-width: 1132px)",
@@ -28,8 +34,15 @@ const Nav = ({ firstLoad }) => {
     }, 400);
   };
 
+  // Closing Nav
   const closeNav = () => $(".menu-laptop").removeClass("open-nav");
 
+  // that function is doing routing for us
+  const go = (link) => {
+    setTimeout(() => {
+      push(link);
+    }, 400);
+  };
   return (
     <>
       <AppBar position="fixed" className="bg-white custom-navbar">
@@ -44,15 +57,29 @@ const Nav = ({ firstLoad }) => {
 
           {isLaptop ? null : <Menus firstLoad={firstLoad} />}
 
-          <Badge
-            badgeContent="Admissions Open"
-            color="error"
-            className="custom-badge"
-          >
-            <Button variant="contained" className="custom-button">
-              Apply Now
+          {uid ? (
+            <Button
+              onClick={() => signOut(replace)}
+              variant="contained"
+              className="custom-button"
+            >
+              Sign Out
             </Button>
-          </Badge>
+          ) : (
+            <Badge
+              badgeContent="Admissions Open"
+              color="error"
+              className="custom-badge"
+            >
+              <Button
+                onClick={() => go("/apply-now")}
+                variant="contained"
+                className="custom-button"
+              >
+                Apply Now
+              </Button>
+            </Badge>
+          )}
         </Toolbar>
       </AppBar>
       {isLaptop && <LaptopMenus closeNav={closeNav} />}
@@ -60,4 +87,16 @@ const Nav = ({ firstLoad }) => {
   );
 };
 
-export default Nav;
+const mapStateToProps = (state) => {
+  return {
+    uid: state.firebase.auth.uid,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: (push) => dispatch(signOut(push)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

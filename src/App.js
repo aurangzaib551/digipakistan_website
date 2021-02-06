@@ -297,6 +297,13 @@ const ArtificialIntelligence = lazy(() =>
     "./components/course_outlines/associate_certifications_programs/artificialIntelligence"
   )
 );
+const ApplyNow = lazy(() => import("./pages/applyNow"));
+const SignUp = lazy(() => import("./pages/signUp"));
+const LogIn = lazy(() => import("./pages/logIn"));
+const TermsAndConditions = lazy(() => import("./pages/termsAndConditions"));
+const ApplicationForm = lazy(() => import("./pages/applicationForm"));
+const EmailVerification = lazy(() => import("./pages/emailVerification"));
+const AdmissionStatus = lazy(() => import("./pages/admissionStatus"));
 
 const App = () => {
   // State
@@ -309,7 +316,7 @@ const App = () => {
     } else {
       setFirstLoad(false);
     }
-  }, []);
+  }, [setFirstLoad]);
 
   if (firstLoad) {
     setTimeout(() => {
@@ -326,6 +333,25 @@ const App = () => {
           <Route path="/admissionProcess" component={AdmissionProcess} />
           <Route path="/faqs" component={FAQs} />
           <Route path="/contactUs" component={ContactUs} />
+          <Route path="/apply-now" exact component={ApplyNow} />
+          <Route path="/apply-now/signup" component={SignUp} />
+          <Route path="/apply-now/login" component={LogIn} />
+          <Route
+            path="/apply-now/admissionStatus"
+            component={AdmissionStatus}
+          />
+          <Route
+            path="/apply-now/emailVerification"
+            component={EmailVerification}
+          />
+          <Route
+            path="/apply-now/termsAndConditions"
+            component={TermsAndConditions}
+          />
+          <Route
+            path="/apply-now/applicationForm"
+            component={ApplicationForm}
+          />
           <Route
             path="/joinDigiPAKISTAN/becomeAnInstructor"
             component={BecomeAnInstructor}

@@ -9,7 +9,7 @@ import {
   uploadInstructorCV,
   applicationForInstructor,
   clearAll,
-} from "../store/actions/becomeAnInstructor";
+} from "../store/actions/becomeAnInstructorActions";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import firebase from "../config/fbConfig";

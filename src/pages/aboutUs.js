@@ -15,7 +15,11 @@ const AboutUs = () => {
             To transform Pakistani Youth into productive workforce to contest
             the challenges of fourth industrial revolution through latest,
             demand driven and state of the art IT Skills with the increased
-            access to high-quality education for everyone, anywhere and anytime.
+            access to{" "}
+            <strong>
+              high-quality education for everyone, anywhere and anytime
+            </strong>
+            .
           </p>
         </div>
         <div className="mt-3">
@@ -29,35 +33,37 @@ const AboutUs = () => {
         <div className="mt-3 pb-5">
           <h3 className="fw-bold">Scope</h3>
           <p>
-            DigiPAKISTAN National Skills Development Program is an IT initiative
-            launched in line with the vision of Pakistan’s ambitions towards a
-            digitally progressive Pakistan to unleash the potential of youth.
-            Pakistan has the second largest population of youth that can be
-            turned into positive strength through digital skills. Unemployment
-            and directionless wandering is now becoming a main threat to the
-            society and it can only be countered through knowledge economy.
-            DigiPAKISTAN is endeavouring to channelize, concentrate and converge
-            our youth to be the leaders in the fourth industrial revolution,
-            where IT Skills and creativity are the winning tools.
+            <strong>DigiPAKISTAN National Skills Development Program</strong> is
+            an IT initiative launched in line with the vision of Pakistan’s
+            ambitions towards a digitally progressive Pakistan to unleash the
+            potential of youth. Pakistan has the second largest population of
+            youth that can be turned into positive strength through digital
+            skills. Unemployment and directionless wandering is now becoming a
+            main threat to the society and it can only be countered through
+            knowledge economy. DigiPAKISTAN is endeavouring to channelize,
+            concentrate and converge our youth to be the leaders in the fourth
+            industrial revolution, where IT Skills and creativity are the
+            winning tools.
           </p>
           <p>
-            DigiPAKISTAN is focused at helping young career seekers to realise
-            the job market trends and understand that now IT Skills are given
-            more importance over the conventional education. In order to compete
-            and become success in today’s highly competitive, demanding and fast
-            changing job environments, you need to be smart and equipped with
-            the latest digital skills as early as possible.
+            <strong>DigiPAKISTAN</strong> is focused at helping young career
+            seekers to realise the job market trends and understand that now IT
+            Skills are given more importance over the conventional education. In
+            order to compete and become success in today’s highly competitive,
+            demanding and fast changing job environments, you need to be smart
+            and equipped with the latest digital skills as early as possible.
           </p>
           <p>
             Women at home also constitute a major portion of the society and if
-            given opportunity can do miracles in the nation’s economic growth.
-            DigiPAKISTAN provides equal opportunity to this segment also through
-            flexible timings and location of own choice.
+            given opportunity can do miracles in the nation’s economic growth.{" "}
+            <strong>DigiPAKISTAN</strong> provides equal opportunity to this
+            segment also through flexible timings and location of own choice.
           </p>
           <p className="pb-5 mb-5">
             A continuously evolving stack of Information Technology Programs
-            consoling the latest technologies are available at DigiPAKISTAN and
-            all you have to do is to enrol yourself in your desired course.
+            consoling the latest technologies are available at{" "}
+            <strong>DigiPAKISTAN</strong> and all you have to do is to{" "}
+            <strong>enroll yourself in your desired course</strong>.
           </p>
         </div>
       </Container>
