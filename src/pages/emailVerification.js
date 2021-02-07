@@ -31,7 +31,7 @@ const EmailVerification = ({
       setTimeout(() => {
         clearAll();
         signOut(replace);
-      }, 30000);
+      }, 20000);
     }
   }, [verifyEmailMsg, clearAll, replace, signOut]);
 
