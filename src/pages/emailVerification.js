@@ -74,18 +74,29 @@ const EmailVerification = ({
           </Button>
         </div>
         {verifyEmailMsg && (
-          <Alert variant="outlined" severity="success" className="mt-3">
-            We've sent an account activation email to you at{" "}
-            <span className="fw-bold">{emailAddress}</span>, please check your
-            inbox for an account activation link from DigiPAKISTAN.{" "}
-            <span className="fw-bold">Note:</span> If you don't see the email in
-            your inbox, check other email folders, like your junk, spam, social,
-            etc. If you find your email in spam / junk folders, please mark it
-            as Not Spam / Not Junk to move it to your inbox. Moreover, if you
-            still unable to find the activation email, you can regenerate
-            activation email yourself by click on regenerate activation email
-            button.
-          </Alert>
+          <>
+            <Alert variant="outlined" severity="success" className="mt-3">
+              We've sent an account activation email to you at{" "}
+              <span className="fw-bold">{emailAddress}</span>, please check your
+              inbox for an account activation link from DigiPAKISTAN.{" "}
+              <span className="fw-bold">Note:</span> If you don't see the email
+              in your inbox, check other email folders, like your junk, spam,
+              social, etc. If you find your email in spam / junk folders, please
+              mark it as Not Spam / Not Junk to move it to your inbox. Moreover,
+              if you still unable to find the activation email, you can
+              regenerate activation email yourself by click on regenerate
+              activation email button.
+            </Alert>
+            <div className="d-flex justify-content-center mt-3">
+              <Button
+                onClick={handleVerifyMyEmail}
+                variant="contained"
+                className="custom-button"
+              >
+                Regenerate Email
+              </Button>
+            </div>
+          </>
         )}
       </Container>
       <Copyright />

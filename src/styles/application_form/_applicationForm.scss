@@ -3,14 +3,6 @@
     border-color: grey !important;
   }
 
-  #no {
-    &:focus {
-      ~ .side-no {
-        border: 1px solid lightgrey !important;
-      }
-    }
-  }
-
   .heading {
     display: flex;
     justify-content: center;
@@ -26,13 +18,33 @@
   }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 575px) {
   .application-form {
     .heading {
       h4 {
         font-size: 18px;
         padding: 10px 20px;
       }
+    }
+
+    .no {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+@media only screen and (max-width: 558px) {
+  .application-form {
+    .no {
+      margin-bottom: 22px;
+    }
+  }
+}
+
+@media only screen and (max-width: 336px) {
+  .application-form {
+    .no {
+      margin-bottom: 42px;
     }
   }
 }

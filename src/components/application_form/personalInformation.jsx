@@ -92,7 +92,7 @@ const PersonalInformation = (props) => {
             </Alert>
           )}
           <div className="d-flex justify-content-between mt-3 align-items-center h-100">
-            <div className="d-flex border-bottom bor side-no border-color mb-1">
+            <div className="d-flex border-bottom bor side-no border-color mb-sm-1 no">
               <p className="mb-0 pe-2 pe-sm-0 pb-1">PK</p>
               <p className="mb-0 pe-2 pe-sm-0 pb-1 ms-sm-2">+92</p>
             </div>
