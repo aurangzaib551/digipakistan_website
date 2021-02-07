@@ -1175,7 +1175,7 @@ const ApplicationForm = ({
     const errors = {};
 
     // Regular Expressions
-    const charactersRegEx = /^[a-zA-Z ]+$/;
+    const charactersRegEx = /^[a-zA-Z. ]+$/;
     const cnicRegEx = /^[0-9]{13}$/;
     const numberRegEx = /^[0-9]{10}$/;
     const overseasCNICRegEx = /^[0-9]{1,}$/;
@@ -1369,6 +1369,7 @@ const ApplicationForm = ({
             formData={formData}
             handleChange={handleChange}
             errors={errors}
+            setFormData={setFormData}
           />
           <AvailablePrograms
             formData={formData}
@@ -1399,7 +1400,7 @@ const ApplicationForm = ({
 
           {Object.keys(errors).length > 0 && (
             <Alert severity="info" variant="filled" className="mt-3">
-              Some fields are mission. Check it
+              Some fields are missing. Check it
             </Alert>
           )}
 

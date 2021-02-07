@@ -32,7 +32,7 @@ const Menus = ({ firstLoad }) => {
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
               <span onClick={() => push("/fastTrackTechnicalProgram")}>
-                Fast Track Technical Program{" "}
+                Fast Track Technical Programs{" "}
                 <AngleRightIcon className="angle-right" />
               </span>
               <ul className="next-sub-menus sub-menus-scroll rounded list-unstyled border">
@@ -288,7 +288,7 @@ const Menus = ({ firstLoad }) => {
             </li>
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
               <span onClick={() => push("/fastTrackNonTechnicalProgram")}>
-                Fast Track Non-Technical Program
+                Fast Track Non-Technical Programs
                 <AngleRightIcon className="angle-right" />
               </span>
               <ul className="next-sub-menus sub-menus-scroll rounded list-unstyled border">
@@ -416,7 +416,7 @@ const Menus = ({ firstLoad }) => {
             </li>
             <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
               <span onClick={() => push("/associateCertificationProgram")}>
-                Associate Certification Program
+                Associate Certification Programs
               </span>
               <AngleRightIcon className="angle-right" />
               <ul className="next-sub-menus rounded list-unstyled border">

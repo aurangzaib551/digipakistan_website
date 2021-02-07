@@ -89,7 +89,7 @@ const BecomeAnInstructor = ({
     const errors = {};
 
     // Regular Expressions
-    const charactersRegEx = /^[a-zA-Z ]+$/;
+    const charactersRegEx = /^[a-zA-Z. ]+$/;
     const numberRegEx = /^[+0-9]{11,}$/;
     const emailRegEx = /^[\w_.-]+@([\w-]+\.)+\w{2,4}$/;
 

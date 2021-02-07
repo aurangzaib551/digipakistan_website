@@ -24,7 +24,7 @@ const ApplyNow = () => {
         <Container
           component={Paper}
           elevation={10}
-          className="d-flex flex-column align-items-center justify-content-center p-3 mx-3"
+          className="d-flex flex-column align-items-center justify-content-center p-3 py-5 mx-3"
         >
           <img
             src="https://i.ibb.co/LYC7rpt/logoPNG.png"

@@ -38,7 +38,7 @@ const ContactUs = () => {
     const errors = {};
 
     // Regular Expressions
-    const charactersRegEx = /^[a-zA-Z ]+$/;
+    const charactersRegEx = /^[a-zA-Z. ]+$/;
     const numberRegEx = /^[+0-9]{11,}$/;
     const emailRegEx = /^[\w_.-]+@([\w-]+\.)+\w{2,4}$/;
 
@@ -135,41 +135,56 @@ const ContactUs = () => {
                   href="https://www.facebook.com/digipakistan.org"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-3 icon-link pointer mt-3"
+                  className="mx-3 pointer mt-3"
                 >
-                  <FacebookIcon style={{ fontSize: 35 }} />
+                  <FacebookIcon
+                    className="icon-contact"
+                    style={{ fontSize: 35 }}
+                  />
                 </a>
                 <a
                   href="https://www.instagram.com/invites/contact/?i=1nd00az19t5ph&utm_content=ktn9t9y"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-3 icon-link pointer mt-3"
+                  className="mx-3 pointer mt-3"
                 >
-                  <InstagramIcon style={{ fontSize: 35 }} />
+                  <InstagramIcon
+                    className="icon-contact"
+                    style={{ fontSize: 35 }}
+                  />
                 </a>
                 <a
                   href="https://twitter.com/DigipakistanP"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-3 icon-link pointer mt-3"
+                  className="mx-3 pointer mt-3"
                 >
-                  <TwitterIcon style={{ fontSize: 35 }} />
+                  <TwitterIcon
+                    className="icon-contact"
+                    style={{ fontSize: 35 }}
+                  />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/digipakistan"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-3 icon-link pointer mt-3"
+                  className="mx-3 pointer mt-3"
                 >
-                  <LinkedInIcon style={{ fontSize: 35 }} />
+                  <LinkedInIcon
+                    className="icon-contact"
+                    style={{ fontSize: 35 }}
+                  />
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCvu0jNb7YmT7kagRfI6lWXw"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-3 icon-link pointer mt-3"
+                  className="mx-3 pointer mt-3"
                 >
-                  <YoutubeIcon style={{ fontSize: 35 }} />
+                  <YoutubeIcon
+                    className="icon-contact"
+                    style={{ fontSize: 35 }}
+                  />
                 </a>
               </div>
             </div>
