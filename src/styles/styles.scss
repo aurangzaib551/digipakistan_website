@@ -38,6 +38,11 @@ body {
   }
 }
 
+// Icon style
+.icon {
+  font-size: 35px !important;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -51,6 +56,30 @@ body {
   color: white !important;
   &:hover {
     background-color: #02a39b !important;
+  }
+}
+
+.signOut-button {
+  text-transform: none !important;
+  background-color: #01645f !important;
+  transition: all 0.3s !important;
+  outline: none !important;
+  font-family: Montserrat, sans-serif !important;
+  color: white !important;
+  &:hover {
+    background-color: #02a39b !important;
+  }
+}
+
+.download-button {
+  text-transform: none !important;
+  background-color: #2196f3 !important;
+  transition: all 0.3s !important;
+  outline: none !important;
+  font-family: Montserrat, sans-serif !important;
+  color: white !important;
+  &:hover {
+    background-color: #0564b3 !important;
   }
 }
 

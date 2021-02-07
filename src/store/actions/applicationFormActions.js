@@ -66,7 +66,7 @@ export const application = (formData, setBtnLoading, uid) => {
     }
 
     firestore
-      .collection("Applications 2021")
+      .collection("Applications")
       .doc(uid)
       .set({
         "Full Name": formData.fullName,
@@ -231,8 +231,10 @@ export const application = (formData, setBtnLoading, uid) => {
           Email: formData.emailAddress,
           Applicant: formData.applicant,
           "Mobile Number": `${
-            formData.countryCode ? formData.countryCode : "+92"
-          }${formData.mobileNumber}`,
+            formData.countryCode
+              ? formData.countryCode + formData.overseasMobileNumber
+              : "+92" + formData.mobileNumber
+          }`,
           "Date of Birth": formData.dob,
           Gender: formData.gender,
           "First Course": formData.firstCourseTitle,
@@ -254,6 +256,7 @@ export const application = (formData, setBtnLoading, uid) => {
           "Terms & Conditions": formData.termsAndConditions,
           "Form Submit Date": `${days}, ${month} ${todayDate}, ${year}`,
           "Form Submit Time": time(new Date()),
+          "Overseas CNIC": formData.overseasCNIC,
         });
       })
       .then(() => {
@@ -263,6 +266,16 @@ export const application = (formData, setBtnLoading, uid) => {
         });
         setBtnLoading(false);
       });
+  };
+};
+
+export const statusOfAdmission = (uid) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+
+    firestore.collection("users").doc(uid).update({
+      admissionStatus: true,
+    });
   };
 };
 

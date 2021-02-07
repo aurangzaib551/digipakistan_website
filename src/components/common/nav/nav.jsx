@@ -53,7 +53,7 @@ const Nav = ({ firstLoad, signOut, uid }) => {
             </IconButton>
           )}
 
-          {isXSmall ? null : <Logo />}
+          {isXSmall ? null : <Logo uid={uid} />}
 
           {isLaptop ? null : <Menus firstLoad={firstLoad} />}
 
@@ -61,7 +61,7 @@ const Nav = ({ firstLoad, signOut, uid }) => {
             <Button
               onClick={() => signOut(replace)}
               variant="contained"
-              className="custom-button"
+              className="signOut-button"
             >
               Sign Out
             </Button>

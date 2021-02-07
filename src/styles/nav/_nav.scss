@@ -44,7 +44,7 @@
         text-decoration: none;
         border-bottom: 3px solid white;
         font-size: 18px;
-        padding: 10px;
+        padding-bottom: 5px;
         transition: all 0.3s;
         user-select: none;
 
@@ -54,7 +54,7 @@
         }
 
         &:hover {
-          background-color: $secondary;
+          color: $secondary;
         }
       }
 
@@ -276,6 +276,10 @@
 }
 
 @media only screen and (max-width: 576px) {
+  .signOut-button {
+    position: relative;
+    left: 150px;
+  }
   .custom-navbar {
     .custom-badge {
       position: absolute;
@@ -287,16 +291,21 @@
       left: 20px;
       top: 20px;
     }
+  }
+}
 
-    .logo {
-      position: relative;
-      top: 0px;
-      left: -47px;
-    }
+@media only screen and (max-width: 522px) {
+  .signOut-button {
+    position: relative;
+    left: 100px;
   }
 }
 
 @media only screen and (max-width: 425px) {
+  .signOut-button {
+    position: relative;
+    left: 70px;
+  }
   .laptop-menu-items {
     .menu-laptop {
       width: 100%;
@@ -305,6 +314,10 @@
 }
 
 @media only screen and (max-width: 345px) {
+  .signOut-button {
+    position: relative;
+    left: 50px;
+  }
   .custom-navbar {
     .custom-badge {
       right: 50px;

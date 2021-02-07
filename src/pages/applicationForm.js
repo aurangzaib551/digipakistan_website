@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import PersonalInformation from "../components/application_form/personalInformation";
 import Button from "@material-ui/core/Button";
@@ -12,6 +12,8 @@ import { Redirect } from "react-router-dom";
 import { application, clearAll } from "../store/actions/applicationFormActions";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Alert from "@material-ui/lab/Alert";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 const ApplicationForm = ({
   uid,
@@ -23,6 +25,7 @@ const ApplicationForm = ({
   msg,
   clearAll,
   applicationSubmitted,
+  referCode,
 }) => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -59,6 +62,45 @@ const ApplicationForm = ({
   });
   const [btnLoading, setBtnLoading] = useState(false);
   const [errors, setErrors] = useState({});
+
+  useLayoutEffect(() => {
+    if (msg) {
+      setTimeout(() => {
+        setFormData({
+          fullName: "",
+          fatherName: "",
+          applicant: "",
+          cnic: "",
+          overseasCNIC: "",
+          overseasMobileNumber: "",
+          countryCode: "",
+          mobileNumber: "",
+          emailAddress,
+          dob: "",
+          gender: "",
+          firstCourseTitle: "",
+          firstCourseName: "",
+          firstCourseLink: "",
+          secondCourseTitle: "",
+          secondCourseName: "",
+          secondCourseLink: "",
+          thirdCourseTitle: "",
+          thirdCourseName: "",
+          thirdCourseLink: "",
+          qualification: "",
+          education: "",
+          instituteName: "",
+          province: "",
+          country: "",
+          city: "",
+          address: "",
+          referenceCode: "",
+          knowAboutUs: "",
+        });
+        clearAll();
+      }, 5000);
+    }
+  }, [emailAddress, clearAll, msg]);
 
   // User is logged in or not
   if (!uid) return <Redirect to="/apply-now/login" />;
@@ -1273,6 +1315,16 @@ const ApplicationForm = ({
       errors.knowAboutUs = "This field mustn't be empty";
     }
 
+    const marketerCode = referCode.filter(
+      (codes) => codes["Refer Code"] === formData.referenceCode
+    );
+
+    if (formData.referenceCode.trim() !== "") {
+      if (marketerCode.length === 0) {
+        errors.marketerCode = "Wrong Reference Code";
+      }
+    }
+
     return Object.keys(errors).length === 0 ? null : errors;
   };
 
@@ -1305,43 +1357,6 @@ const ApplicationForm = ({
     // Sending data to DB
     submitForm(formData, setBtnLoading, uid);
   };
-
-  if (msg) {
-    setTimeout(() => {
-      setFormData({
-        fullName: "",
-        fatherName: "",
-        applicant: "",
-        cnic: "",
-        overseasCNIC: "",
-        overseasMobileNumber: "",
-        countryCode: "",
-        mobileNumber: "",
-        emailAddress,
-        dob: "",
-        gender: "",
-        firstCourseTitle: "",
-        firstCourseName: "",
-        firstCourseLink: "",
-        secondCourseTitle: "",
-        secondCourseName: "",
-        secondCourseLink: "",
-        thirdCourseTitle: "",
-        thirdCourseName: "",
-        thirdCourseLink: "",
-        qualification: "",
-        education: "",
-        instituteName: "",
-        province: "",
-        country: "",
-        city: "",
-        address: "",
-        referenceCode: "",
-        knowAboutUs: "",
-      });
-      clearAll();
-    }, 5000);
-  }
 
   return (
     <>
@@ -1420,6 +1435,9 @@ const mapStateToProps = (state) => {
     emailAddress: state.firebase.auth.email,
     msg: state.applicationForm.msg,
     applicationSubmitted: state.firebase.profile.applicationSubmitted,
+    referCode: state.firestore.ordered["Refer Code"]
+      ? state.firestore.ordered["Refer Code"]
+      : "",
   };
 };
 
@@ -1431,4 +1449,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ApplicationForm);
+export default compose(
+  firestoreConnect([{ collection: "Refer Code" }]),
+  connect(mapStateToProps, mapDispatchToProps)
+)(ApplicationForm);

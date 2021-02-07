@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Input from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -65,20 +65,22 @@ const LogIn = ({ logIn, clearAll, msg }) => {
   };
 
   // Resetting all
-  if (msg) {
-    setTimeout(() => {
-      if (msg === "Successfully logged in") {
-        setFormData({
-          emailAddress: "",
-          password: "",
-        });
-        clearAll();
-        replace("/apply-now/emailVerification");
-      } else {
-        clearAll();
-      }
-    }, 5000);
-  }
+  useLayoutEffect(() => {
+    if (msg) {
+      setTimeout(() => {
+        if (msg === "Successfully logged in") {
+          setFormData({
+            emailAddress: "",
+            password: "",
+          });
+          clearAll();
+          replace("/apply-now/emailVerification");
+        } else {
+          clearAll();
+        }
+      }, 5000);
+    }
+  }, [msg, clearAll, replace]);
 
   return (
     <>

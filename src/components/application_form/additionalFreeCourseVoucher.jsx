@@ -31,6 +31,12 @@ const AdditionalFreeCourseVoucher = ({ handleChange, formData, errors }) => {
         code, Please left this field empty.
       </HelperText>
 
+      {errors.marketerCode && (
+        <Alert severity="error" variant="filled">
+          {errors.marketerCode}
+        </Alert>
+      )}
+
       <Input
         name="knowAboutUs"
         onChange={handleChange}

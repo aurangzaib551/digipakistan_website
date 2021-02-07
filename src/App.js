@@ -304,6 +304,16 @@ const TermsAndConditions = lazy(() => import("./pages/termsAndConditions"));
 const ApplicationForm = lazy(() => import("./pages/applicationForm"));
 const EmailVerification = lazy(() => import("./pages/emailVerification"));
 const AdmissionStatus = lazy(() => import("./pages/admissionStatus"));
+const GenerateChallan = lazy(() =>
+  import("./components/generate_challan/generateChallan")
+);
+const BankChallan = lazy(() => import("./components/bank_challan/bankChallan"));
+const OnlineBanking = lazy(() =>
+  import("./components/online_banking/onlineBanking")
+);
+const EServicesBanking = lazy(() =>
+  import("./components/eservices_banking/eservicesBanking")
+);
 
 const App = () => {
   // State
@@ -336,6 +346,23 @@ const App = () => {
           <Route path="/apply-now" exact component={ApplyNow} />
           <Route path="/apply-now/signup" component={SignUp} />
           <Route path="/apply-now/login" component={LogIn} />
+          <Route
+            path="/apply-now/generateChallan"
+            exact
+            component={GenerateChallan}
+          />
+          <Route
+            path="/apply-now/generateChallan/bankChallan"
+            component={BankChallan}
+          />
+          <Route
+            path="/apply-now/generateChallan/onlineBanking"
+            component={OnlineBanking}
+          />
+          <Route
+            path="/apply-now/generateChallan/eservicesBanking"
+            component={EServicesBanking}
+          />
           <Route
             path="/apply-now/admissionStatus"
             component={AdmissionStatus}

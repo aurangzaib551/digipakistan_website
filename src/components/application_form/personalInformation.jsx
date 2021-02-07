@@ -4,10 +4,20 @@ import MenuItem from "@material-ui/core/MenuItem";
 import HelperText from "@material-ui/core/FormHelperText";
 import Alert from "@material-ui/lab/Alert";
 import mobileCodes from "country-telephone-data";
+import { useMediaQuery } from "react-responsive";
 
 const PersonalInformation = (props) => {
   // Object Destructuring
   const { formData, handleChange, errors } = props;
+
+  // Media Query
+  const isSmall = useMediaQuery({
+    query: "(max-width: 576px)",
+  });
+
+  const isXSmall = useMediaQuery({
+    query: "(max-width: 369px)",
+  });
   return (
     <>
       <div className="heading mt-3">
@@ -81,10 +91,10 @@ const PersonalInformation = (props) => {
               {errors.cnic}
             </Alert>
           )}
-          <div className="d-flex flex-column flex-sm-row justify-content-between mt-3 align-items-center h-100">
+          <div className="d-flex justify-content-between mt-3 align-items-center h-100">
             <div className="d-flex">
-              <p className="mb-0 px-3 pb-2 pb-sm-0 px-sm-2">PK</p>
-              <p className="mb-0 px-3 pb-2 pb-sm-0 px-sm-2">+92</p>
+              <p className="mb-0 pe-2 pe-sm-0 pb-2 pb-sm-0 px-sm-2">PK</p>
+              <p className="mb-0 pe-2 pe-sm-0 pb-2 pb-sm-0 px-sm-2">+92</p>
             </div>
             <div className="ms-sm-2 w-100">
               <Input
@@ -133,10 +143,10 @@ const PersonalInformation = (props) => {
                 </Alert>
               )}
             </div>
-            <div className="col-lg-2 mt-3">
+            <div className="col-6 col-sm-4 col-lg-2 mt-3">
               <Input
                 name="countryCode"
-                label="Country Code *"
+                label={isSmall ? "Code *" : "Country Code *"}
                 value={formData.countryCode}
                 onChange={handleChange}
                 fullWidth
@@ -158,10 +168,10 @@ const PersonalInformation = (props) => {
                 </Alert>
               )}
             </div>
-            <div className="col-lg-10 mt-3">
+            <div className="col-6 col-sm-8 col-lg-10 mt-3">
               <Input
                 name="overseasMobileNumber"
-                label="Mobile Number *"
+                label={isXSmall ? "Number *" : "Mobile Number *"}
                 value={formData.overseasMobileNumber}
                 onChange={handleChange}
                 fullWidth
