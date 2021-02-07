@@ -77,9 +77,9 @@ export const signOut = (push) => {
       .then(() => {
         dispatch({
           type: "SIGN_OUT_SUCESSFULLY",
-          payload: "Successfully log out",
+          payload: push ? "Successfully log out" : null,
         });
-        push("/apply-now/login");
+        push && push("/apply-now/login");
       });
   };
 };
@@ -94,6 +94,30 @@ export const verifyEmail = (setBtnLoading) => {
         dispatch({
           type: "VERIFICATION_EMAIL_SENT",
           payload: true,
+        });
+        setBtnLoading(false);
+      });
+  };
+};
+
+export const forgotPassword = (emailAddress, setBtnLoading) => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+
+    firebase
+      .auth()
+      .sendPasswordResetEmail(emailAddress)
+      .then(() => {
+        dispatch({
+          type: "RESET_PASSWORD",
+          payload: `An email is sent to your ${emailAddress} for resetting the password`,
+        });
+        setBtnLoading(false);
+      })
+      .catch((err) => {
+        dispatch({
+          type: "RESET_PASSWORD_ERROR",
+          payload: err.message,
         });
         setBtnLoading(false);
       });

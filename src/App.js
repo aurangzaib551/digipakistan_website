@@ -1,6 +1,9 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import FadeLoader from "./loader/loader";
+import { Beforeunload } from "react-beforeunload";
+import { connect } from "react-redux";
+import { signOut } from "./store/actions/authActions";
 const Nav = lazy(() => import("./components/common/nav/nav"));
 const HomePage = lazy(() => import("./pages/homePage"));
 const NotFound = lazy(() => import("./pages/notFound"));
@@ -308,6 +311,9 @@ const GenerateChallan = lazy(() =>
   import("./components/generate_challan/generateChallan")
 );
 const BankChallan = lazy(() => import("./components/bank_challan/bankChallan"));
+const ForgotPassword = lazy(() =>
+  import("./components/forgot_password/forgotPassword")
+);
 const OnlineBanking = lazy(() =>
   import("./components/online_banking/onlineBanking")
 );
@@ -315,9 +321,12 @@ const EServicesBanking = lazy(() =>
   import("./components/eservices_banking/eservicesBanking")
 );
 
-const App = () => {
+const App = ({ signOut, uid }) => {
   // State
   const [firstLoad, setFirstLoad] = useState(false);
+
+  // Object Destructuring
+  // const { replace } = useHistory();
 
   useEffect(() => {
     if (window.sessionStorage.getItem("First Load") === null) {
@@ -334,311 +343,336 @@ const App = () => {
     }, 3000);
   }
   return (
-    <BrowserRouter>
-      <Suspense fallback={<FadeLoader />}>
-        <Nav firstLoad={firstLoad} />
-        <Message firstLoad={firstLoad} />
-        <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/admissionProcess" component={AdmissionProcess} />
-          <Route path="/faqs" component={FAQs} />
-          <Route path="/contactUs" component={ContactUs} />
-          <Route path="/apply-now" exact component={ApplyNow} />
-          <Route path="/apply-now/signup" component={SignUp} />
-          <Route path="/apply-now/login" component={LogIn} />
-          <Route
-            path="/apply-now/generateChallan"
-            exact
-            component={GenerateChallan}
-          />
-          <Route
-            path="/apply-now/generateChallan/bankChallan"
-            component={BankChallan}
-          />
-          <Route
-            path="/apply-now/generateChallan/onlineBanking"
-            component={OnlineBanking}
-          />
-          <Route
-            path="/apply-now/generateChallan/eservicesBanking"
-            component={EServicesBanking}
-          />
-          <Route
-            path="/apply-now/admissionStatus"
-            component={AdmissionStatus}
-          />
-          <Route
-            path="/apply-now/emailVerification"
-            component={EmailVerification}
-          />
-          <Route
-            path="/apply-now/termsAndConditions"
-            component={TermsAndConditions}
-          />
-          <Route
-            path="/apply-now/applicationForm"
-            component={ApplicationForm}
-          />
-          <Route
-            path="/joinDigiPAKISTAN/becomeAnInstructor"
-            component={BecomeAnInstructor}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram"
-            exact
-            component={FastTrackTechnicalProgram}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/comptiaItFundamentals"
-            component={CompTIAItFundamentals}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/microsoftFrontEndDevelopment"
-            component={MicrosoftFrontEndDevelopment}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/aspDotNetWebApplications"
-            component={AspDotNetWebApplications}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/phpLaravel"
-            component={PHPLaravel}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/mernStack"
-            component={MERNStack}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/sqlServerSpecialist"
-            component={SQLServerSpecialist}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/oracleDatabaseAdministrator"
-            component={OracleDatabaseAdministrator}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/androidAppsDevelopment"
-            component={AndroidAppsDevelopment}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/kotlinAppsDevelopment"
-            component={KotlinAppsDevelopment}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/iOSAppsDevelopment"
-            component={IOSAppsDevelopment}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/xamarinAppsDevelopment"
-            component={XamarinAppsDevelopment}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/reactNativeWebAndAppsDevelopment"
-            component={ReactNativeWebAndAppsDevelopment}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/gameDevelopment"
-            component={GameDevelopment}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/ciscoCCNANetworking"
-            component={CiscoCCNANetworking}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/comptiaSecurity"
-            component={ComptiaSecurity}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/ceh"
-            component={CertifiedEthicalHacking}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/ecsa"
-            component={PenetrationTestingSecurityAnalyst}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/chfi"
-            component={CertifiedHackingForensicInvestigator}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/cisa"
-            component={CertifiedInformationSystemsAuditor}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/cism"
-            component={CertifiedInformationSecurityManager}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/awsPractitioner"
-            component={AWSPractitioner}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/awsSolutionArchitect"
-            component={AWSSolutionArchitect}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/awsSysOpsAdministrator"
-            component={AWSSysOpsAdministrator}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/awsDeveloperAssociate"
-            component={AWSDeveloperAssociate}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/microsoftAzureCloudFundamentals"
-            component={MicrosoftAzureCloudFundamentals}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/microsoftCloudAdministrator"
-            component={MicrosoftCloudAdministrator}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/pythonForEverone"
-            component={PythonForEveryone}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/machineLearningAndAI"
-            component={MachineLearningAndAI}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/dataScience"
-            component={DataScience}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/bigDataAndHeadoopEcosystem"
-            component={BigDataAndHeadoopEcosystem}
-          />
-          <Route
-            path="/fastTrackTechnicalProgram/googleCloudEngineer"
-            component={GoogleCloudEngineer}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram"
-            exact
-            component={FastTrackNonTechnicalProgram}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/quickBooks"
-            component={QuickBooks}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/saperp"
-            component={SAPERP}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/projectManagementProfessional"
-            component={ProjectManagementProfessional}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/amazonFBABusiness"
-            component={AmazonFBABusiness}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/searchEngineOptimization"
-            component={SearchEngineOptimization}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/digitalMarketing"
-            component={DigitalMarketing}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/socialMediaMarketing"
-            component={SocialMediaMarketing}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/graphicDesign"
-            component={GraphicDesign}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/uiux"
-            component={UIANDUX}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/interiorDesigning"
-            component={InteriorDesign}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/3dMayaMaxAnimation"
-            component={MayaMaxAnimation}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/videoEditing"
-            component={VideoEditing}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/autocad"
-            component={AutoCad}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/microsoftOffice365"
-            component={MicrosoftOffice365}
-          />
-          <Route
-            path="/fastTrackNonTechnicalProgram/enterpreneurship"
-            component={Enterpreneurship}
-          />
-          <Route
-            path="/associateCertificationProgram"
-            exact
-            component={AssociateCertificationProgram}
-          />
-          <Route
-            path="/associateCertificationProgram/digitalForensicCyberSecurity"
-            component={DigitalForensicCyberSecurity}
-          />
-          <Route
-            path="/associateCertificationProgram/penetrationTestingCyberSecurity"
-            component={PenetrationTestingCyberSecurity}
-          />
-          <Route
-            path="/associateCertificationProgram/cissp"
-            component={CISSP}
-          />
-          <Route
-            path="/associateCertificationProgram/artificialIntelligence"
-            component={ArtificialIntelligence}
-          />
-          <Route
-            path="/associateCertificationProgram/awsCloudComputing"
-            component={AWSCloudComputing}
-          />
-          <Route
-            path="/associateCertificationProgram/internetOfThings"
-            component={InternetOfThings}
-          />
-          <Route
-            path="/associateCertificationProgram/blockchainTechnology"
-            component={BlockChainTechnology}
-          />
-          <Route
-            path="/associateCertificationProgram/fullStackWebDevelopment"
-            component={FullStackWebDevelopment}
-          />
-          <Route
-            path="/about/provincialMinisterMessage"
-            component={ProvincialMinisterMessage}
-          />
-          <Route
-            path="/about/directorGeneralMessage"
-            component={DirectorGeneralMessage}
-          />
-          <Route
-            path="/about/chairmanHECPunjabMessage"
-            component={ChairmanHECPunjabMessage}
-          />
-          <Route
-            path="/about/chairmanPECMessage"
-            component={ChairmanPECMessage}
-          />
-          <Route path="/about/advisoryBody" component={AdvisoryBody} />
-          <Route path="/about/aboutUs" component={AboutUs} />
-          <Route path="/not-found" component={NotFound} />
-          <Redirect to="/not-found" />
-        </Switch>
-        <GoToTop />
-      </Suspense>
-    </BrowserRouter>
+    <Beforeunload
+      onBeforeunload={(event) => {
+        if (uid) {
+          signOut();
+          event.preventDefault();
+        }
+      }}
+    >
+      <BrowserRouter>
+        <Suspense fallback={<FadeLoader />}>
+          <Nav firstLoad={firstLoad} />
+          <Message firstLoad={firstLoad} />
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/admissionProcess" component={AdmissionProcess} />
+            <Route path="/faqs" component={FAQs} />
+            <Route path="/contactUs" component={ContactUs} />
+            <Route path="/apply-now" exact component={ApplyNow} />
+            <Route path="/apply-now/signup" component={SignUp} />
+            <Route path="/apply-now/login" component={LogIn} />
+            <Route
+              path="/apply-now/forgotPassword"
+              component={ForgotPassword}
+            />
+            <Route
+              path="/apply-now/generateChallan"
+              exact
+              component={GenerateChallan}
+            />
+            <Route
+              path="/apply-now/generateChallan/bankChallan"
+              component={BankChallan}
+            />
+            <Route
+              path="/apply-now/generateChallan/onlineBanking"
+              component={OnlineBanking}
+            />
+            <Route
+              path="/apply-now/generateChallan/eservicesBanking"
+              component={EServicesBanking}
+            />
+            <Route
+              path="/apply-now/admissionStatus"
+              component={AdmissionStatus}
+            />
+            <Route
+              path="/apply-now/emailVerification"
+              component={EmailVerification}
+            />
+            <Route
+              path="/apply-now/termsAndConditions"
+              component={TermsAndConditions}
+            />
+            <Route
+              path="/apply-now/applicationForm"
+              component={ApplicationForm}
+            />
+            <Route
+              path="/joinDigiPAKISTAN/becomeAnInstructor"
+              component={BecomeAnInstructor}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram"
+              exact
+              component={FastTrackTechnicalProgram}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/comptiaItFundamentals"
+              component={CompTIAItFundamentals}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/microsoftFrontEndDevelopment"
+              component={MicrosoftFrontEndDevelopment}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/aspDotNetWebApplications"
+              component={AspDotNetWebApplications}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/phpLaravel"
+              component={PHPLaravel}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/mernStack"
+              component={MERNStack}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/sqlServerSpecialist"
+              component={SQLServerSpecialist}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/oracleDatabaseAdministrator"
+              component={OracleDatabaseAdministrator}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/androidAppsDevelopment"
+              component={AndroidAppsDevelopment}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/kotlinAppsDevelopment"
+              component={KotlinAppsDevelopment}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/iOSAppsDevelopment"
+              component={IOSAppsDevelopment}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/xamarinAppsDevelopment"
+              component={XamarinAppsDevelopment}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/reactNativeWebAndAppsDevelopment"
+              component={ReactNativeWebAndAppsDevelopment}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/gameDevelopment"
+              component={GameDevelopment}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/ciscoCCNANetworking"
+              component={CiscoCCNANetworking}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/comptiaSecurity"
+              component={ComptiaSecurity}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/ceh"
+              component={CertifiedEthicalHacking}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/ecsa"
+              component={PenetrationTestingSecurityAnalyst}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/chfi"
+              component={CertifiedHackingForensicInvestigator}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/cisa"
+              component={CertifiedInformationSystemsAuditor}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/cism"
+              component={CertifiedInformationSecurityManager}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/awsPractitioner"
+              component={AWSPractitioner}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/awsSolutionArchitect"
+              component={AWSSolutionArchitect}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/awsSysOpsAdministrator"
+              component={AWSSysOpsAdministrator}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/awsDeveloperAssociate"
+              component={AWSDeveloperAssociate}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/microsoftAzureCloudFundamentals"
+              component={MicrosoftAzureCloudFundamentals}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/microsoftCloudAdministrator"
+              component={MicrosoftCloudAdministrator}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/pythonForEverone"
+              component={PythonForEveryone}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/machineLearningAndAI"
+              component={MachineLearningAndAI}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/dataScience"
+              component={DataScience}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/bigDataAndHeadoopEcosystem"
+              component={BigDataAndHeadoopEcosystem}
+            />
+            <Route
+              path="/fastTrackTechnicalProgram/googleCloudEngineer"
+              component={GoogleCloudEngineer}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram"
+              exact
+              component={FastTrackNonTechnicalProgram}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/quickBooks"
+              component={QuickBooks}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/saperp"
+              component={SAPERP}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/projectManagementProfessional"
+              component={ProjectManagementProfessional}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/amazonFBABusiness"
+              component={AmazonFBABusiness}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/searchEngineOptimization"
+              component={SearchEngineOptimization}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/digitalMarketing"
+              component={DigitalMarketing}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/socialMediaMarketing"
+              component={SocialMediaMarketing}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/graphicDesign"
+              component={GraphicDesign}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/uiux"
+              component={UIANDUX}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/interiorDesigning"
+              component={InteriorDesign}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/3dMayaMaxAnimation"
+              component={MayaMaxAnimation}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/videoEditing"
+              component={VideoEditing}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/autocad"
+              component={AutoCad}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/microsoftOffice365"
+              component={MicrosoftOffice365}
+            />
+            <Route
+              path="/fastTrackNonTechnicalProgram/enterpreneurship"
+              component={Enterpreneurship}
+            />
+            <Route
+              path="/associateCertificationProgram"
+              exact
+              component={AssociateCertificationProgram}
+            />
+            <Route
+              path="/associateCertificationProgram/digitalForensicCyberSecurity"
+              component={DigitalForensicCyberSecurity}
+            />
+            <Route
+              path="/associateCertificationProgram/penetrationTestingCyberSecurity"
+              component={PenetrationTestingCyberSecurity}
+            />
+            <Route
+              path="/associateCertificationProgram/cissp"
+              component={CISSP}
+            />
+            <Route
+              path="/associateCertificationProgram/artificialIntelligence"
+              component={ArtificialIntelligence}
+            />
+            <Route
+              path="/associateCertificationProgram/awsCloudComputing"
+              component={AWSCloudComputing}
+            />
+            <Route
+              path="/associateCertificationProgram/internetOfThings"
+              component={InternetOfThings}
+            />
+            <Route
+              path="/associateCertificationProgram/blockchainTechnology"
+              component={BlockChainTechnology}
+            />
+            <Route
+              path="/associateCertificationProgram/fullStackWebDevelopment"
+              component={FullStackWebDevelopment}
+            />
+            <Route
+              path="/about/provincialMinisterMessage"
+              component={ProvincialMinisterMessage}
+            />
+            <Route
+              path="/about/directorGeneralMessage"
+              component={DirectorGeneralMessage}
+            />
+            <Route
+              path="/about/chairmanHECPunjabMessage"
+              component={ChairmanHECPunjabMessage}
+            />
+            <Route
+              path="/about/chairmanPECMessage"
+              component={ChairmanPECMessage}
+            />
+            <Route path="/about/advisoryBody" component={AdvisoryBody} />
+            <Route path="/about/aboutUs" component={AboutUs} />
+            <Route path="/not-found" component={NotFound} />
+            <Redirect to="/not-found" />
+          </Switch>
+          <GoToTop />
+        </Suspense>
+      </BrowserRouter>
+    </Beforeunload>
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    uid: state.firebase.auth.uid,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

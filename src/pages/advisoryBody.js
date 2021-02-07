@@ -17,10 +17,10 @@ const AdvisoryBody = () => {
                 className="about-img"
               />
             </div>
-            <h5 className="text-center title mx-3 fw-bold mt-3 mb-0">
+            <h4 className="text-center title mx-2 fw-bold mt-3 mb-0">
               Engr. Habib Ur Rehman Qaiser
-            </h5>
-            <p className="mb-0 small text-center mt-1">
+            </h4>
+            <p className="mb-0 text-center mt-1">
               Director General DigiPAKISTAN
             </p>
           </div>
@@ -32,10 +32,10 @@ const AdvisoryBody = () => {
                 className="about-img"
               />
             </div>
-            <h5 className="text-center title mx-3 fw-bold mt-3 mb-0">
+            <h4 className="text-center title mx-2 fw-bold mt-3 mb-0">
               Engr. Jawed Salim Qureshi
-            </h5>
-            <p className="mb-0 small text-center mt-1">Chairman, PEC</p>
+            </h4>
+            <p className="mb-0 text-center mt-1">Chairman, PEC</p>
           </div>
           <div className="d-flex flex-column align-items-center pt-4 mt-5 mx-3 mx-xl-0">
             <div className="about-round-circle">
@@ -45,10 +45,10 @@ const AdvisoryBody = () => {
                 className="about-img"
               />
             </div>
-            <h5 className="text-center title mx-3 fw-bold mt-3 mb-0">
+            <h4 className="text-center title mx-2 fw-bold mt-3 mb-0">
               Prof. Dr. Fazal Ahmad Khalid (SI)
-            </h5>
-            <p className="mb-0 small text-center mt-1">Chairman, Punjab HEC</p>
+            </h4>
+            <p className="mb-0 text-center mt-1">Chairman, Punjab HEC</p>
           </div>
           <div className="d-flex flex-column align-items-center pt-4 mt-5 mx-3 mx-xl-0">
             <div className="about-round-circle">
@@ -58,10 +58,10 @@ const AdvisoryBody = () => {
                 className="about-img"
               />
             </div>
-            <h5 className="text-center title mx-3 fw-bold mt-3 mb-0">
+            <h4 className="text-center title mx-2 fw-bold mt-3 mb-0">
               Engr. Dr. Javaid Younas Uppal
-            </h5>
-            <p className="mb-0 small text-center mt-1">
+            </h4>
+            <p className="mb-0 text-center mt-1">
               President, Institutions of Engineers Pakistan
             </p>
           </div>
@@ -73,10 +73,10 @@ const AdvisoryBody = () => {
                 className="about-img"
               />
             </div>
-            <h5 className="text-center title mx-3 fw-bold mt-3 mb-0">
+            <h5 className="text-center title mx-2 fw-bold mt-3 mb-0">
               Prof. Dr. Niaz Ahmad (SI) Vice Chancellor
             </h5>
-            <p className="mb-0 small text-center mt-1">Punjab University</p>
+            <p className="mb-0 text-center mt-1">Punjab University</p>
           </div>
           <div className="d-flex flex-column align-items-center pt-4 mt-5 mx-3 mx-xl-0">
             <div className="about-round-circle">
@@ -86,10 +86,10 @@ const AdvisoryBody = () => {
                 className="about-img"
               />
             </div>
-            <h5 className="text-center title mx-3 fw-bold mt-3 mb-0">
+            <h4 className="text-center title mx-2 fw-bold mt-3 mb-0">
               Prof. Dr. Suhail Aftab Qureshi
-            </h5>
-            <p className="mb-0 small text-center mt-1">Governing Body PEC</p>
+            </h4>
+            <p className="mb-0 text-center mt-1">Governing Body PEC</p>
           </div>
           <div className="d-flex flex-column align-items-center pt-4 mt-5 mx-3 mx-xl-0">
             <div className="about-round-circle">
@@ -99,10 +99,10 @@ const AdvisoryBody = () => {
                 className="about-img"
               />
             </div>
-            <h5 className="text-center title mx-3 fw-bold mt-3 mb-0">
+            <h4 className="text-center title mx-2 fw-bold mt-3 mb-0">
               Major Mustafa Zaidi (Retd)
-            </h5>
-            <p className="mb-0 small text-center mt-1">Executive Director</p>
+            </h4>
+            <p className="mb-0 text-center mt-1">Executive Director</p>
           </div>
         </div>
       </Container>

@@ -21,7 +21,7 @@ const PersonalInformation = (props) => {
   return (
     <>
       <div className="heading mt-3">
-        <h3 className="fw-bold mb-0">Personal Information</h3>
+        <h4 className="fw-bold mb-0">Personal Information</h4>
       </div>
       <Input
         name="fullName"
@@ -29,7 +29,7 @@ const PersonalInformation = (props) => {
         onChange={handleChange}
         label="Full Name *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
       />
       {errors.fullName && (
@@ -43,7 +43,7 @@ const PersonalInformation = (props) => {
         onChange={handleChange}
         label="Father Name *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
       />
       {errors.fatherName && (
@@ -57,7 +57,7 @@ const PersonalInformation = (props) => {
         onChange={handleChange}
         label="Applicant *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
         select
       >
@@ -79,7 +79,7 @@ const PersonalInformation = (props) => {
             onChange={handleChange}
             label="CNIC / Form-B *"
             fullWidth
-            variant="filled"
+            variant="standard"
             className="mt-3"
             aria-describedby="cnic"
           />
@@ -103,7 +103,7 @@ const PersonalInformation = (props) => {
                 onChange={handleChange}
                 label="Mobile Number *"
                 fullWidth
-                variant="filled"
+                variant="standard"
                 aria-describedby="no"
               />
               <HelperText name="no" error>
@@ -130,7 +130,7 @@ const PersonalInformation = (props) => {
                 onChange={handleChange}
                 label="CNIC / Form-B *"
                 fullWidth
-                variant="filled"
+                variant="standard"
                 className="mt-3"
                 aria-describedby="cnic"
               />
@@ -143,14 +143,14 @@ const PersonalInformation = (props) => {
                 </Alert>
               )}
             </div>
-            <div className="col-6 col-sm-4 col-lg-2 mt-3">
+            <div className="col-4 col-sm-4 col-lg-2 mt-3">
               <Input
                 name="countryCode"
                 label={isSmall ? "Code *" : "Country Code *"}
                 value={formData.countryCode}
                 onChange={handleChange}
                 fullWidth
-                variant="filled"
+                variant="standard"
                 aria-describedby="countryCode"
                 select
               >
@@ -168,14 +168,14 @@ const PersonalInformation = (props) => {
                 </Alert>
               )}
             </div>
-            <div className="col-6 col-sm-8 col-lg-10 mt-3">
+            <div className="col-8 col-sm-8 col-lg-10 mt-3">
               <Input
                 name="overseasMobileNumber"
                 label={isXSmall ? "Number *" : "Mobile Number *"}
                 value={formData.overseasMobileNumber}
                 onChange={handleChange}
                 fullWidth
-                variant="filled"
+                variant="standard"
                 aria-describedby="overseasNo"
               />
               <HelperText name="overseasNo" error>
@@ -198,7 +198,7 @@ const PersonalInformation = (props) => {
         onChange={handleChange}
         label="Email Address *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
       />
       <Input
@@ -207,7 +207,7 @@ const PersonalInformation = (props) => {
         onChange={handleChange}
         label="Date of Birth *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
         type="date"
         InputLabelProps={{
@@ -225,7 +225,7 @@ const PersonalInformation = (props) => {
         onChange={handleChange}
         label="Gender *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
         select
       >

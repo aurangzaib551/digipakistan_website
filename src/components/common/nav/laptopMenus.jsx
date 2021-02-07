@@ -73,16 +73,19 @@ const LaptopMenus = ({ closeNav }) => {
                 )}
               </p>
               {availableProgram && (
-                <ul className="list-unstyled mb-0">
+                <ul className="list-unstyled ul-sub mb-0">
                   <li onClick={closeAvailablePrograms}>
-                    <Link to="/fastTrackTechnicalProgram" className="items-sub">
+                    <Link
+                      to="/fastTrackTechnicalProgram"
+                      className="items-sub mb-3"
+                    >
                       Fast Track Technical Program
                     </Link>
                   </li>
                   <li onClick={closeAvailablePrograms}>
                     <Link
                       to="/fastTrackNonTechnicalProgram"
-                      className="items-sub"
+                      className="items-sub mb-3"
                     >
                       Fast Track Non-Technical Program
                     </Link>
@@ -115,17 +118,20 @@ const LaptopMenus = ({ closeNav }) => {
                 )}
               </p>
               {joinDigiPakistan && (
-                <ul className="list-unstyled mb-0">
+                <ul className="list-unstyled ul-sub mb-0">
                   <li onClick={closeJoinDigiPAKISTAN}>
                     <Link
                       to="/joinDigiPAKISTAN/becomeAnInstructor"
-                      className="items-sub"
+                      className="items-sub mb-3"
                     >
                       Become an Instructor
                     </Link>
                   </li>
                   <li onClick={closeJoinDigiPAKISTAN}>
-                    <a href=" " className="items-sub">
+                    <a
+                      href="https://affiliatedigipakistan.netlify.app"
+                      className="items-sub"
+                    >
                       Become a Marketing Partner
                     </a>
                   </li>
@@ -163,11 +169,11 @@ const LaptopMenus = ({ closeNav }) => {
                 )}
               </p>
               {about && (
-                <ul className="list-unstyled mb-0">
+                <ul className="list-unstyled ul-sub mb-0">
                   <li onClick={closeAbout}>
                     <Link
                       to="/about/provincialMinisterMessage"
-                      className="items-sub"
+                      className="items-sub mb-3"
                     >
                       Provincial Minister Message
                     </Link>
@@ -175,7 +181,7 @@ const LaptopMenus = ({ closeNav }) => {
                   <li onClick={closeAbout}>
                     <Link
                       to="/about/directorGeneralMessage"
-                      className="items-sub"
+                      className="items-sub mb-3"
                     >
                       Director General (DG) Message
                     </Link>
@@ -183,18 +189,21 @@ const LaptopMenus = ({ closeNav }) => {
                   <li onClick={closeAbout}>
                     <Link
                       to="/about/chairmanHECPunjabMessage"
-                      className="items-sub"
+                      className="items-sub mb-3"
                     >
                       Chairman HEC Punjab Message
                     </Link>
                   </li>
                   <li onClick={closeAbout}>
-                    <Link to="/about/chairmanPECMessage" className="items-sub">
+                    <Link
+                      to="/about/chairmanPECMessage"
+                      className="items-sub mb-3"
+                    >
                       Chairman PEC Message
                     </Link>
                   </li>
                   <li onClick={closeAbout}>
-                    <Link to="/about/aboutUs" className="items-sub">
+                    <Link to="/about/aboutUs" className="items-sub mb-3">
                       About Us
                     </Link>
                   </li>

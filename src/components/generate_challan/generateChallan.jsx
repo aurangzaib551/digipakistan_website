@@ -75,17 +75,19 @@ const GenerateChallan = ({
       </p>
 
       {/* Payment Methods */}
-      <div className="d-flex flex-column flex-lg-row justify-content-center justify-content-md-between flex-wrap">
+      <div className="d-flex flex-column flex-lg-row justify-content-center flex-wrap">
         <Button
           onClick={() => go("/apply-now/generateChallan/bankChallan")}
           variant="contained"
-          className="custom-button mt-3"
+          size="large"
+          className="custom-button mt-3 mx-lg-3"
         >
           Bank Challan for Pakistani Applicants
         </Button>
         <Button
           onClick={() => go("/apply-now/generateChallan/onlineBanking")}
           variant="contained"
+          size="large"
           className="custom-button mt-3 mx-lg-3"
         >
           Online Banking for Pakistani Applicants
@@ -93,7 +95,8 @@ const GenerateChallan = ({
         <Button
           onClick={() => go("/apply-now/generateChallan/eservicesBanking")}
           variant="contained"
-          className="custom-button mt-3"
+          size="large"
+          className="custom-button mt-3 mx-lg-3"
         >
           E-Services Banking for Overseas Applicants
         </Button>
@@ -111,7 +114,7 @@ const GenerateChallan = ({
         Dear Student submit your registration fee as soon as possible to
         complete your Admission Process.
       </p>
-      <p className="text-justify">
+      <p className="text-justify mb-5">
         Once Registration Charges Paid, You'll be able to access Learning
         Management System
       </p>

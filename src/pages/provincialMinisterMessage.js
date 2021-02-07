@@ -15,7 +15,7 @@ const ProvincialMinisterMessage = () => {
           <h1 className="text-center title mx-3 fw-bold mt-3 mb-0">
             Col (R) Muhammad Hashim
           </h1>
-          <p className="small">Provincial Minister</p>
+          <p>Provincial Minister</p>
         </div>
         <p className="lh-lg para text-justify">
           پاکستان اللہ تبارک و تعالیٰ کے فضل و کرم سے دنیا کے تمام معدنیات، موسم

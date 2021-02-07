@@ -1361,7 +1361,7 @@ const ApplicationForm = ({
   return (
     <>
       <Container className="mt pt-4 application-form">
-        <h1 className="text-center fw-light">
+        <h1 className="text-center fw-light display-4">
           Digi<span className="fw-bold">PAKISTAN</span> Application Form
         </h1>
         <form onSubmit={handleSubmit} className="w-100">

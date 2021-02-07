@@ -18,9 +18,9 @@ const AvailablePrograms = ({
   return (
     <>
       <div className="heading mt-3">
-        <h3 className="fw-bold mb-0">Available Programs</h3>
+        <h4 className="fw-bold mb-0">Available Programs</h4>
       </div>
-      <FormControl fullWidth variant="filled" className="mt-3">
+      <FormControl fullWidth variant="standard" className="mt-3">
         <Label htmlFor="firstCourse">First Course *</Label>
         <Select
           id="firstCourse"
@@ -47,7 +47,7 @@ const AvailablePrograms = ({
       )}
 
       {formData.firstCourseTitle === "Fast Track Technical Program" && (
-        <FormControl fullWidth className="mt-3" variant="filled">
+        <FormControl fullWidth className="mt-3" variant="standard">
           <Label id="firstCourseCategory">First Course Category</Label>
           <Select
             value={formData.firstCourseName}
@@ -140,7 +140,7 @@ const AvailablePrograms = ({
       )}
 
       {formData.firstCourseTitle === "Fast Track Non-Technical Program" && (
-        <FormControl fullWidth className="mt-3" variant="filled">
+        <FormControl fullWidth className="mt-3" variant="standard">
           <Label id="firstCourseCategory">First Course Category</Label>
           <Select
             id="firstCourseCategory"
@@ -178,7 +178,7 @@ const AvailablePrograms = ({
       )}
 
       {formData.firstCourseTitle === "Associate Certification Program" && (
-        <FormControl fullWidth className="mt-3" variant="filled">
+        <FormControl fullWidth className="mt-3" variant="standard">
           <Label htmlFor="firstCourseCategory">First Course Category</Label>
           <Select
             id="firstCourseCategory"
@@ -219,7 +219,7 @@ const AvailablePrograms = ({
       )}
 
       {/* Second Course */}
-      <FormControl fullWidth variant="filled" className="mt-3">
+      <FormControl fullWidth variant="standard" className="mt-3">
         <Label htmlFor="secondCourse">Second Course (Optional)</Label>
         <Select
           id="secondCourse"
@@ -241,7 +241,7 @@ const AvailablePrograms = ({
       </FormControl>
 
       {formData.secondCourseTitle === "Fast Track Technical Program" && (
-        <FormControl fullWidth className="mt-3" variant="filled">
+        <FormControl fullWidth className="mt-3" variant="standard">
           <Label id="secondCourseCategory">Second Course Category</Label>
           <Select
             value={formData.secondCourseName}
@@ -334,7 +334,7 @@ const AvailablePrograms = ({
       )}
 
       {formData.secondCourseTitle === "Fast Track Non-Technical Program" && (
-        <FormControl fullWidth className="mt-3" variant="filled">
+        <FormControl fullWidth className="mt-3" variant="standard">
           <Label id="secondCourseCategory">Second Course Category</Label>
           <Select
             value={formData.secondCourseName}
@@ -372,7 +372,7 @@ const AvailablePrograms = ({
       )}
 
       {formData.secondCourseTitle === "Associate Certification Program" && (
-        <FormControl fullWidth className="mt-3" variant="filled">
+        <FormControl fullWidth className="mt-3" variant="standard">
           <Label id="secondCourseCategory">Second Course Category</Label>
           <Select
             value={formData.secondCourseName}
@@ -413,7 +413,7 @@ const AvailablePrograms = ({
       )}
 
       {/* third Course */}
-      <FormControl fullWidth variant="filled" className="mt-3">
+      <FormControl fullWidth variant="standard">
         <Label htmlFor="thirdCourse">Third Course (Optional)</Label>
         <Select
           id="thirdCourse"
@@ -435,7 +435,7 @@ const AvailablePrograms = ({
       </FormControl>
 
       {formData.thirdCourseTitle === "Fast Track Technical Program" && (
-        <FormControl fullWidth className="mt-3" variant="filled">
+        <FormControl fullWidth className="mt-3" variant="standard">
           <Label id="thirdCourseCategory">Third Course Category</Label>
           <Select
             value={formData.thirdCourseName}
@@ -528,7 +528,7 @@ const AvailablePrograms = ({
       )}
 
       {formData.thirdCourseTitle === "Fast Track Non-Technical Program" && (
-        <FormControl fullWidth className="mt-3" variant="filled">
+        <FormControl fullWidth className="mt-3" variant="standard">
           <Label id="thirdCourseCategory">Third Course Category</Label>
           <Select
             value={formData.thirdCourseName}
@@ -566,7 +566,7 @@ const AvailablePrograms = ({
       )}
 
       {formData.thirdCourseTitle === "Associate Certification Program" && (
-        <FormControl fullWidth className="mt-3" variant="filled">
+        <FormControl fullWidth className="mt-3" variant="standard">
           <Label id="thirdCourseCategory">Third Course Category</Label>
           <Select
             value={formData.thirdCourseName}

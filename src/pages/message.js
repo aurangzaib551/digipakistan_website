@@ -32,7 +32,7 @@ const Message = ({ firstLoad }) => {
             >
               <CloseIcon className="close-icon" />
             </IconButton>
-            <p className="mb-0 txt p-3 text-white fw-bold small text-center">
+            <p className="mb-0 txt p-3 text-white fw-bold text-center">
               Registration Open. Last Date to apply 05-Mar-2021. For queries
               contact DigiPAKISTAN helpline: 042-35974881 / 042-35974882
             </p>

@@ -15,8 +15,8 @@ const ChairmanHECPunjabMessage = () => {
           <h1 className="text-center title mx-3 fw-bold mt-3 mb-0">
             Prof. Dr. Fazal Ahmad Khalid (SI)
           </h1>
-          <p className="small mb-1">Chairman</p>
-          <p className="small text-center">
+          <p className="mb-1">Chairman</p>
+          <p className="text-center">
             Punjab Higher Education Commission{" "}
             <span className="fw-bold">(HEC Punjab)</span>
           </p>

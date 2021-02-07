@@ -8,7 +8,7 @@ const AdditionalFreeCourseVoucher = ({ handleChange, formData, errors }) => {
   return (
     <>
       <div className="heading mt-3">
-        <h3 className="fw-bold mb-0">Additional Free Course Voucher</h3>
+        <h4 className="fw-bold mb-0">Additional Free Course Voucher</h4>
       </div>
       <p className="small mb-0 mt-2 fw-bold">
         (Provide us a valid reference code if you have any)
@@ -20,7 +20,7 @@ const AdditionalFreeCourseVoucher = ({ handleChange, formData, errors }) => {
         value={formData.referenceCode}
         label="Reference Code (Optional)"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
         aria-describedby="referCode"
       />
@@ -43,7 +43,7 @@ const AdditionalFreeCourseVoucher = ({ handleChange, formData, errors }) => {
         value={formData.knowAboutUs}
         label="How you get to know about DigiPAKISTAN initiative *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
         select
       >

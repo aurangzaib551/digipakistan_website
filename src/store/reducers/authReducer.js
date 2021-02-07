@@ -2,6 +2,7 @@ const initialState = {
   msg: "",
   loginMsg: "",
   verifyEmailMsg: false,
+  resetPasswordMsg: "",
 };
 
 const authReducer = (state = initialState, action) => {
@@ -25,6 +26,7 @@ const authReducer = (state = initialState, action) => {
         msg: "",
         loginMsg: "",
         verifyEmailMsg: false,
+        resetPasswordMsg: "",
       };
     case "LOGIN_SUCCESSFULLY":
       return {
@@ -45,6 +47,16 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         verifyEmailMsg: payload,
+      };
+    case "RESET_PASSWORD":
+      return {
+        ...state,
+        resetPasswordMsg: payload,
+      };
+    case "RESET_PASSWORD_ERROR":
+      return {
+        ...state,
+        resetPasswordMsg: payload,
       };
     default:
       return state;

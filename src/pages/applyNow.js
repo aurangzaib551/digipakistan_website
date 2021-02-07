@@ -26,6 +26,7 @@ const ApplyNow = () => {
             src="https://i.ibb.co/LYC7rpt/logoPNG.png"
             alt="DigiPAKISTAN"
             width="200"
+            height="200"
           />
           <h1 className="text-center fw-bold mx-3">
             Online Application System
@@ -41,12 +42,14 @@ const ApplyNow = () => {
             <Button
               onClick={() => go("/apply-now/signup")}
               variant="contained"
+              size="large"
               className="custom-button mx-3 mt-3"
             >
               New Registeration
             </Button>
             <Button
               onClick={() => go("/apply-now/login")}
+              size="large"
               variant="contained"
               className="custom-button mx-3 mt-3"
             >

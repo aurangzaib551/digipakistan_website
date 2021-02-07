@@ -1,5 +1,5 @@
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 html {
@@ -8,7 +8,7 @@ html {
 
 body {
   &::-webkit-scrollbar {
-    width: 15px;
+    width: 12px;
   }
 
   &::-webkit-scrollbar-track {
@@ -17,7 +17,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(to top, #02a39b, #01645f);
+    background: #02a39b;
     border-radius: 10px;
   }
 }
@@ -40,11 +40,21 @@ body {
 
 // Icon style
 .icon {
-  font-size: 35px !important;
+  font-size: 135px !important;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.custom-link {
+  color: #01645f;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    color: #02a39b;
+  }
 }
 
 .custom-button {
@@ -52,7 +62,7 @@ body {
   background-color: #01645f !important;
   transition: all 0.3s !important;
   outline: none !important;
-  font-family: Montserrat, sans-serif !important;
+  font-family: "Quicksand", sans-serif !important;
   color: white !important;
   &:hover {
     background-color: #02a39b !important;
@@ -64,7 +74,7 @@ body {
   background-color: #01645f !important;
   transition: all 0.3s !important;
   outline: none !important;
-  font-family: Montserrat, sans-serif !important;
+  font-family: "Quicksand", sans-serif !important;
   color: white !important;
   &:hover {
     background-color: #02a39b !important;
@@ -76,7 +86,7 @@ body {
   background-color: #2196f3 !important;
   transition: all 0.3s !important;
   outline: none !important;
-  font-family: Montserrat, sans-serif !important;
+  font-family: "Quicksand", sans-serif !important;
   color: white !important;
   &:hover {
     background-color: #0564b3 !important;
@@ -91,13 +101,12 @@ body {
   outline: none !important;
 }
 
+// Input Fields style for all
 .MuiFormLabel-root.Mui-focused {
   color: #02a39b !important;
 }
 
-// Input Fields style for all
-.MuiFilledInput-underline:after,
-.MuiFilledInput-underline.Mui-focused:after {
+.MuiInput-underline:after {
   border-color: #02a39b !important;
 }
 

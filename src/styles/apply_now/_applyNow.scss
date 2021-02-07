@@ -7,3 +7,11 @@
   height: 1000px;
   width: 100%;
 }
+
+@media only screen and (max-width: 576px) {
+  .apply-now {
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 150px;
+  }
+}

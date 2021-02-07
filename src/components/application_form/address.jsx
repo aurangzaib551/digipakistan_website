@@ -10,10 +10,10 @@ const Address = ({ handleChange, formData, errors }) => {
   return (
     <>
       <div className="heading mt-3">
-        <h3 className="fw-bold mb-0">Address</h3>
+        <h4 className="fw-bold mb-0">Address</h4>
       </div>
 
-      <FormControl fullWidth variant="filled" className="mt-3">
+      <FormControl fullWidth variant="standard" className="mt-3">
         <Label htmlFor="province">Province *</Label>
         <Select
           name="province"
@@ -46,7 +46,7 @@ const Address = ({ handleChange, formData, errors }) => {
         value={formData.country}
         label="Country *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
       />
 
@@ -62,7 +62,7 @@ const Address = ({ handleChange, formData, errors }) => {
         value={formData.city}
         label="City *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
       />
 
@@ -78,7 +78,7 @@ const Address = ({ handleChange, formData, errors }) => {
         value={formData.address}
         label="Address *"
         fullWidth
-        variant="filled"
+        variant="standard"
         className="mt-3"
       />
 

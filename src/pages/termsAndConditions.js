@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import { useHistory, Redirect } from "react-router-dom";
 import Copyright from "../components/common/copyright/copyright";
 import { connect } from "react-redux";
 import { termsAndConditions } from "../store/actions/applicationFormActions";
+import { signOut } from "../store/actions/authActions";
 import Loader from "../loader/loader";
 
 const TermsAndConditions = ({
@@ -13,9 +14,16 @@ const TermsAndConditions = ({
   termsAndConditions,
   applicationSubmitted,
   profile,
+  signOut,
 }) => {
   // Object Destructuring
   const { push } = useHistory();
+
+  useLayoutEffect(() => {
+    return () => {
+      signOut();
+    };
+  }, [signOut]);
 
   // User is logged in or not
   if (!uid) return <Redirect to="/apply-now/login" />;
@@ -129,6 +137,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     termsAndConditions: (agree) => dispatch(termsAndConditions(agree)),
+    signOut: () => dispatch(signOut()),
   };
 };
 

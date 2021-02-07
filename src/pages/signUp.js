@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Input from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -8,6 +8,13 @@ import { connect } from "react-redux";
 import { signUp, clearAll } from "../store/actions/authActions";
 import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import ToastServive from "react-material-toast";
+
+const toast = ToastServive.new({
+  place: "topRight",
+  duration: 2,
+  maxCount: 1,
+});
 
 const SignUp = ({ registerUser, msg, clearAll }) => {
   // State
@@ -79,23 +86,27 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
     registerUser(formData, setBtnLoading);
   };
 
-  // Resetting all
-  if (msg) {
-    setTimeout(() => {
+  useLayoutEffect(() => {
+    // Resetting all
+    if (msg) {
       if (msg === "Your account has been successfully created.") {
-        setFormData({
-          firstName: "",
-          lastName: "",
-          emailAddress: "",
-          password: "",
+        toast.success(msg, () => {
+          setFormData({
+            firstName: "",
+            lastName: "",
+            emailAddress: "",
+            password: "",
+          });
+          clearAll();
+          replace("/apply-now/login");
         });
-        clearAll();
-        replace("/apply-now/login");
-      } else {
-        clearAll();
+      } else if (msg) {
+        toast.error(msg, () => {
+          clearAll();
+        });
       }
-    }, 5000);
-  }
+    }
+  }, [clearAll, msg, replace]);
 
   return (
     <>
@@ -107,7 +118,7 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
             width="200"
           />
 
-          <form onSubmit={handleSubmit} className="w-100">
+          <form onSubmit={handleSubmit} className="form">
             <h1 className="fw-bold text-center mx-3">Registeration</h1>
             <Input
               id="firstName"
@@ -115,7 +126,7 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
               onChange={handleChange}
               fullWidth
               label="First Name *"
-              variant="filled"
+              variant="standard"
               className="mt-2"
             />
             {errors.firstName && (
@@ -129,7 +140,7 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
               label="Last Name *"
               value={formData.lastName}
               onChange={handleChange}
-              variant="filled"
+              variant="standard"
               className="mt-3"
             />
             {errors.lastName && (
@@ -143,7 +154,7 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
               value={formData.emailAddress}
               onChange={handleChange}
               label="Email Address *"
-              variant="filled"
+              variant="standard"
               className="mt-3"
             />
             {errors.emailAddress && (
@@ -158,26 +169,12 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
               type="password"
               value={formData.password}
               onChange={handleChange}
-              variant="filled"
+              variant="standard"
               className="mt-3"
             />
             {errors.password && (
               <Alert severity="error" variant="filled">
                 {errors.password}
-              </Alert>
-            )}
-
-            {msg && (
-              <Alert
-                severity={
-                  msg === "Your account has been successfully created."
-                    ? "success"
-                    : "error"
-                }
-                className="my-3"
-                variant="filled"
-              >
-                {msg}
               </Alert>
             )}
 
@@ -196,8 +193,11 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
               )}
             </Button>
           </form>
-          <p className="mb-0 small mt-3 fw-bold">
-            Have an account? <Link to="/apply-now/login">Log In</Link>
+          <p className="mb-0 mt-3 fw-bold">
+            Have an account?{" "}
+            <Link to="/apply-now/login" className="custom-link">
+              Log In
+            </Link>
           </p>
         </Container>
       </div>

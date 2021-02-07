@@ -123,9 +123,15 @@ const AdmissionStatus = ({
           </span>
         </h2>
         {status ? (
-          <ApprovedIcon className="text-success ms-2 icon" />
+          <ApprovedIcon
+            className="text-success ms-2"
+            style={{ fontSize: 35 }}
+          />
         ) : (
-          <NotApprovedIcon className="text-danger ms-2 icon" />
+          <NotApprovedIcon
+            className="text-danger ms-2"
+            style={{ fontSize: 35 }}
+          />
         )}
       </div>
 

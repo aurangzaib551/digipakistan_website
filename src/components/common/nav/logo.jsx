@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const LOGO = ({ uid }) => {
   return (
-    <div className={"logo"}>
+    <div className={uid ? "" : "logo"}>
       <Link to="/">
         <img
           src="https://i.ibb.co/LYC7rpt/logoPNG.png"

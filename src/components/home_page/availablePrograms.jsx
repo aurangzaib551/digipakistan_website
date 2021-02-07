@@ -31,6 +31,7 @@ const AvailablePrograms = () => {
               <img
                 src="https://i.ibb.co/9YZzbr5/technical.png"
                 width="90"
+                height="90"
                 alt="Fast Track Technical Program"
                 className="technical-img"
               />
@@ -49,7 +50,7 @@ const AvailablePrograms = () => {
                 </div>
               </div>
             </div>
-            <div className="d-flex flex-wrap courses mt-2">
+            <div className="d-flex flex-column flex-sm-row flex-wrap courses mt-2">
               {isLaptop ? (
                 <>
                   <p className="mb-0 mt-2 px-2">CompTIA IT Fundamentals</p>
@@ -160,6 +161,7 @@ const AvailablePrograms = () => {
               <img
                 src="https://i.ibb.co/5TL95M1/non-technical.png"
                 width="90"
+                height="90"
                 alt="Fast Track Non-Technical Program"
                 className="technical-img tech-sec-img"
               />
@@ -178,7 +180,7 @@ const AvailablePrograms = () => {
                 </div>
               </div>
             </div>
-            <div className="d-flex flex-wrap courses pb-lg-4 mt-2">
+            <div className="d-flex flex-column flex-sm-row flex-wrap courses pb-lg-4 mt-2">
               <p className="mb-0 mt-2 px-2">QuickBooks ERP</p>
               <p className="mb-0 mt-2 px-2">SAP ERP</p>
               <p className="mb-0 mt-2 px-2">
@@ -209,6 +211,7 @@ const AvailablePrograms = () => {
               <img
                 src="https://i.ibb.co/8swpxtt/associate.png"
                 width="80"
+                height="80"
                 alt="Associate Certification Program"
                 className="associate-img"
               />
@@ -229,7 +232,7 @@ const AvailablePrograms = () => {
                 </div>
               </div>
             </div>
-            <div className="d-flex flex-wrap courses mt-2">
+            <div className="d-flex flex-column flex-sm-row flex-wrap courses mt-2">
               <p className="mb-0 mt-2 px-2">Digital Forensic Cyber Security</p>
               <p className="mb-0 mt-2 px-2">
                 Penetration Testing Cyber Security

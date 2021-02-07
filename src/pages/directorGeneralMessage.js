@@ -15,8 +15,8 @@ const DirectorGeneralMessage = () => {
           <h1 className="text-center title mx-3 fw-bold mt-3 mb-0">
             Lt Col (R) Engr. Habib Ur Rehman Qaiser (TI)
           </h1>
-          <p className="small mb-1">Member Governing Body</p>
-          <p className="small">
+          <p className="mb-1">Member Governing Body</p>
+          <p>
             Pakistan Engineering Council <span className="fw-bold">(PEC)</span>
           </p>
         </div>

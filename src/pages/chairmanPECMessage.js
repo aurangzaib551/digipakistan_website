@@ -15,8 +15,8 @@ const ChairmanPECMessage = () => {
           <h1 className="text-center title mx-3 fw-bold mt-3 mb-0">
             Engr. Jawed Salim Qureshi
           </h1>
-          <p className="small mb-1">Chairman</p>
-          <p className="small text-center">
+          <p className="mb-1">Chairman</p>
+          <p className="text-center">
             Pakistan Engineering Council <span className="fw-bold">(PEC)</span>
           </p>
         </div>

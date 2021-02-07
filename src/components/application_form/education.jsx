@@ -10,9 +10,9 @@ const Education = ({ handleQualification, formData, handleChange, errors }) => {
   return (
     <>
       <div className="heading mt-3">
-        <h3 className="fw-bold mb-0">Education</h3>
+        <h4 className="fw-bold mb-0">Education</h4>
       </div>
-      <FormControl fullWidth variant="filled" className="mt-3">
+      <FormControl fullWidth variant="standard" className="mt-3">
         <Label htmlFor="qualification">Qualification *</Label>
         <Select
           value={formData.qualification}
@@ -37,7 +37,7 @@ const Education = ({ handleQualification, formData, handleChange, errors }) => {
       )}
 
       {formData.qualification === "Matric" && (
-        <FormControl fullWidth variant="filled" className="mt-3">
+        <FormControl fullWidth variant="standard" className="mt-3">
           <Label htmlFor="education">Education *</Label>
           <Select
             id="education"
@@ -52,7 +52,7 @@ const Education = ({ handleQualification, formData, handleChange, errors }) => {
       )}
 
       {formData.qualification === "Intermediate" && (
-        <FormControl fullWidth variant="filled" className="mt-3">
+        <FormControl fullWidth variant="standard" className="mt-3">
           <Label htmlFor="education">Education *</Label>
           <Select
             id="education"
@@ -75,7 +75,7 @@ const Education = ({ handleQualification, formData, handleChange, errors }) => {
       {(formData.qualification === "Undergraduate" ||
         formData.qualification === "Graduate" ||
         formData.qualification === "Post Graduate") && (
-        <FormControl fullWidth variant="filled" className="mt-3">
+        <FormControl fullWidth variant="standard" className="mt-3">
           <Label htmlFor="education">Education *</Label>
           <Select
             id="education"
@@ -106,7 +106,7 @@ const Education = ({ handleQualification, formData, handleChange, errors }) => {
           name="education"
           fullWidth
           className="mt-3"
-          variant="filled"
+          variant="standard"
           onChange={handleChange}
           label="Education *"
         />
@@ -123,7 +123,7 @@ const Education = ({ handleQualification, formData, handleChange, errors }) => {
         name="instituteName"
         fullWidth
         className="mt-3"
-        variant="filled"
+        variant="standard"
         onChange={handleChange}
         label="Institute Name *"
       />

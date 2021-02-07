@@ -8,6 +8,13 @@ import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";
 import { logIn, clearAll } from "../store/actions/authActions";
+import ToastServive from "react-material-toast";
+
+const toast = ToastServive.new({
+  place: "topRight",
+  duration: 3,
+  maxCount: 1,
+});
 
 const LogIn = ({ logIn, clearAll, msg }) => {
   const [formData, setFormData] = useState({
@@ -67,18 +74,24 @@ const LogIn = ({ logIn, clearAll, msg }) => {
   // Resetting all
   useLayoutEffect(() => {
     if (msg) {
-      setTimeout(() => {
-        if (msg === "Successfully logged in") {
+      if (msg === "Successfully logged in") {
+        toast.success(msg, () => {
           setFormData({
             emailAddress: "",
             password: "",
           });
           clearAll();
           replace("/apply-now/emailVerification");
-        } else {
+        });
+      } else if (msg === "Successfully log out") {
+        toast.success(msg, () => {
           clearAll();
-        }
-      }, 5000);
+        });
+      } else if (msg) {
+        toast.error(msg, () => {
+          clearAll();
+        });
+      }
     }
   }, [msg, clearAll, replace]);
 
@@ -90,9 +103,10 @@ const LogIn = ({ logIn, clearAll, msg }) => {
             src="https://i.ibb.co/LYC7rpt/logoPNG.png"
             alt="DigiPAKISTAN"
             width="200"
+            height="200"
           />
 
-          <form onSubmit={handleSubmit} className="w-100">
+          <form onSubmit={handleSubmit} className="form">
             <h1 className="fw-bold text-center mx-3">Log In</h1>
             <Input
               id="emailAddress"
@@ -100,7 +114,7 @@ const LogIn = ({ logIn, clearAll, msg }) => {
               value={formData.emailAddress}
               onChange={handleChange}
               label="Email Address"
-              variant="filled"
+              variant="standard"
               className="mt-3"
             />
             {errors.emailAddress && (
@@ -115,27 +129,12 @@ const LogIn = ({ logIn, clearAll, msg }) => {
               value={formData.password}
               onChange={handleChange}
               label="Password"
-              variant="filled"
+              variant="standard"
               className="mt-3"
             />
             {errors.password && (
               <Alert severity="error" variant="filled">
                 {errors.password}
-              </Alert>
-            )}
-
-            {msg && (
-              <Alert
-                severity={
-                  msg === "Successfully logged in" ||
-                  msg === "Successfully log out"
-                    ? "success"
-                    : "error"
-                }
-                className="my-3"
-                variant="filled"
-              >
-                {msg}
               </Alert>
             )}
 
@@ -154,8 +153,18 @@ const LogIn = ({ logIn, clearAll, msg }) => {
               )}
             </Button>
           </form>
-          <p className="mb-0 small mt-3 fw-bold">
-            Don't have an account? <Link to="/apply-now/signup">Sign Up</Link>
+          <p className="mb-0 mt-3 fw-bold">
+            Forgot{" "}
+            <Link to="/apply-now/forgotPassword" className="custom-link">
+              Password
+            </Link>
+          </p>
+          <p className="mb-0">Or</p>
+          <p className="mb-0 fw-bold">
+            Don't have an account?{" "}
+            <Link to="/apply-now/signup" className="custom-link">
+              Sign Up
+            </Link>
           </p>
         </Container>
       </div>

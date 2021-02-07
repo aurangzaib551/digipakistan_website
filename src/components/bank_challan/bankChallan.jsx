@@ -191,7 +191,7 @@ const BankChallan = ({
         </Button>
       </div>
 
-      <p className="mb-0 mt-3">
+      <p className="mb-0 mt-3 mb-5">
         <span className="fw-bold">Note:</span> As you pay the registration
         charges you'll be able to access the Learning Management System in next
         48hrs

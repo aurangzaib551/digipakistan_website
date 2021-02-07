@@ -4,6 +4,10 @@
   margin-block-end: 0;
 }
 
+.MuiBadge-badge {
+  font-size: 0.7rem !important;
+}
+
 .laptop-menu-items {
   .menu-laptop.open-nav {
     left: 0;
@@ -30,7 +34,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background: linear-gradient(to top, #02a39b, #01645f);
+      background: $secondary;
       border-radius: 10px;
     }
 
@@ -42,9 +46,10 @@
         display: block;
         color: white;
         text-decoration: none;
-        border-bottom: 3px solid white;
+        border-bottom: 1px solid white;
         font-size: 18px;
-        padding-bottom: 5px;
+        font-weight: bold;
+        padding-bottom: 3px;
         transition: all 0.3s;
         user-select: none;
 
@@ -58,15 +63,19 @@
         }
       }
 
+      .ul-sub {
+        background-color: white;
+        border-radius: 0.3rem;
+        padding: 12px 0 !important;
+        margin-top: 7px;
+      }
+
       .items-sub {
-        margin-top: 5px;
         display: block;
         margin-left: 15px;
         color: black;
         text-decoration: none;
-        background-color: white;
-        font-size: 14px;
-        padding: 10px;
+        font-size: 16px;
         transition: all 0.3s;
         font-weight: bold;
         &:hover {
@@ -103,13 +112,13 @@
         border-radius: 0.3rem;
 
         &:hover {
-          background: linear-gradient(to right, $primary, $secondary);
+          background: $secondary;
           color: white;
         }
       }
 
       &:hover {
-        background: linear-gradient(to right, $primary, $secondary);
+        background: $secondary;
         color: white;
         cursor: pointer;
       }
@@ -129,7 +138,7 @@
       }
 
       &::-webkit-scrollbar-thumb {
-        background: linear-gradient(to top, #02a39b, #01645f);
+        background: $secondary;
         border-radius: 10px;
       }
     }
@@ -172,7 +181,7 @@
         }
 
         &:hover {
-          background: linear-gradient(to right, $primary, $secondary);
+          background: $secondary;
           color: white;
         }
 
@@ -193,7 +202,7 @@
             display: block;
 
             &:hover {
-              background: linear-gradient(to right, $primary, $secondary);
+              background: $secondary;
             }
           }
         }
@@ -221,10 +230,6 @@
   .custom-navbar {
     .custom-badge {
       right: 17px;
-    }
-
-    .MuiBadge-badge {
-      font-size: 0.7rem !important;
     }
 
     .navbar-items {
@@ -291,6 +296,11 @@
       left: 20px;
       top: 20px;
     }
+
+    .logo {
+      position: relative;
+      left: -45px;
+    }
   }
 }
 
@@ -342,6 +352,10 @@
 }
 
 @media only screen and (max-width: 325px) {
+  .signOut-button {
+    position: relative;
+    left: 80px;
+  }
   .custom-navbar {
     height: 70px;
 

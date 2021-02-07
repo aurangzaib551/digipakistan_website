@@ -30,7 +30,7 @@ const YoutubeChannel = () => {
         </h1>
 
         <div className="row g-0">
-          <div className="col-lg-9">
+          <div className="col-lg-8">
             <iframe
               title={youtube.videoId}
               width="100%"
@@ -41,7 +41,7 @@ const YoutubeChannel = () => {
               allowFullScreen
             ></iframe>
           </div>
-          <div className="col-lg-3 ps-3 videos pb-3 mt-4 mt-lg-0">
+          <div className="col-lg-4 ps-3 videos pb-3 mt-4 mt-lg-0">
             {youtube.items.map((video, ind) => {
               return (
                 <div

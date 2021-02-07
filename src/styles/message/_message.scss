@@ -1,6 +1,6 @@
 .message {
   position: fixed;
-  width: 700px;
+  width: 1020px;
   background-color: $primary;
   top: 110px;
   z-index: 11;
@@ -35,7 +35,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1072px) {
   .message {
     width: 95%;
   }
@@ -47,7 +47,7 @@
     top: 103px;
   }
   .txt {
-    font-size: 2.5vw;
+    font-size: 3vw;
   }
 }
 
