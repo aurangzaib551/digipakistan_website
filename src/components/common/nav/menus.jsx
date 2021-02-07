@@ -506,7 +506,10 @@ const Menus = ({ firstLoad }) => {
               </Link>
             </li>
             <li className="sub-menus-li rounded text-nowrap">
-              <a href=" " className="sub-menu-link ps-3 pe-5 d-block">
+              <a
+                href="https://marketing.digipakistan.org"
+                className="sub-menu-link ps-3 pe-5 d-block"
+              >
                 Become a Marketing Partner
               </a>
             </li>

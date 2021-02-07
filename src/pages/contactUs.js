@@ -137,7 +137,7 @@ const ContactUs = () => {
                   rel="noreferrer"
                   className="mx-3 icon-link pointer mt-3"
                 >
-                  <FacebookIcon className="icon" />
+                  <FacebookIcon style={{ fontSize: 35 }} />
                 </a>
                 <a
                   href="https://www.instagram.com/invites/contact/?i=1nd00az19t5ph&utm_content=ktn9t9y"
@@ -145,7 +145,7 @@ const ContactUs = () => {
                   rel="noreferrer"
                   className="mx-3 icon-link pointer mt-3"
                 >
-                  <InstagramIcon className="icon" />
+                  <InstagramIcon style={{ fontSize: 35 }} />
                 </a>
                 <a
                   href="https://twitter.com/DigipakistanP"
@@ -153,7 +153,7 @@ const ContactUs = () => {
                   rel="noreferrer"
                   className="mx-3 icon-link pointer mt-3"
                 >
-                  <TwitterIcon className="icon" />
+                  <TwitterIcon style={{ fontSize: 35 }} />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/digipakistan"
@@ -161,7 +161,7 @@ const ContactUs = () => {
                   rel="noreferrer"
                   className="mx-3 icon-link pointer mt-3"
                 >
-                  <LinkedInIcon className="icon" />
+                  <LinkedInIcon style={{ fontSize: 35 }} />
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCvu0jNb7YmT7kagRfI6lWXw"
@@ -169,12 +169,12 @@ const ContactUs = () => {
                   rel="noreferrer"
                   className="mx-3 icon-link pointer mt-3"
                 >
-                  <YoutubeIcon className="icon" />
+                  <YoutubeIcon style={{ fontSize: 35 }} />
                 </a>
               </div>
             </div>
             <div className="col-lg-8 ps-sm-3 px-3 d-flex flex-column justify-content-center">
-              <h1 className="fw-bold mb-sm-0 text-center">Got a Question?</h1>
+              <h1 className="fw-bold mb-sm-0">Got a Question?</h1>
               <p className="text-justify">
                 Is there something you can’t find an answer to or do you have
                 something else you need help with? Let us know by filling out
@@ -185,7 +185,7 @@ const ContactUs = () => {
                 <div className="row g-4">
                   <div className="col-sm-6 pe-4 pe-sm-0">
                     <Input
-                      variant="filled"
+                      variant="standard"
                       label="First Name"
                       id="firstName"
                       value={formData.firstName}
@@ -200,7 +200,7 @@ const ContactUs = () => {
                   </div>
                   <div className="col-sm-6 pe-4">
                     <Input
-                      variant="filled"
+                      variant="standard"
                       label="Last Name"
                       id="lastName"
                       value={formData.lastName}
@@ -215,7 +215,7 @@ const ContactUs = () => {
                   </div>
                   <div className="col-sm-6 pe-4 pe-sm-0">
                     <Input
-                      variant="filled"
+                      variant="standard"
                       label="Contact Number"
                       id="contactNumber"
                       value={formData.contactNumber}
@@ -230,7 +230,7 @@ const ContactUs = () => {
                   </div>
                   <div className="col-sm-6 pe-4">
                     <Input
-                      variant="filled"
+                      variant="standard"
                       label="Email Address"
                       id="emailAddress"
                       value={formData.emailAddress}
@@ -245,7 +245,7 @@ const ContactUs = () => {
                   </div>
                   <div className="col-12 pe-4">
                     <Input
-                      variant="filled"
+                      variant="standard"
                       label="Subject"
                       id="subject"
                       value={formData.subject}
@@ -260,7 +260,7 @@ const ContactUs = () => {
                   </div>
                   <div className="col-12 pe-4">
                     <Input
-                      variant="filled"
+                      variant="standard"
                       label="Message"
                       id="message"
                       value={formData.message}

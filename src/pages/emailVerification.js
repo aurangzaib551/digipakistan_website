@@ -17,6 +17,7 @@ const EmailVerification = ({
   signOut,
   emailVerified,
   emailAddress,
+  profile,
 }) => {
   // State
   const [btnLoading, setBtnLoading] = useState(false);
@@ -51,7 +52,7 @@ const EmailVerification = ({
     <>
       <Container className="mt pt-4 email-verification d-flex flex-column align-items-center justify-content-center">
         <MailIcon className="icon" />
-        <h1 className="fw-bold mx-3 text-center">Hi Aurangzaib Manzoor</h1>
+        <h1 className="fw-bold mx-3 text-center">Hi {profile.fullName}</h1>
         <p className="mx-3 text-center">
           First verify your Email Account as all communications will be done via
           email.
@@ -98,6 +99,7 @@ const mapStateToProps = (state) => {
     emailVerified: state.firebase.auth.emailVerified,
     verifyEmailMsg: state.auth.verifyEmailMsg,
     emailAddress: state.firebase.auth.email,
+    profile: state.firebase.profile,
   };
 };
 

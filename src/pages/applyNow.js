@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
 import Paper from "@material-ui/core/Paper";
@@ -8,6 +8,10 @@ import { useHistory } from "react-router-dom";
 const ApplyNow = () => {
   // Object Destructuring
   const { push } = useHistory();
+
+  useLayoutEffect(() => {
+    return () => {};
+  }, []);
 
   const go = (link) => {
     setTimeout(() => {

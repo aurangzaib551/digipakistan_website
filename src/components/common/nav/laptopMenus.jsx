@@ -129,7 +129,7 @@ const LaptopMenus = ({ closeNav }) => {
                   </li>
                   <li onClick={closeJoinDigiPAKISTAN}>
                     <a
-                      href="https://affiliatedigipakistan.netlify.app"
+                      href="https://marketing.digipakistan.org"
                       className="items-sub"
                     >
                       Become a Marketing Partner

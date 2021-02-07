@@ -6,10 +6,14 @@ import Tab from "@material-ui/core/Tab";
 import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
+import { useHistory } from "react-router-dom";
 
 const BigDataAndHeadoopEcosystem = () => {
   // State
   const [tabValue, setTabValue] = useState(0);
+
+  // Object Destructuring
+  const { push } = useHistory();
 
   const handleTab = (obj, ind) => {
     setTabValue(ind);
@@ -189,6 +193,7 @@ const BigDataAndHeadoopEcosystem = () => {
                 Language: <span className="fw-normal">Urdu / English</span>
               </h6>
               <Button
+                onClick={() => push("/apply-now")}
                 variant="contained"
                 fullWidth
                 className="custom-button mt-3"

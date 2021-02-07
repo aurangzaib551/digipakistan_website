@@ -1,4 +1,16 @@
 .application-form {
+  .border-color {
+    border-color: grey !important;
+  }
+
+  #no {
+    &:focus {
+      ~ .side-no {
+        border: 1px solid lightgrey !important;
+      }
+    }
+  }
+
   .heading {
     display: flex;
     justify-content: center;

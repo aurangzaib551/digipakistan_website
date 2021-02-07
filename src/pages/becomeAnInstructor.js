@@ -195,7 +195,7 @@ const BecomeAnInstructor = ({
 
         <form onSubmit={handleSubmit} className="mt-3">
           <Input
-            variant="filled"
+            variant="standard"
             id="fullName"
             label="Full Name *"
             fullWidth
@@ -208,7 +208,7 @@ const BecomeAnInstructor = ({
             </Alert>
           )}
           <Input
-            variant="filled"
+            variant="standard"
             id="emailAddress"
             label="Email Address *"
             value={formData.emailAddress}
@@ -222,7 +222,7 @@ const BecomeAnInstructor = ({
             </Alert>
           )}
           <Input
-            variant="filled"
+            variant="standard"
             id="phoneNumber"
             label="Phone Number *"
             value={formData.phoneNumber}
@@ -236,7 +236,7 @@ const BecomeAnInstructor = ({
             </Alert>
           )}
           <Input
-            variant="filled"
+            variant="standard"
             id="typeOfCourse"
             value={formData.typeOfCourse}
             onChange={handleChange}
@@ -252,7 +252,7 @@ const BecomeAnInstructor = ({
             </Alert>
           )}
           <Input
-            variant="filled"
+            variant="standard"
             id="expertise"
             value={formData.expertise}
             onChange={handleChange}
@@ -268,7 +268,7 @@ const BecomeAnInstructor = ({
             </Alert>
           )}
           <Input
-            variant="filled"
+            variant="standard"
             id="bio"
             value={formData.bio}
             onChange={handleChange}
@@ -279,7 +279,7 @@ const BecomeAnInstructor = ({
             rows={7}
           />
           <Input
-            variant="filled"
+            variant="standard"
             id="linkedInURL"
             value={formData.linkedInURL}
             onChange={handleChange}
@@ -293,7 +293,7 @@ const BecomeAnInstructor = ({
             </Alert>
           )}
           <Input
-            variant="filled"
+            variant="standard"
             id="country"
             value={formData.country}
             onChange={handleChange}
@@ -307,7 +307,7 @@ const BecomeAnInstructor = ({
             </Alert>
           )}
           <Input
-            variant="filled"
+            variant="standard"
             id="city"
             label="City *"
             value={formData.city}
