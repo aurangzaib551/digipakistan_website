@@ -186,7 +186,11 @@ const BankChallan = ({
           );
         })}
 
-        <Button variant="contained" className="custom-button mt-3">
+        <Button
+          href="https://forms.gle/wqCjW8musjiWJmLC9"
+          variant="contained"
+          className="custom-button mt-3"
+        >
           Verification Form
         </Button>
       </div>

@@ -66,7 +66,11 @@ const OnlineBanking = ({
       </ul>
 
       <div className="d-flex justify-content-center">
-        <Button variant="contained" className="custom-button mt-3">
+        <Button
+          href="https://forms.gle/YSD8vLmkFkoTpYwM9"
+          variant="contained"
+          className="custom-button mt-3"
+        >
           Verification Form
         </Button>
       </div>
