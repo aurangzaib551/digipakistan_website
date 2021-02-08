@@ -1,4 +1,9 @@
 import React from "react";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import YoutubeIcon from "@material-ui/icons/YouTube";
 
 const Footer = () => {
   return (
@@ -28,6 +33,48 @@ const Footer = () => {
             helpdesk@digipakistan.org
           </a>
         </p>
+        <div className="d-flex justify-content-center flex-wrap">
+          <a
+            href="https://www.facebook.com/digipakistan.org"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 icon-link pointer mt-3"
+          >
+            <FacebookIcon className="icon-footer" style={{ fontSize: 35 }} />
+          </a>
+          <a
+            href="https://www.instagram.com/invites/contact/?i=1nd00az19t5ph&utm_content=ktn9t9y"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 icon-link pointer mt-3"
+          >
+            <InstagramIcon className="icon-footer" style={{ fontSize: 35 }} />
+          </a>
+          <a
+            href="https://twitter.com/DigipakistanP"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 icon-link pointer mt-3"
+          >
+            <TwitterIcon className="icon-footer" style={{ fontSize: 35 }} />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/digipakistan"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 icon-link pointer mt-3"
+          >
+            <LinkedInIcon className="icon-footer" style={{ fontSize: 35 }} />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCvu0jNb7YmT7kagRfI6lWXw"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 icon-link pointer mt-3"
+          >
+            <YoutubeIcon className="icon-footer" style={{ fontSize: 35 }} />
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -3,21 +3,14 @@ import Input from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import HelperText from "@material-ui/core/FormHelperText";
 import Alert from "@material-ui/lab/Alert";
-import mobileCodes from "country-telephone-data";
-import { useMediaQuery } from "react-responsive";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const PersonalInformation = (props) => {
   // Object Destructuring
-  const { formData, handleChange, errors } = props;
+  const { formData, handleChange, errors, setFormData } = props;
 
-  // Media Query
-  const isSmall = useMediaQuery({
-    query: "(max-width: 576px)",
-  });
-
-  const isXSmall = useMediaQuery({
-    query: "(max-width: 369px)",
-  });
   return (
     <>
       <div className="heading mt-3">
@@ -92,24 +85,28 @@ const PersonalInformation = (props) => {
             </Alert>
           )}
           <div className="d-flex justify-content-between mt-3 align-items-center h-100">
-            <div className="d-flex border-bottom bor side-no border-color mb-1">
-              <p className="mb-0 pe-2 pe-sm-0 pb-1">PK</p>
-              <p className="mb-0 pe-2 pe-sm-0 pb-1 ms-sm-2">+92</p>
-            </div>
+            {/* <div className="d-flex border pt-2 side-no border-color rounded mb-sm-2 no">
+              <p className="mb-0 pe-2 pe-sm-3 pb-1 ms-sm-2">+92</p>
+            </div> */}
             <div className=" w-100">
               <Input
                 id="no"
                 name="mobileNumber"
                 value={formData.mobileNumber}
                 onChange={handleChange}
-                label="Mobile Number *"
+                label="Phone Number *"
                 fullWidth
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">+92</InputAdornment>
+                  ),
+                }}
                 variant="standard"
+                placeholder="Phone number"
                 aria-describedby="no"
               />
               <HelperText name="no" error>
-                (If you are Pakistani provide your valid mobile # in the format
-                e.g. 3001234567)
+                (Enter your phone # in the format e.g. 3001234567)
               </HelperText>
               {errors.mobileNumber && (
                 <Alert severity="error" variant="filled">
@@ -144,12 +141,11 @@ const PersonalInformation = (props) => {
                 </Alert>
               )}
             </div>
-            <div className="col-4 col-sm-4 col-lg-2 mt-3">
-              <Input
+            <div className="col mt-3">
+              {/* <Input
                 name="countryCode"
                 label={isSmall ? "Code *" : "Country Code *"}
-                value={formData.countryCode}
-                onChange={handleChange}
+                
                 fullWidth
                 variant="standard"
                 aria-describedby="countryCode"
@@ -157,35 +153,32 @@ const PersonalInformation = (props) => {
               >
                 {mobileCodes.allCountries.map((country, index) => {
                   return (
-                    <MenuItem key={index} value={`+${country.dialCode}`}>
-                      +{country.dialCode} &nbsp; &nbsp; {country.name}
+                    <MenuItem
+                      key={index}
+                      value={`+${country.dialCode}`}
+                      className="text-uppercase"
+                    >
+                      +{country.dialCode} &nbsp; &nbsp; {country.iso2}
                     </MenuItem>
                   );
                 })}
-              </Input>
+              </Input> */}
+              <PhoneInput
+                country={"sa"}
+                enableAreaCodes={true}
+                enableSearch
+                inputStyle={{ width: "100%" }}
+                value={formData.overseasMobileNumber}
+                onChange={(number) =>
+                  setFormData({ ...formData, overseasMobileNumber: number })
+                }
+              />
+              <HelperText name="countryCode" className="text-nowrap" error>
+                (Enter your country code before number)
+              </HelperText>
               {errors.countryCode && (
                 <Alert severity="error" variant="filled">
                   {errors.countryCode}
-                </Alert>
-              )}
-            </div>
-            <div className="col-8 col-sm-8 col-lg-10 mt-3">
-              <Input
-                name="overseasMobileNumber"
-                label={isXSmall ? "Number *" : "Mobile Number *"}
-                value={formData.overseasMobileNumber}
-                onChange={handleChange}
-                fullWidth
-                variant="standard"
-                aria-describedby="overseasNo"
-              />
-              <HelperText name="overseasNo" error>
-                (In case of Overseas Pakistani, Enter your country code before
-                number. Kindly provide valid contact number)
-              </HelperText>
-              {errors.overseasMobileNumber && (
-                <Alert severity="error" variant="filled">
-                  {errors.overseasMobileNumber}
                 </Alert>
               )}
             </div>

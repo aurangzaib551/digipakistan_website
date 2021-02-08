@@ -1,4 +1,13 @@
 footer {
+  .icon-footer {
+    color: white;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
   .footer-top {
     background-color: $secondary;
   }

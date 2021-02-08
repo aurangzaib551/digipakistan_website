@@ -20,6 +20,14 @@ const Slider = () => {
       <Carousel.Item>
         <img
           className="d-block w-100 img"
+          src="https://i.ibb.co/HpFgHtJ/banner-3-for-web.png"
+          alt="Third slide"
+          width="100%"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100 img"
           src="https://i.ibb.co/Np423Gp/700-height-banner-2.png"
           alt="Third slide"
           width="100%"

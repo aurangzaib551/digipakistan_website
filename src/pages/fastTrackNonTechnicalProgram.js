@@ -18,7 +18,7 @@ const FastTrackNonTechnicalProgram = () => {
     <>
       <div className="all-programs-bg mt d-flex flex-column justify-content-center px-lg-5">
         <h2 className="fw-bold text-white text-center text-lg-start">
-          Fast Track Non-Technical Program
+          Fast Track Non-Technical Programs (3 Months)
         </h2>
         <p className="mb-0 small text-white para text-center text-lg-start px-3 px-lg-0 text-justify">
           A continuously evolving stack of Information Technology Programs
