@@ -74,11 +74,7 @@ export const application = (formData, setBtnLoading, uid) => {
         CNIC: formData.cnic,
         Email: formData.emailAddress,
         Applicant: formData.applicant,
-        "Mobile Number": `${
-          formData.countryCode
-            ? formData.countryCode + formData.overseasMobileNumber
-            : "+92" + formData.mobileNumber
-        }`,
+        "Mobile Number": formData.mobileNumber || formData.overseasMobileNumber,
         "Date of Birth": formData.dob,
         Gender: formData.gender,
         "First Course": formData.firstCourseTitle,
@@ -91,7 +87,6 @@ export const application = (formData, setBtnLoading, uid) => {
         Education: formData.education,
         "Institute Name": formData.instituteName,
         Province: formData.province,
-        "Country Code": formData.countryCode,
         City: formData.city,
         Address: formData.address,
         "Reference Code": formData.referenceCode,
@@ -230,11 +225,8 @@ export const application = (formData, setBtnLoading, uid) => {
           CNIC: formData.cnic,
           Email: formData.emailAddress,
           Applicant: formData.applicant,
-          "Mobile Number": `${
-            formData.countryCode
-              ? formData.countryCode + formData.overseasMobileNumber
-              : "+92" + formData.mobileNumber
-          }`,
+          "Mobile Number":
+            formData.mobileNumber || formData.overseasMobileNumber,
           "Date of Birth": formData.dob,
           Gender: formData.gender,
           "First Course": formData.firstCourseTitle,
@@ -247,7 +239,6 @@ export const application = (formData, setBtnLoading, uid) => {
           Education: formData.education,
           "Institute Name": formData.instituteName,
           Province: formData.province,
-          "Country Code": formData.countryCode,
           City: formData.city,
           Address: formData.address,
           "Reference Code": formData.referenceCode,

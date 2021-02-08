@@ -34,7 +34,6 @@ const ApplicationForm = ({
     cnic: "",
     overseasCNIC: "",
     overseasMobileNumber: "",
-    countryCode: "",
     mobileNumber: "",
     emailAddress,
     dob: "",
@@ -1179,7 +1178,6 @@ const ApplicationForm = ({
     const cnicRegEx = /^[0-9]{13}$/;
     const numberRegEx = /^[0-9]{10}$/;
     const overseasCNICRegEx = /^[0-9]{1,}$/;
-    const overseasCountryCodeRegEx = /^[+0-9]+$/;
     const overseasMobileNumberRegEx = /^[0-9]{7,}$/;
 
     if (formData.fullName.trim() === "") {
@@ -1218,12 +1216,6 @@ const ApplicationForm = ({
           errors.overseasCNIC = "CNIC / Form-B over mustn't be empty";
         } else if (!overseasCNICRegEx.test(formData.overseasCNIC)) {
           errors.overseasCNIC = "Invalid CNIC / Form-B";
-        }
-
-        if (formData.countryCode.trim() === "") {
-          errors.countryCode = "Country code mustn't be empty";
-        } else if (!overseasCountryCodeRegEx.test(formData.countryCode)) {
-          errors.countryCode = "Invalid Country Code";
         }
 
         if (formData.overseasMobileNumber.trim() === "") {
