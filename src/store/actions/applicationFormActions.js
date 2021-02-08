@@ -226,7 +226,7 @@ export const application = (formData, setBtnLoading, uid) => {
           Email: formData.emailAddress,
           Applicant: formData.applicant,
           "Mobile Number":
-            formData.mobileNumber || formData.overseasMobileNumber,
+            `${formData.mobileNumber}` || `${formData.overseasMobileNumber}`,
           "Date of Birth": formData.dob,
           Gender: formData.gender,
           "First Course": formData.firstCourseTitle,

@@ -18,7 +18,7 @@ const OurMission = () => {
             a highly skilled human resource in diversified IT domains and
             contribute in nation building towards a knowledge-based economy. In
             order to bring this vision, a comprehensive{" "}
-            <strong>DigiPAKISTAN National Skills Development Initaitive</strong>{" "}
+            <strong>DigiPAKISTAN National Skills Development Initiative</strong>{" "}
             has been designed which provides contemporary online training of{" "}
             <strong>
               Information Technology in Technical, Non-Technical &amp; High Tech

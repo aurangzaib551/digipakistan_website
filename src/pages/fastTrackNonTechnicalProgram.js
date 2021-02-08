@@ -205,9 +205,7 @@ const FastTrackNonTechnicalProgram = () => {
         </ButtonBase>
 
         <ButtonBase
-          onClick={() =>
-            go("/fastTrackNonTechnicalProgram/microsfoftOffice365")
-          }
+          onClick={() => go("/fastTrackNonTechnicalProgram/microsoftOffice365")}
           className="box mx-3 outline mt-5 "
         >
           <Paper

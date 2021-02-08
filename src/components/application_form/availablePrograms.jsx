@@ -413,7 +413,7 @@ const AvailablePrograms = ({
       )}
 
       {/* third Course */}
-      <FormControl fullWidth variant="standard">
+      <FormControl fullWidth variant="standard" className="mt-3">
         <Label htmlFor="thirdCourse">Third Course (Optional)</Label>
         <Select
           id="thirdCourse"

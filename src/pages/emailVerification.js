@@ -31,7 +31,7 @@ const EmailVerification = ({
       setTimeout(() => {
         clearAll();
         signOut(replace);
-      }, 45000);
+      }, 15000);
     }
   }, [verifyEmailMsg, clearAll, replace, signOut]);
 
@@ -79,21 +79,14 @@ const EmailVerification = ({
               We've sent an account activation email to you at{" "}
               <span className="fw-bold">{emailAddress}</span>, please check your
               inbox for an account activation link from DigiPAKISTAN.{" "}
-              <span className="fw-bold">Note:</span> If you don't see the email
-              in your inbox, check other email folders, like your junk, spam,
-              social, etc. If you find your email in spam / junk folders, please
-              mark it as Not Spam / Not Junk to move it to your inbox. Moreover,
-              if you still unable to find the activation email, you can
-              regenerate activation email yourself by click on regenerate
-              activation email button.
             </Alert>
             <div className="d-flex justify-content-center mt-3">
               <Button
-                onClick={handleVerifyMyEmail}
+                onClick={() => signOut(replace)}
                 variant="contained"
                 className="custom-button"
               >
-                Regenerate Email
+                Login Again
               </Button>
             </div>
           </>

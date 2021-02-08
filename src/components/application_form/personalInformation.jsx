@@ -74,6 +74,11 @@ const PersonalInformation = (props) => {
             fullWidth
             variant="standard"
             className="mt-3"
+            onInput={(e) => {
+              e.target.value = Math.max(0, e.target.value)
+                .toString()
+                .slice(0, 13);
+            }}
             aria-describedby="cnic"
           />
           <HelperText name="cnic" error>
@@ -84,37 +89,42 @@ const PersonalInformation = (props) => {
               {errors.cnic}
             </Alert>
           )}
-          <div className="d-flex justify-content-between mt-3 align-items-center h-100">
-            {/* <div className="d-flex border pt-2 side-no border-color rounded mb-sm-2 no">
-              <p className="mb-0 pe-2 pe-sm-3 pb-1 ms-sm-2">+92</p>
-            </div> */}
-            <div className=" w-100">
-              <Input
-                id="no"
-                name="mobileNumber"
-                value={formData.mobileNumber}
-                onChange={handleChange}
-                label="Phone Number *"
-                fullWidth
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">+92</InputAdornment>
-                  ),
-                }}
-                variant="standard"
-                placeholder="Phone number"
-                aria-describedby="no"
-              />
-              <HelperText name="no" error>
-                (Enter your phone # in the format e.g. 3001234567)
-              </HelperText>
-              {errors.mobileNumber && (
-                <Alert severity="error" variant="filled">
-                  {errors.mobileNumber}
-                </Alert>
-              )}
-            </div>
-          </div>
+
+          <Input
+            className="mt-3"
+            id="no"
+            name="mobileNumber"
+            value={formData.mobileNumber.slice(3)}
+            onChange={(event) =>
+              setFormData({
+                ...formData,
+                mobileNumber: `+92${event.target.value}`,
+              })
+            }
+            label="Phone Number *"
+            onInput={(e) => {
+              e.target.value = Math.max(0, e.target.value)
+                .toString()
+                .slice(0, 10);
+            }}
+            fullWidth
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">+92</InputAdornment>
+              ),
+            }}
+            variant="standard"
+            placeholder="Phone number"
+            aria-describedby="no"
+          />
+          <HelperText name="no" error>
+            (Enter your phone # in the format e.g. 3001234567)
+          </HelperText>
+          {errors.mobileNumber && (
+            <Alert severity="error" variant="filled">
+              {errors.mobileNumber}
+            </Alert>
+          )}
         </>
       )}
 
@@ -142,27 +152,6 @@ const PersonalInformation = (props) => {
               )}
             </div>
             <div className="col mt-3">
-              {/* <Input
-                name="countryCode"
-                label={isSmall ? "Code *" : "Country Code *"}
-                
-                fullWidth
-                variant="standard"
-                aria-describedby="countryCode"
-                select
-              >
-                {mobileCodes.allCountries.map((country, index) => {
-                  return (
-                    <MenuItem
-                      key={index}
-                      value={`+${country.dialCode}`}
-                      className="text-uppercase"
-                    >
-                      +{country.dialCode} &nbsp; &nbsp; {country.iso2}
-                    </MenuItem>
-                  );
-                })}
-              </Input> */}
               <PhoneInput
                 country={"sa"}
                 enableAreaCodes={true}
@@ -170,15 +159,18 @@ const PersonalInformation = (props) => {
                 inputStyle={{ width: "100%" }}
                 value={formData.overseasMobileNumber}
                 onChange={(number) =>
-                  setFormData({ ...formData, overseasMobileNumber: number })
+                  setFormData({
+                    ...formData,
+                    overseasMobileNumber: `+${number}`,
+                  })
                 }
               />
               <HelperText name="countryCode" className="text-nowrap" error>
                 (Enter your country code before number)
               </HelperText>
-              {errors.countryCode && (
+              {errors.overseasMobileNumber && (
                 <Alert severity="error" variant="filled">
-                  {errors.countryCode}
+                  {errors.overseasMobileNumber}
                 </Alert>
               )}
             </div>

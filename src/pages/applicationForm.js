@@ -1176,9 +1176,9 @@ const ApplicationForm = ({
     // Regular Expressions
     const charactersRegEx = /^[a-zA-Z. ]+$/;
     const cnicRegEx = /^[0-9]{13}$/;
-    const numberRegEx = /^[0-9]{10}$/;
+    const numberRegEx = /^[+0-9]{13}$/;
     const overseasCNICRegEx = /^[0-9]{1,}$/;
-    const overseasMobileNumberRegEx = /^[0-9]{7,}$/;
+    const overseasMobileNumberRegEx = /^[+0-9]{7,}$/;
 
     if (formData.fullName.trim() === "") {
       errors.fullName =
@@ -1246,15 +1246,15 @@ const ApplicationForm = ({
         errors.firstCourseName = "First course category mustn't be empty";
       }
 
-      if (formData.firstCourseTitle === formData.secondCourseTitle) {
-        errors.firstCourseTitle = "Courses  mustn't be same";
-      } else if (formData.firstCourseTitle === formData.thirdCourseTitle) {
-        errors.firstCourseTitle = "Courses mustn't be same";
+      if (formData.firstCourseName === formData.secondCourseName) {
+        errors.firstCourseName = "Course category  mustn't be same";
+      } else if (formData.firstCourseName === formData.thirdCourseName) {
+        errors.firstCourseTitle = "Course category mustn't be same";
       }
 
-      if (formData.secondCourseTitle !== "") {
-        if (formData.secondCourseTitle === formData.thirdCourseTitle) {
-          errors.firstCourseTitle = "Courses mustn't be same";
+      if (formData.secondCourseName !== "") {
+        if (formData.secondCourseName === formData.thirdCourseName) {
+          errors.firstCourseTitle = "Course category mustn't be same";
         }
       }
     }
@@ -1349,6 +1349,8 @@ const ApplicationForm = ({
     // Sending data to DB
     submitForm(formData, setBtnLoading, uid);
   };
+
+  console.log(formData);
 
   return (
     <>

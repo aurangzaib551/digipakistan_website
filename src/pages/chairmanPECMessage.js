@@ -35,7 +35,7 @@ const ChairmanPECMessage = () => {
         </p>
         <p className="text-justify">
           On the platform of <strong>Pakistan Engineering Council</strong>, I
-          make a call to all engineers to ensure their attachment with
+          make a call to all engineers to ensure their attachment with{" "}
           <strong>DigiPAKISTAN</strong> and start developing your skills in the
           IT programs offered by this initiative. You can earn more than{" "}
           <strong>$50</strong> a day using{" "}

@@ -37,7 +37,11 @@ const JoinDigiPAKISTAN = () => {
             &amp; earn profitable income and exciting incentives on achieving
             different targets.
           </p>
-          <Button variant="contained" className="custom-button">
+          <Button
+            href="https://marketing.digipakistan.org"
+            variant="contained"
+            className="custom-button"
+          >
             Start Earning
           </Button>
         </div>

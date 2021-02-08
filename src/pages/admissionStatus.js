@@ -104,7 +104,7 @@ const AdmissionStatus = ({
             before the due date.
           </p>
         ) : (
-          <p className="mb-0 h4 text-justify fw-bold">
+          <p className="mb-0 h4">
             Your application has been submitted successfully to the DigiPAKISTAN
             National Skills Development Program. You have to wait for 24hrs for
             application status. Admission Department will evaluate your
