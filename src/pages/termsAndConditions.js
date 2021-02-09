@@ -67,10 +67,11 @@ const TermsAndConditions = ({
           against particular candidates.
         </p>
         <p>
-          <span className="fw-bold">4)</span> Students at{" "}
-          <strong>DigiPAKISTAN</strong> have to follow all the rules and the
-          regulations otherwise the Organization have the right to take actions
-          against particular candidates.
+          <span className="fw-bold">4)</span> According to course completion
+          criteria, trainees will need to{" "}
+          <strong>secure 70% score to become eligible for Certificate.</strong>{" "}
+          Trainees Will get{" "}
+          <strong>Certificates after Completion of Course.</strong>
         </p>
         <p>
           <span className="fw-bold">5)</span> The candidate training duration
@@ -102,11 +103,11 @@ const TermsAndConditions = ({
         </p>
         <p>
           <span className="fw-bold">10)</span> No stipend will be paid to the
-          candidate
+          candidate.
         </p>
         <p>
           <span className="fw-bold">11)</span> You have to clear{" "}
-          <strong>Quizes, Assignments &amp; Exams</strong> for each course
+          <strong>Quizes, Assignments &amp; Exams</strong> for each course.
         </p>
 
         <div className="d-flex justify-content-center">

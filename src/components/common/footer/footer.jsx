@@ -35,7 +35,7 @@ const Footer = () => {
         </p>
         <div className="d-flex justify-content-center flex-wrap">
           <a
-            href="https://www.facebook.com/digipakistan.org"
+            href="https://www.facebook.com/digipakistan.official"
             target="_blank"
             rel="noreferrer"
             className="mx-3 icon-link pointer mt-3"
@@ -43,7 +43,7 @@ const Footer = () => {
             <FacebookIcon className="icon-footer" style={{ fontSize: 35 }} />
           </a>
           <a
-            href="https://www.instagram.com/invites/contact/?i=1nd00az19t5ph&utm_content=ktn9t9y"
+            href="https://www.instagram.com/digipakistan.official/"
             target="_blank"
             rel="noreferrer"
             className="mx-3 icon-link pointer mt-3"
@@ -51,7 +51,7 @@ const Footer = () => {
             <InstagramIcon className="icon-footer" style={{ fontSize: 35 }} />
           </a>
           <a
-            href="https://twitter.com/DigipakistanP"
+            href="https://twitter.com/DigiPAKISTAN_"
             target="_blank"
             rel="noreferrer"
             className="mx-3 icon-link pointer mt-3"
@@ -59,7 +59,7 @@ const Footer = () => {
             <TwitterIcon className="icon-footer" style={{ fontSize: 35 }} />
           </a>
           <a
-            href="https://www.linkedin.com/company/digipakistan"
+            href="https://www.linkedin.com/company/digipakistanofficial"
             target="_blank"
             rel="noreferrer"
             className="mx-3 icon-link pointer mt-3"
