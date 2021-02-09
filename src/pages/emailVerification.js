@@ -32,7 +32,7 @@ const EmailVerification = ({
       setTimeout(() => {
         clearAll();
         signOut(replace);
-      }, 15000);
+      }, 20000);
     }
   }, [verifyEmailMsg, clearAll, replace, signOut]);
 
