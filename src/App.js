@@ -307,19 +307,11 @@ const TermsAndConditions = lazy(() => import("./pages/termsAndConditions"));
 const ApplicationForm = lazy(() => import("./pages/applicationForm"));
 const EmailVerification = lazy(() => import("./pages/emailVerification"));
 const AdmissionStatus = lazy(() => import("./pages/admissionStatus"));
-const GenerateChallan = lazy(() =>
-  import("./components/generate_challan/generateChallan")
-);
-const BankChallan = lazy(() => import("./components/bank_challan/bankChallan"));
-const ForgotPassword = lazy(() =>
-  import("./components/forgot_password/forgotPassword")
-);
-const OnlineBanking = lazy(() =>
-  import("./components/online_banking/onlineBanking")
-);
-const EServicesBanking = lazy(() =>
-  import("./components/eservices_banking/eservicesBanking")
-);
+const GenerateChallan = lazy(() => import("./pages/generateChallan"));
+const BankChallan = lazy(() => import("./pages/bankChallan"));
+const ForgotPassword = lazy(() => import("./pages/forgotPassword"));
+const OnlineBanking = lazy(() => import("./pages/onlineBanking"));
+const EServicesBanking = lazy(() => import("./pages/eservicesBanking"));
 
 const App = ({ signOut, uid }) => {
   // State

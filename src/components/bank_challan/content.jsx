@@ -39,7 +39,7 @@ Font.register({
   ],
 });
 
-const BankChallan = ({
+const Content = ({
   uid,
   emailVerified,
   applicationSubmitted,
@@ -47,11 +47,10 @@ const BankChallan = ({
   data,
   profile,
 }) => {
+  console.log(data);
   // State
   const [enrolledCourses, setEnrolledCourses] = useState([]);
   const [showPDF, setShowPDF] = useState(false);
-
-  console.log(data);
 
   useLayoutEffect(() => {
     const enrollment = [];
@@ -220,4 +219,4 @@ const mapStateToProps = (state) => {
 export default compose(
   firestoreConnect([{ collection: "Applications" }]),
   connect(mapStateToProps)
-)(BankChallan);
+)(Content);

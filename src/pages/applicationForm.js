@@ -1350,8 +1350,6 @@ const ApplicationForm = ({
     submitForm(formData, setBtnLoading, uid);
   };
 
-  console.log(formData);
-
   return (
     <>
       <Container className="mt pt-4 application-form">
