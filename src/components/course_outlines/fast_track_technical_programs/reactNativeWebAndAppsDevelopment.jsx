@@ -54,34 +54,42 @@ const ReactNativeWebAndAppsDevelopment = ({ signOut }) => {
               <div className="my-3">
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
-                  React Native enables you to build iOS , Web and Android
-                  appliaction and benefit from code reuse cross platform. React
-                  Native is an exciting new language backed by Facebook that
-                  allows you to create a native mobile experience on Android,
-                  Web and iOS devices through a common coding experience. Apps
-                  can be developed fast using popular free text editors and
-                  testing is fast for iOS, Web and Android - rapid mobile
-                  development.
+                  <strong>React Native</strong> enables you to build{" "}
+                  <strong>iOS , Web and Android appliaction</strong> and benefit
+                  from code reuse cross platform. <strong>React Native</strong>{" "}
+                  is an exciting new language backed by Facebook that allows you
+                  to create a native mobile experience on{" "}
+                  <strong>Android, Web and iOS</strong> devices through a common
+                  coding experience. Apps can be developed fast using popular
+                  free text editors and testing is fast for iOS, Web and Android
+                  - rapid mobile development.
                 </p>
 
                 <p className="text-justify">
                   This course teaches developers at any level to get started
-                  with React Native and start coding. You will build cross
-                  platform applications for Android, Web and iOS in React
-                  Native! This is a hands-on training course. Every Module
-                  includes a hands-on project. You’ll need to successfully
-                  finish the project(s) to complete the Specialization and earn
-                  your certificate.
+                  with <strong>React Native</strong> and start coding. You will
+                  build{" "}
+                  <strong>
+                    cross platform applications for Android, Web and iOS in
+                    React Native!
+                  </strong>{" "}
+                  This is a <strong>hands-on</strong> training course. Every
+                  Module includes a <strong>hands-on</strong> project. You’ll
+                  need to successfully finish the project(s) to complete the
+                  Specialization and earn your certificate.
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (

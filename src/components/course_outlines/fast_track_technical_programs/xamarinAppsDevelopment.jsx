@@ -54,26 +54,35 @@ const XamarinAppsDevelopment = ({ signOut }) => {
               <div className="my-3">
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
-                  Xamarin is an open-source, C# based set of tools for writing
-                  Android, iOS and Windows apps with native user interfaces and
-                  a shared code base across all platforms. It allows developers
-                  to use the same IDE, language, and APIs everywhere -- anything
-                  that can be done in Objective-C, Swift, or Java can be done in
-                  C# with Xamarin. Xamarin was bought by Microsoft in 2016 and
-                  is included with Visual Studio. In this instructor-led, live
-                  training, participants learn key aspects of Xamarin as they
-                  take on the development of their own set of mobile
-                  applications for Android, iOS and Windows.
+                  <strong>Xamarin</strong> is an open-source,{" "}
+                  <strong>C#</strong> based set of tools for writing{" "}
+                  <strong>Android, iOS and Windows apps</strong> with native
+                  user interfaces and a shared code base across all platforms.
+                  It allows developers to use the same{" "}
+                  <strong>IDE, language, and APIs</strong> everywhere --
+                  anything that can be done in{" "}
+                  <strong>Objective-C, Swift, or Java</strong> can be done in{" "}
+                  <strong>C#</strong> with Xamarin. <strong>Xamarin</strong> was
+                  bought by Microsoft in 2016 and is included with Visual
+                  Studio. In this instructor-led, live training, participants
+                  learn key aspects of Xamarin as they take on the development
+                  of their own set of{" "}
+                  <strong>
+                    mobile applications for Android, iOS and Windows.
+                  </strong>
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (

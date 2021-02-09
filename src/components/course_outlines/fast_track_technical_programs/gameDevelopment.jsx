@@ -55,31 +55,39 @@ const GameDevelopment = ({ signOut }) => {
                   The purpose of the course is to teach students about the
                   overall process of game development. Computer games can be
                   played today on a number of platforms. The course will equip
-                  students with the latest techniques using Unity and
-                  accompanying tools to develop quality games for PC, Mobile and
-                  Console platform.
+                  students with the{" "}
+                  <strong>
+                    latest techniques using Unity and accompanying tools to
+                    develop quality games for PC, Mobile and Console platform.
+                  </strong>
                 </p>
 
                 <p className="text-justify">
                   In the era of information technology, mobile devices are the
-                  future. Whether it’s a mobile game, android game or a
-                  playstation, video games are becoming more popular in our
-                  life. Creative people's brains work differently, they develop
-                  games for providing quality entertainment to the public.
-                  Nowadays in Pakistan, people can be seen playing games on
-                  mobile or android devices in the leisure time. It has been
-                  demonstrated that cultures and societies in a changing world
-                  are affected by video and mobile games.
+                  future. Whether it’s a{" "}
+                  <strong>
+                    mobile game, android game or a playstation, video games are
+                    becoming more popular in our life.
+                  </strong>{" "}
+                  Creative people's brains work differently, they develop games
+                  for providing quality entertainment to the public. Nowadays in
+                  Pakistan, people can be seen playing games on mobile or
+                  android devices in the leisure time. It has been demonstrated
+                  that cultures and societies in a changing world are affected
+                  by video and mobile games.
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
