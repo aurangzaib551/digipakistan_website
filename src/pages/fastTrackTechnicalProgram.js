@@ -6,6 +6,7 @@ import Copyright from "../components/common/copyright/copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const FastTrackTechnicalProgram = ({ signOut }) => {
   useEffect(() => {
@@ -23,6 +24,9 @@ const FastTrackTechnicalProgram = ({ signOut }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Fast Track Technical Programs</title>
+      </Helmet>
       <div className="all-programs-bg mt d-flex flex-column justify-content-center px-lg-5">
         <h2 className="fw-bold text-white text-center text-lg-start">
           Fast Track Technical Programs (3 Months)

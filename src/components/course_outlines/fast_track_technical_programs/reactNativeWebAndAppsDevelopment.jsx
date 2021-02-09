@@ -9,6 +9,7 @@ import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../../../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const ReactNativeWebAndAppsDevelopment = ({ signOut }) => {
   useEffect(() => {
@@ -31,6 +32,9 @@ const ReactNativeWebAndAppsDevelopment = ({ signOut }) => {
   });
   return (
     <>
+      <Helmet>
+        <title>React Native Web &amp; Apps Development</title>
+      </Helmet>
       <Container className="mt overflow-hidden pt-4 course-outlines mb-5 pb-5">
         <h1 className="text-center fw-bold mx-3">
           React Native Web &amp; Apps Development

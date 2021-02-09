@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const AboutUs = ({ signOut }) => {
   useEffect(() => {
@@ -10,6 +11,9 @@ const AboutUs = ({ signOut }) => {
   }, [signOut]);
   return (
     <>
+      <Helmet>
+        <title>About Us</title>
+      </Helmet>
       <Container className="mt pt-4 mb-5">
         <h1 className="fw-bold text-center mx-3">
           ڈیجی پاکستان قومی ہنر مند ترقیاتی پروگرام

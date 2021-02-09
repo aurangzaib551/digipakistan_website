@@ -9,6 +9,7 @@ import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../../../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const DigitalForensicCyberSecurity = ({ signOut }) => {
   useEffect(() => {
@@ -30,6 +31,9 @@ const DigitalForensicCyberSecurity = ({ signOut }) => {
   });
   return (
     <>
+      <Helmet>
+        <title>Digital Forensic Cyber Security</title>
+      </Helmet>
       <Container className="mt overflow-hidden pt-4 course-outlines mb-5 pb-5">
         <h1 className="text-center fw-bold mx-3">
           Digital Forensic Cyber Security

@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 import Loader from "../loader/loader";
 import { Redirect, useHistory } from "react-router-dom";
 import { statusOfAdmission } from "../store/actions/applicationFormActions";
+import { Helmet } from "react-helmet";
 
 const AdmissionStatus = ({
   status,
@@ -94,78 +95,85 @@ const AdmissionStatus = ({
   };
 
   return profile.fullName ? (
-    <Container className="mt pt-4">
-      <Alert severity="success" variant={status ? "filled" : "standard"}>
-        {status ? (
-          <p className="mb-0">
-            Congratulations, Your application has been approved successfully
-            &amp; we are happy to inform that you are eligible for the program.
-            Follow the further Instructions to complete your admission process
-            before the due date.
-          </p>
-        ) : (
-          <p className="mb-0 h4">
-            Your application has been submitted successfully to the DigiPAKISTAN
-            National Skills Development Program. You have to wait for 24hrs for
-            application status. Admission Department will evaluate your
-            application &amp; update the Applicant Admission Status within next
-            24hrs to this portal. Login again after 24hrs, in case your
-            application approved you have to proceed further &amp; if not
-            eligible try next time.
-          </p>
-        )}
-      </Alert>
-      <div className="d-flex mt-5">
-        <h2 className="fw-bold">
-          Application Status:{" "}
-          <span className="fw-normal">
-            {status ? "Approved" : "Pending..."}
-          </span>
-        </h2>
-        {status ? (
-          <ApprovedIcon
-            className="text-success ms-2"
-            style={{ fontSize: 35 }}
-          />
-        ) : (
-          <NotApprovedIcon
-            className="text-danger ms-2"
-            style={{ fontSize: 35 }}
-          />
-        )}
-      </div>
-
-      <h2 className="fw-bold">
-        Name: <span className="fw-normal">{profile.fullName}</span>
-      </h2>
-
-      <h2 className="fw-bold">
-        Father Name: <span className="fw-normal">{profile.fatherName}</span>
-      </h2>
-
-      <h2 className="fw-bold">
-        Roll #: <span className="fw-normal">{profile.rollNumber}</span>
-      </h2>
-
-      {status && (
-        <>
+    <>
+      <Helmet>
+        <title>Admission Status</title>
+      </Helmet>
+      <Container className="mt pt-4">
+        <Alert severity="success" variant={status ? "filled" : "standard"}>
+          {status ? (
+            <p className="mb-0">
+              Congratulations, Your application has been approved successfully
+              &amp; we are happy to inform that you are eligible for the
+              program. Follow the further Instructions to complete your
+              admission process before the due date.
+            </p>
+          ) : (
+            <p className="mb-0 h4">
+              Your application has been submitted successfully to the
+              DigiPAKISTAN National Skills Development Program. You have to wait
+              for 24hrs for application status. Admission Department will
+              evaluate your application &amp; update the Applicant Admission
+              Status within next 24hrs to this portal. Login again after 24hrs,
+              in case your application approved you have to proceed further
+              &amp; if not eligible try next time.
+            </p>
+          )}
+        </Alert>
+        <div className="d-flex mt-5">
           <h2 className="fw-bold">
-            Complete Further Process before Due Date:{" "}
-            <span className="fw-normal">{profile.lastDateOfFeeSubmission}</span>
+            Application Status:{" "}
+            <span className="fw-normal">
+              {status ? "Approved" : "Pending..."}
+            </span>
           </h2>
+          {status ? (
+            <ApprovedIcon
+              className="text-success ms-2"
+              style={{ fontSize: 35 }}
+            />
+          ) : (
+            <NotApprovedIcon
+              className="text-danger ms-2"
+              style={{ fontSize: 35 }}
+            />
+          )}
+        </div>
 
-          <div className="d-flex justify-content-center">
-            <Button
-              onClick={() => go("/apply-now/generateChallan")}
-              variant="contained"
-              className="custom-button mt-3"
-            >
-              Next
-            </Button>
-          </div>
-        </>
-      )}
-    </Container>
+        <h2 className="fw-bold">
+          Name: <span className="fw-normal">{profile.fullName}</span>
+        </h2>
+
+        <h2 className="fw-bold">
+          Father Name: <span className="fw-normal">{profile.fatherName}</span>
+        </h2>
+
+        <h2 className="fw-bold">
+          Roll #: <span className="fw-normal">{profile.rollNumber}</span>
+        </h2>
+
+        {status && (
+          <>
+            <h2 className="fw-bold">
+              Complete Further Process before Due Date:{" "}
+              <span className="fw-normal">
+                {profile.lastDateOfFeeSubmission}
+              </span>
+            </h2>
+
+            <div className="d-flex justify-content-center">
+              <Button
+                onClick={() => go("/apply-now/generateChallan")}
+                variant="contained"
+                className="custom-button mt-3"
+              >
+                Next
+              </Button>
+            </div>
+          </>
+        )}
+      </Container>
+    </>
   ) : (
     <Loader />
   );

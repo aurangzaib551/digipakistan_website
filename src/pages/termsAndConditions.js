@@ -6,6 +6,7 @@ import Copyright from "../components/common/copyright/copyright";
 import { connect } from "react-redux";
 import { termsAndConditions } from "../store/actions/applicationFormActions";
 import Loader from "../loader/loader";
+import { Helmet } from "react-helmet";
 
 const TermsAndConditions = ({
   uid,
@@ -39,29 +40,37 @@ const TermsAndConditions = ({
   };
   return profile.fullName ? (
     <>
+      <Helmet>
+        <title>Terms &amp; Conditions</title>
+      </Helmet>
       <Container className="mt pt-4 mb-5 pb-5">
         <h1 className="text-center fw-bold mx-3">Terms &amp; Conditions</h1>
         <p>
-          <span className="fw-bold">1)</span> If any forgery / discrepancy with
-          respect to any information if found otherwise at any stage will result
-          in cancellation of the application &amp; the fee will be
-          non-refundable.
+          <span className="fw-bold">1)</span> If any{" "}
+          <strong>forgery / discrepancy</strong> with respect to any information
+          if found otherwise at any stage will result in{" "}
+          <strong>
+            cancellation of the application &amp; the fee will be
+            non-refundable.
+          </strong>
         </p>
         <p>
-          <span className="fw-bold">2)</span> The DigiPAKISTAN Program is not
-          offering any employment and also not associated with any future
-          employment opportunity. The program aims only to provide training to
-          the students.
+          <span className="fw-bold">2)</span> The{" "}
+          <strong>DigiPAKISTAN Program</strong> is not offering any employment
+          and also not associated with any future employment opportunity. The
+          program aims only to provide training to the students.
         </p>
         <p>
-          <span className="fw-bold">3)</span> Students at DigiPAKISTAN have to
-          follow all the rules and the regulations otherwise the Organization
-          have the right to take actions against particular candidates.
+          <span className="fw-bold">3)</span> Students at{" "}
+          <strong>DigiPAKISTAN</strong> have to follow all the rules and the
+          regulations otherwise the Organization have the right to take actions
+          against particular candidates.
         </p>
         <p>
-          <span className="fw-bold">4)</span> Students at DigiPAKISTAN have to
-          follow all the rules and the regulations otherwise the Organization
-          have the right to take actions against particular candidates.
+          <span className="fw-bold">4)</span> Students at{" "}
+          <strong>DigiPAKISTAN</strong> have to follow all the rules and the
+          regulations otherwise the Organization have the right to take actions
+          against particular candidates.
         </p>
         <p>
           <span className="fw-bold">5)</span> The candidate training duration
@@ -71,31 +80,33 @@ const TermsAndConditions = ({
         </p>
         <p>
           <span className="fw-bold">6)</span> The selected candidate provided
-          all information should be correct to the best of knowledge of the
-          applicant and if found otherwise at any stage shall result in the
-          cancellation of the application.
+          all information should be <strong>correct</strong> to the best of
+          knowledge of the applicant and if found otherwise at any stage shall
+          result in the <strong>cancellation of the application.</strong>
         </p>
         <p>
-          <span className="fw-bold">7)</span> Selection / Rejection of a
-          candidate is a purify decision by organization.
+          <span className="fw-bold">7)</span>{" "}
+          <strong>Selection / Rejection</strong> of a candidate is a purify
+          decision by organization.
         </p>
         <p>
           <span className="fw-bold">8)</span> Registration charges will be
-          non-refundable. Students will have to pay only minor registration
-          charges before the due date for confirmed seat into the program.
+          <strong>non-refundable.</strong> Students will have to pay only minor
+          registration charges before the due date for confirmed seat into the
+          program.
         </p>
         <p>
           <span className="fw-bold">9)</span> Any decision by the management
-          regarding training, posting, termination is not challengeable in any
-          court / judiciary
+          regarding training, posting, termination is{" "}
+          <strong>not challengeable in any court / judiciary.</strong>
         </p>
         <p>
           <span className="fw-bold">10)</span> No stipend will be paid to the
           candidate
         </p>
         <p>
-          <span className="fw-bold">11)</span> You have to clear Quizes,
-          Assignments &amp; Exams for each course
+          <span className="fw-bold">11)</span> You have to clear{" "}
+          <strong>Quizes, Assignments &amp; Exams</strong> for each course
         </p>
 
         <div className="d-flex justify-content-center">

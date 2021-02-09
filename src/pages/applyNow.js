@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const ApplyNow = ({ signOut }) => {
   useEffect(() => {
@@ -26,6 +27,9 @@ const ApplyNow = ({ signOut }) => {
   };
   return (
     <>
+      <Helmet>
+        <title>Apply Now</title>
+      </Helmet>
       <div className="apply-now mt d-flex justify-content-center align-items-center">
         <Container
           component={Paper}

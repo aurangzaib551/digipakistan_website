@@ -9,6 +9,7 @@ import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../../../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const SocialMediaMarketing = ({ signOut }) => {
   useEffect(() => {
@@ -31,6 +32,9 @@ const SocialMediaMarketing = ({ signOut }) => {
   });
   return (
     <>
+      <Helmet>
+        <title>Social Media Marketing (SMM)</title>
+      </Helmet>
       <Container className="mt overflow-hidden pt-4 course-outlines mb-5 pb-5">
         <h1 className="text-center fw-bold mx-3">
           Social Media Marketing (SMM)

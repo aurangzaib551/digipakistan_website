@@ -14,6 +14,7 @@ import YoutubeIcon from "@material-ui/icons/YouTube";
 import Alert from "@material-ui/lab/Alert";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const ContactUs = ({ signOut }) => {
   useEffect(() => {
@@ -104,6 +105,9 @@ const ContactUs = ({ signOut }) => {
   };
   return (
     <>
+      <Helmet>
+        <title>Contact Us</title>
+      </Helmet>
       <div className="contact-us d-flex py-5 justify-content-center align-items-center mt">
         <Container className="bg-white rounded px-0 mx-3 py-3 py-lg-4">
           <div className="row g-0">

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Content from "../components/bank_challan/content";
+import { Helmet } from "react-helmet";
 
 const BankChallan = ({ uid, emailVerified, applicationSubmitted, status }) => {
   // User is logged in or not
@@ -15,6 +16,9 @@ const BankChallan = ({ uid, emailVerified, applicationSubmitted, status }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Bank Challan</title>
+      </Helmet>
       <Content />
     </>
   );

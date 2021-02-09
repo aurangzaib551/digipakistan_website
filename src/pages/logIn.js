@@ -9,6 +9,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";
 import { logIn, clearAll } from "../store/actions/authActions";
 import ToastServive from "react-material-toast";
+import { Helmet } from "react-helmet";
 
 const toast = ToastServive.new({
   place: "topRight",
@@ -97,6 +98,9 @@ const LogIn = ({ logIn, clearAll, msg }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Log In</title>
+      </Helmet>
       <div className="signup mt d-flex justify-content-center align-items-center">
         <Container className="d-flex flex-column justify-content-center align-items-center">
           <img

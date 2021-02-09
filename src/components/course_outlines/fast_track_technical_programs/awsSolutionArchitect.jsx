@@ -9,6 +9,7 @@ import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../../../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const AWSSolutionArchitect = ({ signOut }) => {
   useEffect(() => {
@@ -31,6 +32,9 @@ const AWSSolutionArchitect = ({ signOut }) => {
   });
   return (
     <>
+      <Helmet>
+        <title>AWS Solutions Architect</title>
+      </Helmet>
       <Container className="mt overflow-hidden pt-4 course-outlines mb-5 pb-5">
         <h1 className="text-center fw-bold mx-3">AWS Solutions Architect</h1>
         <div className="row g-4 mb-5 pb-5">

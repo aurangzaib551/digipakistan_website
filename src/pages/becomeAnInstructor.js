@@ -14,6 +14,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import firebase from "../config/fbConfig";
 import { signOut } from "../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const BecomeAnInstructor = ({
   uploadInstructorCV,
@@ -189,6 +190,9 @@ const BecomeAnInstructor = ({
 
   return disable ? (
     <>
+      <Helmet>
+        <title>Become An Instructor</title>
+      </Helmet>
       <Container className="mt py-4 become-an-instructor">
         <h1 className="text-center mx-3 fw-bold">Become An Instructor</h1>
 

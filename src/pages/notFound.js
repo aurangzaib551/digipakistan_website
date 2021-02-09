@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const NotFound = () => {
   //   Object Destructuring
@@ -8,6 +9,9 @@ const NotFound = () => {
 
   return (
     <>
+      <Helmet>
+        <title>404 | Not Found</title>
+      </Helmet>
       <div
         className="d-flex flex-column align-items-center justify-content-center"
         style={{ height: "100vh" }}

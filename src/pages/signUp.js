@@ -9,6 +9,7 @@ import { signUp, clearAll } from "../store/actions/authActions";
 import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ToastServive from "react-material-toast";
+import { Helmet } from "react-helmet";
 
 const toast = ToastServive.new({
   place: "topRight",
@@ -110,6 +111,9 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Sign Up</title>
+      </Helmet>
       <div className="signup mt d-flex justify-content-center align-items-center">
         <Container className="d-flex flex-column justify-content-center align-items-center">
           <img

@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const AdvisoryBody = ({ signOut }) => {
   useEffect(() => {
@@ -10,6 +11,9 @@ const AdvisoryBody = ({ signOut }) => {
   }, [signOut]);
   return (
     <>
+      <Helmet>
+        <title>Advisory Body</title>
+      </Helmet>
       <Container className="mt pt-4">
         <h1 className="text-center fw-bold mx-3">Advisory Body</h1>
 

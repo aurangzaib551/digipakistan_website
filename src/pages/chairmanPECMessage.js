@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const ChairmanPECMessage = ({ signOut }) => {
   useEffect(() => {
@@ -10,6 +11,9 @@ const ChairmanPECMessage = ({ signOut }) => {
   }, [signOut]);
   return (
     <>
+      <Helmet>
+        <title>Chairman PEC</title>
+      </Helmet>
       <Container className="mt provincial-minister pb-5">
         <div className="d-flex flex-column align-items-center pt-4">
           <img

@@ -14,6 +14,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Alert from "@material-ui/lab/Alert";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import { Helmet } from "react-helmet";
 
 const ApplicationForm = ({
   uid,
@@ -1352,6 +1353,9 @@ const ApplicationForm = ({
 
   return (
     <>
+      <Helmet>
+        <title>Application Form</title>
+      </Helmet>
       <Container className="mt pt-4 application-form">
         <h1 className="text-center fw-light display-4">
           Digi<span className="fw-bold">PAKISTAN</span> Application Form

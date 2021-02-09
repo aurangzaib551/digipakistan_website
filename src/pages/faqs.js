@@ -5,6 +5,7 @@ import Copyright from "../components/common/copyright/copyright";
 import Help from "../components/faqs/help";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const FAQs = ({ signOut }) => {
   useEffect(() => {
@@ -12,6 +13,9 @@ const FAQs = ({ signOut }) => {
   }, [signOut]);
   return (
     <>
+      <Helmet>
+        <title>FAQ's</title>
+      </Helmet>
       <Banner />
       <Help />
       <QuestionsAndAnswers />

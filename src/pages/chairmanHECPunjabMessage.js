@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const ChairmanHECPunjabMessage = ({ signOut }) => {
   useEffect(() => {
@@ -10,6 +11,9 @@ const ChairmanHECPunjabMessage = ({ signOut }) => {
   }, [signOut]);
   return (
     <>
+      <Helmet>
+        <title>Chairman HEC Punjab</title>
+      </Helmet>
       <Container className="mt provincial-minister">
         <div className="d-flex flex-column align-items-center pt-4">
           <img

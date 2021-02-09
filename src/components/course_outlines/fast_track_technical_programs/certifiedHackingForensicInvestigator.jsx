@@ -9,6 +9,7 @@ import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../../../store/actions/authActions";
+import { Helmet } from "react-helmet";
 
 const CertifiedHackingForensicInvestigator = ({ signOut }) => {
   useEffect(() => {
@@ -31,6 +32,9 @@ const CertifiedHackingForensicInvestigator = ({ signOut }) => {
   });
   return (
     <>
+      <Helmet>
+        <title>Certified Hacking Forensic Investigator (CHFI)</title>
+      </Helmet>
       <Container className="mt overflow-hidden pt-4 course-outlines mb-5 pb-5">
         <h1 className="text-center fw-bold mx-3">
           Certified Hacking Forensic Investigator (CHFI)

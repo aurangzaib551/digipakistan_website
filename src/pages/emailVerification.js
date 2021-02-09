@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import { verifyEmail, clearAll, signOut } from "../store/actions/authActions";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { Helmet } from "react-helmet";
 
 const EmailVerification = ({
   uid,
@@ -50,6 +51,9 @@ const EmailVerification = ({
 
   return (
     <>
+      <Helmet>
+        <title>Email Verification</title>
+      </Helmet>
       <Container className="mt pt-4 email-verification d-flex flex-column align-items-center justify-content-center">
         <MailIcon className="icon" />
         <h1 className="fw-bold mx-3 text-center">Hi {profile.fullName}</h1>

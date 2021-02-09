@@ -6,7 +6,7 @@ import Copyright from "../components/common/copyright/copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
-
+import { Helmet } from "react-helmet";
 const AssociateCertificationProgram = ({ signOut }) => {
   useEffect(() => {
     signOut();
@@ -22,6 +22,9 @@ const AssociateCertificationProgram = ({ signOut }) => {
   };
   return (
     <>
+      <Helmet>
+        <title>Associate Certification Programs</title>
+      </Helmet>
       <div className="all-programs-bg mt d-flex flex-column justify-content-center px-lg-5">
         <h2 className="fw-bold text-white text-center text-lg-start">
           Associate Certification Programs (6 Months)

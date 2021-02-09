@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { clearAll, forgotPassword } from "../store/actions/authActions";
 import ToastServive from "react-material-toast";
 import Alert from "@material-ui/lab/Alert";
+import { Helmet } from "react-helmet";
 
 const toast = ToastServive.new({
   place: "topRight",
@@ -71,43 +72,48 @@ const ForgotPassword = ({ forgotPassword, msg, clearAll }) => {
   }, [msg, clearAll, emailAddress]);
 
   return (
-    <Container className="mt signup d-flex flex-column justify-content-center align-items-center">
-      <div className="d-flex justify-content-center">
-        <img
-          src="https://i.ibb.co/LYC7rpt/logoPNG.png"
-          alt="DigiPAKISTAN"
-          width="200"
-          height="200"
-        />
-      </div>
-      <form onSubmit={handleSubmit} className="form d-flex flex-column">
-        <Input
-          id="forgotPassword"
-          value={emailAddress}
-          variant="standard"
-          onChange={(e) => setEmailAddress(e.target.value)}
-          label="Email Address *"
-        />
-        {errors.emailAddress && (
-          <Alert severity="error" variant="filled">
-            {errors.emailAddress}
-          </Alert>
-        )}
-        <Button
-          type="submit"
-          disabled={btnLoading}
-          variant="contained"
-          className="custom-button mt-3"
-        >
-          {btnLoading && <CircularProgress className="loader" />}
-          {btnLoading ? (
-            <span className="ms-3">Resetting Password...</span>
-          ) : (
-            "Reset Password"
+    <>
+      <Helmet>
+        <title>Forgot Password</title>
+      </Helmet>
+      <Container className="mt signup d-flex flex-column justify-content-center align-items-center">
+        <div className="d-flex justify-content-center">
+          <img
+            src="https://i.ibb.co/LYC7rpt/logoPNG.png"
+            alt="DigiPAKISTAN"
+            width="200"
+            height="200"
+          />
+        </div>
+        <form onSubmit={handleSubmit} className="form d-flex flex-column">
+          <Input
+            id="forgotPassword"
+            value={emailAddress}
+            variant="standard"
+            onChange={(e) => setEmailAddress(e.target.value)}
+            label="Email Address *"
+          />
+          {errors.emailAddress && (
+            <Alert severity="error" variant="filled">
+              {errors.emailAddress}
+            </Alert>
           )}
-        </Button>
-      </form>
-    </Container>
+          <Button
+            type="submit"
+            disabled={btnLoading}
+            variant="contained"
+            className="custom-button mt-3"
+          >
+            {btnLoading && <CircularProgress className="loader" />}
+            {btnLoading ? (
+              <span className="ms-3">Resetting Password...</span>
+            ) : (
+              "Reset Password"
+            )}
+          </Button>
+        </form>
+      </Container>
+    </>
   );
 };
 
