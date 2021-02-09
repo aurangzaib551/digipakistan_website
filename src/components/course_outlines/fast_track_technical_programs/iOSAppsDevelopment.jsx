@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const IOSAppsDevelopment = () => {
+const IOSAppsDevelopment = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -47,11 +53,16 @@ const IOSAppsDevelopment = () => {
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
                   This program is intended for anyone who wants to learn how to
-                  develop Apps using Swift and iOS. you will learn topics
-                  beginning with the absolute basics and ending with selling
-                  your apps on the app store. This program provides the skills
-                  you'll need to advance your programming career and seek
-                  employment in Swift and iOS application development.
+                  develop Apps using <strong>Swift and iOS.</strong> You will{" "}
+                  <strong>
+                    learn topics beginning with the absolute basics
+                  </strong>{" "}
+                  and ending with{" "}
+                  <strong>selling your apps on the app store.</strong> This
+                  program provides the skills you'll need to{" "}
+                  <strong>advance your programming career</strong> and seek
+                  employment in{" "}
+                  <strong>Swift and iOS application development.</strong>
                 </p>
 
                 <p className="text-justify">
@@ -62,23 +73,31 @@ const IOSAppsDevelopment = () => {
                 </p>
 
                 <p className="text-justify">
-                  By the end of this Professional Certificate program, you will
-                  have completed several projects showcasing your proficiency in
-                  Swift 5 and iOS programming, and you will have developed the
-                  skills necessary to begin a career as a Swift and/or iOS
-                  application developer. You will also be able to share evidence
-                  of your success with your professional network and potential
-                  employers.
+                  By the end of this{" "}
+                  <strong>Professional Certificate program,</strong> you will
+                  have completed several <strong>projects</strong> showcasing
+                  your proficiency in{" "}
+                  <strong>Swift 5 and iOS programming,</strong> and you will
+                  have developed the skills necessary to{" "}
+                  <strong>
+                    begin a career as a Swift and / or iOS application
+                    developer.
+                  </strong>{" "}
+                  You will also be able to share evidence of your success with
+                  your professional network and potential employers.
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -148,4 +167,10 @@ const IOSAppsDevelopment = () => {
   );
 };
 
-export default IOSAppsDevelopment;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(IOSAppsDevelopment);

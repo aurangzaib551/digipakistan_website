@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const ASPDotNETWebApplications = () => {
+const ASPDotNETWebApplications = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -46,26 +52,39 @@ const ASPDotNETWebApplications = () => {
               <div className="my-3">
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
-                  ASP.NET is a platform for building dynamic web sites that
-                  address a wide range of business needs. This extensive project
-                  driven course covers n-tier web application development using
-                  Microsoft .NET Framework / .NET Core, Visual Studio and SQL
-                  Server. It includes object oriented programming using C#, web
-                  development using HTML5, CSS3 and Bootstrap 4; Interactive and
-                  rich UI development using JavaScript, jQuery and jQuery UI;
-                  Server side programming using ASP .NET Core MVC, Web API and
-                  C#; Database programming using ADO .NET Entity Framework, LINQ
-                  and SQL Server 2017.
+                  <strong>ASP.NET</strong> is a platform for building dynamic
+                  web sites that address a wide range of business needs. This
+                  extensive project driven course covers n-tier web application
+                  development using{" "}
+                  <strong>
+                    Microsoft .NET Framework / .NET Core, Visual Studio and SQL
+                    Server.
+                  </strong>{" "}
+                  It includes{" "}
+                  <strong>
+                    object oriented programming using C#, web development using
+                    HTML5, CSS3 and Bootstrap 4;
+                  </strong>{" "}
+                  Interactive and rich UI development using{" "}
+                  <strong>JavaScript, jQuery and jQuery UI;</strong> Server side
+                  programming using{" "}
+                  <strong>
+                    ASP .NET Core MVC, Web API and C#; Database programming
+                    using ADO .NET Entity Framework, LINQ and SQL Server 2017.
+                  </strong>
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -131,4 +150,10 @@ const ASPDotNETWebApplications = () => {
   );
 };
 
-export default ASPDotNETWebApplications;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ASPDotNETWebApplications);

@@ -30,8 +30,11 @@ const Menus = ({ firstLoad }) => {
         >
           Available Programs <AngleDownIcon className="angle-down" />
           <ul className="sub-menus list-unstyled rounded mb-0 rounded border">
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <span onClick={() => push("/fastTrackTechnicalProgram")}>
+            <li className="sub-menus-li rounded text-nowrap">
+              <span
+                className="ps-3 pe-5 py-2 d-block"
+                onClick={() => push("/fastTrackTechnicalProgram")}
+              >
                 Fast Track Technical Programs{" "}
                 <AngleRightIcon className="angle-right" />
               </span>
@@ -286,8 +289,11 @@ const Menus = ({ firstLoad }) => {
                 </li>
               </ul>
             </li>
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <span onClick={() => push("/fastTrackNonTechnicalProgram")}>
+            <li className="sub-menus-li rounded text-nowrap">
+              <span
+                className="ps-3 pe-5 py-2 d-block"
+                onClick={() => push("/fastTrackNonTechnicalProgram")}
+              >
                 Fast Track Non-Technical Programs
                 <AngleRightIcon className="angle-right" />
               </span>
@@ -414,11 +420,14 @@ const Menus = ({ firstLoad }) => {
                 </li>
               </ul>
             </li>
-            <li className="ps-3 pe-5 sub-menus-li rounded text-nowrap">
-              <span onClick={() => push("/associateCertificationProgram")}>
+            <li className="sub-menus-li rounded text-nowrap">
+              <span
+                className="ps-3 pe-5 py-2 d-block"
+                onClick={() => push("/associateCertificationProgram")}
+              >
                 Associate Certification Programs
+                <AngleRightIcon className="angle-right" />
               </span>
-              <AngleRightIcon className="angle-right" />
               <ul className="next-sub-menus rounded list-unstyled border">
                 <li>
                   <Link
@@ -500,7 +509,7 @@ const Menus = ({ firstLoad }) => {
             <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/joinDigiPAKISTAN/becomeAnInstructor"
-                className="sub-menu-link ps-3 pe-5 d-block"
+                className="sub-menu-link ps-3 pe-5 py-2 d-block"
               >
                 Become an Instructor
               </Link>
@@ -508,7 +517,7 @@ const Menus = ({ firstLoad }) => {
             <li className="sub-menus-li rounded text-nowrap">
               <a
                 href="https://marketing.digipakistan.org"
-                className="sub-menu-link ps-3 pe-5 d-block"
+                className="sub-menu-link ps-3 pe-5 py-2 d-block"
               >
                 Become a Marketing Partner
               </a>
@@ -549,7 +558,7 @@ const Menus = ({ firstLoad }) => {
             <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/provincialMinisterMessage"
-                className="sub-menu-link ps-3 pe-5  d-block"
+                className="sub-menu-link ps-3 pe-5 py-2 d-block"
               >
                 Provincial Minister Message
               </Link>
@@ -557,7 +566,7 @@ const Menus = ({ firstLoad }) => {
             <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/directorGeneralMessage"
-                className="sub-menu-link ps-3 pe-5  d-block"
+                className="sub-menu-link ps-3 pe-5 py-2 d-block"
               >
                 Director General (DG) Message
               </Link>
@@ -565,7 +574,7 @@ const Menus = ({ firstLoad }) => {
             <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/chairmanHECPunjabMessage"
-                className="sub-menu-link ps-3 pe-5  d-block"
+                className="sub-menu-link ps-3 pe-5 py-2 d-block"
               >
                 Chairman HEC Punjab Message
               </Link>
@@ -573,7 +582,7 @@ const Menus = ({ firstLoad }) => {
             <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/chairmanPECMessage"
-                className="sub-menu-link ps-3 pe-5  d-block"
+                className="sub-menu-link ps-3 pe-5 py-2 d-block"
               >
                 Chairman PEC Message
               </Link>
@@ -581,7 +590,7 @@ const Menus = ({ firstLoad }) => {
             <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/aboutUs"
-                className="sub-menu-link ps-3 pe-5  d-block"
+                className="sub-menu-link ps-3 pe-5 py-2 d-block"
               >
                 About Us
               </Link>
@@ -589,7 +598,7 @@ const Menus = ({ firstLoad }) => {
             <li className="sub-menus-li rounded text-nowrap">
               <Link
                 to="/about/advisoryBody"
-                className="sub-menu-link ps-3 pe-5 d-block"
+                className="sub-menu-link ps-3 pe-5 py-2 d-block"
               >
                 Advisory Board
               </Link>

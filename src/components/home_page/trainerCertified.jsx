@@ -49,21 +49,24 @@ const TrainerCertified = () => {
         <p className="text-justify">
           <strong>DigiPAKISTAN National Skills Development Program</strong> is
           an <strong>IT initiative</strong> launched with the vision of
-          Pakistan’s digital ambition and to work towards a digitally
-          progressive and inclusive Pakistan. It will unleash the potential of
-          the youth. Pakistan has the second biggest population of youth and it
-          can be turned into strength through digital work. Women can also
-          contribute to the sector as well, aimed at helping young career
-          seekers understand the basic information technology functioning of the
-          sector and the job role they aspire to take on. Today's highly
-          competitive and demanding employment market is looking for only
-          talented and skilled manpower with enough command on the information
-          technology industry essentials.
+          <strong>Pakistan’s digital ambition</strong> and to work towards a
+          digitally progressive and inclusive Pakistan. It will unleash the
+          potential of the youth. Pakistan has the second biggest population of
+          youth and it can be turned into strength through digital work.{" "}
+          <strong>Women</strong> can also contribute to the sector as well,
+          aimed at <strong>helping young career seekers</strong> understand the
+          basic information technology functioning of the sector and the job
+          role they aspire to take on. Today's highly{" "}
+          <strong>
+            competitive and demanding employment market is looking for only
+            talented and skilled manpower with enough command on the information
+            technology industry essentials.
+          </strong>
         </p>
         <p className="mb-0 text-justify">
-          There are so many Information Technology Programs available at{" "}
-          <strong>DigiPAKISTAN</strong> and all you have to do is to enroll
-          yourself in your desired course.
+          There are so many <strong>Information Technology Programs</strong>{" "}
+          available at <strong>DigiPAKISTAN</strong> and all you have to do is
+          to <strong>enroll yourself in your desired course.</strong>
         </p>
       </div>
     </Container>

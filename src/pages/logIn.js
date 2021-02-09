@@ -12,7 +12,7 @@ import ToastServive from "react-material-toast";
 
 const toast = ToastServive.new({
   place: "topRight",
-  duration: 3,
+  duration: 2,
   maxCount: 1,
 });
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const OracleDatabaseAdministrator = () => {
+const OracleDatabaseAdministrator = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -48,26 +54,32 @@ const OracleDatabaseAdministrator = () => {
               <div className="my-3">
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
-                  It covers database development and administration using Oracle
-                  12c. It includes understanding database concept; creating
-                  databases using Oracle 12c ; querying and manipulating data
-                  using PL / SQL and taking advantage of Oracle’s
-                  Multitenant-Architecture for cloud computing. The course not
-                  only teaches the skills required to Oracle DBA for performing
-                  his routine operations but also teaches him the skills
-                  required to become a top-performing Oracle DBA. It includes
-                  deployment of backup and recovery and its cloud computing
-                  strategies.
+                  It covers database development and administration using{" "}
+                  <strong>Oracle 12C.</strong> It includes understanding
+                  database concept;{" "}
+                  <strong>
+                    creating databases using Oracle 12C; querying and
+                    manipulating data using PL / SQL and taking advantage of
+                    Oracle’s Multitenant-Architecture for cloud computing.
+                  </strong>{" "}
+                  The course not only teaches the skills required to Oracle DBA
+                  for performing his routine operations but also teaches him the
+                  skills required to become a top-performing Oracle DBA. It
+                  includes deployment of backup and recovery and its cloud
+                  computing strategies.
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -347,4 +359,10 @@ const OracleDatabaseAdministrator = () => {
   );
 };
 
-export default OracleDatabaseAdministrator;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(OracleDatabaseAdministrator);

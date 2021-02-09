@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const PHPLaravel = () => {
+const PHPLaravel = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -46,30 +52,38 @@ const PHPLaravel = () => {
               <div className="my-3">
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
-                  PHP is a server-based scripting language primarily used for
-                  web development. In simpler words, it is a language that is
-                  used to build, operate and run websites from the back end. It
-                  is a general purpose language and can be learned by all people
-                  even if they do not have any background. In this project-based
-                  course students will learn web development using PHP 7 and
-                  Laravel Framework. It includes essentials of web programming
-                  in PHP 7, Object Oriented Programming in PHP 7, Installation
-                  and Configuration of Laravel Framework, database development
-                  using Eloquent (Laravel ORM Framework) and MySql. The students
-                  will also learn to take advantage of Laravel Framework’s MVC
-                  Architecture, its Blade template system and its powerful
-                  routing features. The course also covers REST APIs / REST
-                  Services development using PHP and Laravel Framework.
+                  <strong>PHP</strong> is a server-based scripting language
+                  primarily used for web development. In simpler words, it is a
+                  language that is used to build, operate and run websites from
+                  the back end. It is a general purpose language and can be
+                  learned by all people even if they do not have any background.
+                  In this project-based course students will learn web
+                  development using{" "}
+                  <strong>PHP 7 and Laravel Framework.</strong> It includes
+                  essentials of web programming in{" "}
+                  <strong>
+                    PHP 7, Object Oriented Programming in PHP 7, Installation
+                    and Configuration of Laravel Framework, database development
+                    using Eloquent (Laravel ORM Framework) and MySql.
+                  </strong>{" "}
+                  The students will also learn to take advantage of{" "}
+                  <strong>Laravel Framework’s MVC Architecture</strong>, its
+                  Blade template system and its powerful routing features. The
+                  course also covers <strong>REST APIs / REST Services</strong>{" "}
+                  development using <strong>PHP and Laravel Framework.</strong>
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -138,4 +152,10 @@ const PHPLaravel = () => {
   );
 };
 
-export default PHPLaravel;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(PHPLaravel);

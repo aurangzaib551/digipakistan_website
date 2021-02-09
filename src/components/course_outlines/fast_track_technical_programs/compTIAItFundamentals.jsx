@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const CompTIAItFundamentals = () => {
+const CompTIAItFundamentals = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -46,32 +52,34 @@ const CompTIAItFundamentals = () => {
               <div className="my-3">
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
-                  CompTIA ITF+ helps professionals to decide if a career in IT
-                  is right for them or to develop a broader understanding of IT.
+                  <strong>CompTIA ITF+</strong> helps professionals to decide if
+                  a career in IT is right for them or to develop a broader
+                  understanding of IT.
                 </p>
                 <ul className="text-justify">
                   <li>
-                    ITF+ is the only pre-career certification that helps
-                    students or career changers determine if they have a
-                    competency for information technology and if it is the right
-                    career path for them.
+                    <strong>ITF+</strong> is the only pre-career certification
+                    that helps students or career changers determine if they
+                    have a competency for information technology and if it is
+                    the right career path for them.
                   </li>
                   <li>
-                    ITF+ is the only single certification that covers all areas
-                    of IT foundations, creating a broader understanding of IT
-                    making it ideal for non-technical professionals.
+                    <strong>ITF+</strong> is the only single certification that
+                    covers all areas of IT foundations, creating a broader
+                    understanding of IT making it ideal for non-technical
+                    professionals.
                   </li>
                   <li>
-                    ITF+ establishes an IT education framework for students in
-                    middle school and high school.
+                    <strong>ITF+</strong> establishes an IT education framework
+                    for students in middle school and high school.
                   </li>
                 </ul>
                 <p className="text-justify">
-                  CompTIA ITF+ can serve as a springboard for various IT
-                  careers, ensuring candidates are better prepared to understand
-                  and grasp the building blocks of IT at an introductory,
-                  foundational level. These individuals should consider pursing
-                  CompTIA ITF+:
+                  <strong>CompTIA ITF+</strong> can serve as a springboard for
+                  various IT careers, ensuring candidates are better prepared to
+                  understand and grasp the building blocks of IT at an
+                  introductory, foundational level. These individuals should
+                  consider pursing CompTIA ITF+:
                 </p>
                 <ul className="text-justify">
                   <li>Students considering a career in IT</li>
@@ -88,11 +96,14 @@ const CompTIAItFundamentals = () => {
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -184,4 +195,10 @@ const CompTIAItFundamentals = () => {
   );
 };
 
-export default CompTIAItFundamentals;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(CompTIAItFundamentals);

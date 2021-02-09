@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
+import { connect } from "react-redux";
+import { signOut } from "../store/actions/authActions";
 
-const ProvincialMinisterMessage = () => {
+const ProvincialMinisterMessage = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
   return (
     <>
       <Container className="mt provincial-minister">
@@ -64,4 +69,10 @@ const ProvincialMinisterMessage = () => {
   );
 };
 
-export default ProvincialMinisterMessage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ProvincialMinisterMessage);

@@ -1643,9 +1643,7 @@ const PDFChallan = (props) => {
         style={{ outline: "none" }}
         onClick={async () => {
           const blob = await MyDoc("1");
-          setTimeout(() => {
-            saveAs(blob, `${name} ${course.title} ${challanRollNumber}.pdf`);
-          }, 400);
+          saveAs(blob, `${name} ${course.title} ${challanRollNumber}.pdf`);
         }}
       >
         Download Challan

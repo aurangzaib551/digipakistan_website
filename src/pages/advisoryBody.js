@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
+import { connect } from "react-redux";
+import { signOut } from "../store/actions/authActions";
 
-const AdvisoryBody = () => {
+const AdvisoryBody = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
   return (
     <>
       <Container className="mt pt-4">
@@ -74,9 +79,11 @@ const AdvisoryBody = () => {
               />
             </div>
             <h5 className="text-center title mx-2 fw-bold mt-3 mb-0">
-              Prof. Dr. Niaz Ahmad (SI) Vice Chancellor
+              Prof. Dr. Niaz Ahmad (SI)
             </h5>
-            <p className="mb-0 text-center mt-1">Punjab University</p>
+            <p className="mb-0 text-center mt-1">
+              Punjab University Vice Chancellor
+            </p>
           </div>
           <div className="d-flex flex-column align-items-center pt-4 mt-5 mx-3 mx-xl-0">
             <div className="about-round-circle">
@@ -111,4 +118,10 @@ const AdvisoryBody = () => {
   );
 };
 
-export default AdvisoryBody;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(AdvisoryBody);

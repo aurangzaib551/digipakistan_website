@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "../components/home_page/slider";
 import OurMission from "../components/home_page/ourMission";
 import AvailablePrograms from "../components/home_page/availablePrograms";
@@ -10,8 +10,13 @@ import JoinDigiPAKISTAN from "../components/home_page/joinDigiPAKISTAN";
 import Supporters from "../components/home_page/supporters";
 import Footer from "../components/common/footer/footer";
 import Copyright from "../components/common/copyright/copyright";
+import { connect } from "react-redux";
+import { signOut } from "../store/actions/authActions";
 
-const HomePage = () => {
+const HomePage = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
   return (
     <>
       <Slider />
@@ -29,4 +34,10 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(HomePage);

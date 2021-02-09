@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const KotlinAppsDevelopment = () => {
+const KotlinAppsDevelopment = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -49,36 +55,49 @@ const KotlinAppsDevelopment = () => {
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
                   You will learn the fundamentals of building Android
-                  applications using Kotlin. The course covers architecture
-                  components, multi-screen navigation, data persistence, RESTful
-                  APIs and Material Design. By the end of the course, you’ll be
-                  able to create well-designed Android applications using Kotlin
-                  that can connect to the internet, store data and navigate
-                  between screens.
+                  applications using <strong>Kotlin</strong>. The course covers{" "}
+                  <strong>
+                    architecture components, multi-screen navigation, data
+                    persistence, RESTful APIs and Material Design.
+                  </strong>{" "}
+                  By the end of the course, you’ll be able to create
+                  well-designed Android applications using{" "}
+                  <strong>Kotlin</strong> that can connect to the internet,
+                  store data and navigate between screens.
                 </p>
                 <p className="text-justify">
-                  Kotlin is an open-source, modern programming language that
-                  lets developers use both object-oriented and functional
-                  programming techniques. It is concise, safe, and fully
-                  interoperable with Java. Kotlin is an official language for
-                  Android development and the community of Kotlin developers is
-                  growing rapidly, with major companies like Netflix, Pinterest,
-                  and Google using Kotlin.
+                  <strong>Kotlin</strong> is an open-source, modern programming
+                  language that lets developers use both{" "}
+                  <strong>
+                    object-oriented and functional programming techniques.
+                  </strong>{" "}
+                  It is concise, safe, and fully interoperable with Java.{" "}
+                  <strong>Kotlin</strong> is an official language for Android
+                  development and the community of{" "}
+                  <strong>
+                    Kotlin developers is growing rapidly, with major companies
+                    like Netflix, Pinterest, and Google using Kotlin.
+                  </strong>
                 </p>
                 <p className="text-justify">
-                  Kotlin is a modern statically typed programming language used
-                  by over 60% of professional Android developers that helps
-                  boost productivity, developer satisfaction, and code safety.
+                  <strong>Kotlin</strong> is a modern statically typed
+                  programming language used by over{" "}
+                  <strong>60% of professional Android developers</strong> that
+                  helps boost productivity, developer satisfaction, and code
+                  safety.
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -255,5 +274,10 @@ const KotlinAppsDevelopment = () => {
     </>
   );
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
 
-export default KotlinAppsDevelopment;
+export default connect(null, mapDispatchToProps)(KotlinAppsDevelopment);

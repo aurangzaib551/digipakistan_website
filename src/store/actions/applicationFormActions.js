@@ -219,36 +219,38 @@ export const application = (formData, setBtnLoading, uid) => {
           });
       })
       .then(() => {
-        firestore.collection("Scholarship Students").add({
-          "Full Name": formData.fullName,
-          "Father Name": formData.fatherName,
-          CNIC: formData.cnic,
-          Email: formData.emailAddress,
-          Applicant: formData.applicant,
-          "Mobile Number":
-            `${formData.mobileNumber}` || `${formData.overseasMobileNumber}`,
-          "Date of Birth": formData.dob,
-          Gender: formData.gender,
-          "First Course": formData.firstCourseTitle,
-          "First Course Category": formData.firstCourseName,
-          "Second Course": formData.secondCourseTitle,
-          "Second Course Category": formData.secondCourseName,
-          "Third Course": formData.thirdCourseTitle,
-          "Third Course Category": formData.thirdCourseName,
-          Qualification: formData.qualification,
-          Education: formData.education,
-          "Institute Name": formData.instituteName,
-          Province: formData.province,
-          City: formData.city,
-          Address: formData.address,
-          "Reference Code": formData.referenceCode,
-          "Know About Us": formData.knowAboutUs,
-          "Roll Number": formData.rollNumber,
-          "Terms & Conditions": formData.termsAndConditions,
-          "Form Submit Date": `${days}, ${month} ${todayDate}, ${year}`,
-          "Form Submit Time": time(new Date()),
-          "Overseas CNIC": formData.overseasCNIC,
-        });
+        if (formData.referenceCode) {
+          firestore.collection("Scholarship Students").add({
+            "Full Name": formData.fullName,
+            "Father Name": formData.fatherName,
+            CNIC: formData.cnic,
+            Email: formData.emailAddress,
+            Applicant: formData.applicant,
+            "Mobile Number":
+              `${formData.mobileNumber}` || `${formData.overseasMobileNumber}`,
+            "Date of Birth": formData.dob,
+            Gender: formData.gender,
+            "First Course": formData.firstCourseTitle,
+            "First Course Category": formData.firstCourseName,
+            "Second Course": formData.secondCourseTitle,
+            "Second Course Category": formData.secondCourseName,
+            "Third Course": formData.thirdCourseTitle,
+            "Third Course Category": formData.thirdCourseName,
+            Qualification: formData.qualification,
+            Education: formData.education,
+            "Institute Name": formData.instituteName,
+            Province: formData.province,
+            City: formData.city,
+            Address: formData.address,
+            "Reference Code": formData.referenceCode,
+            "Know About Us": formData.knowAboutUs,
+            "Roll Number": formData.rollNumber,
+            "Terms & Conditions": formData.termsAndConditions,
+            "Form Submit Date": `${days}, ${month} ${todayDate}, ${year}`,
+            "Form Submit Time": time(new Date()),
+            "Overseas CNIC": formData.overseasCNIC,
+          });
+        }
       })
       .then(() => {
         dispatch({

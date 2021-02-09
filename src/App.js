@@ -317,9 +317,6 @@ const App = ({ signOut, uid }) => {
   // State
   const [firstLoad, setFirstLoad] = useState(false);
 
-  // Object Destructuring
-  // const { replace } = useHistory();
-
   useEffect(() => {
     if (window.sessionStorage.getItem("First Load") === null) {
       window.sessionStorage.setItem("First Load", 1);
@@ -332,7 +329,7 @@ const App = ({ signOut, uid }) => {
   if (firstLoad) {
     setTimeout(() => {
       setFirstLoad(false);
-    }, 3000);
+    }, 4000);
   }
   return (
     <Beforeunload

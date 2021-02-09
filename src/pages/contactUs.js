@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
 import MapIcon from "@material-ui/icons/RoomOutlined";
@@ -12,8 +12,14 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import YoutubeIcon from "@material-ui/icons/YouTube";
 import Alert from "@material-ui/lab/Alert";
+import { connect } from "react-redux";
+import { signOut } from "../store/actions/authActions";
 
-const ContactUs = () => {
+const ContactUs = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [formData, setFormData] = useState({
     firstName: "",
@@ -311,4 +317,10 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ContactUs);

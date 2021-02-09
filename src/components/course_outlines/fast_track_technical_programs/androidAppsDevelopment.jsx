@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const AndroidAppsDevelopment = () => {
+const AndroidAppsDevelopment = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -46,44 +52,53 @@ const AndroidAppsDevelopment = () => {
               <div className="my-3">
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
-                  Android is an open source and Linux-based operating system for
-                  mobile devices such as smartphones. Android was developed by
-                  the Open Handset Alliance, led by Google, and other companies.
-                  This Course will teach you basic Android application
-                  development and will also take you through some advanced
-                  concepts related to Android application development.
+                  <strong>Android</strong> is an open source and Linux-based
+                  operating system for mobile devices such as smartphones.
+                  Android was developed by the Open Handset Alliance, led by
+                  Google, and other companies. This Course will teach you basic
+                  Android application development and will also take you through
+                  some advanced concepts related to Android application
+                  development.
                 </p>
 
                 <h3 className="fw-bold">Audience</h3>
                 <p className="text-justify">
-                  This Course has been prepared for the beginners to help them
-                  to understand basic to advance level of Android application
+                  This Course has been prepared for the{" "}
+                  <strong>beginners</strong> to help them to understand{" "}
+                  <strong>basic to advance level</strong> of Android application
                   development.
                 </p>
 
                 <h3 className="fw-bold">Prerequisites</h3>
                 <p className="text-justify">
-                  Android app development is based on Java programming language
-                  so if you have the basic understanding of Java programming
-                  then it will be fun to learn Android application development.
+                  <strong>Android app development</strong> is based on Java
+                  programming language so if you have the basic understanding of
+                  Java programming then it will be fun to learn Android
+                  application development.
                 </p>
 
                 <h3 className="fw-bold">Course Learning Outcomes</h3>
                 <p className="text-justify">
                   At the end on this course the students will gain enough
                   knowledge to create and publish their own Apps for Google
-                  Android devices as well as ability to learn advanced topics
-                  through self-study methods we will teach them.
+                  Android devices as well as{" "}
+                  <strong>
+                    ability to learn advanced topics through self-study methods
+                    we will teach them.
+                  </strong>
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -376,4 +391,10 @@ const AndroidAppsDevelopment = () => {
   );
 };
 
-export default AndroidAppsDevelopment;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(AndroidAppsDevelopment);

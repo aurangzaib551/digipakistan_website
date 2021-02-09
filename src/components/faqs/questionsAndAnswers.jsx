@@ -104,15 +104,16 @@ const QuestionsAndAnswers = () => {
           <div className="ms-3 ms-sm-5">
             <p className="small mt-3 mb-0 text-justify">
               <span className="fw-bold text-start d-inline-block">Step 1:</span>{" "}
-              Go to <Link to="/">Apply Now</Link> page. Register yourself as a
-              new applicant.
+              Go to <Link to="/apply-now">Apply Now</Link> page. Register
+              yourself as a new applicant.
             </p>
             <p className="small mb-0 text-justify">
               <span className="fw-bold text-start d-inline-block">Step 2:</span>{" "}
               (Candidate Login): After successfully sign up. Go to candidate{" "}
-              <Link to="/">login</Link> page. Enter your login details (Type
-              your email &amp; password which you have enter during signing up).
-              You will be successfully logged into the Candidate Portal.
+              <Link to="/apply-now/login">login</Link> page. Enter your login
+              details (Type your email &amp; password which you have enter
+              during signing up). You will be successfully logged into the
+              Candidate Portal.
             </p>
             <p className="small mb-0 text-justify">
               <span className="fw-bold text-start d-inline-block">Step 3:</span>{" "}

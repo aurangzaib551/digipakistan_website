@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const MERNStack = () => {
+const MERNStack = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -46,25 +52,36 @@ const MERNStack = () => {
               <div className="my-3">
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
-                  MERN Stack development is a free and open-source JavaScript
-                  software for building powerful front-end and back-end websites
-                  and applications. The term “MERN Stack” is an assemblage of
-                  MongoDB, ExpressJS, ReactJS, and NodeJS, all JavaScript based
-                  technologies used to design web applications. As all MERN
-                  stack components are JavaScript based, this means MERN stack
-                  application is written in one language for both-ends server
-                  and client-side. It is easy to design web applications using
-                  Node.js as it provides a wide range of JavaScript modules.
+                  <strong>MERN Stack</strong> development is a free and
+                  open-source JavaScript software for building powerful{" "}
+                  <strong>
+                    front-end and back-end websites and applications.
+                  </strong>{" "}
+                  The term <strong>“MERN Stack”</strong> is an assemblage of{" "}
+                  <strong>
+                    MongoDB, ExpressJS, ReactJS, and NodeJS, all JavaScript
+                    based technologies
+                  </strong>{" "}
+                  used to design web applications. As all{" "}
+                  <strong>MERN stack</strong> components are JavaScript based,
+                  this means <strong>MERN stack</strong> application is written
+                  in one language for both-ends{" "}
+                  <strong>server and client-side.</strong> It is easy to design
+                  web applications using <strong>NodeJS</strong> as it provides
+                  a wide range of <strong>JavaScript modules.</strong>
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -114,4 +131,10 @@ const MERNStack = () => {
   );
 };
 
-export default MERNStack;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(MERNStack);

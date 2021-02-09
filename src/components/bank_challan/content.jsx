@@ -47,7 +47,6 @@ const Content = ({
   data,
   profile,
 }) => {
-  console.log(data);
   // State
   const [enrolledCourses, setEnrolledCourses] = useState([]);
   const [showPDF, setShowPDF] = useState(false);

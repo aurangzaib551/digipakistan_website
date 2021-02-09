@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const MicrosoftFrontEndDevelopment = () => {
+const MicrosoftFrontEndDevelopment = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -50,30 +56,35 @@ const MicrosoftFrontEndDevelopment = () => {
                 <p className="text-justify">
                   In this course you will learn to develop interactive and
                   responsive websites and front-end web development of a
-                  enterprise application. It includes HTML5 and CSS3 for
-                  creating beautiful web pages; JavaScript &amp; jQuery for more
-                  interactive and rich Web UI; BootStrap for developing
-                  responsive and elegant websites; AJAX &amp; JSON for consuming
-                  REST Services. The course also covers essentials of Angular
-                  for front-end web development.
+                  enterprise application. It includes{" "}
+                  <strong>HTML5 and CSS3</strong> for creating beautiful web
+                  pages; <strong>JavaScript &amp; jQuery</strong> for more
+                  interactive and rich Web UI; <strong>BootStrap</strong> for
+                  developing responsive and elegant websites;{" "}
+                  <strong>AJAX &amp; JSON</strong> for consuming REST Services.
+                  The course also covers essentials of{" "}
+                  <strong>Angular for front-end web development.</strong>
                 </p>
 
                 <p className="text-justify">
-                  In every industry, front-end development is the first way to
-                  reach and attract users. The demand is more today and in the
-                  future. As a front end developer, your career is safe and
-                  secure with high opportunities. The business wants front end
-                  developer for business growth.
+                  In every industry, <strong>front-end development</strong> is
+                  the first way to reach and attract users. The demand is more
+                  today and in the future. As a front end developer, your career
+                  is safe and secure with high opportunities. The business wants
+                  front end developer for business growth.
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -130,4 +141,10 @@ const MicrosoftFrontEndDevelopment = () => {
   );
 };
 
-export default MicrosoftFrontEndDevelopment;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(MicrosoftFrontEndDevelopment);

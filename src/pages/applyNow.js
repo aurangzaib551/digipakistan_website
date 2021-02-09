@@ -1,11 +1,17 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../store/actions/authActions";
 
-const ApplyNow = () => {
+const ApplyNow = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // Object Destructuring
   const { push } = useHistory();
 
@@ -67,4 +73,10 @@ const ApplyNow = () => {
   );
 };
 
-export default ApplyNow;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ApplyNow);

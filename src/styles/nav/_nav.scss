@@ -163,8 +163,6 @@
       .sub-menus-li {
         position: relative;
         background-color: white;
-        padding-top: 10px;
-        padding-bottom: 10px;
 
         &:hover {
           .sub-menu-link {
@@ -197,8 +195,8 @@
           @include ul;
 
           .next-sub-menus-link {
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 8px;
+            padding-bottom: 8px;
             display: block;
 
             &:hover {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,8 +7,14 @@ import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
 import Copyright from "../../common/copyright/copyright";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/authActions";
 
-const SQLServerSpecialist = () => {
+const SQLServerSpecialist = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
+
   // State
   const [tabValue, setTabValue] = useState(0);
 
@@ -46,28 +52,38 @@ const SQLServerSpecialist = () => {
               <div className="my-3">
                 <h3 className="fw-bold">Course Description</h3>
                 <p className="text-justify">
-                  Microsoft SQL Server provides a robust architecture for
-                  enterprise level data management, developer’s productivity and
-                  business intelligence. This hands-on course is designed to
-                  provide necessary knowledge and hands-on experience for
-                  installation and configuration and administration of SQL
-                  Server; designing and implementing SQL Server databases,
-                  querying and manipulating data from SQL Server and
-                  implementing a Data Warehouse with SQL Server. SQL Server
-                  training curriculum is carefully designed to meet the
-                  requirements of Microsoft exam: Querying Microsoft SQL Server.
-                  Course helps developing strong understanding of Microsoft SQL
-                  Server and development foundation.
+                  <strong>Microsoft SQL Server</strong> provides a robust
+                  architecture for enterprise level data management, developer’s
+                  productivity and business intelligence. This{" "}
+                  <strong>hands-on course</strong> is designed to provide
+                  necessary knowledge and <strong>hands-on experience</strong>{" "}
+                  for installation and configuration and administration of{" "}
+                  <strong>SQL Server;</strong> designing and implementing{" "}
+                  <strong>
+                    SQL Server databases, querying and manipulating data from
+                    SQL Server and implementing a Data Warehouse with SQL
+                    Server.
+                  </strong>{" "}
+                  SQL Server training curriculum is carefully designed to meet
+                  the requirements of <strong>Microsoft exam:</strong> Querying
+                  Microsoft SQL Server. Course helps developing strong
+                  understanding of{" "}
+                  <strong>
+                    Microsoft SQL Server and development foundation.
+                  </strong>
                 </p>
 
                 <h3 className="fw-bold">Certificate</h3>
                 <p className="text-justify">
                   On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
+                  awarded participation{" "}
+                  <strong>certificate from DigiPAKISTAN.</strong> Also prepare
+                  for <strong>International Exam.</strong>
                 </p>
                 <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
+                <p className="mb-0">
+                  Total Duration of the course is <strong>3 months</strong>
+                </p>
               </div>
             )}
             {tabValue === 1 && (
@@ -198,4 +214,10 @@ const SQLServerSpecialist = () => {
   );
 };
 
-export default SQLServerSpecialist;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SQLServerSpecialist);

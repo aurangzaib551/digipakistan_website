@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
+import { connect } from "react-redux";
+import { signOut } from "../store/actions/authActions";
 
-const ChairmanHECPunjabMessage = () => {
+const ChairmanHECPunjabMessage = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
   return (
     <>
       <Container className="mt provincial-minister">
@@ -82,4 +87,10 @@ const ChairmanHECPunjabMessage = () => {
   );
 };
 
-export default ChairmanHECPunjabMessage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ChairmanHECPunjabMessage);

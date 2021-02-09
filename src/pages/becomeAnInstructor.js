@@ -13,12 +13,14 @@ import {
 import LinearProgress from "@material-ui/core/LinearProgress";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import firebase from "../config/fbConfig";
+import { signOut } from "../store/actions/authActions";
 
 const BecomeAnInstructor = ({
   uploadInstructorCV,
   application,
   msg,
   clearAll,
+  signOut,
 }) => {
   // State
   const [formData, setFormData] = useState({
@@ -58,7 +60,8 @@ const BecomeAnInstructor = ({
 
   useLayoutEffect(() => {
     checkApplication();
-  }, []);
+    signOut();
+  }, [signOut]);
 
   // Getting values from input fields
   const handleChange = (event) => {
@@ -117,10 +120,6 @@ const BecomeAnInstructor = ({
 
     if (formData.expertise.trim() === "") {
       errors.expertise = "Expertise mustn't be empty";
-    }
-
-    if (formData.linkedInURL.trim() === "") {
-      errors.linkedInURL = "LinkedIn URL mustn't be empty";
     }
 
     if (formData.country.trim() === "") {
@@ -287,11 +286,6 @@ const BecomeAnInstructor = ({
             fullWidth
             className="mt-3"
           />
-          {errors.linkedInURL && (
-            <Alert severity="error" variant="filled">
-              {errors.linkedInURL}
-            </Alert>
-          )}
           <Input
             variant="standard"
             id="country"
@@ -414,6 +408,7 @@ const mapDispatchToProps = (dispatch) => {
     application: (formData, setBtnLoading) =>
       dispatch(applicationForInstructor(formData, setBtnLoading)),
     clearAll: () => dispatch(clearAll()),
+    signOut: () => dispatch(signOut()),
   };
 };
 

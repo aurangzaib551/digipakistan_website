@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
+import { connect } from "react-redux";
+import { signOut } from "../store/actions/authActions";
 
-const AboutUs = () => {
+const AboutUs = ({ signOut }) => {
+  useEffect(() => {
+    signOut();
+  }, [signOut]);
   return (
     <>
       <Container className="mt pt-4 mb-5">
@@ -74,4 +79,10 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(AboutUs);
