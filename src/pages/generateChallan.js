@@ -34,10 +34,12 @@ const GenerateChallan = ({
   return (
     <>
       <Helmet>
-        <title>Generate Challan</title>
+        <title>Further Process</title>
       </Helmet>
       <Container className="mt pt-4">
-        <h1 className="fw-bold text-center mx-3">Generate Challan</h1>
+        <h1 className="fw-bold text-center mx-3">
+          Follow Further Procedure for Seat Confirmation
+        </h1>
         <p className="text-justify">
           Students who are approved will now have to follow further Instructions
           of Registration Charges submission for their seat confirmation. Late
