@@ -86,7 +86,7 @@ const AdvisoryBody = ({ signOut }) => {
               Prof. Dr. Niaz Ahmad (SI)
             </h5>
             <p className="mb-0 text-center mt-1">
-              Punjab University Vice Chancellor
+              Vice Chancellor Punjab University
             </p>
           </div>
           <div className="d-flex flex-column align-items-center pt-4 mt-5 mx-3 mx-xl-0">
