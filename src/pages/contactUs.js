@@ -15,6 +15,8 @@ import Alert from "@material-ui/lab/Alert";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
 import { Helmet } from "react-helmet";
+import TimeIcon from "@material-ui/icons/AccessTimeRounded";
+import BusinessIcon from "@material-ui/icons/BusinessRounded";
 
 const ContactUs = ({ signOut }) => {
   useEffect(() => {
@@ -139,6 +141,16 @@ const ContactUs = ({ signOut }) => {
                 <a href="tel:04235974882" className="ms-3 link">
                   042-35974882
                 </a>
+              </div>
+              <div className="d-flex justify-content-center justify-content-lg-start align-items-center mt-3">
+                <TimeIcon />
+                <p className="mb-0 small ms-3">
+                  Office Timing: 10:00AM to 5:00PM
+                </p>
+              </div>
+              <div className="d-flex justify-content-center justify-content-lg-start align-items-center mt-3">
+                <BusinessIcon />
+                <p className="mb-0 small ms-3">Office Closed: Sunday</p>
               </div>
               <div className="d-flex justify-content-center flex-wrap">
                 <a
