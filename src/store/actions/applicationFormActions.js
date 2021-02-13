@@ -96,6 +96,7 @@ export const application = (formData, setBtnLoading, uid) => {
         "Form Submit Date": `${days}, ${month} ${todayDate}, ${year}`,
         "Form Submit Time": time(new Date()),
         "Overseas CNIC": formData.overseasCNIC,
+        visibility: "public",
       })
       .then(() => {
         let course = [];
@@ -324,6 +325,7 @@ export const application = (formData, setBtnLoading, uid) => {
             "Form Submit Date": `${days}, ${month} ${todayDate}, ${year}`,
             "Form Submit Time": time(new Date()),
             "Overseas CNIC": formData.overseasCNIC,
+            visibility: "public",
           });
         }
       })
