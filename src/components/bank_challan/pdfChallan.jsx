@@ -239,7 +239,9 @@ const PDFChallan = (props) => {
                 fontSize: 11,
               }}
             >
-              <Text style={{ textAlign: "center" }}>{course.title}</Text>
+              <Text style={{ textAlign: "center", fontSize: 10 }}>
+                {course.title}
+              </Text>
             </View>
             <View
               style={{
@@ -773,7 +775,9 @@ const PDFChallan = (props) => {
                 fontSize: 11,
               }}
             >
-              <Text style={{ textAlign: "center" }}>{course.title}</Text>
+              <Text style={{ textAlign: "center", fontSize: 10 }}>
+                {course.title}
+              </Text>
             </View>
             <View
               style={{
@@ -1306,7 +1310,9 @@ const PDFChallan = (props) => {
                 fontSize: 11,
               }}
             >
-              <Text style={{ textAlign: "center" }}>{course.title}</Text>
+              <Text style={{ textAlign: "center", fontSize: 10 }}>
+                {course.title}
+              </Text>
             </View>
             <View
               style={{

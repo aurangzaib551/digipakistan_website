@@ -145,12 +145,16 @@ const ContactUs = ({ signOut }) => {
               <div className="d-flex justify-content-center justify-content-lg-start align-items-center mt-3">
                 <TimeIcon />
                 <p className="mb-0 small ms-3">
-                  Office Timing: 10:00AM to 5:00PM
+                  <span className="fw-bold">Office Timing:</span> 10:00AM to
+                  5:00PM
                 </p>
               </div>
               <div className="d-flex justify-content-center justify-content-lg-start align-items-center mt-3">
                 <BusinessIcon />
-                <p className="mb-0 small ms-3">Office Closed: Sunday</p>
+                <p className="mb-0 small mt-1 ms-3">
+                  <span className="fw-bold">Office Days:</span> Monday to
+                  Saturday
+                </p>
               </div>
               <div className="d-flex justify-content-center flex-wrap">
                 <a

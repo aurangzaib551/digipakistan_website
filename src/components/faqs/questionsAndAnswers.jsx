@@ -391,8 +391,8 @@ const QuestionsAndAnswers = () => {
         <h3 className="fw-bold mb-0 a">A.</h3>
         <p className="ms-3 mb-0 mt-1 word-break text-justify">
           In case of queries you can dial{" "}
-          <a href="tel:042-35974881">042-35974881</a> /{" "}
-          <a href="042-35974882">042-35974882</a> and can email at{" "}
+          <a href="tel:04235974881">042-35974881</a> /{" "}
+          <a href="tel:04235974882">042-35974882</a> and can email at{" "}
           <a href="mailto:helpdesk@digipakistan.org">
             helpdesk@digipakistan.org
           </a>
