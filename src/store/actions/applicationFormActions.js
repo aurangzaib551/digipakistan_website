@@ -326,6 +326,7 @@ export const application = (formData, setBtnLoading, uid) => {
             "Form Submit Time": time(new Date()),
             "Overseas CNIC": formData.overseasCNIC,
             visibility: "public",
+            paymentStatus: false,
           });
         }
       })
