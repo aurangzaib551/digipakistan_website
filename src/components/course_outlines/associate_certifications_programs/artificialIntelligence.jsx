@@ -106,7 +106,7 @@ const ArtificialIntelligence = ({ signOut }) => {
                 </span>
               </h6>
               <h6 className="fw-bold mb-0 details text-center text-sm-start">
-                Duration: <span className="fw-normal">3 Months</span>
+                Duration: <span className="fw-normal">6 Months</span>
               </h6>
               <h6 className="fw-bold mb-0 details text-center text-sm-start">
                 Language: <span className="fw-normal">Urdu / English</span>

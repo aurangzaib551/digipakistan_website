@@ -321,6 +321,7 @@ const App = ({ signOut, uid }) => {
   useEffect(() => {
     if (window.sessionStorage.getItem("First Load") === null) {
       window.sessionStorage.setItem("First Load", 1);
+
       setFirstLoad(true);
     } else {
       setFirstLoad(false);
@@ -330,7 +331,7 @@ const App = ({ signOut, uid }) => {
   if (firstLoad) {
     setTimeout(() => {
       setFirstLoad(false);
-    }, 4000);
+    }, 5000);
   }
   return (
     <Beforeunload
