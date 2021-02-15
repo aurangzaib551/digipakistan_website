@@ -62,17 +62,13 @@ const Content = ({
       data["Third Course"] === "Fast Track Technical Program"
     ) {
       type.titleOne = "Technical";
-    }
-
-    if (
+    } else if (
       data["First Course"] === "Fast Track Non-Technical Program" ||
       data["Second Course"] === "Fast Track Non-Technical Program" ||
       data["Third Course"] === "Fast Track Non-Technical Program"
     ) {
       type.titleTwo = "Non-Technical";
-    }
-
-    if (
+    } else if (
       data["First Course"] === "Associate Certification Program" ||
       data["Second Course"] === "Associate Certification Program" ||
       data["Third Course"] === "Associate Certification Program"
@@ -83,21 +79,21 @@ const Content = ({
     if (data["First Course"]) {
       enrollment.push({
         title: data["First Course Category"],
-        type: type.titleOne,
+        type: type.titleOne || type.titleTwo || type.titlethree,
       });
     }
 
     if (data["Second Course"]) {
       enrollment.push({
         title: data["Second Course Category"],
-        type: type.titleTwo,
+        type: type.titleOne || type.titleTwo || type.titlethree,
       });
     }
 
     if (data["Third Course"]) {
       enrollment.push({
         title: data["Third Course Category"],
-        type: type.titlethree,
+        type: type.titleOne || type.titleTwo || type.titlethree,
       });
     }
 
