@@ -62,13 +62,15 @@ const Content = ({
       data["Third Course"] === "Fast Track Technical Program"
     ) {
       type.titleOne = "Technical";
-    } else if (
+    }
+    if (
       data["First Course"] === "Fast Track Non-Technical Program" ||
       data["Second Course"] === "Fast Track Non-Technical Program" ||
       data["Third Course"] === "Fast Track Non-Technical Program"
     ) {
       type.titleTwo = "Non-Technical";
-    } else if (
+    }
+    if (
       data["First Course"] === "Associate Certification Program" ||
       data["Second Course"] === "Associate Certification Program" ||
       data["Third Course"] === "Associate Certification Program"
@@ -76,24 +78,61 @@ const Content = ({
       type.titlethree = "Associate";
     }
 
+    if (
+      data["First Course"] === "Fast Track Technical Program" &&
+      data["Second Course"] === "Fast Track Technical Program" &&
+      data["Third Course"] === "Fast Track Technical Program"
+    ) {
+      type.titleOne = "Technical";
+    } else if (
+      data["First Course"] === "Fast Track Non-Technical Program" &&
+      data["Second Course"] === "Fast Track Non-Technical Program" &&
+      data["Third Course"] === "Fast Track Non-Technical Program"
+    ) {
+      type.titleOne = "Non-Technical";
+    } else if (
+      data["First Course"] === "Associate Certification Program" &&
+      data["Second Course"] === "Associate Certification Program" &&
+      data["Third Course"] === "Associate Certification Program"
+    ) {
+      type.titleOne = "Associate";
+    }
+
+    if (
+      data["First Course"] === "Fast Track Technical Program" &&
+      data["Second Course"] === "Fast Track Technical Program"
+    ) {
+      type.titleOne = "Technical";
+    } else if (
+      data["First Course"] === "Fast Track Non-Technical Program" &&
+      data["Third Course"] === "Fast Track Non-Technical Program"
+    ) {
+      type.titleOne = "Non-Technical";
+    } else if (
+      data["Second Course"] === "Associate Certification Program" &&
+      data["Third Course"] === "Associate Certification Program"
+    ) {
+      type.titleOne = "Associate";
+    }
+
     if (data["First Course"]) {
       enrollment.push({
         title: data["First Course Category"],
-        type: type.titleOne || type.titleTwo || type.titlethree,
+        type: type.titleOne,
       });
     }
 
     if (data["Second Course"]) {
       enrollment.push({
         title: data["Second Course Category"],
-        type: type.titleOne || type.titleTwo || type.titlethree,
+        type: type.titleTwo || type.titleOne,
       });
     }
 
     if (data["Third Course"]) {
       enrollment.push({
         title: data["Third Course Category"],
-        type: type.titleOne || type.titleTwo || type.titlethree,
+        type: type.titlethree || type.titleOne,
       });
     }
 
