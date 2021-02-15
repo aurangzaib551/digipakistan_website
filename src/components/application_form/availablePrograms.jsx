@@ -132,6 +132,7 @@ const AvailablePrograms = ({
             <MenuItem value="Machine Learning &amp; AI">
               Machine Learning &amp; AI
             </MenuItem>
+            <MenuItem value="Data Science">Data Science</MenuItem>
             <MenuItem value="Big Data &amp; Headoop Ecosystem">
               Big Data &amp; Headoop Ecosystem
             </MenuItem>
