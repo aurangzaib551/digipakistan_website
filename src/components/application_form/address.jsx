@@ -25,7 +25,7 @@ const Address = ({ handleChange, formData, errors }) => {
           <MenuItem value="Balochistan">Balochistan</MenuItem>
           <MenuItem value="KPK">KPK</MenuItem>
           <MenuItem value="Azad Jammu &amp; Kashmir">
-            Azad Jammu &amp; Kashmir
+            Azad Jammu &amp; Kashmir &amp; GB
           </MenuItem>
           <MenuItem value="Islamabad Capital Territory">
             Islamabad Capital Territory
