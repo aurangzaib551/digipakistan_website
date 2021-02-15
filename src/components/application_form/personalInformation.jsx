@@ -74,11 +74,6 @@ const PersonalInformation = (props) => {
             fullWidth
             variant="standard"
             className="mt-3"
-            onInput={(e) => {
-              e.target.value = Math.max(0, e.target.value)
-                .toString()
-                .slice(0, 13);
-            }}
             aria-describedby="cnic"
           />
           <HelperText name="cnic" error>
@@ -95,18 +90,13 @@ const PersonalInformation = (props) => {
             id="no"
             name="mobileNumber"
             value={formData.mobileNumber.slice(3)}
-            onChange={(event) =>
+            onChange={(event) => {
               setFormData({
                 ...formData,
                 mobileNumber: `+92${event.target.value}`,
-              })
-            }
-            label="Phone Number *"
-            onInput={(e) => {
-              e.target.value = Math.max(0, e.target.value)
-                .toString()
-                .slice(0, 10);
+              });
             }}
+            label="Phone Number *"
             fullWidth
             InputProps={{
               startAdornment: (

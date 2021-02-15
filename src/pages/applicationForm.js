@@ -140,6 +140,12 @@ const ApplicationForm = ({
         firstCourseLink: "/lmsDashboard/myCourses/frontEndLMS",
         firstCourseName: value,
       });
+    } else if (value === "Data Science") {
+      setFormData({
+        ...formData,
+        firstCourseLink: "/lmsDashboard/myCourses/dataScienceLMS",
+        firstCourseName: value,
+      });
     } else if (value === "ASP.NET Web Applications") {
       setFormData({
         ...formData,
@@ -480,11 +486,17 @@ const ApplicationForm = ({
   //   Getting value from second course name
   const handleSecondCourseName = ({ target }) => {
     const { value } = target;
-
+    console.log(value);
     if (value === "Microsoft Front End Development") {
       setFormData({
         ...formData,
         secondCourseLink: "/lmsDashboard/myCourses/frontEndLMS",
+        secondCourseName: value,
+      });
+    } else if (value === "Data Science") {
+      setFormData({
+        ...formData,
+        secondCourseLink: "/lmsDashboard/myCourses/dataScienceLMS",
         secondCourseName: value,
       });
     } else if (value === "ASP.NET Web Applications") {
@@ -832,6 +844,12 @@ const ApplicationForm = ({
       setFormData({
         ...formData,
         thirdCourseLink: "/lmsDashboard/myCourses/frontEndLMS",
+        thirdCourseName: value,
+      });
+    } else if (value === "Data Science") {
+      setFormData({
+        ...formData,
+        thirdCourseLink: "/lmsDashboard/myCourses/dataScienceLMS",
         thirdCourseName: value,
       });
     } else if (value === "ASP.NET Web Applications") {
