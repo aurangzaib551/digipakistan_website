@@ -10,6 +10,8 @@ import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ToastServive from "react-material-toast";
 import { Helmet } from "react-helmet";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const toast = ToastServive.new({
   place: "topRight",
@@ -24,6 +26,7 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
     lastName: "",
     emailAddress: "",
     password: "",
+    mobileNumber: "",
   });
   const [errors, setErrors] = useState({});
   const [btnLoading, setBtnLoading] = useState(false);
@@ -39,6 +42,13 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
     });
   };
 
+  const handleMobileNumber = (number) => {
+    setFormData({
+      ...formData,
+      mobileNumber: number,
+    });
+  };
+
   // Validation on input fields
   const validate = () => {
     const errors = {};
@@ -46,6 +56,7 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
     // Regular Expressions
     const charactersRegEx = /^[a-zA-Z ]+$/;
     const emailRegEx = /^[\w_.-]+@([\w-]+\.)+\w{2,4}$/;
+    const mobileNumberRegEx = /^[0-9]+$/;
 
     if (formData.firstName.trim() === "") {
       errors.firstName = "First name mustn't be empty";
@@ -57,6 +68,12 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
       errors.lastName = "Last name mustn't be empty";
     } else if (!charactersRegEx.test(formData.lastName)) {
       errors.lastName = "Invalid Last Name";
+    }
+
+    if (formData.mobileNumber.trim() === "") {
+      errors.mobileNumber = "Mobile number mustn't be empty";
+    } else if (!mobileNumberRegEx.test(formData.mobileNumber)) {
+      errors.mobileNumber = "Invalid Mobile Number";
     }
 
     if (formData.emailAddress.trim() === "") {
@@ -152,6 +169,22 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
                 {errors.lastName}
               </Alert>
             )}
+
+            <div className="mt-3">
+              <PhoneInput
+                country={"pk"}
+                onChange={handleMobileNumber}
+                enableAreaCodes={true}
+                enableSearch
+                inputStyle={{ width: "100%" }}
+              />
+              {errors.mobileNumber && (
+                <Alert severity="error" variant="filled">
+                  {errors.mobileNumber}
+                </Alert>
+              )}
+            </div>
+
             <Input
               id="emailAddress"
               fullWidth

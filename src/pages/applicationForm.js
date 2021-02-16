@@ -33,6 +33,7 @@ const ApplicationForm = ({
     fatherName: "",
     applicant: "",
     cnic: "",
+    messageNumber: "",
     overseasCNIC: "",
     overseasMobileNumber: "",
     mobileNumber: "",

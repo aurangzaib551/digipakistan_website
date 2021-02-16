@@ -1,4 +1,5 @@
 import random from "number-uid";
+import axios from "axios";
 
 export const signUp = (formData, setBtnLoading) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
@@ -6,7 +7,13 @@ export const signUp = (formData, setBtnLoading) => {
     const firestore = getFirestore();
 
     // Object Destructuring
-    const { emailAddress, password, firstName, lastName } = formData;
+    const {
+      emailAddress,
+      password,
+      firstName,
+      lastName,
+      mobileNumber,
+    } = formData;
 
     firebase
       .auth()
@@ -22,6 +29,17 @@ export const signUp = (formData, setBtnLoading) => {
             batch: "Batch 01",
             createdAt: new Date(),
           });
+      })
+      .then(() => {
+        const message =
+          "Dear Student, you have been successfully created login credentials through registration at DigiPAKISTAN Website. Now Login to this link and complete further process: digipakistan.org/apply-now/login";
+
+        const encodeMessage = encodeURI(message);
+        const encodeMask = encodeURI("INFOSHARE");
+
+        axios.post(
+          `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=${encodeMask}&to=${mobileNumber}&message=${encodeMessage}`
+        );
       })
       .then(() => {
         dispatch({

@@ -94,6 +94,7 @@ const PersonalInformation = (props) => {
               setFormData({
                 ...formData,
                 mobileNumber: `+92${event.target.value}`,
+                messageNumber: `92${event.target.value}`,
               });
             }}
             label="Phone Number *"
@@ -152,6 +153,7 @@ const PersonalInformation = (props) => {
                   setFormData({
                     ...formData,
                     overseasMobileNumber: `+${number}`,
+                    messageNumber: number,
                   })
                 }
               />
