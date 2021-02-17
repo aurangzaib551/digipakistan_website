@@ -28,6 +28,7 @@ export const signUp = (formData, setBtnLoading) => {
             initials: firstName[0],
             batch: "Batch 01",
             createdAt: new Date(),
+            mobileNumber,
           });
       })
       .then(() => {
@@ -148,22 +149,9 @@ export const clearAll = () => {
   };
 };
 
-export const challanNo = (uid, enrolledCourses) => {
+export const challanNo = (uid) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
-
-    const no = {};
-
-    if (enrolledCourses === 1) {
-      no.challanNoOne = random(6);
-    } else if (enrolledCourses === 2) {
-      no.challanNoOne = random(6);
-      no.challanNoTwo = random(6);
-    } else if (enrolledCourses === 3) {
-      no.challanNoOne = random(6);
-      no.challanNoTwo = random(6);
-      no.challanNoThree = random(6);
-    }
 
     firestore
       .collection("Applications")

@@ -157,7 +157,7 @@ const Content = ({
       setShowPDF((prevValue) => !prevValue);
     }, 400);
     if (!data.challanNoOne) {
-      saveChallanNo(uid, enrolledCourses.length);
+      saveChallanNo(uid);
     }
   };
 
@@ -261,7 +261,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    saveChallanNo: (uid, length) => dispatch(challanNo(uid, length)),
+    saveChallanNo: (uid) => dispatch(challanNo(uid)),
   };
 };
 
