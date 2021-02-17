@@ -147,3 +147,31 @@ export const clearAll = () => {
     type: "CLEAR_ALL",
   };
 };
+
+export const challanNo = (uid, enrolledCourses) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+
+    const no = {};
+
+    if (enrolledCourses === 1) {
+      no.challanNoOne = random(6);
+    } else if (enrolledCourses === 2) {
+      no.challanNoOne = random(6);
+      no.challanNoTwo = random(6);
+    } else if (enrolledCourses === 3) {
+      no.challanNoOne = random(6);
+      no.challanNoTwo = random(6);
+      no.challanNoThree = random(6);
+    }
+
+    firestore
+      .collection("Applications")
+      .doc(uid)
+      .update({
+        challanNoOne: random(6),
+        challanNoTwo: random(6),
+        challanNoThree: random(6),
+      });
+  };
+};

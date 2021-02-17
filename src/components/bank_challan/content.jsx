@@ -10,7 +10,7 @@ import { Font } from "@react-pdf/renderer";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import PDFChallan from "./pdfChallan";
-import Number from "number-uid";
+import { challanNo } from "../../store/actions/authActions";
 
 Font.register({
   family: "Montserrat",
@@ -46,6 +46,7 @@ const Content = ({
   status,
   data,
   profile,
+  saveChallanNo,
 }) => {
   // State
   const [enrolledCourses, setEnrolledCourses] = useState([]);
@@ -119,6 +120,7 @@ const Content = ({
       enrollment.push({
         title: data["First Course Category"],
         type: type.titleOne,
+        challanNo: data.challanNoOne,
       });
     }
 
@@ -126,6 +128,7 @@ const Content = ({
       enrollment.push({
         title: data["Second Course Category"],
         type: type.titleTwo || type.titleOne,
+        challanNo: data.challanNoTwo,
       });
     }
 
@@ -133,6 +136,7 @@ const Content = ({
       enrollment.push({
         title: data["Third Course Category"],
         type: type.titlethree || type.titleOne,
+        challanNo: data.challanNoThree,
       });
     }
 
@@ -147,6 +151,15 @@ const Content = ({
   if (!applicationSubmitted)
     return <Redirect to="/apply-now/applicationForm" />;
   if (!status) return <Redirect to="/apply-now/admissionStatus" />;
+
+  const handleChallan = () => {
+    setTimeout(() => {
+      setShowPDF((prevValue) => !prevValue);
+    }, 400);
+    if (!data.challanNoOne) {
+      saveChallanNo(uid, enrolledCourses.length);
+    }
+  };
 
   return (
     <Container className="mt pt-4">
@@ -187,11 +200,7 @@ const Content = ({
       <div className="d-flex flex-column align-items-center">
         <div className="d-flex mt-3 justify-content-center">
           <Button
-            onClick={() => {
-              setTimeout(() => {
-                setShowPDF((prevValue) => !prevValue);
-              }, 400);
-            }}
+            onClick={handleChallan}
             variant="contained"
             className="custom-button d-flex align-items-center"
           >
@@ -205,7 +214,7 @@ const Content = ({
               {showPDF && (
                 <div className="close">
                   <PDFChallan
-                    challanNo={Number(6)}
+                    challanNo={course.challanNo}
                     course={course}
                     issueDate={profile.issueDateOfFeeSubmission}
                     lastDate={profile.lastDateOfFeeSubmission}
@@ -250,7 +259,13 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    saveChallanNo: (uid, length) => dispatch(challanNo(uid, length)),
+  };
+};
+
 export default compose(
   firestoreConnect([{ collection: "Applications" }]),
-  connect(mapStateToProps)
+  connect(mapStateToProps, mapDispatchToProps)
 )(Content);
