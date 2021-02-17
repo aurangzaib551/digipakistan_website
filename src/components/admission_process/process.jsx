@@ -7,6 +7,17 @@ const Process = () => {
     <>
       <div className="process-odd py-5">
         <Container>
+          <div className="d-flex justify-content-center mb-5">
+            <iframe
+              title="videoAdmissionProcess"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/UnSzGC76OHQ"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
           <div className="row g-0">
             <div className="col-lg-1">
               <h1 className="display-1 text-center fw-bold">(1)</h1>

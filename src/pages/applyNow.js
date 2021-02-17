@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/copyright";
 import Paper from "@material-ui/core/Paper";
@@ -7,8 +7,12 @@ import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
 import { Helmet } from "react-helmet";
+import Modal from "react-bootstrap/Modal";
 
 const ApplyNow = ({ signOut }) => {
+  // State
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
     signOut();
   }, [signOut]);
@@ -25,6 +29,10 @@ const ApplyNow = ({ signOut }) => {
       push(link);
     }, 400);
   };
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <Helmet>
@@ -69,8 +77,34 @@ const ApplyNow = ({ signOut }) => {
             >
               Log In
             </Button>
+            <Button
+              onClick={handleShow}
+              size="large"
+              variant="contained"
+              className="custom-button mx-3 mt-3"
+            >
+              Video Instructions
+            </Button>
           </div>
         </Container>
+        <Modal show={show} onHide={handleClose} centered>
+          <Modal.Header closeButton>
+            <Modal.Title className="fw-bold">
+              Apply Now Instructions
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <iframe
+              title="videoApplyNow"
+              width="100%"
+              height="300"
+              src="https://www.youtube.com/embed/UnSzGC76OHQ"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </Modal.Body>
+        </Modal>
       </div>
       <Copyright />
     </>
