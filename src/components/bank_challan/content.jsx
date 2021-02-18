@@ -54,7 +54,7 @@ const Content = ({
   const [showPDF, setShowPDF] = useState(false);
 
   // Object Destructuring
-  const { push } = useHistory();
+  // const { push } = useHistory();
 
   useLayoutEffect(() => {
     const enrollment = [];
