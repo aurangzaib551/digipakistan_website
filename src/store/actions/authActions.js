@@ -36,10 +36,9 @@ export const signUp = (formData, setBtnLoading) => {
           "Dear Student, you have been successfully created login credentials through registration at DigiPAKISTAN Website. Now Login to this link and complete further process: digipakistan.org/apply-now/login";
 
         const encodeMessage = encodeURI(message);
-        const encodeMask = encodeURI("INFOSHARE");
 
         axios.post(
-          `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=${encodeMask}&to=${mobileNumber}&message=${encodeMessage}`
+          `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=Digi Alert&to=${mobileNumber}&message=${encodeMessage}`
         );
       })
       .then(() => {

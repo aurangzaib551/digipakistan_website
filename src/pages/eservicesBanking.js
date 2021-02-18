@@ -89,9 +89,8 @@ const EServicesBanking = ({
           </Button>
         </div>
         <p className="mb-0 mt-3 text-center mb-5">
-          <span className="fw-bold">Note:</span> As you pay the registration
-          charges you'll be able to access the Learning Management System in
-          next 48hrs
+          <span className="fw-bold">Note:</span> Once admissions are closed, you
+          will get your LMS Login Credentials
         </p>
       </Container>
     </>

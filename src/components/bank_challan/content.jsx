@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import font from "../../assets/fonts/Montserrat ExtraBold 800.ttf";
 import fontSemi from "../../assets/fonts/Montserrat-SemiBold.ttf";
@@ -11,6 +11,7 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import PDFChallan from "./pdfChallan";
 import { challanNo } from "../../store/actions/authActions";
+import CircularLoader from "@material-ui/core/CircularProgress";
 
 Font.register({
   family: "Montserrat",
@@ -52,68 +53,36 @@ const Content = ({
   const [enrolledCourses, setEnrolledCourses] = useState([]);
   const [showPDF, setShowPDF] = useState(false);
 
+  // Object Destructuring
+  const { push } = useHistory();
+
   useLayoutEffect(() => {
     const enrollment = [];
 
     let type = {};
 
-    if (
-      data["First Course"] === "Fast Track Technical Program" ||
-      data["Second Course"] === "Fast Track Technical Program" ||
-      data["Third Course"] === "Fast Track Technical Program"
-    ) {
+    if (data["First Course"] === "Fast Track Technical Program") {
       type.titleOne = "Technical";
+    } else if (data["First Course"] === "Fast Track Non-Technical Program") {
+      type.titleOne = "Non-Technical";
+    } else if (data["First Course"] === "Associate Certification Program") {
+      type.titleOne = "Associate";
     }
-    if (
-      data["First Course"] === "Fast Track Non-Technical Program" ||
-      data["Second Course"] === "Fast Track Non-Technical Program" ||
-      data["Third Course"] === "Fast Track Non-Technical Program"
-    ) {
+
+    if (data["Second Course"] === "Fast Track Technical Program") {
+      type.titleTwo = "Technical";
+    } else if (data["Second Course"] === "Fast Track Non-Technical Program") {
       type.titleTwo = "Non-Technical";
-    }
-    if (
-      data["First Course"] === "Associate Certification Program" ||
-      data["Second Course"] === "Associate Certification Program" ||
-      data["Third Course"] === "Associate Certification Program"
-    ) {
-      type.titlethree = "Associate";
+    } else if (data["Second Course"] === "Associate Certification Program") {
+      type.titleTwo = "Associate";
     }
 
-    if (
-      data["First Course"] === "Fast Track Technical Program" &&
-      data["Second Course"] === "Fast Track Technical Program" &&
-      data["Third Course"] === "Fast Track Technical Program"
-    ) {
-      type.titleOne = "Technical";
-    } else if (
-      data["First Course"] === "Fast Track Non-Technical Program" &&
-      data["Second Course"] === "Fast Track Non-Technical Program" &&
-      data["Third Course"] === "Fast Track Non-Technical Program"
-    ) {
-      type.titleOne = "Non-Technical";
-    } else if (
-      data["First Course"] === "Associate Certification Program" &&
-      data["Second Course"] === "Associate Certification Program" &&
-      data["Third Course"] === "Associate Certification Program"
-    ) {
-      type.titleOne = "Associate";
-    }
-
-    if (
-      data["First Course"] === "Fast Track Technical Program" &&
-      data["Second Course"] === "Fast Track Technical Program"
-    ) {
-      type.titleOne = "Technical";
-    } else if (
-      data["First Course"] === "Fast Track Non-Technical Program" &&
-      data["Third Course"] === "Fast Track Non-Technical Program"
-    ) {
-      type.titleOne = "Non-Technical";
-    } else if (
-      data["Second Course"] === "Associate Certification Program" &&
-      data["Third Course"] === "Associate Certification Program"
-    ) {
-      type.titleOne = "Associate";
+    if (data["Third Course"] === "Fast Track Technical Program") {
+      type.titleThree = "Technical";
+    } else if (data["Third Course"] === "Fast Track Non-Technical Program") {
+      type.titleThree = "Non-Technical";
+    } else if (data["Third Course"] === "Associate Certification Program") {
+      type.titleThree = "Associate";
     }
 
     if (data["First Course"]) {
@@ -127,7 +96,7 @@ const Content = ({
     if (data["Second Course"]) {
       enrollment.push({
         title: data["Second Course Category"],
-        type: type.titleTwo || type.titleOne,
+        type: type.titleTwo || type.titleOne || type.titlethree,
         challanNo: data.challanNoTwo,
       });
     }
@@ -135,7 +104,7 @@ const Content = ({
     if (data["Third Course"]) {
       enrollment.push({
         title: data["Third Course Category"],
-        type: type.titlethree || type.titleOne,
+        type: type.titlethree || type.titleOne || type.titleTwo,
         challanNo: data.challanNoThree,
       });
     }
@@ -199,13 +168,17 @@ const Content = ({
 
       <div className="d-flex flex-column align-items-center">
         <div className="d-flex mt-3 justify-content-center">
-          <Button
-            onClick={handleChallan}
-            variant="contained"
-            className="custom-button d-flex align-items-center"
-          >
-            Generated Challan {showPDF ? "-" : "+"}
-          </Button>
+          {data["Full Name"] ? (
+            <Button
+              onClick={handleChallan}
+              variant="contained"
+              className="custom-button d-flex align-items-center"
+            >
+              Generated Challan {showPDF ? "-" : "+"}
+            </Button>
+          ) : (
+            <CircularLoader style={{ color: "#02a39b", marginTop: 10 }} />
+          )}
         </div>
 
         {enrolledCourses.map((course, index) => {
@@ -229,18 +202,35 @@ const Content = ({
         })}
 
         <Button
-          href="https://forms.gle/wqCjW8musjiWJmLC9"
+          href="https://forms.gle/d47KWyUXN5drvrn56"
           variant="contained"
           className="custom-button mt-3"
         >
           Verification Form
         </Button>
+
+        {/* {data["Full Name"] ? (
+          <Button
+            onClick={() => {
+              setTimeout(() => {
+                push(
+                  `/apply-now/generateChallan/paymentVerification/${data["Full Name"]}/${data["Father Name"]}/${data.Applicant}`
+                );
+              }, 400);
+            }}
+            variant="contained"
+            className="custom-button mt-3"
+          >
+            Payment Verification
+          </Button>
+        ) : (
+          <CircularLoader style={{ color: "#02a39b", marginTop: 10 }} />
+        )} */}
       </div>
 
       <p className="mb-0 mt-3 mb-5">
-        <span className="fw-bold">Note:</span> As you pay the registration
-        charges you'll be able to access the Learning Management System in next
-        48hrs
+        <span className="fw-bold">Note:</span> Once admissions are closed, you
+        will get your LMS Login Credentials
       </p>
     </Container>
   );

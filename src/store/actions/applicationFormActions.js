@@ -337,7 +337,7 @@ export const application = (formData, setBtnLoading, uid) => {
           "Your application has been submitted successfully. Our admission department is currently evaluating your application and we will inform you as your application is approved. In case you didn't receive notification by DigiPAKISTAN within next 24hrs, you can check your application status by logging to this link: digipakistan.org/apply-now/login ";
 
         axios.post(
-          `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=INFOSHARE&to=${formData.messageNumber}&message=${message}`
+          `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=Digi Alert&to=${formData.messageNumber}&message=${message}`
         );
       })
       .then(() => {
