@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import { connect } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import font from "../../assets/fonts/Montserrat ExtraBold 800.ttf";
 import fontSemi from "../../assets/fonts/Montserrat-SemiBold.ttf";
