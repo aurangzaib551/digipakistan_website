@@ -14,6 +14,8 @@ const BankChallan = ({ uid, emailVerified, applicationSubmitted, status }) => {
     return <Redirect to="/apply-now/applicationForm" />;
   if (!status) return <Redirect to="/apply-now/admissionStatus" />;
 
+  console.log(uid);
+
   return (
     <>
       <Helmet>

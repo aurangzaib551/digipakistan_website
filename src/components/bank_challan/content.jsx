@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import font from "../../assets/fonts/Montserrat ExtraBold 800.ttf";
 import fontSemi from "../../assets/fonts/Montserrat-SemiBold.ttf";
@@ -54,7 +54,7 @@ const Content = ({
   const [showPDF, setShowPDF] = useState(false);
 
   // Object Destructuring
-  // const { push } = useHistory();
+  const { push } = useHistory();
 
   useLayoutEffect(() => {
     const enrollment = [];
@@ -85,6 +85,8 @@ const Content = ({
       type.titleThree = "Associate";
     }
 
+    console.log(type);
+
     if (data["First Course"]) {
       enrollment.push({
         title: data["First Course Category"],
@@ -96,7 +98,7 @@ const Content = ({
     if (data["Second Course"]) {
       enrollment.push({
         title: data["Second Course Category"],
-        type: type.titleTwo || type.titleOne || type.titlethree,
+        type: type.titleTwo,
         challanNo: data.challanNoTwo,
       });
     }
@@ -104,7 +106,7 @@ const Content = ({
     if (data["Third Course"]) {
       enrollment.push({
         title: data["Third Course Category"],
-        type: type.titlethree || type.titleOne || type.titleTwo,
+        type: type.titleThree,
         challanNo: data.challanNoThree,
       });
     }
