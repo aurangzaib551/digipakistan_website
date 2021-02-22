@@ -421,7 +421,7 @@ const App = ({ signOut, uid }) => {
               component={GenerateChallan}
             />
             <Route
-              path="/apply-now/generateChallan/paymentVerification/:name/:fatherName/:applicant"
+              path="/apply-now/generateChallan/paymentVerification/:name/:fatherName/:applicant/:number"
               component={PaymentVerification}
             />
             <Route

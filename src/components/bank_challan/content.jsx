@@ -85,8 +85,6 @@ const Content = ({
       type.titleThree = "Associate";
     }
 
-    console.log(type);
-
     if (data["First Course"]) {
       enrollment.push({
         title: data["First Course Category"],
@@ -131,6 +129,8 @@ const Content = ({
       saveChallanNo(uid);
     }
   };
+
+  const number = data["Mobile Number"].slice(1);
 
   return (
     <Container className="mt pt-4">
@@ -211,12 +211,12 @@ const Content = ({
           Verification Form
         </Button>
 
-        {/* {data["Full Name"] ? (
+        {data["Full Name"] ? (
           <Button
             onClick={() => {
               setTimeout(() => {
                 push(
-                  `/apply-now/generateChallan/paymentVerification/${data["Full Name"]}/${data["Father Name"]}/${data.Applicant}`
+                  `/apply-now/generateChallan/paymentVerification/${data["Full Name"]}/${data["Father Name"]}/${data.Applicant}/${number}`
                 );
               }, 400);
             }}
@@ -227,7 +227,7 @@ const Content = ({
           </Button>
         ) : (
           <CircularLoader style={{ color: "#02a39b", marginTop: 10 }} />
-        )} */}
+        )}
       </div>
 
       <p className="mb-0 mt-3 mb-5">

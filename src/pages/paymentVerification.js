@@ -7,6 +7,7 @@ import Input from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import data from "../components/bank_challan/bankData";
+import axios from "axios";
 
 const PaymentVerification = (props) => {
   // Object Destructuring
@@ -124,6 +125,19 @@ const PaymentVerification = (props) => {
     }
   };
 
+  if (verify) {
+    const message =
+      "Dear Student, you have been successfully created login credentials through registration at DigiPAKISTAN Website. Now Login to this link and complete further process: digipakistan.org/apply-now/login";
+
+    const encodeMessage = encodeURI(message);
+
+    axios
+      .post(
+        `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=Digi Alert&to=${props.match.params.number}&message=${encodeMessage}`
+      )
+      .then((res) => console.log(res.data));
+  }
+
   return (
     <>
       <Helmet>
@@ -230,7 +244,8 @@ const PaymentVerification = (props) => {
             </>
           )}
 
-          {formData.paid === "Online Banking" && (
+          {(formData.paid === "Online Banking" ||
+            formData.paid === "eService for Overseas") && (
             <>
               <Input
                 className="mt-3"
