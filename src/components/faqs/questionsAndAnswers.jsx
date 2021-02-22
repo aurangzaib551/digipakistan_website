@@ -141,11 +141,6 @@ const QuestionsAndAnswers = () => {
             </p>
             <p className="small mb-0 text-justify">
               <span className="fw-bold text-start d-inline-block">Step 7:</span>{" "}
-              As challan is paid. Fill Verification form at candidate portal and
-              upload your CNIC &amp; last Degree documents online at portal.
-            </p>
-            <p className="small mb-0 text-justify">
-              <span className="fw-bold text-start d-inline-block">Step 8:</span>{" "}
               Applicant will now be enrolled in DigiPAKISTAN program.
             </p>
           </div>

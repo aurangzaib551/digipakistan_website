@@ -130,7 +130,7 @@ const Content = ({
     }
   };
 
-  const number = data["Mobile Number"].slice(1);
+  // const number = data["Mobile Number"] && data["Mobile Number"].slice(1);
 
   return (
     <Container className="mt pt-4">
@@ -211,7 +211,7 @@ const Content = ({
           Verification Form
         </Button>
 
-        {data["Full Name"] ? (
+        {/* {data["Full Name"] ? (
           <Button
             onClick={() => {
               setTimeout(() => {
@@ -227,7 +227,7 @@ const Content = ({
           </Button>
         ) : (
           <CircularLoader style={{ color: "#02a39b", marginTop: 10 }} />
-        )}
+        )} */}
       </div>
 
       <p className="mb-0 mt-3 mb-5">

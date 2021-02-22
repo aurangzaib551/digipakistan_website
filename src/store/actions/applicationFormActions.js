@@ -232,8 +232,6 @@ export const application = (formData, setBtnLoading, uid) => {
           feeMonth = 0;
         } else if (date.getDate() === 31 && date.getMonth() === 11) {
           feeMonth = 0;
-        } else {
-          feeMonth = date.getMonth();
         }
 
         let feeYear;
