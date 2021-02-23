@@ -4,10 +4,10 @@ import { Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Container from "@material-ui/core/Container";
 import Input from "@material-ui/core/TextField";
-import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
-import data from "../components/bank_challan/bankData";
 import axios from "axios";
+import Alert from "@material-ui/lab/Alert";
+import { firebasePayment } from "../config/fbConfigOnlineBanking";
 
 const PaymentVerification = (props) => {
   // Object Destructuring
@@ -15,19 +15,11 @@ const PaymentVerification = (props) => {
 
   // State
   const [formData, setFormData] = useState({
-    paid: "",
-    firstCourseName: "",
-    secondCourseName: "",
-    thirdCourseName: "",
-    firstChallanNo: "",
-    secondChallanNo: "",
-    thirdChallanNo: "",
-    accountNo: "",
-    tid: "",
-    referenceID: "",
+    cnic: "",
+    payment: "",
   });
-  const [verify, setVerify] = useState(false);
-  const [notVerify, setNotVerify] = useState(false);
+  const [data, setData] = useState(null);
+  const [msg, setMsg] = useState("");
 
   // User is logged in or not
   if (!uid) return <Redirect to="/apply-now/login" />;
@@ -42,101 +34,72 @@ const PaymentVerification = (props) => {
   const handleChange = (event) => {
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value,
+      [event.target.id]: event.target.value,
     });
   };
 
-  const handleSelect = (event) => {
-    setFormData({
-      ...formData,
-      paid: event.target.value,
-      firstChallanNo: "",
-      firstCourseName: "",
-      secondChallanNo: "",
-      secondCourseName: "",
-      thirdChallanNo: "",
-      thirdCourseName: "",
-      accountNo: "",
-      tid: "",
-      referenceID: "",
-    });
+  const handleHBL = () => {
+    firebasePayment
+      .database()
+      .ref("/HBLPaymentVerification")
+      .child(formData.cnic || 1)
+      .once("value", (snapshot) => {
+        if (snapshot.exists()) {
+          setData(snapshot.val());
+          const message = "Your payment has been verified";
+
+          const encodeMessage = encodeURI(message);
+
+          // if (snapshot.val().Verified === "Done") {
+          //   axios.post(
+          //     `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=Digi Alert&to=${props.match.params.number}&message=${encodeMessage}`
+          //   );
+          // } else if (snapshot.val().Verified === "Pending") {
+          //   const message = "Your payment is not verified";
+
+          //   const encodeMessage = encodeURI(message);
+
+          //   axios.post(
+          //     `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=Digi Alert&to=${props.match.params.number}&message=${encodeMessage}`
+          //   );
+          // }
+        } else {
+          setMsg("There is no record");
+        }
+      });
   };
 
-  const handleClick = () => {
-    if (formData.firstChallanNo) {
-      const bankData = data.includes(formData.firstChallanNo.toString());
-      if (bankData) {
-        setVerify(true);
-        setNotVerify(false);
-      } else if (bankData === false) {
-        setNotVerify(true);
-        setVerify(false);
-      }
-    }
-    if (formData.secondChallanNo) {
-      const bankData = data.includes(formData.secondChallanNo.toString());
-      if (bankData) {
-        setVerify(true);
-        setNotVerify(false);
-      } else if (bankData === false) {
-        setNotVerify(true);
-        setVerify(false);
-      }
-    }
-    if (formData.thirdChallanNo) {
-      const bankData = data.includes(formData.thirdChallanNo.toString());
-      if (bankData) {
-        setVerify(true);
-        setNotVerify(false);
-      } else if (bankData === false) {
-        setNotVerify(true);
-        setVerify(false);
-      }
-    }
-    if (formData.accountNo) {
-      const bankData = data.includes(formData.accountNo.toString());
-      if (bankData) {
-        setVerify(true);
-        setNotVerify(false);
-      } else if (bankData === false) {
-        setNotVerify(true);
-        setVerify(false);
-      }
-    }
-    if (formData.tid) {
-      const bankData = data.includes(formData.tid.toString());
-      if (bankData) {
-        setVerify(true);
-        setNotVerify(false);
-      } else if (bankData === false) {
-        setNotVerify(true);
-        setVerify(false);
-      }
-    }
-    if (formData.referenceID) {
-      const bankData = data.includes(formData.referenceID.toString());
-      if (bankData) {
-        setVerify(true);
-        setNotVerify(false);
-      } else if (bankData === false) {
-        setNotVerify(true);
-        setVerify(false);
-      }
-    }
+  const handleOnline = () => {
+    setData(null);
+    firebasePayment
+      .database()
+      .ref("/OnlinePaymentVerification")
+      .child(formData.cnic || 1)
+      .once("value", (snapshot) => {
+        if (snapshot.exists()) {
+          setData(snapshot.val());
+          const message = "Your payment has been verified";
+
+          const encodeMessage = encodeURI(message);
+
+          // if (snapshot.val().Verified === "Done") {
+          //   axios.post(
+          //     `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=Digi Alert&to=${props.match.params.number}&message=${encodeMessage}`
+          //   );
+          // } else if (snapshot.val().Verified === "Pending") {
+          //   const message = "Your payment is not verified";
+
+          //   const encodeMessage = encodeURI(message);
+
+          //   axios.post(
+          //     `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=Digi Alert&to=${props.match.params.number}&message=${encodeMessage}`
+          //   );
+          // }
+        } else {
+          setMsg("There is no record");
+        }
+      });
   };
-
-  if (verify) {
-    const message =
-      "Dear Student, you have been successfully created login credentials through registration at DigiPAKISTAN Website. Now Login to this link and complete further process: digipakistan.org/apply-now/login";
-
-    const encodeMessage = encodeURI(message);
-
-    axios
-      .post(
-        `https://secure.h3techs.com/sms/api/send?email=digipakistan.org@gmail.com&key=02813f09b8ea5a5be950bb7ec26e9ae986&mask=Digi Alert&to=${props.match.params.number}&message=${encodeMessage}`
-      )
-      .then((res) => console.log(res.data));
-  }
 
   return (
     <>
@@ -162,163 +125,52 @@ const PaymentVerification = (props) => {
 
           <Input
             className="mt-3"
-            id="paid"
-            name="paid"
-            value={formData.paid}
-            onChange={handleSelect}
-            label="Select option by which you paid registeration charges?"
+            id="cnic"
+            label="CNIC *"
+            value={formData.cnic}
+            onChange={handleChange}
             fullWidth
-            select
-          >
-            <MenuItem value="HBL Challan Deposit">HBL Challan Deposit</MenuItem>
-            <MenuItem value="Online Banking">Online Banking</MenuItem>
-            <MenuItem value="eService for Overseas">
-              eService for Overseas
-            </MenuItem>
-          </Input>
+          />
 
-          {formData.paid === "HBL Challan Deposit" && (
-            <>
-              <Input
-                className="mt-3"
-                id="firstCourseName"
-                name="firstCourseName"
-                label="First Course Name"
-                value={formData.firstCourseName}
-                onChange={handleChange}
-                fullWidth
-              />
-
-              <Input
-                className="mt-3"
-                id="firstChallanNo"
-                name="firstChallanNo"
-                value={formData.firstChallanNo}
-                onChange={handleChange}
-                label="Challan # 1"
-                helperText="Enter your first course challan number here"
-                fullWidth
-              />
-
-              <Input
-                className="mt-3"
-                id="secondCourseName"
-                name="secondCourseName"
-                value={formData.secondCourseName}
-                onChange={handleChange}
-                label="Second Course Name (Optional)"
-                fullWidth
-              />
-
-              <Input
-                className="mt-3"
-                id="secondChallanNo"
-                name="secondChallanNo"
-                value={formData.secondChallanNo}
-                onChange={handleChange}
-                label="Challan # 2 (Optional)"
-                helperText="Enter your second course challan number here"
-                fullWidth
-              />
-
-              <Input
-                className="mt-3"
-                id="thirdCourseName"
-                name="thirdCourseName"
-                value={formData.thirdCourseName}
-                onChange={handleChange}
-                label="Third Course Name (Optional)"
-                fullWidth
-              />
-
-              <Input
-                className="mt-3"
-                id="thirdChallanNo"
-                name="thirdChallanNo"
-                value={formData.thirdChallanNo}
-                onChange={handleChange}
-                label="Challan # 3 (Optional)"
-                helperText="Enter your third course challan number here"
-                fullWidth
-              />
-            </>
+          {msg && (
+            <Alert severity="error" variant="filled" className="mt-3">
+              {msg}
+            </Alert>
           )}
 
-          {(formData.paid === "Online Banking" ||
-            formData.paid === "eService for Overseas") && (
+          {data && (
             <>
-              <Input
-                className="mt-3"
-                id="accountNo"
-                name="accountNo"
-                value={formData.accountNo}
-                onChange={handleChange}
-                label="From Account"
-                helperText="Add account number by which you transfer registeration charges"
-                fullWidth
-              />
-
-              <Input
-                className="mt-3"
-                id="tid"
-                name="tid"
-                value={formData.tid}
-                onChange={handleChange}
-                label="Transaction ID"
-                helperText="Enter your Transaction ID"
-                fullWidth
-              />
-
-              <Input
-                className="mt-3"
-                id="referenceID"
-                name="referenceID"
-                value={formData.referenceID}
-                onChange={handleChange}
-                label="Reference ID (Optional)"
-                helperText="Enter your third course challan number here"
-                fullWidth
-              />
-
-              <Input
-                className="mt-3"
-                id="firstCourseName"
-                name="firstCourseName"
-                label="First Course Name"
-                value={formData.firstCourseName}
-                onChange={handleChange}
-                fullWidth
-              />
-              <Input
-                className="mt-3"
-                id="secondCourseName"
-                name="secondCourseName"
-                value={formData.secondCourseName}
-                onChange={handleChange}
-                label="Second Course Name (Optional)"
-                fullWidth
-              />
-              <Input
-                className="mt-3"
-                id="thirdCourseName"
-                name="thirdCourseName"
-                value={formData.thirdCourseName}
-                onChange={handleChange}
-                label="Third Course Name (Optional)"
-                fullWidth
-              />
+              <h4 className="fw-bold mt-3">
+                Name: <span className="fw-normal">{data.FullName}</span>
+              </h4>
+              <h4 className="fw-bold">
+                Payment Amount:{" "}
+                <span className="fw-normal">
+                  {data.VerifiedAmount ? data.VerifiedAmount : 0}
+                </span>
+              </h4>
+              <h4 className="fw-bold">
+                Verified:{" "}
+                <span className="fw-normal">
+                  {data.Verified === "Done" ? "Verified" : "Not Verified"}
+                </span>
+              </h4>
             </>
           )}
-
-          <p className="mb-0 mt-3">{verify && "Payment is verified"}</p>
-          <p className="mb-0 mt-3">{notVerify && "Payment is not verified"}</p>
 
           <Button
-            onClick={handleClick}
+            onClick={handleHBL}
             variant="contained"
             className="custom-button mt-3"
           >
-            Submit
+            Verify HBL Banking
+          </Button>
+          <Button
+            onClick={handleOnline}
+            variant="contained"
+            className="custom-button mt-3"
+          >
+            Verify Online Banking
           </Button>
         </Container>
       </div>
