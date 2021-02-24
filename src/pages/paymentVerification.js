@@ -5,9 +5,11 @@ import { Helmet } from "react-helmet";
 import Container from "@material-ui/core/Container";
 import Input from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import axios from "axios";
+// import axios from "axios";
 import Alert from "@material-ui/lab/Alert";
 import { firebasePayment } from "../config/fbConfigOnlineBanking";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { useMediaQuery } from "react-responsive";
 
 const PaymentVerification = (props) => {
   // Object Destructuring
@@ -20,6 +22,13 @@ const PaymentVerification = (props) => {
   });
   const [data, setData] = useState(null);
   const [msg, setMsg] = useState("");
+  const [btnLoading, setBtnLoading] = useState(false);
+  const [secBtnLoading, setSecBtnLoading] = useState(false);
+
+  // Media Query
+  const isMobile = useMediaQuery({
+    query: "(max-width: 576px)",
+  });
 
   // User is logged in or not
   if (!uid) return <Redirect to="/apply-now/login" />;
@@ -39,16 +48,19 @@ const PaymentVerification = (props) => {
   };
 
   const handleHBL = () => {
+    setBtnLoading(true);
     firebasePayment
       .database()
       .ref("/HBLPaymentVerification")
       .child(formData.cnic || 1)
       .once("value", (snapshot) => {
         if (snapshot.exists()) {
+          setMsg("");
           setData(snapshot.val());
-          const message = "Your payment has been verified";
+          setBtnLoading(false);
+          // const message = "Your payment has been verified";
 
-          const encodeMessage = encodeURI(message);
+          // const encodeMessage = encodeURI(message);
 
           // if (snapshot.val().Verified === "Done") {
           //   axios.post(
@@ -65,11 +77,14 @@ const PaymentVerification = (props) => {
           // }
         } else {
           setMsg("There is no record");
+          setData(null);
+          setBtnLoading(false);
         }
       });
   };
 
   const handleOnline = () => {
+    setSecBtnLoading(true);
     setData(null);
     firebasePayment
       .database()
@@ -77,10 +92,12 @@ const PaymentVerification = (props) => {
       .child(formData.cnic || 1)
       .once("value", (snapshot) => {
         if (snapshot.exists()) {
+          setMsg(null);
           setData(snapshot.val());
-          const message = "Your payment has been verified";
+          setBtnLoading(false);
+          // const message = "Your payment has been verified";
 
-          const encodeMessage = encodeURI(message);
+          // const encodeMessage = encodeURI(message);
 
           // if (snapshot.val().Verified === "Done") {
           //   axios.post(
@@ -97,6 +114,7 @@ const PaymentVerification = (props) => {
           // }
         } else {
           setMsg("There is no record");
+          setSecBtnLoading(false);
         }
       });
   };
@@ -124,7 +142,7 @@ const PaymentVerification = (props) => {
           </h4>
 
           <Input
-            className="mt-3"
+            className={`mt-3 ${isMobile ? "w-100" : "w-75"}`}
             id="cnic"
             label="CNIC *"
             value={formData.cnic}
@@ -158,20 +176,26 @@ const PaymentVerification = (props) => {
             </>
           )}
 
-          <Button
-            onClick={handleHBL}
-            variant="contained"
-            className="custom-button mt-3"
-          >
-            Verify HBL Banking
-          </Button>
-          <Button
-            onClick={handleOnline}
-            variant="contained"
-            className="custom-button mt-3"
-          >
-            Verify Online Banking
-          </Button>
+          <div className="d-flex flex-column flex-sm-row">
+            <Button
+              onClick={handleHBL}
+              variant="contained"
+              disabled={btnLoading}
+              className="custom-button mt-3 me-sm-2"
+            >
+              {btnLoading && <CircularProgress className="loader me-2" />}
+              {btnLoading ? "Verifying" : "Verify HBL Banking"}
+            </Button>
+            <Button
+              onClick={handleOnline}
+              disabled={secBtnLoading}
+              variant="contained"
+              className="custom-button mt-3"
+            >
+              {secBtnLoading && <CircularProgress className="loader me-2" />}
+              {secBtnLoading ? "Verifying" : "Verify Online Banking"}
+            </Button>
+          </div>
         </Container>
       </div>
     </>

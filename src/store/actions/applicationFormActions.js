@@ -136,149 +136,149 @@ export const application = (formData, setBtnLoading, uid) => {
         }
 
         // Seven date last for fee submission
-        let feeDate;
-        if (date.getDate() === 20) {
-          feeDate = 28;
-        } else if (date.getDate() === 21) {
-          feeDate = 29;
-        } else if (date.getDate() === 22) {
-          feeDate = 1;
-        } else if (date.getDate() === 23) {
-          feeDate = 2;
-        } else if (date.getDate() === 24) {
-          feeDate = 3;
-        } else if (date.getDate() === 25) {
-          feeDate = 4;
-        } else if (date.getDate() === 26) {
-          feeDate = 5;
-        } else if (date.getDate() === 27) {
-          feeDate = 6;
-        } else if (date.getDate() === 28) {
-          feeDate = 7;
-        } else if (date.getDate() === 29) {
-          feeDate = 8;
-        } else if (date.getDate() === 30) {
-          feeDate = 9;
-        } else if (date.getDate() === 31) {
-          feeDate = 10;
-        } else {
-          feeDate = date.getDate() + 7;
-        }
+        // let feeDate;
+        // if (date.getDate() === 20) {
+        //   feeDate = 28;
+        // } else if (date.getDate() === 21) {
+        //   feeDate = 29;
+        // } else if (date.getDate() === 22) {
+        //   feeDate = 1;
+        // } else if (date.getDate() === 23) {
+        //   feeDate = 2;
+        // } else if (date.getDate() === 24) {
+        //   feeDate = 3;
+        // } else if (date.getDate() === 25) {
+        //   feeDate = 4;
+        // } else if (date.getDate() === 26) {
+        //   feeDate = 5;
+        // } else if (date.getDate() === 27) {
+        //   feeDate = 6;
+        // } else if (date.getDate() === 28) {
+        //   feeDate = 7;
+        // } else if (date.getDate() === 29) {
+        //   feeDate = 8;
+        // } else if (date.getDate() === 30) {
+        //   feeDate = 9;
+        // } else if (date.getDate() === 31) {
+        //   feeDate = 10;
+        // } else {
+        //   feeDate = date.getDate() + 7;
+        // }
 
-        // February Month
-        if (date.getDate() === 20 && date.getMonth() === 1) {
-          feeDate = 1;
-        } else if (date.getDate() === 21 && date.getMonth() === 1) {
-          feeDate = 2;
-        } else if (date.getDate() === 22 && date.getMonth() === 1) {
-          feeDate = 3;
-        } else if (date.getDate() === 23 && date.getMonth() === 1) {
-          feeDate = 4;
-        } else if (date.getDate() === 24 && date.getMonth() === 1) {
-          feeDate = 5;
-        } else if (date.getDate() === 25 && date.getMonth() === 1) {
-          feeDate = 6;
-        } else if (date.getDate() === 26 && date.getMonth() === 1) {
-          feeDate = 7;
-        } else if (date.getDate() === 27 && date.getMonth() === 1) {
-          feeDate = 8;
-        } else if (date.getDate() === 28 && date.getMonth() === 1) {
-          feeDate = 9;
-        } else {
-          feeDate = date.getDate() + 7;
-        }
+        // // February Month
+        // if (date.getDate() === 20 && date.getMonth() === 1) {
+        //   feeDate = 1;
+        // } else if (date.getDate() === 21 && date.getMonth() === 1) {
+        //   feeDate = 2;
+        // } else if (date.getDate() === 22 && date.getMonth() === 1) {
+        //   feeDate = 3;
+        // } else if (date.getDate() === 23 && date.getMonth() === 1) {
+        //   feeDate = 4;
+        // } else if (date.getDate() === 24 && date.getMonth() === 1) {
+        //   feeDate = 5;
+        // } else if (date.getDate() === 25 && date.getMonth() === 1) {
+        //   feeDate = 6;
+        // } else if (date.getDate() === 26 && date.getMonth() === 1) {
+        //   feeDate = 7;
+        // } else if (date.getDate() === 27 && date.getMonth() === 1) {
+        //   feeDate = 8;
+        // } else if (date.getDate() === 28 && date.getMonth() === 1) {
+        //   feeDate = 9;
+        // }
 
-        let feeMonth;
-        if (
-          date.getDate() === 20 ||
-          date.getDate() === 21 ||
-          date.getDate() === 22 ||
-          date.getDate() === 23 ||
-          date.getDate() === 24 ||
-          date.getDate() === 25 ||
-          date.getDate() === 26 ||
-          date.getDate() === 27 ||
-          date.getDate() === 28 ||
-          date.getDate() === 29 ||
-          date.getDate() === 30 ||
-          date.getDate() === 31
-        ) {
-          feeMonth = date.getMonth() + 1;
-        } else {
-          feeMonth = date.getMonth();
-        }
+        // let feeMonth;
+        // if (
+        //   date.getDate() === 20 ||
+        //   date.getDate() === 21 ||
+        //   date.getDate() === 22 ||
+        //   date.getDate() === 23 ||
+        //   date.getDate() === 24 ||
+        //   date.getDate() === 25 ||
+        //   date.getDate() === 26 ||
+        //   date.getDate() === 27 ||
+        //   date.getDate() === 28 ||
+        //   date.getDate() === 29 ||
+        //   date.getDate() === 30 ||
+        //   date.getDate() === 31
+        // ) {
+        //   feeMonth = date.getMonth() + 1;
+        // } else {
+        //   feeMonth = date.getMonth();
+        // }
 
-        if (date.getDate() === 20 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 21 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 22 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 23 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 24 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 25 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 26 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 27 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 28 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 29 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 30 && date.getMonth() === 11) {
-          feeMonth = 0;
-        } else if (date.getDate() === 31 && date.getMonth() === 11) {
-          feeMonth = 0;
-        }
+        // if (date.getDate() === 20 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 21 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 22 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 23 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 24 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 25 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 26 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 27 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 28 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 29 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 30 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // } else if (date.getDate() === 31 && date.getMonth() === 11) {
+        //   feeMonth = 0;
+        // }
 
-        let feeYear;
-        if (date.getMonth() === 11 && date.getDate() === 20) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 21) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 22) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 23) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 24) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 25) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 26) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 27) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 28) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 29) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 30) {
-          feeYear = date.getFullYear() + 1;
-        } else if (date.getMonth() === 11 && date.getDate() === 31) {
-          feeYear = date.getFullYear() + 1;
-        } else {
-          feeYear = date.getFullYear();
-        }
+        // let feeYear;
+        // if (date.getMonth() === 11 && date.getDate() === 20) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 21) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 22) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 23) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 24) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 25) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 26) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 27) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 28) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 29) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 30) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else if (date.getMonth() === 11 && date.getDate() === 31) {
+        //   feeYear = date.getFullYear() + 1;
+        // } else {
+        //   feeYear = date.getFullYear();
+        // }
 
-        const monthNames = [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ];
+        // const monthNames = [
+        //   "Jan",
+        //   "Feb",
+        //   "Mar",
+        //   "Apr",
+        //   "May",
+        //   "Jun",
+        //   "Jul",
+        //   "Aug",
+        //   "Sep",
+        //   "Oct",
+        //   "Nov",
+        //   "Dec",
+        // ];
 
-        const feeMonthName = monthNames[feeMonth];
+        // const feeMonthName = monthNames[feeMonth];
+
+        // `${feeMonthName} ${feeDate}, ${feeYear}`
 
         firestore
           .collection("users")
@@ -291,7 +291,7 @@ export const application = (formData, setBtnLoading, uid) => {
             course,
             lms: false,
             issueDateOfFeeSubmission: `${month} ${todayDate}, ${year}`,
-            lastDateOfFeeSubmission: `${feeMonthName} ${feeDate}, ${feeYear}`,
+            lastDateOfFeeSubmission: "Mar 2, 2021",
           });
       })
       .then(() => {

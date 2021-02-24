@@ -1,6 +1,8 @@
 .message {
   position: fixed;
-  z-index: 11;
+  z-index: 1151;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -12,8 +14,10 @@
 
     .close {
       position: absolute;
-      top: -20px;
-      right: -20px;
+      top: -15px;
+      height: 35px;
+      width: 35px;
+      right: -15px;
       background-color: $secondary;
       color: white;
     }
@@ -24,13 +28,6 @@
   .message {
     .content {
       width: 90%;
-
-      .close {
-        height: 35px;
-        width: 35px;
-        top: -15px;
-        right: -15px;
-      }
 
       h4 {
         text-align: left;

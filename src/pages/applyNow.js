@@ -64,14 +64,12 @@ const ApplyNow = ({ signOut }) => {
             <Button
               onClick={() => go("/apply-now/signup")}
               variant="contained"
-              size="large"
               className="custom-button mx-3 mt-3"
             >
               New Registeration
             </Button>
             <Button
               onClick={() => go("/apply-now/login")}
-              size="large"
               variant="contained"
               className="custom-button mx-3 mt-3"
             >
@@ -79,7 +77,6 @@ const ApplyNow = ({ signOut }) => {
             </Button>
             <Button
               onClick={handleShow}
-              size="large"
               variant="contained"
               className="custom-button mx-3 mt-3"
             >

@@ -31,12 +31,14 @@ const Message = ({ firstLoad }) => {
             }
           >
             <div className="content p-3 py-4 rounded-">
-              <h3 className="fw-bold text-center">
+              <h3 className="text-center fw-bold">
                 DigiPAKISTAN <br /> National Skills Development Initiative
               </h3>
-              <h4 className="fw-light text-center">
-                Registration Open. Last Date to apply 05-Mar-2021. For queries
-                contact DigiPAKISTAN helpline: 042-35974881 / 042-35974882
+              <h4 className="fw-normal text-center">
+                <span className="fw-bold">Registration Open.</span> Last Date to
+                apply <span className="fw-bold">05-Mar-2021.</span> For queries
+                contact <span className="fw-bold">DigiPAKISTAN helpline:</span>{" "}
+                042-35974881 / 042-35974882
               </h4>
               <IconButton
                 onClick={() =>
