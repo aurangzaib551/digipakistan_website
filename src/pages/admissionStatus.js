@@ -219,7 +219,8 @@ const AdmissionStatus = ({
                   <p className="mb-0">
                     You will get access to the LMS portal before commencement of
                     the session. In case of any discrepancy in above
-                    information, you may contact DigiPAKISTAN ({" "}
+                    information, you may contact DigiPAKISTAN Accounts
+                    Department ({" "}
                     <a
                       href="mailto:accounts@digipakistan.org"
                       className="text-primary"
