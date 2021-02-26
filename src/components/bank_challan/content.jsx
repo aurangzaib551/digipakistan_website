@@ -192,7 +192,7 @@ const Content = ({
                     challanNo={course.challanNo}
                     course={course}
                     issueDate={profile.issueDateOfFeeSubmission}
-                    lastDate={profile.lastDateOfFeeSubmission}
+                    lastDate="Mar 2, 2021"
                     cnicChallan={data.CNIC || data["Overseas CNIC"]}
                     challanRollNumber={data["Roll Number"]}
                     name={data["Full Name"]}
@@ -210,24 +210,6 @@ const Content = ({
         >
           Verification Form
         </Button>
-
-        {data["Full Name"] ? (
-          <Button
-            onClick={() => {
-              setTimeout(() => {
-                push(
-                  `/apply-now/generateChallan/paymentVerification/${data["Full Name"]}/${data["Father Name"]}/${data.Applicant}/${number}`
-                );
-              }, 400);
-            }}
-            variant="contained"
-            className="custom-button mt-3"
-          >
-            Payment Verification
-          </Button>
-        ) : (
-          <CircularLoader style={{ color: "#02a39b", marginTop: 10 }} />
-        )}
       </div>
 
       <p className="mb-0 mt-3 mb-5">

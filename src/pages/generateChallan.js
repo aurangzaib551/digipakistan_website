@@ -114,7 +114,10 @@ const GenerateChallan = ({
         </h4>
         <h4 className="fw-bold">
           Fee Submission Deadline:{" "}
-          <span className="fw-normal">{profile.lastDateOfFeeSubmission}</span>
+          <span className="fw-normal">
+            {/* {profile.lastDateOfFeeSubmission} */}
+            Mar 2, 2021
+          </span>
         </h4>
 
         <p className="text-justify mb-1">
