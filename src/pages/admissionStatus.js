@@ -78,11 +78,11 @@ const AdmissionStatus = ({
     const allCoures = [];
     firebasePayment
       .database()
-      .ref("/OnlinePaymentVerification")
+      .ref("OnlinePaymentVerification")
       .once("value", (snapshot) => {
         if (snapshot.exists()) {
+          setData(snapshot.val()[applicationData.CNIC]);
           if (snapshot.val()[applicationData.CNIC]) {
-            setData(snapshot.val()[applicationData.CNIC]);
             if (snapshot.val()[applicationData.CNIC].Course1) {
               allCoures.push(snapshot.val()[applicationData.CNIC].Course1);
             }
@@ -106,7 +106,7 @@ const AdmissionStatus = ({
           setLoading(false);
         }
       });
-  }, []);
+  }, [applicationData.CNIC]);
 
   useLayoutEffect(() => {
     if (profile.admissionStatus === false) {
