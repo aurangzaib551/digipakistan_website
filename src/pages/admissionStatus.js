@@ -102,7 +102,9 @@ const AdmissionStatus = ({
           setLoading(false);
         }
       });
+  }, []);
 
+  useLayoutEffect(() => {
     if (profile.admissionStatus === false) {
       if (`${days}, ${month} ${todayDate}, ${year}` !== profile.approvalDate) {
         // Setting status is approved when next day is come
