@@ -83,11 +83,15 @@ const AdmissionStatus = ({
         if (snapshot.exists()) {
           if (snapshot.val()[applicationData.CNIC]) {
             setData(snapshot.val()[applicationData.CNIC]);
-            allCoures.push(
-              snapshot.val()[applicationData.CNIC].Course1,
-              snapshot.val()[applicationData.CNIC].Course2,
-              snapshot.val()[applicationData.CNIC].Course3
-            );
+            if (snapshot.val()[applicationData.CNIC].Course1) {
+              allCoures.push(snapshot.val()[applicationData.CNIC].Course1);
+            }
+            if (snapshot.val()[applicationData.CNIC].Course2) {
+              allCoures.push(snapshot.val()[applicationData.CNIC].Course2);
+            }
+            if (snapshot.val()[applicationData.CNIC].Course3) {
+              allCoures.push(snapshot.val()[applicationData.CNIC].Course3);
+            }
             setShow(true);
             setLoading(false);
             setCourses(allCoures);
