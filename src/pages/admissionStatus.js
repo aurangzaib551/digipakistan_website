@@ -141,7 +141,7 @@ const AdmissionStatus = ({
     }, 400);
   };
 
-  return profile.fullName ? (
+  return profile.fullName && applicationData ? (
     <>
       <Helmet>
         <title>{data ? "Payment Verification" : "Admission Status"}</title>
