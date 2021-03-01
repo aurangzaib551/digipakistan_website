@@ -150,7 +150,7 @@ const AdmissionStatus = ({
         <Loader />
       ) : (
         <Container className="mt pt-4">
-          {data.VerifiedAmount ? null : (
+          {data.VerifiedAmount || data.VerifiedAmount === 0 ? null : (
             <Alert severity="success" variant={status ? "filled" : "standard"}>
               <>
                 {status ? (
@@ -245,7 +245,7 @@ const AdmissionStatus = ({
                     <b>
                       Registeration Verification
                       <CancelIcon
-                        className="text-success ms-2"
+                        className="text-danger ms-2"
                         style={{ fontSize: 40 }}
                       />
                     </b>
@@ -256,17 +256,16 @@ const AdmissionStatus = ({
                   </h4>
                   <p className="mb-0">
                     We are thankful for your interest in DigiPAKISTAN. You have
-                    applied for {courses.length} courses but we regret to inform
-                    that your seat confirmation is still pending for{" "}
-                    {courses.length} courses due to non-verification of your
-                    payment proofs. You are requested to again contact
-                    DigiPAKISTAN ({" "}
+                    applied for courses but we regret to inform that your seat
+                    confirmation is still pending for your courses due to
+                    non-verification of your payment proofs. You are requested
+                    to again contact DigiPAKISTAN (
                     <a
                       href="mailto:accounts@digipakistan.org"
                       className="text-primary"
                     >
                       accounts@digipakistan.org
-                    </a>{" "}
+                    </a>
                     ) with details of your proofs for verification and approval.
                   </p>
                   <p className="mb-0">
@@ -280,7 +279,7 @@ const AdmissionStatus = ({
 
           {data && (
             <>
-              {data.VerifiedAmount ? null : (
+              {data.VerifiedAmount || data.VerifiedAmount === 0 ? null : (
                 <>
                   <div className="d-flex mt-5">
                     <h2 className="fw-bold">
@@ -359,7 +358,7 @@ const AdmissionStatus = ({
 
           {status && (
             <>
-              {data.VerifiedAmount ? null : (
+              {data.VerifiedAmount || data.VerifiedAmount === 0 ? null : (
                 <>
                   <h2 className="fw-bold">
                     Complete Further Process before Due Date:{" "}
