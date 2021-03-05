@@ -17,6 +17,7 @@ import { signOut } from "../store/actions/authActions";
 import { Helmet } from "react-helmet";
 import TimeIcon from "@material-ui/icons/AccessTimeRounded";
 import BusinessIcon from "@material-ui/icons/BusinessRounded";
+import ContactAds from '../components/home_page/myDigi/myhomeDive/Home_1'
 
 const ContactUs = ({ signOut }) => {
   useEffect(() => {
@@ -112,6 +113,7 @@ const ContactUs = ({ signOut }) => {
       </Helmet>
       <div className="contact-us d-flex py-5 justify-content-center align-items-center mt">
         <Container className="bg-white rounded px-0 mx-3 py-3 py-lg-4">
+        <ContactAds />
           <div className="row g-0">
             <div className="col-lg-4 py-5 py-lg-0 rounded mb-4 mb-lg-0 my-lg-4 address d-flex flex-column justify-content-center px-3 ps-lg-4">
               <h1 className="fw-bold text-center text-lg-start">Contact Us</h1>
@@ -330,7 +332,10 @@ const ContactUs = ({ signOut }) => {
               </form>
             </div>
           </div>
+          <ContactAds/>
+          <ContactAds/>
         </Container>
+        
       </div>
       <Copyright />
     </>

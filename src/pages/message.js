@@ -36,7 +36,7 @@ const Message = ({ firstLoad }) => {
               </h3>
               <h4 className="fw-normal text-center">
                 <span className="fw-bold">Registration Open.</span> Last Date to
-                apply <span className="fw-bold">05-Mar-2021.</span> For queries
+                apply <span className="fw-bold">15-Mar-2021.</span> For queries
                 contact <span className="fw-bold">DigiPAKISTAN helpline:</span>{" "}
                 042-35974881 / 042-35974882
               </h4>

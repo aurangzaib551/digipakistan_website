@@ -1,12 +1,14 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
+import AdmissionProcessContentAds from '../home_page/myDigi/myhomeDive/Home_1' 
 
 const Process = () => {
   return (
     <>
       <div className="process-odd py-5">
         <Container>
+            <AdmissionProcessContentAds />
           <div className="d-flex justify-content-center mb-5">
             <iframe
               title="videoAdmissionProcess"
@@ -18,11 +20,13 @@ const Process = () => {
               allowFullScreen
             ></iframe>
           </div>
+            <AdmissionProcessContentAds />
           <div className="row g-0">
             <div className="col-lg-1">
               <h1 className="display-1 text-center fw-bold">(1)</h1>
             </div>
             <div className="col-lg-11 mt-3 mt-lg-0 ps-lg-5">
+            <AdmissionProcessContentAds />
               <h6 className="fw-bold text-justify">
                 To participate in DigiPAKISTAN National Skills Development
                 Initiative, students have to adopt the following process.
@@ -33,6 +37,7 @@ const Process = () => {
                 training program. Computer know-how and basic proficiency in
                 English will be desirable.
               </p>
+              <AdmissionProcessContentAds />
               <p className="small mt-3 mb-0 text-justify">
                 <span className="fw-bold text-start d-inline-block">
                   Step 1:
@@ -95,6 +100,7 @@ const Process = () => {
         </Container>
       </div>
       <div className="process-even py-5">
+      <AdmissionProcessContentAds />
         <Container>
           <div className="row g-0">
             <div className="col-lg-1">
@@ -114,8 +120,10 @@ const Process = () => {
             </div>
           </div>
         </Container>
+        <AdmissionProcessContentAds />
       </div>
       <div className="process-odd py-5">
+      <AdmissionProcessContentAds />
         <Container>
           <div className="row g-0">
             <div className="col-lg-1">
@@ -130,8 +138,10 @@ const Process = () => {
             </div>
           </div>
         </Container>
+        <AdmissionProcessContentAds />
       </div>
       <div className="process-even py-5">
+      <AdmissionProcessContentAds />
         <Container>
           <div className="row g-0">
             <div className="col-lg-1">
@@ -155,6 +165,7 @@ const Process = () => {
             </div>
           </div>
         </Container>
+        <AdmissionProcessContentAds />
       </div>
     </>
   );

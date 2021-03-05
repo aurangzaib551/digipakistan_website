@@ -291,7 +291,7 @@ export const application = (formData, setBtnLoading, uid) => {
             course,
             lms: false,
             issueDateOfFeeSubmission: `${month} ${todayDate}, ${year}`,
-            lastDateOfFeeSubmission: "Mar 2, 2021",
+            lastDateOfFeeSubmission: "Mar 5, 2021",
           });
       })
       .then(() => {

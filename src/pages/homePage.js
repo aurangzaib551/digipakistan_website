@@ -12,6 +12,7 @@ import Footer from "../components/common/footer/footer";
 import Copyright from "../components/common/copyright/copyright";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
+import Home1 from "../components/home_page/myDigi/myhomeDive/Home_1";
 
 const HomePage = ({ signOut }) => {
   useEffect(() => {
@@ -20,14 +21,23 @@ const HomePage = ({ signOut }) => {
   return (
     <>
       <Slider />
+      <Home1 />
       <OurMission />
+      <Home1 />
       <AvailablePrograms />
+      <Home1 />
       <UpcomingPrograms />
+      <Home1 />
       <YoutubeChannel />
+      <Home1 />
       <TrainerCertified />
+      <Home1 />
       <FreelancingPlatforms />
+      <Home1 />
       <JoinDigiPAKISTAN />
+      <Home1 />
       <Supporters />
+      <Home1 />
       <Footer />
       <Copyright />
     </>

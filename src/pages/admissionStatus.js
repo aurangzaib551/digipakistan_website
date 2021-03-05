@@ -232,6 +232,10 @@ const AdmissionStatus = ({
                   <p className="mb-0">
                     Best wishes for your future endeavours.
                   </p>
+                  <p className="mb-0 my-2 fw-bold">
+                    Dear Students, Your classes will be held on 1<sup>st</sup>{" "}
+                    April, 2021
+                  </p>
                   <p className="mb-0">Team DigiPAKISTAN</p>
                 </>
               )}
@@ -270,6 +274,10 @@ const AdmissionStatus = ({
                   </p>
                   <p className="mb-0">
                     Best wishes for your future endeavours.
+                  </p>
+                  <p className="mb-0 my-2 fw-bold">
+                    Dear Students, Your classes will be held on 1<sup>st</sup>{" "}
+                    April, 2021
                   </p>
                   <p className="mb-0">Team DigiPAKISTAN</p>
                 </>
@@ -364,10 +372,13 @@ const AdmissionStatus = ({
                     Complete Further Process before Due Date:{" "}
                     <span className="fw-normal">
                       {/* {profile.lastDateOfFeeSubmission} */}
-                      Mar 2, 2021
+                      Mar 15, 2021
                     </span>
                   </h2>
-
+                  <p className="mb-0 my-2 fw-bold">
+                    Dear Students, Your classes will be held on 1<sup>st</sup>{" "}
+                    April, 2021
+                  </p>
                   <div className="d-flex flex-column align-items-center">
                     <Button
                       onClick={() => go("/apply-now/generateChallan")}
