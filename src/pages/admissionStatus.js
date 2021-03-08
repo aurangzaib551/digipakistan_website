@@ -29,7 +29,6 @@ const AdmissionStatus = ({
   const [loading, setLoading] = useState(false);
   const [courses, setCourses] = useState([]);
   const [show, setShow] = useState(false);
-  const [applications, setApplications] = useState([]);
 
   // Object Destructuring
   const { push } = useHistory();
