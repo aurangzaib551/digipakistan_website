@@ -11,7 +11,7 @@ import { statusOfAdmission } from "../store/actions/applicationFormActions";
 import { Helmet } from "react-helmet";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-import firebasePayment from "../config/fbConfig";
+import { affiliate } from "../config/fbConfigAffiliate";
 import OfflinePinIcon from "@material-ui/icons/OfflinePin";
 import CancelIcon from "@material-ui/icons/Cancel";
 
@@ -29,6 +29,7 @@ const AdmissionStatus = ({
   const [loading, setLoading] = useState(false);
   const [courses, setCourses] = useState([]);
   const [show, setShow] = useState(false);
+  const [applications, setApplications] = useState([]);
 
   // Object Destructuring
   const { push } = useHistory();
@@ -76,7 +77,7 @@ const AdmissionStatus = ({
   useLayoutEffect(() => {
     setLoading(true);
     const allCoures = [];
-    firebasePayment
+    affiliate
       .database()
       .ref("OnlinePaymentVerification")
       .once("value", (snapshot) => {
