@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
 import { Helmet } from "react-helmet";
 import Modal from "react-bootstrap/Modal";
-import ApplyNowAds from '../components/home_page/myDigi/myhomeDive/Home_1'
+import ApplyNowAds from "../components/home_page/myDigi/myhomeDive/Home_1";
 
 const ApplyNow = ({ signOut }) => {
   // State
@@ -45,14 +45,14 @@ const ApplyNow = ({ signOut }) => {
           elevation={10}
           className="d-flex flex-column align-items-center justify-content-center p-3 py-5 mx-3"
         >
-           <ApplyNowAds />
+          <ApplyNowAds />
           <img
             src="https://i.ibb.co/LYC7rpt/logoPNG.png"
             alt="DigiPAKISTAN"
             width="200"
             height="200"
           />
-           <ApplyNowAds />
+          <ApplyNowAds />
           <h1 className="text-center fw-bold mx-3">
             Online Application System
           </h1>
@@ -63,7 +63,7 @@ const ApplyNow = ({ signOut }) => {
             registration). You will be successfully logged into the Candidate
             Portal.
           </p>
-            <ApplyNowAds />
+          <ApplyNowAds />
           <div className="d-flex flex-column flex-sm-row justify-content-center mb-3">
             <Button
               onClick={() => go("/apply-now/signup")}
@@ -78,6 +78,13 @@ const ApplyNow = ({ signOut }) => {
               className="custom-button mx-3 mt-3"
             >
               Log In
+            </Button>
+            <Button
+              onClick={() => go("/apply-now/paymentVerification")}
+              variant="contained"
+              className="custom-button mx-3 mt-3"
+            >
+              Payment Verification
             </Button>
             <Button
               onClick={handleShow}
