@@ -34,11 +34,16 @@ const Message = ({ firstLoad }) => {
               <h3 className="text-center fw-bold">
                 DigiPAKISTAN <br /> National Skills Development Initiative
               </h3>
-              <h4 className="fw-normal text-center">
+              {/* <h4 className="fw-normal text-center">
                 <span className="fw-bold">Registration Open.</span> Last Date to
                 apply <span className="fw-bold">15-Mar-2021.</span> For queries
                 contact <span className="fw-bold">DigiPAKISTAN helpline:</span>{" "}
                 042-35974881 / 042-35974882
+              </h4> */}
+
+              <h4 className="fw-normal text-center">
+                Registerations are closed. Check your status by clicking log in
+                button.
               </h4>
               <IconButton
                 onClick={() =>
@@ -63,7 +68,7 @@ const Message = ({ firstLoad }) => {
                     }, 400)
                   }
                 >
-                  Apply Now
+                  Log In
                 </Button>
               </div>
             </div>

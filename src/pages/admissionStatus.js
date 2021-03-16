@@ -156,13 +156,18 @@ const AdmissionStatus = ({
           Roll #: <span className="fw-normal">{profile.rollNumber}</span>
         </h2>
 
-        <h2 className="fw-bold">
+        <h3 className="fw-bold">
+          Dear Students, Your admission is closed. If your application status is
+          approved then you've right to complete your furthur process before due
+          date: <span className="fw-light">Mar 18, 2021</span>
+        </h3>
+
+        {/* <h2 className="fw-bold">
           Complete Further Process before Due Date:{" "}
           <span className="fw-normal">
-            {/* {profile.lastDateOfFeeSubmission} */}
             Mar 15, 2021
           </span>
-        </h2>
+        </h2> */}
         <p className="mb-0 my-2 fw-bold">
           Dear Students, Your classes will be held on 1<sup>st</sup> April, 2021
         </p>

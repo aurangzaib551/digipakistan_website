@@ -116,7 +116,7 @@ const GenerateChallan = ({
           Fee Submission Deadline:{" "}
           <span className="fw-normal">
             {/* {profile.lastDateOfFeeSubmission} */}
-            Mar 15, 2021
+            Mar 18, 2021
           </span>
         </h4>
 
