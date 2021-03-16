@@ -30,6 +30,7 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
   });
   const [errors, setErrors] = useState({});
   const [btnLoading, setBtnLoading] = useState(false);
+  const [status] = useState(false);
 
   // Object Destructuring
   const { replace } = useHistory();
@@ -132,111 +133,120 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
         <title>Sign Up</title>
       </Helmet>
       <div className="signup mt d-flex justify-content-center align-items-center">
-        <Container className="d-flex flex-column justify-content-center align-items-center">
-          <img
-            src="https://i.ibb.co/LYC7rpt/logoPNG.png"
-            alt="DigiPAKISTAN"
-            width="200"
-          />
-
-          <form onSubmit={handleSubmit} className="form">
-            <h1 className="fw-bold text-center mx-3">Registeration</h1>
-            <Input
-              id="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              fullWidth
-              label="First Name *"
-              variant="standard"
-              className="mt-2"
+        {status ? (
+          <Container className="d-flex flex-column justify-content-center align-items-center">
+            <img
+              src="https://i.ibb.co/LYC7rpt/logoPNG.png"
+              alt="DigiPAKISTAN"
+              width="200"
             />
-            {errors.firstName && (
-              <Alert severity="error" variant="filled">
-                {errors.firstName}
-              </Alert>
-            )}
-            <Input
-              id="lastName"
-              fullWidth
-              label="Last Name *"
-              value={formData.lastName}
-              onChange={handleChange}
-              variant="standard"
-              className="mt-3"
-            />
-            {errors.lastName && (
-              <Alert severity="error" variant="filled">
-                {errors.lastName}
-              </Alert>
-            )}
 
-            <div className="mt-3">
-              <PhoneInput
-                country={"pk"}
-                onChange={handleMobileNumber}
-                enableAreaCodes={true}
-                enableSearch
-                inputStyle={{ width: "100%" }}
+            <form onSubmit={handleSubmit} className="form">
+              <h1 className="fw-bold text-center mx-3">Registeration</h1>
+              <Input
+                id="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                fullWidth
+                label="First Name *"
+                variant="standard"
+                className="mt-2"
               />
-              {errors.mobileNumber && (
+              {errors.firstName && (
                 <Alert severity="error" variant="filled">
-                  {errors.mobileNumber}
+                  {errors.firstName}
                 </Alert>
               )}
-            </div>
-
-            <Input
-              id="emailAddress"
-              fullWidth
-              value={formData.emailAddress}
-              onChange={handleChange}
-              label="Email Address *"
-              variant="standard"
-              className="mt-3"
-            />
-            {errors.emailAddress && (
-              <Alert severity="error" variant="filled">
-                {errors.emailAddress}
-              </Alert>
-            )}
-            <Input
-              id="password"
-              fullWidth
-              label="Password *"
-              type="password"
-              value={formData.password}
-              onChange={handleChange}
-              variant="standard"
-              className="mt-3"
-            />
-            {errors.password && (
-              <Alert severity="error" variant="filled">
-                {errors.password}
-              </Alert>
-            )}
-
-            <Button
-              disabled={btnLoading}
-              type="submit"
-              variant="contained"
-              className="custom-button mt-3"
-              fullWidth
-            >
-              {btnLoading && <CircularProgress className="loader" />}
-              {btnLoading ? (
-                <span className="ms-3">Registering...</span>
-              ) : (
-                "Register"
+              <Input
+                id="lastName"
+                fullWidth
+                label="Last Name *"
+                value={formData.lastName}
+                onChange={handleChange}
+                variant="standard"
+                className="mt-3"
+              />
+              {errors.lastName && (
+                <Alert severity="error" variant="filled">
+                  {errors.lastName}
+                </Alert>
               )}
-            </Button>
-          </form>
-          <p className="mb-0 mt-3 fw-bold">
-            Have an account?{" "}
-            <Link to="/apply-now/login" className="custom-link">
-              Log In
-            </Link>
-          </p>
-        </Container>
+
+              <div className="mt-3">
+                <PhoneInput
+                  country={"pk"}
+                  onChange={handleMobileNumber}
+                  enableAreaCodes={true}
+                  enableSearch
+                  inputStyle={{ width: "100%" }}
+                />
+                {errors.mobileNumber && (
+                  <Alert severity="error" variant="filled">
+                    {errors.mobileNumber}
+                  </Alert>
+                )}
+              </div>
+
+              <Input
+                id="emailAddress"
+                fullWidth
+                value={formData.emailAddress}
+                onChange={handleChange}
+                label="Email Address *"
+                variant="standard"
+                className="mt-3"
+              />
+              {errors.emailAddress && (
+                <Alert severity="error" variant="filled">
+                  {errors.emailAddress}
+                </Alert>
+              )}
+              <Input
+                id="password"
+                fullWidth
+                label="Password *"
+                type="password"
+                value={formData.password}
+                onChange={handleChange}
+                variant="standard"
+                className="mt-3"
+              />
+              {errors.password && (
+                <Alert severity="error" variant="filled">
+                  {errors.password}
+                </Alert>
+              )}
+
+              <Button
+                disabled={btnLoading}
+                type="submit"
+                variant="contained"
+                className="custom-button mt-3"
+                fullWidth
+              >
+                {btnLoading && <CircularProgress className="loader" />}
+                {btnLoading ? (
+                  <span className="ms-3">Registering...</span>
+                ) : (
+                  "Register"
+                )}
+              </Button>
+            </form>
+            <p className="mb-0 mt-3 fw-bold">
+              Have an account?{" "}
+              <Link to="/apply-now/login" className="custom-link">
+                Log In
+              </Link>
+            </p>
+          </Container>
+        ) : (
+          <Container
+            className="d-flex justify-content-center align-items-center"
+            style={{ height: "100vh" }}
+          >
+            <h1 className="fw-bold display-4">Admission Closed!</h1>
+          </Container>
+        )}
       </div>
       <Copyright />
     </>

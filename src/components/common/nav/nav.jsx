@@ -66,19 +66,13 @@ const Nav = ({ firstLoad, signOut, uid }) => {
               Sign Out
             </Button>
           ) : (
-            <Badge
-              badgeContent="Admissions Open"
-              color="error"
-              className="custom-badge"
+            <Button
+              onClick={() => go("/apply-now/login")}
+              variant="contained"
+              className="custom-button"
             >
-              <Button
-                onClick={() => go("/apply-now")}
-                variant="contained"
-                className="custom-button"
-              >
-                Apply Now
-              </Button>
-            </Badge>
+              Log In
+            </Button>
           )}
         </Toolbar>
       </AppBar>
