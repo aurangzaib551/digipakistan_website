@@ -157,7 +157,7 @@ const AdmissionStatus = ({
         </h2>
 
         <h3 className="fw-bold">
-          Dear Students, Your admission is closed. If your application status is
+          Dear Student, Your admission is closed. If your application status is
           approved then you've right to complete your furthur process before due
           date: <span className="fw-light">Mar 18, 2021</span>
         </h3>
@@ -169,7 +169,7 @@ const AdmissionStatus = ({
           </span>
         </h2> */}
         <p className="mb-0 my-2 fw-bold">
-          Dear Students, Your classes will be held on 1<sup>st</sup> April, 2021
+          Dear Student, Your classes will be held on 1<sup>st</sup> April, 2021
         </p>
         <div className="d-flex flex-column align-items-center">
           <Button

@@ -43,7 +43,9 @@ const Message = ({ firstLoad }) => {
 
               <h4 className="fw-normal text-center">
                 Registerations are closed. Check your status by clicking log in
-                button.
+                button. For queries contact{" "}
+                <span className="fw-bold">DigiPAKISTAN helpline:</span>{" "}
+                042-35974881 / 042-35974882
               </h4>
               <IconButton
                 onClick={() =>
