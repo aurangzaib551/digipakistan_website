@@ -66,7 +66,7 @@ const Nav = ({ firstLoad, signOut, uid }) => {
             </Button>
           ) : (
             <Button
-              onClick={() => go("/apply-now/login")}
+              onClick={() => go("/apply-now")}
               variant="contained"
               className="custom-button"
             >
