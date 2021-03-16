@@ -6,7 +6,6 @@ import Menus from "./menus";
 import Logo from "./logo";
 import LaptopMenus from "./laptopMenus";
 import Button from "@material-ui/core/Button";
-import Badge from "@material-ui/core/Badge";
 import MenuIcon from "@material-ui/icons/MenuRounded";
 import IconButton from "@material-ui/core/IconButton";
 import $ from "jquery";
