@@ -45,7 +45,7 @@ const Nav = ({ firstLoad, signOut, uid }) => {
   return (
     <>
       <AppBar position="fixed" className="bg-white custom-navbar">
-        <Toolbar className="d-flex h-100 justify-content-center custom-toolbar justify-content-sm-between align-items-center justify-content-xl-evenly justify-content-xxl-around text-dark">
+        <Toolbar className="d-flex h-100 justify-content-between custom-toolbar justify-content-sm-between align-items-center justify-content-xl-evenly justify-content-xxl-around text-dark">
           {isLaptop && (
             <IconButton onClick={handleOpen} className="outline laptop-menus">
               <MenuIcon />
@@ -60,7 +60,7 @@ const Nav = ({ firstLoad, signOut, uid }) => {
             <Button
               onClick={() => signOut(replace)}
               variant="contained"
-              className="signOut-button"
+              className="custom-button"
             >
               Sign Out
             </Button>

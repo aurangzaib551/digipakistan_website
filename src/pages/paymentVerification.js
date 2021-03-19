@@ -17,6 +17,7 @@ const PaymentVerification = () => {
   const [courses, setCourses] = useState([]);
   const [show, setShow] = useState(false);
   const [data, setData] = useState({});
+  const [msg, setMsg] = useState("");
 
   //   Validating the input field
   const validate = () => {
@@ -47,7 +48,7 @@ const PaymentVerification = () => {
     const allCoures = [];
     affiliate
       .database()
-      .ref("OnlinePaymentVerification/" + cnic)
+      .ref(`${process.env.REACT_APP_DATABASE_REF}/${cnic}`)
       .once("value", (snapshot) => {
         if (snapshot.exists()) {
           if (snapshot.val()) {
@@ -69,6 +70,7 @@ const PaymentVerification = () => {
           }
         } else {
           setBtnLoading(false);
+          setMsg("Your payment hasn't been verified");
         }
       });
   };
@@ -103,6 +105,11 @@ const PaymentVerification = () => {
                   {errors.cnic && (
                     <Alert severity="error" variant="filled">
                       {errors.cnic}
+                    </Alert>
+                  )}
+                  {msg && (
+                    <Alert severity="error" variant="filled">
+                      {msg}
                     </Alert>
                   )}
                   <div className="d-flex justify-content-center">

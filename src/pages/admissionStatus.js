@@ -156,11 +156,11 @@ const AdmissionStatus = ({
           Roll #: <span className="fw-normal">{profile.rollNumber}</span>
         </h2>
 
-        <h3 className="fw-bold">
+        {/* <h3 className="fw-bold">
           Dear Student, Your admission is closed. If your application status is
           approved then you've right to complete your furthur process before due
           date: <span className="fw-light">Mar 18, 2021</span>
-        </h3>
+        </h3> */}
 
         {/* <h2 className="fw-bold">
           Complete Further Process before Due Date:{" "}
@@ -169,15 +169,41 @@ const AdmissionStatus = ({
           </span>
         </h2> */}
         <p className="mb-0 my-2 fw-bold">
-          Dear Student, Your classes will be held on 1<sup>st</sup> April, 2021
+          Dear Student, Your classes will be held on 5<sup>th</sup> April, 2021
         </p>
-        <div className="d-flex flex-column align-items-center">
+        {/* <div className="d-flex flex-column align-items-center">
           <Button
             onClick={() => go("/apply-now/generateChallan")}
             variant="contained"
             className="custom-button mt-3"
           >
             Next
+          </Button>
+        </div> */}
+        <h1 className="fw-bold text-center mx-3 mt-3">
+          Fill your payment form
+        </h1>
+        <div className="d-flex flex-column flex-lg-row justify-content-center flex-wrap">
+          <Button
+            href="https://forms.gle/d47KWyUXN5drvrn56"
+            variant="contained"
+            className="custom-button mt-3 mx-lg-3"
+          >
+            Bank Challan Payment Verification Form
+          </Button>
+          <Button
+            href="https://forms.gle/YSD8vLmkFkoTpYwM9"
+            variant="contained"
+            className="custom-button mt-3 mx-lg-3"
+          >
+            Online Banking Verification Form
+          </Button>
+          <Button
+            href="https://forms.gle/weVCxPupkqQFWkE69"
+            variant="contained"
+            className="custom-button mt-3 mx-lg-3"
+          >
+            Overseas Verification Form
           </Button>
         </div>
       </Container>

@@ -241,10 +241,15 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
           </Container>
         ) : (
           <Container
-            className="d-flex justify-content-center align-items-center"
+            className="d-flex flex-column justify-content-center align-items-center"
             style={{ height: "100vh" }}
           >
-            <h1 className="fw-bold display-4">Admission Closed!</h1>
+            <h1 className="fw-bold text-center display-4 text-danger">
+              Dear Students, <br /> Admissions are Closed!
+            </h1>
+            <h4 className="mb-0 fw-bold">
+              You can enroll yourself in the next batch.
+            </h4>
           </Container>
         )}
       </div>
