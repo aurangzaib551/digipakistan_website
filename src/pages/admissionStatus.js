@@ -107,8 +107,8 @@ const AdmissionStatus = ({
               <p className="mb-0">
                 Congratulations, Your application has been approved successfully
                 &amp; we are happy to inform that you are eligible for the
-                program. Follow the further Instructions to complete your
-                admission process before the due date.
+                 program. {/* Follow the further Instructions to complete your
+                admission process before the due date. */}
               </p>
             ) : (
               <p className="mb-0 h4">
@@ -171,6 +171,7 @@ const AdmissionStatus = ({
         <p className="mb-0 my-2 fw-bold">
           Dear Student, Your classes will be held on 5<sup>th</sup> April, 2021
         </p>
+
         {/* <div className="d-flex flex-column align-items-center">
           <Button
             onClick={() => go("/apply-now/generateChallan")}
@@ -180,10 +181,10 @@ const AdmissionStatus = ({
             Next
           </Button>
         </div> */}
-        <h1 className="fw-bold text-center mx-3 mt-3">
+        {/* <h1 className="fw-bold text-center mx-3 mt-3">
           Fill your payment form
-        </h1>
-        <div className="d-flex flex-column flex-lg-row justify-content-center flex-wrap">
+        </h1> */}
+        {/* <div className="d-flex flex-column flex-lg-row justify-content-center flex-wrap">
           <Button
             href="https://forms.gle/d47KWyUXN5drvrn56"
             variant="contained"
@@ -205,6 +206,15 @@ const AdmissionStatus = ({
           >
             Overseas Verification Form
           </Button>
+        </div> */}
+        <div className="d-flex justify-content-center">
+          <Button
+            onClick={() => go("/apply-now/paymentVerification")}
+            variant="contained"
+            className="custom-button mx-3 mt-3"
+          >
+            Payment Verification
+            </Button>
         </div>
       </Container>
     </>

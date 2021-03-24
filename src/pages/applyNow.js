@@ -22,7 +22,7 @@ const ApplyNow = ({ signOut }) => {
   const { push } = useHistory();
 
   useLayoutEffect(() => {
-    return () => {};
+    return () => { };
   }, []);
 
   const go = (link) => {
@@ -84,7 +84,7 @@ const ApplyNow = ({ signOut }) => {
               variant="contained"
               className="custom-button mx-3 mt-3"
             >
-              Payment Verification
+              Seat Verification System
             </Button>
             <Button
               onClick={handleShow}

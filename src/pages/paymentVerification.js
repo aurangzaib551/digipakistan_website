@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { affiliate } from "../config/fbConfigAffiliate";
+import digipakistan from "../config/fbConfig";
 import { Helmet } from "react-helmet";
 import Footer from "../components/common/footer/footer";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
@@ -46,7 +46,7 @@ const PaymentVerification = () => {
     setBtnLoading(true);
 
     const allCoures = [];
-    affiliate
+    digipakistan
       .database()
       .ref(`${process.env.REACT_APP_DATABASE_REF}/${cnic}`)
       .once("value", (snapshot) => {
