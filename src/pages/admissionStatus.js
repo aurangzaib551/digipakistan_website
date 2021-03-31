@@ -107,7 +107,8 @@ const AdmissionStatus = ({
               <p className="mb-0">
                 Congratulations, Your application has been approved successfully
                 &amp; we are happy to inform that you are eligible for the
-                 program. {/* Follow the further Instructions to complete your
+                program.{" "}
+                {/* Follow the further Instructions to complete your
                 admission process before the due date. */}
               </p>
             ) : (
@@ -213,8 +214,8 @@ const AdmissionStatus = ({
             variant="contained"
             className="custom-button mx-3 mt-3"
           >
-            Payment Verification
-            </Button>
+            Seat Verification System
+          </Button>
         </div>
       </Container>
     </>

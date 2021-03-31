@@ -190,7 +190,7 @@ const PaymentVerification = () => {
                     Best wishes for your future endeavours.
                   </p>
                   <p className="mb-0 my-2 fw-bold">
-                    Dear Students, Your classes will be held on 1<sup>st</sup>{" "}
+                    Dear Students, Your classes will be held on 5<sup>th</sup>{" "}
                     April, 2021
                   </p>
                   <p className="mb-0">Team DigiPAKISTAN</p>
@@ -228,7 +228,7 @@ const PaymentVerification = () => {
                     Best wishes for your future endeavours.
                   </p>
                   <p className="mb-0 my-2 fw-bold">
-                    Dear Students, Your classes will be held on 1<sup>st</sup>{" "}
+                    Dear Students, Your classes will be held on 5<sup>th</sup>{" "}
                     April, 2021
                   </p>
                   <p className="mb-0">Team DigiPAKISTAN</p>
