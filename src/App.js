@@ -314,6 +314,7 @@ const ForgotPassword = lazy(() => import("./pages/forgotPassword"));
 const OnlineBanking = lazy(() => import("./pages/onlineBanking"));
 const EServicesBanking = lazy(() => import("./pages/eservicesBanking"));
 const PaymentVerification = lazy(() => import("./pages/paymentVerification"));
+const Team = lazy(() => import("./pages/team"));
 
 const App = ({ signOut, uid }) => {
   // State
@@ -408,6 +409,7 @@ const App = ({ signOut, uid }) => {
             <Route path="/admissionProcess" component={AdmissionProcess} />
             <Route path="/faqs" component={FAQs} />
             <Route path="/contactUs" component={ContactUs} />
+            <Route path="/team" component={Team} />
             <Route path="/apply-now" exact component={ApplyNow} />
             <Route path="/apply-now/signup" component={SignUp} />
             <Route path="/apply-now/login" component={LogIn} />

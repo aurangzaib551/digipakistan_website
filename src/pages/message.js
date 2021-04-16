@@ -64,13 +64,14 @@ const Message = ({ firstLoad }) => {
                   className="custom-button"
                   onClick={() =>
                     setTimeout(() => {
-                      push("/apply-now");
+                      // push("/apply-now");
+                      window.location.href = "https://portal.digipakistan.org/";
                       setMsg(false);
                       window.sessionStorage.setItem("Msg on load", 1);
                     }, 400)
                   }
                 >
-                  Log In
+                  Login Portal
                 </Button>
               </div>
             </div>

@@ -65,12 +65,21 @@ const Nav = ({ firstLoad, signOut, uid }) => {
               Sign Out
             </Button>
           ) : (
+            // <Button
+            //   onClick={() => go("/apply-now")}
+            //   variant="contained"
+            //   className="custom-button"
+            // >
+            //   Log In
+            // </Button>
             <Button
-              onClick={() => go("/apply-now")}
+              onClick={() =>
+                (window.location.href = "https://portal.digipakistan.org/")
+              }
               variant="contained"
               className="custom-button"
             >
-              Log In
+              Login Portal
             </Button>
           )}
         </Toolbar>
