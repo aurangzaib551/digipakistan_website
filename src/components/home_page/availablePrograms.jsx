@@ -20,7 +20,7 @@ const AvailablePrograms = () => {
   return (
     <Container>
       <div className="available-programs">
-        <h1 className="fw-bold text-center mx-3">Available Programs</h1>
+        <h2 className="fw-bold h1 text-center mx-3">Available Programs</h2>
         <div className="d-flex flex-column flex-lg-row justify-content-between mb-3 flex-wrap">
           <Paper
             elevation={5}

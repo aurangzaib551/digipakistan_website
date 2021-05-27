@@ -6,7 +6,7 @@ const OurMission = () => {
     <Container>
       <div className="row g-0 my-5 our-mission">
         <div className="col-lg-6">
-          <h1 className="fw-bold">Our Mission</h1>
+          <h2 className="fw-bold h1">Our Mission</h2>
           <p>
             To transform Pakistani Youth into productive workforce to contest
             the challenges of fourth industrial revolution through latest,

@@ -4,9 +4,9 @@ import Container from "@material-ui/core/Container";
 const TrainerCertified = () => {
   return (
     <Container className="mt-5">
-      <h1 className="fw-bold mx-3 text-center mb-0">
+      <h2 className="fw-bold mx-3 h1 text-center mb-0">
         Our Trainers Certified From
-      </h1>
+      </h2>
       <div className="d-flex flex-wrap align-items-center justify-content-around">
         <img
           src="https://i.ibb.co/z5q7VJY/aws.png"

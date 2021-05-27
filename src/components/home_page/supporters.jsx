@@ -10,7 +10,7 @@ const Supporters = () => {
 
   return (
     <Container>
-      <h1 className="fw-bold text-center mx-3">Supporting Institutions</h1>
+      <h2 className="fw-bold h1 text-center mx-3">Supporting Institutions</h2>
       <div className="d-flex align-items-center justify-content-center justify-content-md-between align-items-md-stretch flex-wrap mb-5">
         <img
           src="https://i.ibb.co/khvgtXw/phec.png"

@@ -25,9 +25,9 @@ const YoutubeChannel = () => {
   return (
     <div className="youtube-channel pb-5">
       <Container className="mt-5">
-        <h1 className="fw-bold text-center mx-3 text-white py-5 mb-0">
+        <h2 className="fw-bold h1 text-center mx-3 text-white py-5 mb-0">
           ڈیجی پاکستان قومی ہنر مند ترقیاتی پروگرام
-        </h1>
+        </h2>
 
         <div className="row g-0">
           <div className="col-lg-8">

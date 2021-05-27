@@ -34,7 +34,7 @@ const UpcomingPrograms = () => {
   };
   return (
     <Container className="mt-5 upcoming-programs">
-      <h1 className="fw-bold text-center mx-3">Upcoming Programs</h1>
+      <h2 className="fw-bold h1 text-center mx-3">Upcoming Programs</h2>
 
       <SlickSlider
         {...settings}
