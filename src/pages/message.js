@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CloseIcon from "@material-ui/icons/CloseRounded";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Message = ({ firstLoad }) => {
   const [msg, setMsg] = useState(
@@ -16,7 +16,7 @@ const Message = ({ firstLoad }) => {
   const msgOnLoad = window.sessionStorage.getItem("Msg on load");
 
   // Object Destructuring
-  const { push } = useHistory();
+
   const { pathname } = useLocation();
 
   return (

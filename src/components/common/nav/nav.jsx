@@ -15,7 +15,7 @@ import { signOut } from "../../../store/actions/authActions";
 
 const Nav = ({ firstLoad, signOut, uid }) => {
   // Object Destructuring
-  const { push, replace } = useHistory();
+  const { replace } = useHistory();
 
   // Media Query
   const isLaptop = useMediaQuery({
@@ -37,11 +37,11 @@ const Nav = ({ firstLoad, signOut, uid }) => {
   const closeNav = () => $(".menu-laptop").removeClass("open-nav");
 
   // that function is doing routing for us
-  const go = (link) => {
-    setTimeout(() => {
-      push(link);
-    }, 400);
-  };
+  // const go = (link) => {
+  //   setTimeout(() => {
+  //     push(link);
+  //   }, 400);
+  // };
   return (
     <>
       <AppBar position="fixed" className="bg-white custom-navbar">

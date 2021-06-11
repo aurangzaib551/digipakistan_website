@@ -4,6 +4,14 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.team {
+  .modal {
+    .modal-body {
+      height: 400px !important;
+    }
+  }
+}
 .ser-head {
   font-weight: bolder;
   font-size: 4rem;
