@@ -409,7 +409,7 @@ const App = ({ signOut, uid }) => {
             <Route path="/admissionProcess" component={AdmissionProcess} />
             <Route path="/faqs" component={FAQs} />
             <Route path="/contactUs" component={ContactUs} />
-            <Route path="/team" component={Team} />
+            <Route path="/about/ourTeam" component={Team} />
             <Route path="/apply-now" exact component={ApplyNow} />
             <Route path="/apply-now/signup" component={SignUp} />
             <Route path="/apply-now/login" component={LogIn} />

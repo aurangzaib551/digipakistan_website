@@ -155,6 +155,14 @@ const Menus = ({ firstLoad }) => {
                 Advisory Board
               </Link>
             </li>
+            <li className="sub-menus-li rounded text-nowrap">
+              <Link
+                to="/about/ourTeam"
+                className="sub-menu-link ps-3 pe-5 py-2 d-block"
+              >
+                Our Team
+              </Link>
+            </li>
           </ul>
         </li>
         <li

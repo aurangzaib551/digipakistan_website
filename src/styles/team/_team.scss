@@ -1,5 +1,6 @@
 .bg-img {
-  background-image: url("https://i.ibb.co/x57BJnw/depositphotos-80147336-Business-teamwork.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://i.ibb.co/x57BJnw/depositphotos-80147336-Business-teamwork.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -16,7 +17,31 @@
 }
 .card-title-name {
   font-weight: bolder;
+  color: #01645f !important;
 }
 .title-parent {
   border-bottom: 1px solid black;
+}
+.card-img-parrent {
+  width: 100% !important;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-img-top {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+}
+.my-card-button {
+  border-radius: 40% !important;
+  width: 150px !important;
+}
+
+@media only screen and (max-width: 371px) {
+  .card-img-top {
+    height: 200px;
+    width: 200px;
+  }
 }
