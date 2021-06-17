@@ -1,328 +1,457 @@
-import React, { useEffect, useState } from "react";
-import Container from "@material-ui/core/Container";
+import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import { useMediaQuery } from "react-responsive";
 import Button from "@material-ui/core/Button";
-import Copyright from "../../common/copyright/copyright";
-import { useHistory } from "react-router-dom";
-import { connect } from "react-redux";
-import { signOut } from "../../../store/actions/authActions";
-import { Helmet } from "react-helmet";
 
-const CertifiedInformationSystemsAuditor = ({ signOut }) => {
-  useEffect(() => {
-    signOut();
-  }, [signOut]);
+import { Tab, Tabs } from "react-bootstrap";
 
-  // State
-  const [tabValue, setTabValue] = useState(0);
+const CertifiedInformationSystemAuditor = () => {
+  const [key, setKey] = useState("home");
 
-  // Object Destructuring
-  const { push } = useHistory();
-
-  const handleTab = (obj, ind) => {
-    setTabValue(ind);
-  };
-
-  //   Media Query
-  const isSmall = useMediaQuery({
-    query: "(max-width: 400px)",
-  });
   return (
     <>
-      <Helmet>
-        <title>Certified Information Systems Auditor (CISA)</title>
-      </Helmet>
-      <Container className="mt overflow-hidden pt-4 course-outlines mb-5 pb-5">
-        <h1 className="text-center fw-bold mx-3">
-          Certified Information Systems Auditor (CISA)
-        </h1>
-        <div className="row g-4 mb-5 pb-5">
-          <div className="col-lg-8">
-            <Paper square>
-              <Tabs
-                value={tabValue}
-                variant={isSmall ? "scrollable" : "standard"}
-                onChange={handleTab}
-                scrollButtons={isSmall ? "on" : "off"}
-                centered={isSmall ? false : true}
-              >
-                <Tab label="Overview" className="outline" />
-                <Tab label="Curriculum" className="outline" />
-                <Tab label="Instructor" className="outline" />
-              </Tabs>
-            </Paper>
-            {tabValue === 0 && (
-              <div className="my-3">
-                <h3 className="fw-bold">Course Description</h3>
-                <p className="text-justify">
-                  The Certified Information Systems Auditor (CISA) course covers
-                  all the six domains of the CISA exam offered by the
-                  Information Systems Audit and Control Association (ISACA).
-                  CISA exam has become the industry standard for the IT
-                  auditing, control and security. The course helps the students
-                  to gain relevant, up-to-date and concise knowledge along with
-                  hands-on practice exams to prepare for the CISA certification
-                  exam.
-                </p>
-
-                <p className="text-justify">
-                  CISA is one of the most popular and high-demand IT
-                  certifications available in the market, approximately, more
-                  than 60,000 professionals hold CISA certification. The CISA
-                  certification is also consistently named one of the best
-                  professional certifications to have by the leading analysts
-                  around the world. The course offers the students to gain
-                  comprehensive knowledge and concepts that are required to pass
-                  the CISA certification exam.
-                </p>
-
-                <h3 className="fw-bold">Certificate</h3>
-                <p className="text-justify">
-                  On successful completion of the course participants will be
-                  awarded participation certificate from DigiPAKISTAN. Also
-                  prepare for International Exam.
-                </p>
-                <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                <p className="mb-0">Total Duration of the course is 3 months</p>
-              </div>
-            )}
-            {tabValue === 1 && (
-              <div className="my-3">
-                <ul className="list-unstyled">
-                  <li className="fw-bold">
-                    General Information About the Exam
-                    <ul className="fw-normal">
-                      <li>About the CISA Exam</li>
-                      <li>Answering Questions</li>
-                      <li>Exam Scoring</li>
-                      <li>Certification Steps</li>
-                      <li>Example Questions</li>
-                    </ul>
-                  </li>
-                  <li className="fw-bold mt-3">
-                    Domain 1: Information System Auditing Process
-                    <ul className="fw-normal">
-                      <li>
-                        Planning
-                        <ul>
-                          <li>
-                            IS Audit Standards, Guidelines and Codes of Ethics
-                          </li>
-                          <li>Business Processes</li>
-                          <li>Types of Controls</li>
-                          <li>Risk-based Audit Planning</li>
-                          <li>Types of Audits and Assessments</li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <ul className="fw-normal">
-                      <li>
-                        Execution
-                        <ul>
-                          <li>Audit Project Management</li>
-                          <li>Sampling Methodology</li>
-                          <li>Audit Evidence Collection Techniques</li>
-                          <li>Data Analytics</li>
-                          <li>Reporting and Communication Techniques</li>
-                          <li>
-                            Quality Assurance and Improvement of the Audit
-                            Process
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="fw-bold mt-3">
-                    Domain 2: Governance and Management of IT
-                    <ul className="fw-normal">
-                      <li>
-                        IT Governance and IT Strategy
-                        <ul>
-                          <li>IT-related Frameworks</li>
-                          <li>IT Standards, Policies and Procedures</li>
-                          <li>Organizational Structure</li>
-                          <li>Enterprise Architecture</li>
-                          <li>Enterprise Risk Management</li>
-                          <li>Maturity Models</li>
-                          <li>
-                            Laws, Regulations and Industry Standards Affecting
-                            the Organization
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <ul className="fw-normal">
-                      <li>
-                        IT Management
-                        <ul>
-                          <li>IT Resource Management</li>
-                          <li>
-                            IT Service Provider Acquisition and Management
-                          </li>
-                          <li>IT Performance Monitoring and Reporting</li>
-                          <li>
-                            Quality Assurance and Quality Management of IT
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="fw-bold mt-3">
-                    Domain 3: Information Systems Acquisition, Development and
-                    Implementation
-                    <ul className="fw-normal">
-                      <li>
-                        Information Systems Acquisition and Development
-                        <ul>
-                          <li>Project Governance and Management</li>
-                          <li>Business Case and Feasibility Analysis</li>
-                          <li>System Development Methodologies</li>
-                          <li>Control Identification and Design</li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <ul className="fw-normal">
-                      <li>
-                        Information Systems Acquisition and Development
-                        <ul>
-                          <li>Testing Methodologies</li>
-                          <li>Configuration and Release Management</li>
-                          <li>
-                            System Migration, Infrastructure Deployment and Data
-                            Conversion
-                          </li>
-                          <li>Post-implementation Review</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="fw-bold mt-3">
-                    Domain 4: IS Operations and Business Resilience
-                    <ul className="fw-normal">
-                      <li>
-                        Information Systems Operations o Common Technology
-                        Components
-                        <ul>
-                          <li>IT Asset Management</li>
-                          <li>
-                            Job Scheduling and Production Process Automation
-                          </li>
-                          <li>System Interfaces</li>
-                          <li>End-user Computing</li>
-                          <li>Data Governance</li>
-                          <li>Systems Performance Management</li>
-                          <li>Problem and Incident Management</li>
-                          <li>
-                            Change, Configuration, Release and Patch Management
-                          </li>
-                          <li>IT Service Level Management</li>
-                          <li>Database Management</li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <ul className="fw-normal">
-                      <li>
-                        Business Resilience
-                        <ul>
-                          <li>Business Impact Analysis</li>
-                          <li>System Resiliency</li>
-                          <li>Data Backup, Storage and Restoration</li>
-                          <li>Business Continuity Plan</li>
-                          <li>Disaster Recovery Plans</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="fw-bold mt-3">
-                    Domain 5: Information Asset Security and Control
-                    <ul className="fw-normal">
-                      <li>
-                        Information Asset Security Frameworks, Standards and
-                        Guidelines
-                        <ul>
-                          <li>Privacy Principles</li>
-                          <li>Physical Access and Environmental Controls</li>
-                          <li>Identity and Access Management</li>
-                          <li>Network and End-point Security</li>
-                          <li>Data Classification</li>
-                          <li>
-                            Data Encryption and Encryption-related Techniques
-                          </li>
-                          <li>Public Key Infrastructure</li>
-                          <li>Web-based Communication Technologies</li>
-                          <li>Virtualized Environments</li>
-                          <li>
-                            Mobile, Wireless and Internet-of-things Devices
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <ul className="fw-normal">
-                      <li>
-                        Security Event Management
-                        <ul>
-                          <li>Security Awareness Training and Programs</li>
-                          <li>
-                            Information System Attack Methods and Techniques
-                          </li>
-                          <li>Security Testing Tools and Techniques</li>
-                          <li>Security Monitoring Tools and Techniques</li>
-                          <li>Incident Response Management</li>
-                          <li>Evidence Collection and Forensics</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
-
-          <div className="col-lg-4">
-            <Paper elevation={10} className="p-3 border">
-              <h6 className="fw-bold mb-0 details text-center text-sm-start">
-                Total No. of Seats in Batch-01:{" "}
-                <span className="text-success">1000 Students Only</span>
-              </h6>
-              <h6 className="fw-bold mb-0 details text-center text-sm-start">
-                Course Type:{" "}
-                <span className="fw-normal">Fast Track Technical Program</span>
-              </h6>
-              <h6 className="fw-bold mb-0 details text-center text-sm-start">
-                Duration: <span className="fw-normal">3 Months</span>
-              </h6>
-              <h6 className="fw-bold mb-0 details text-center text-sm-start">
-                Language: <span className="fw-normal">Urdu / English</span>
-              </h6>
-              <Button
-                onClick={() => push("/apply-now")}
-                variant="contained"
-                fullWidth
-                className="custom-button mt-3"
-              >
-                Apply Now
-              </Button>
-            </Paper>
+      <div className="course-outlines mt">
+        <div className="bg-img">
+          <div className="container pt-5">
+            <h1 className="fw-bold text-white">Courses</h1>
+            <p className="mb-0 small fw-bold text-white">
+              Home &bull; Available Programs &bull; Fast Track &bull; Certified
+              Information Security Auditor
+            </p>
           </div>
         </div>
-      </Container>
-      <div className="pt-5">
-        <Copyright />
+
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-9 mt-4 mt-lg-5">
+              <div className="d-flex justify-content-between align-items-center">
+                <h2 className="fw-bold mb-0">
+                  Certified Information Security Auditor
+                </h2>
+
+                <div>
+                  <Button
+                    // onClick={() => push("/apply-now")}
+                    variant="contained"
+                    fullWidth
+                    className="custom-button mt-3"
+                  >
+                    Apply Now
+                  </Button>
+                </div>
+              </div>
+
+              <div className="my-3">
+                <img
+                  src="https://c1.wallpaperflare.com/preview/763/123/778/technology-lumia-mobile-smartphone.jpg"
+                  alt=""
+                  width="100%"
+                  className="rounded "
+                  height="400"
+                />
+              </div>
+
+              <Tabs
+                id="controlled-tab-example"
+                activeKey={key}
+                onSelect={(k) => setKey(k)}
+              >
+                <Tab eventKey="home" title="Overview">
+                  <h3 className="fw-bold">Course Description</h3>
+                </Tab>
+                <Tab eventKey="requi" title="Prerequisite"></Tab>
+                <Tab eventKey="profile" title="Curriculum">
+                  <div className="accordion" id="accordionExample">
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="headingOne">
+                        <button
+                          className="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          Orientation
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        className="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div className="accordion-body">
+                          <ul>
+                            <li>CISA Orientation & Introduction Part I</li>
+                            <li>CISA Orientation & Introduction Part II</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="headingTwo">
+                        <button
+                          className="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="collapseTwo"
+                        >
+                          The Process of Auditing of Information System
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseTwo"
+                        className="accordion-collapse collapse"
+                        aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div className="accordion-body">
+                          <ul>
+                            <li>IS Audit Objective and Functions</li>
+                            <li>
+                              IS Auditor Code of Professional Ethics Standard
+                              and Guidelines Laws and Regulations
+                            </li>
+                            <li>CSA (Control Self – Assessment)</li>
+                            <li>Audit Planning & Considerations</li>
+                            <li>Risk Analysis and Risk Management Process</li>
+                            <li>Control Classifications & Internal Controls</li>
+                            <li>Information System Control Objective</li>
+                            <li>Type of Audits Internal vs External</li>
+                            <li>Audit Methodology and Audit Phases/Steps</li>
+                            <li>Audit Objective and Audit Risk</li>
+                            <li>Audit Programs & Procedures</li>
+                            <li>Testing Methods and Process</li>
+                            <li>Evidences Collection and Sampling</li>
+                            <li>Interview and Observations</li>
+                            <li>CAATs</li>
+                            <li>Audit Reporting and Documentation</li>
+                            <li>Quiz – Exam Sample Questions</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="headingThree">
+                        <button
+                          className="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseThree"
+                          aria-expanded="false"
+                          aria-controls="collapseThree"
+                        >
+                          Governance and Management of Information Technology
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseThree"
+                        className="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div className="accordion-body">
+                          <ul>
+                            <li>Governance of Enterprise IT</li>
+                            <li>Get IT Implementation and Good Practices</li>
+                            <li>Information Security Governance Issue</li>
+                            <li>Cloud Computing</li>
+                            <li>IT Functions</li>
+                            <li>Segregation of Duties</li>
+                            <li>Change Management</li>
+                            <li>Information Security Strategy</li>
+                            <li>Polices, Standard, Procedures</li>
+                            <li>IT Balance Scorecard</li>
+                            <li>IT Portfolio Management</li>
+                            <li>Risk Management Program</li>
+                            <li>Business Impact Analysis</li>
+                            <li>Process Maturity Frameworks</li>
+                            <li>Financial Management</li>
+                            <li>Tools and Techniques</li>
+                            <li>Policy Management</li>
+                            <li>BCP/DR Overview</li>
+                            <li>BCP Components and Auditing</li>
+                            <li>Quiz – Sample Example Question</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="headingThree">
+                        <button
+                          className="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#m1"
+                          aria-expanded="false"
+                          aria-controls="m1"
+                        >
+                          Information System Acquisition, Development and
+                          Implement
+                        </button>
+                      </h2>
+                      <div
+                        id="m1"
+                        className="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div className="accordion-body">
+                          <ul>
+                            <li>Benefit Realization</li>
+                            <li>Feasibly Study</li>
+                            <li>System Acquisition Factors</li>
+                            <li>Software Acquisition Process</li>
+                            <li>Project vs Program Management</li>
+                            <li>Project Objective, Planning, Scheduling</li>
+                            <li>SDLC (Software Development Lifecycle)</li>
+                            <li>Business Application Development Methods</li>
+                            <li>System Development Tools</li>
+                            <li>Virtualization</li>
+                            <li>Input and Processing Controls</li>
+                            <li>Application Controls and Testing</li>
+                            <li>Type of Testing</li>
+                            <li>Implementation Planning</li>
+                            <li>Certification and Accreditation</li>
+                            <li>Change Management</li>
+                            <li>Configuration Management</li>
+                            <li>Quiz – Sample Exam Question Review</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="headingThree">
+                        <button
+                          className="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#m2"
+                          aria-expanded="false"
+                          aria-controls="m2"
+                        >
+                          Information Security Incident Management
+                        </button>
+                      </h2>
+                      <div
+                        id="m2"
+                        className="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div className="accordion-body">
+                          <ul>
+                            <li>IT Service Management</li>
+                            <li>ITSM Frameworks</li>
+                            <li>SLA Tools</li>
+                            <li>OS and DB Review</li>
+                            <li>Network and IS Operations Review</li>
+                            <li>Capacity, Release, Patch Management</li>
+                            <li>Database Management System & Controls</li>
+                            <li>IT Asset Management</li>
+                            <li>Incident Management</li>
+                            <li>Problem Management</li>
+                            <li>Change Management</li>
+                            <li>End-user Computing</li>
+                            <li>BCP/DR Recovery Strategies</li>
+                            <li>Data Storage Resiliency</li>
+                            <li>Network Protection</li>
+                            <li>Quiz – Exam Sample Question Review</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="headingThree">
+                        <button
+                          className="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#m2"
+                          aria-expanded="false"
+                          aria-controls="m2"
+                        >
+                          Protection of Information Assets
+                        </button>
+                      </h2>
+                      <div
+                        id="m2"
+                        className="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div className="accordion-body">
+                          <ul>
+                            <li>Information Security Management System</li>
+                            <li>Security Controls</li>
+                            <li>Security Awareness Training</li>
+                            <li>Control Methods</li>
+                            <li>Physical Access Controls and Audits</li>
+                            <li>Logical Access Controls and Audits</li>
+                            <li>Network and Infrastructure Security</li>
+                            <li>Data Classification</li>
+                            <li>DLP Solutions</li>
+                            <li>Authentication, Authorization and Access</li>
+                            <li>
+                              Mobile Computing Controls and Data Access Controls
+                            </li>
+                            <li>Computer Crimes</li>
+                            <li>Security Incident Handling</li>
+                            <li>Auditing ISM Framework</li>
+                            <li>Security Testing Techniques</li>
+                            <li>Investigation Techniques</li>
+                            <li>Auditing Network Infrastructure</li>
+                            <li>Penetration Testing</li>
+                            <li>Quiz – Sample Exam Question Review</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Tab>
+                <Tab eventKey="contact" title="Instructor">
+                  <div className="d-flex flex-sm-row flex-column px-3 justify-content-center align-items-center mb-5">
+                    <img
+                      src="data:image/png;base64,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"
+                      alt=""
+                      width="200"
+                      height="200"
+                    />
+
+                    <div className="ms-3">
+                      <h5 className="fw-bold">Name</h5>
+                      <p>Instructor</p>
+                      <p className="mb-0">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Laudantium maiores laborum laboriosam placeat vitae quae
+                        blanditiis facilis impedit! Placeat nihil temporibus
+                        magnam est autem quis ex aperiam inventore, voluptatem
+                        quae!
+                      </p>
+                    </div>
+                  </div>
+                </Tab>
+              </Tabs>
+
+              <h3 className="fw-bold mb-0">Related</h3>
+              <div className="row">
+                <div className="col-sm-6 col-md-4 mt-4">
+                  <div className="card w-100">
+                    <img
+                      src="https://i.ibb.co/3pV01zc/ASP-NET-Web-Applications.jpg"
+                      className="card-img-top w-100"
+                      style={{ borderRadius: 0, height: 130 }}
+                      alt="..."
+                    />
+                    <div className="card-body d-flex flex-column align-items-center">
+                      <div className="d-flex flex-column align-items-center img-par">
+                        <div className="image d-flex flex-column align-items-center">
+                          <img
+                            src="https://i.ibb.co/CVCp97m/FARUKH-KHAN.png"
+                            alt=""
+                            width="60"
+                          />
+                        </div>
+                        <h6 className="mt-2">FARUKH KHAN</h6>
+                      </div>
+
+                      <h5 className="card-title text-center my-card-title-font ">
+                        ASP.NET Web Applications
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-sm-6 col-md-4 mt-4">
+                  <div className="card w-100">
+                    <img
+                      src="https://i.ibb.co/KmnkbPp/PHP-Laravel.jpg"
+                      className="card-img-top w-100"
+                      style={{ borderRadius: 0, height: 130 }}
+                      alt="..."
+                    />
+                    <div className="card-body d-flex flex-column align-items-center">
+                      <div className="d-flex flex-column align-items-center img-par">
+                        <div className="image d-flex flex-column align-items-center">
+                          <img
+                            src="https://i.ibb.co/7gfCGj5/ABDUL-BASSIT-SURAHIO.png"
+                            alt=""
+                            width="60"
+                          />
+                        </div>
+                        <h6 className="mt-2 ">Name</h6>
+                      </div>
+
+                      <h5 className="card-title text-center my-card-title-font ">
+                        PHP Laravel
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-sm-6 col-md-4 mt-4">
+                  <div className="card w-100">
+                    <img
+                      src="https://i.ibb.co/vmWqn6k/MERN-Stack.jpg"
+                      className="card-img-top w-100"
+                      style={{ borderRadius: 0, height: 130 }}
+                      alt="..."
+                    />
+                    <div className="card-body d-flex flex-column align-items-center">
+                      <div className="d-flex flex-column align-items-center img-par">
+                        <div className="image d-flex flex-column align-items-center">
+                          <img
+                            src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                            alt=""
+                            width="60"
+                          />
+                        </div>
+                        <h6 className="mt-2">Name</h6>
+                      </div>
+
+                      <h5 className="card-title text-center my-card-title-font ">
+                        MERN Stack
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3 mt-4 mt-lg-5">
+              <Paper elevation={10} className="p-3 border">
+                <h6 className="fw-bold mb-0 details text-center text-sm-start">
+                  Instructor: <span className="text-success"></span>
+                </h6>
+                <h6 className="fw-bold mb-0 details text-center text-sm-start">
+                  Lectures: <span className="fw-normal">18</span>
+                </h6>
+                <h6 className="fw-bold mb-0 details text-center text-sm-start">
+                  Duration: <span className="fw-normal">18 Weeks</span>
+                </h6>
+                <h6 className="fw-bold mb-0 details text-center text-sm-start">
+                  Enrolled: <span className="fw-normal">0 Students</span>
+                </h6>
+                <h6 className="fw-bold mb-0 details text-center text-sm-start">
+                  Language: <span className="fw-normal">Urdu / English</span>
+                </h6>
+                <Button
+                  // onClick={() => push("/apply-now")}
+                  variant="contained"
+                  fullWidth
+                  className="custom-button mt-3"
+                >
+                  Enroll Now
+                </Button>
+              </Paper>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    signOut: () => dispatch(signOut()),
-  };
-};
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(CertifiedInformationSystemsAuditor);
+export default CertifiedInformationSystemAuditor;

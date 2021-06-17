@@ -302,6 +302,11 @@ const ArtificialIntelligence = lazy(() =>
   )
 );
 const ApplyNow = lazy(() => import("./pages/applyNow"));
+const AndroidDevelopment = lazy(() =>
+  import(
+    "./components/course_outlines/technical_programs/AndroidAppsDevelopment"
+  )
+);
 const SignUp = lazy(() => import("./pages/signUp"));
 const LogIn = lazy(() => import("./pages/logIn"));
 const TermsAndConditions = lazy(() => import("./pages/termsAndConditions"));
@@ -413,6 +418,10 @@ const App = ({ signOut, uid }) => {
             <Route path="/apply-now" exact component={ApplyNow} />
             <Route path="/apply-now/signup" component={SignUp} />
             <Route path="/apply-now/login" component={LogIn} />
+            <Route
+              path="/androidAppsDevelopment"
+              component={AndroidDevelopment}
+            />
             <Route
               path="/apply-now/paymentVerification"
               component={PaymentVerification}

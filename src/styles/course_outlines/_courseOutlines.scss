@@ -1,4 +1,60 @@
 .course-outlines {
+  .card {
+    position: relative;
+  }
+
+  .card-body {
+    .img-par {
+      position: relative;
+      bottom: 50px;
+      left: 0px;
+
+      .image {
+        background-color: white;
+        padding: 5px;
+        border-radius: 50%;
+      }
+      h6 {
+        font-size: 0.75rem !important;
+      }
+    }
+
+    .card-title {
+      position: absolute;
+      bottom: 8%;
+      text-align: center;
+    }
+    .my-card-title-font {
+      font-size: 1.05rem !important;
+    }
+  }
+  .nav-link {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-left: none !important;
+    border-right: none !important;
+    outline: none !important;
+    color: black;
+    width: 200px;
+    text-align: center;
+  }
+
+  .nav-link.active[role="tab"] {
+    border-top-width: 2px;
+    border-top-color: $primary;
+  }
+
+  .bg-img {
+    background: linear-gradient(rgba(2, 163, 155, 0.8), rgba(2, 163, 155, 0.8)),
+      url(https://c4.wallpaperflare.com/wallpaper/302/456/881/books-keep-calm-and-quote-motivational-wallpaper-preview.jpg);
+    height: 250px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+  }
+
   .MuiTabs-indicator {
     background-color: $primary;
   }

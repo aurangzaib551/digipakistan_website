@@ -1,12 +1,23 @@
 import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
-
+import Tabsi from "@material-ui/core/Tabs";
+import Tabi from "@material-ui/core/Tab";
+import { useMediaQuery } from "react-responsive";
 import { Tab, Tabs } from "react-bootstrap";
 
-const AWSCloudComputing = () => {
+const AndroidAppsDevelopment = () => {
+  const [tabValue, setTabValue] = useState(0);
   const [key, setKey] = useState("home");
 
+  const handleTab = (obj, ind) => {
+    setTabValue(ind);
+  };
+
+  //   Media Query
+  const isSmall = useMediaQuery({
+    query: "(max-width: 541px)",
+  });
   return (
     <>
       <div className="course-outlines mt">
@@ -14,8 +25,8 @@ const AWSCloudComputing = () => {
           <div className="container pt-5">
             <h1 className="fw-bold text-white">Courses</h1>
             <p className="mb-0 small fw-bold text-white">
-              Home &bull; Available Programs &bull; Fast Track &bull; AWS Cloud
-              Computing
+              Home &bull; Available Programs &bull; Fast Track &bull; Android
+              Apps Development
             </p>
           </div>
         </div>
@@ -24,7 +35,7 @@ const AWSCloudComputing = () => {
           <div className="row">
             <div className="col-lg-9 mt-4 mt-lg-5">
               <div className="d-flex justify-content-between align-items-center">
-                <h2 className="fw-bold mb-0">AWS Cloud Computing</h2>
+                <h2 className="fw-bold mb-0">Android Apps Development</h2>
 
                 <div>
                   <Button
@@ -54,42 +65,43 @@ const AWSCloudComputing = () => {
                 onSelect={(k) => setKey(k)}
               >
                 <Tab eventKey="home" title="Overview">
-                  <h3 className="fw-bold">Course Description</h3>
-                  <p className="text-justify">
-                    AWS Certification validates cloud expertise to help
-                    professionals highlight in-demand skills and organizations
-                    build effective, innovative teams for cloud initiatives
-                    using AWS.
+                  <h1 className="fw-bold">Course Description</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Harum quisquam iure pariatur distinctio reprehenderit
+                    repudiandae explicabo, dicta qui nobis et, enim veritatis
+                    nemo vel alias? Doloremque quam dolorem possimus saepe.
                   </p>
-
-                  <p className="text-justify">
-                    Cloud computing is the on-demand delivery of IT resources
-                    over the Internet with pay-as-you-go pricing. Instead of
-                    buying, owning, and maintaining physical data centers and
-                    servers, you can access technology services, such as
-                    computing power, storage, and databases, on an as-needed
-                    basis from a cloud provider like Amazon Web Services (AWS).
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Reprehenderit corrupti laborum voluptas eum possimus
+                    doloremque suscipit rem sit vel magnam? Ab reprehenderit
+                    aliquam fugiat rerum necessitatibus neque delectus amet
+                    nulla!
                   </p>
-
-                  <p className="text-justify">
-                    AWS (Amazon Web Services) is a comprehensive, evolving cloud
-                    computing platform provided by Amazon that includes a
-                    mixture of infrastructure as a service (IaaS), platform as a
-                    service (PaaS) and packaged software as a service (SaaS)
-                    offerings. AWS services can offer an organization tools such
-                    as compute power, database storage and content delivery
-                    services.
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sint cum facere quod beatae nesciunt mollitia tempore
+                    voluptatem possimus accusamus molestias, odio iure unde
+                    saepe assumenda, omnis, commodi quis. Placeat, perspiciatis.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus aspernatur molestiae unde dolores sunt libero
+                    vel veritatis ab! Excepturi consectetur placeat, accusantium
+                    ex atque iusto ducimus? Eos tempore possimus ullam?
                   </p>
-
-                  <h3 className="fw-bold">Certificate</h3>
-                  <p className="text-justify">
-                    On successful completion of the course participants will be
-                    awarded participation certificate from DigiPAKISTAN. Also
-                    prepare for International Exam.
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Molestias culpa officiis, illo mollitia cupiditate iusto
+                    deserunt praesentium molestiae quae rem ducimus at
+                    consectetur! Aliquid veniam, praesentium nostrum neque
+                    blanditiis inventore?
                   </p>
-                  <h3 className="fw-bold">Duration &amp; Frequency</h3>
-                  <p className="mb-0">
-                    Total Duration of the course is 6 months
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Assumenda culpa cum minima nostrum quibusdam aperiam velit
+                    placeat quod dignissimos suscipit voluptates molestias
+                    totam, labore asperiores neque? Fuga explicabo dicta
+                    consectetur!
                   </p>
                 </Tab>
                 <Tab eventKey="requi" title="Prerequisite"></Tab>
@@ -105,7 +117,7 @@ const AWSCloudComputing = () => {
                           aria-expanded="true"
                           aria-controls="collapseOne"
                         >
-                          Introduction to cloud Computing
+                          Accordion Item #1
                         </button>
                       </h2>
                       <div
@@ -115,9 +127,18 @@ const AWSCloudComputing = () => {
                         data-bs-parent="#accordionExample"
                       >
                         <div className="accordion-body">
-                          <ul>
-                            <li>Buzz Words</li>
-                          </ul>
+                          <strong>
+                            This is the first item's accordion body.
+                          </strong>{" "}
+                          It is shown by default, until the collapse plugin adds
+                          the appropriate classes that we use to style each
+                          element. These classes control the overall appearance,
+                          as well as the showing and hiding via CSS transitions.
+                          You can modify any of this with custom CSS or
+                          overriding our default variables. It's also worth
+                          noting that just about any HTML can go within the{" "}
+                          <code>.accordion-body</code>, though the transition
+                          does limit overflow.
                         </div>
                       </div>
                     </div>
@@ -131,7 +152,7 @@ const AWSCloudComputing = () => {
                           aria-expanded="false"
                           aria-controls="collapseTwo"
                         >
-                          Section: Service Models
+                          Accordion Item #2
                         </button>
                       </h2>
                       <div
@@ -141,13 +162,18 @@ const AWSCloudComputing = () => {
                         data-bs-parent="#accordionExample"
                       >
                         <div className="accordion-body">
-                          <ul>
-                            <li>Introduction</li>
-                            <li>Infrastructure as a Service (IaaS)</li>
-                            <li>Platform as a Service (PaaS)</li>
-                            <li>Software as a Service (SaaS)</li>
-                            <li>Model Comparison</li>
-                          </ul>
+                          <strong>
+                            This is the second item's accordion body.
+                          </strong>{" "}
+                          It is hidden by default, until the collapse plugin
+                          adds the appropriate classes that we use to style each
+                          element. These classes control the overall appearance,
+                          as well as the showing and hiding via CSS transitions.
+                          You can modify any of this with custom CSS or
+                          overriding our default variables. It's also worth
+                          noting that just about any HTML can go within the{" "}
+                          <code>.accordion-body</code>, though the transition
+                          does limit overflow.
                         </div>
                       </div>
                     </div>
@@ -161,7 +187,7 @@ const AWSCloudComputing = () => {
                           aria-expanded="false"
                           aria-controls="collapseThree"
                         >
-                          Essentials Characteristic
+                          Accordion Item #3
                         </button>
                       </h2>
                       <div
@@ -171,214 +197,18 @@ const AWSCloudComputing = () => {
                         data-bs-parent="#accordionExample"
                       >
                         <div className="accordion-body">
-                          <ul>
-                            <li>Introduction</li>
-                            <li>On-Demand Self-service</li>
-                            <li>Broad Network access</li>
-                            <li>Resource Pooling</li>
-                            <li>Rapid Elasticity</li>
-                            <li>Measure Service</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingThree">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#m1"
-                          aria-expanded="false"
-                          aria-controls="m1"
-                        >
-                          Deployment Models
-                        </button>
-                      </h2>
-                      <div
-                        id="m1"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div className="accordion-body">
-                          <ul>
-                            <li>Deployment Models</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingThree">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#m2"
-                          aria-expanded="false"
-                          aria-controls="m2"
-                        >
-                          Cloud Models
-                        </button>
-                      </h2>
-                      <div
-                        id="m2"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div className="accordion-body">
-                          <ul>
-                            <li>Public Cloud</li>
-                            <li>Private Cloud</li>
-                            <li>Hybrid Cloud</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingThree">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#m3"
-                          aria-expanded="false"
-                          aria-controls="m3"
-                        >
-                          Wrapping Up
-                        </button>
-                      </h2>
-                      <div
-                        id="m3"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div className="accordion-body">
-                          <ul>
-                            <li>It’s a wrap</li>
-                            <li>The Quiz</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingThree">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#m4"
-                          aria-expanded="false"
-                          aria-controls="m4"
-                        >
-                          AWS Cloud Practitioner
-                        </button>
-                      </h2>
-                      <div
-                        id="m4"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div className="accordion-body">
-                          <ul>
-                            <li>Before Cloud</li>
-                            <li>What is Cloud Computing?</li>
-                            <li>Cloud Computing Services</li>
-                            <li>Cloud Model</li>
-                            <li>Scalability</li>
-                            <li>Reliability</li>
-                            <li>Secure Data</li>
-                            <li>Introduction to AWS Interface</li>
-                            <li>Benefits</li>
-                            <li>AWS IAM</li>
-                            <li>AWS EC2</li>
-                            <li>AWS S3</li>
-                            <li>AWS Core Services</li>
-                            <li>VPC</li>
-                            <li>CloudFront</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingThree">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#m5"
-                          aria-expanded="false"
-                          aria-controls="m5"
-                        >
-                          Global Infrastructure
-                        </button>
-                      </h2>
-                      <div
-                        id="m5"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div className="accordion-body">
-                          <ul>
-                            <li>Cloud Watch</li>
-                            <li>Route53</li>
-                            <li>AWS SNS</li>
-                            <li>Loadbalancer</li>
-                            <li>Auto Scaling</li>
-                            <li>Cloud Formation</li>
-                            <li>Elastic BeanStalk</li>
-                            <li>AWS Architecture</li>
-                            <li>AWS Security</li>
-                            <li>AWS Pricing &amp; Support</li>
-                            <li>AWS Databases</li>
-                            <li>AWS Analytic</li>
-                            <li>Amazon Athena</li>
-                            <li>Amazon EMR</li>
-                            <li>and Other Services</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingThree">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#m5"
-                          aria-expanded="false"
-                          aria-controls="m5"
-                        >
-                          AWS Solution Architect
-                        </button>
-                      </h2>
-                      <div
-                        id="m5"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div className="accordion-body">
-                          <ul>
-                            <li>IAM</li>
-                            <li>S3</li>
-                            <li>EC2</li>
-                            <li>Route53</li>
-                            <li>RDS</li>
-                            <li>VPC</li>
-                            <li>Application Services</li>
-                            <li>High Availability</li>
-                          </ul>
+                          <strong>
+                            This is the third item's accordion body.
+                          </strong>{" "}
+                          It is hidden by default, until the collapse plugin
+                          adds the appropriate classes that we use to style each
+                          element. These classes control the overall appearance,
+                          as well as the showing and hiding via CSS transitions.
+                          You can modify any of this with custom CSS or
+                          overriding our default variables. It's also worth
+                          noting that just about any HTML can go within the{" "}
+                          <code>.accordion-body</code>, though the transition
+                          does limit overflow.
                         </div>
                       </div>
                     </div>
@@ -408,7 +238,6 @@ const AWSCloudComputing = () => {
                 </Tab>
               </Tabs>
 
-              <h3 className="fw-bold mb-0">Related</h3>
               <div className="row">
                 <div className="col-sm-6 col-md-4 mt-4">
                   <div className="card w-100">
@@ -524,4 +353,4 @@ const AWSCloudComputing = () => {
   );
 };
 
-export default AWSCloudComputing;
+export default AndroidAppsDevelopment;

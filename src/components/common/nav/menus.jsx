@@ -160,7 +160,7 @@ const Menus = ({ firstLoad }) => {
                 to="/about/ourTeam"
                 className="sub-menu-link ps-3 pe-5 py-2 d-block"
               >
-                Our Team
+                DigiPAKISTAN Faculty
               </Link>
             </li>
           </ul>

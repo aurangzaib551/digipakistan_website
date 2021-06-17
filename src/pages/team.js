@@ -15,7 +15,7 @@ const Team = () => {
         <h1 className="text-center cards-head">Team</h1>
         <div className="row me-0">
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/7gfCGj5/ABDUL-BASSIT-SURAHIO.png"
@@ -33,8 +33,8 @@ const Team = () => {
                   </h6>
                 </div>
                 <p className="card-text text-center">
-                  Abdul Bassit Surahio is a Corporate Trainer having years of
-                  experience. He is working as an Information Security ...
+                  Intructor of Cloud Computing under NAVTTC, Hunarmand Pakistan
+                  Master's Research on 5G Technology
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -110,7 +110,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/BzzmCfP/ABU-BAKAR-RIAZ.png"
@@ -118,19 +118,21 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    ABU BAKAR RIAZ
-                  </h3>
-                  <h6 className="card-title text-center">
-                    SQL Server Specialist
-                  </h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      ABU BAKAR RIAZ
+                    </h3>
+                    <h6 className="card-title text-center">
+                      SQL Server Specialist
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Senior Development &amp; Database at JAZZ (Previously Known
+                    as Mobilink)
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Abubakar Riaz is a Professional Microsoft Database Trainer
-                  have approx. 10 years of working experience ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -184,7 +186,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/djYjLdH/AFFAN-SAIED-BAIG.png"
@@ -192,17 +194,18 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    AFFAN SAIED BAIG
-                  </h3>
-                  <h6 className="card-title text-center">AWS Practitioner</h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      AFFAN SAIED BAIG
+                    </h3>
+                    <h6 className="card-title text-center">AWS Practitioner</h6>
+                  </div>
+                  <p className="card-text text-center">
+                    .Net, Azure Cloud, AWS Cloud
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Affan Saied Baig is Microsoft Certified .Net developer and
-                  Certified AWS/Azure Cloud, having years of software ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -260,7 +263,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/tZBBkh9/AHMED-YASIR-KHAN.png"
@@ -278,9 +281,12 @@ const Team = () => {
                   </h6>
                 </div>
                 <p className="card-text text-center">
-                  Ahmed Yasir Khan is a qualified MBA (MIS) and possesses 23
-                  years of diversified industry exposure to educate people in
-                  the technological as well as field of finance &amp; IT ...
+                  23 years of diversified industory expose | Corporate Trainer |
+                  Mentor | ERP Consultant | Digital Transformation | BI &amp;
+                  Power BI | Digital Marketing | Business Analyst | Project
+                  Management | Training &amp; Development | Data Visualization
+                  &amp; Analytics | Certified Trainer for SAP ERP &amp;
+                  Quickbooks
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -366,7 +372,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/rQ0Vh1k/ARIF-IMRAN.png"
@@ -374,19 +380,21 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    ARIF IMRAN
-                  </h3>
-                  <h6 className="card-title text-center">
-                    Xamarin Apps Development
-                  </h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      ARIF IMRAN
+                    </h3>
+                    <h6 className="card-title text-center">
+                      Xamarin Apps Development
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Consultant Xamarin / React Native | Certified Xamarin Apps
+                    Developer | MSCS - IBA Karachi 10+ Years of Experience
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Arif Imran is a Certified Xamarin Mobile App Developer having
-                  10+ years of experience making desktop ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -439,7 +447,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/vwNwRH7/ASFAND-YAR-JUNEJO.png"
@@ -447,17 +455,18 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    ASFAND YAR JUNEJO
-                  </h3>
-                  <h6 className="card-title text-center">SEO</h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      ASFAND YAR JUNEJO
+                    </h3>
+                    <h6 className="card-title text-center">SEO</h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Certified SEO Consultant Having Years of Experience
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Asfand Yar is an efficient and pro-active SEO and Digital
-                  Marketing, expert. He possesses a profound understanding ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -534,7 +543,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/R9zHnxc/AYFAR-KHAN.png"
@@ -550,8 +559,10 @@ const Team = () => {
                   <h6 className="card-title text-center">Graphic Design</h6>
                 </div>
                 <p className="card-text text-center">
-                  SAyfar Khan is a Passionate Freelancer, Entrepreneur, and
-                  Trainer, Mentor, Coach who worked and learn ...
+                  Passionate Freelancer, Enterpreneur, Trainer | Fourtune 500
+                  Countries | Her papers are referred by professors of topmost
+                  universities like Oxford University, Berkeley Cambridge
+                  University etc.
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -663,7 +674,7 @@ const Team = () => {
             </div>
           </div>
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/Qf65bXv/BASIT-ELAHI.png"
@@ -671,17 +682,19 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    BASIT ELAHI
-                  </h3>
-                  <h6 className="card-title text-center">React Native</h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      BASIT ELAHI
+                    </h3>
+                    <h6 className="card-title text-center">React Native</h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Microsoft Certified Professional (MCP) | SSDL Certified
+                    Professional Trainer SSDL Certified DevOps
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Basit Elahi has an experience of 12+ years in the IT Industry
-                  &amp; is internationally recognized as Microsoft ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -747,7 +760,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/Y3QSjgx/FAIZA-KHALID.png"
@@ -755,19 +768,21 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    FAIZA KHALID
-                  </h3>
-                  <h6 className="card-title text-center">
-                    Amazon FBA Business
-                  </h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      FAIZA KHALID
+                    </h3>
+                    <h6 className="card-title text-center">
+                      Amazon FBA Business
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Enterpreneur, CEO LOOP &amp; BIZCO INC in UK, Freelancer
+                    Digital Marketer &amp; Ecommerce Expert
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Faiza Khalid is a serial Entrepreneur and Much Passionate to
-                  do something Productive for our Youth ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -879,7 +894,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/CVCp97m/FARUKH-KHAN.png"
@@ -887,19 +902,21 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    FARUKH KHAN
-                  </h3>
-                  <h6 className="card-title text-center">
-                    ASP.NET Azure Fundamentals
-                  </h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      FARUKH KHAN
+                    </h3>
+                    <h6 className="card-title text-center">
+                      ASP.NET Azure Fundamentals
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Microsoft MCT | MCSD | .NET | Javascript | Angular | Azure
+                    Cloud | Azure | DevOps | Microsoft Certified Trainer
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Farrukh Khan is an official Microsoft Certified Trainer.
-                  Internationally Certified by Microsoft in MCT ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -987,7 +1004,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/z42kttP/IMRAN-ISRAR.png"
@@ -1003,8 +1020,11 @@ const Team = () => {
                   <h6 className="card-title text-center">CCNA</h6>
                 </div>
                 <p className="card-text text-center">
-                  Imran Israr is a network engineering professional having 10+
-                  years of experience in multinational companies in IP CORE ...
+                  Team Lead Datacom | HCIE R&amp;S #11971 | 3*HCNA (R&amp;S.
+                  Security, Datacom) | 3* HCIP (R&amp;S, Security, Datacom) |
+                  CCNA (R&amp;S) | CCNA (R&amp;S) | CCNP (R&amp;S) | 2*JNCP (SEC
+                  &amp; RS) | Routing Switching, Troubleshooting | MSC Network
+                  Engineering
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -1081,7 +1101,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/jMFQXsx/IRFAD-AHMED-IMTIAZ.png"
@@ -1097,8 +1117,10 @@ const Team = () => {
                   <h6 className="card-title text-center">Enterpreneurship</h6>
                 </div>
                 <p className="card-text text-center">
-                  Irfad Imtiaz is a Microsoft Certified Security Researcher with
-                  his name listed in the Top Security Researchers from ...
+                  Microsoft Certified Security Researcher with the name listed
+                  in the top Security Researcher from Pakistan in Microsoft hall
+                  of fame | Honorary member of Standford Enterpreneurship Club |
+                  Executive Director Menal Foundation
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -1165,7 +1187,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/r44JBBQ/JAZIB-ALEEM.png"
@@ -1183,8 +1205,9 @@ const Team = () => {
                   </h6>
                 </div>
                 <p className="card-text text-center">
-                  Jazib Aleem is a Corporate Trainer, CEO and Head of Full Stack
-                  Development team, Experienced Formar ...
+                  Corporate Trainer SQL Database, Android &amp; iOS, Web
+                  Development, Java, C#, PHP, C++, Data Migration, MongoDB,
+                  NodeJS, ReactJS, React Native and Laravel
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -1243,7 +1266,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/sFF7tpt/KAMRAN-AHMAD.png"
@@ -1251,17 +1274,18 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-uppercase text-center h4">
-                    Kamran Ahmad
-                  </h3>
-                  <h6 className="card-title text-center">Autocad</h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-uppercase text-center h4">
+                      Kamran Ahmad
+                    </h3>
+                    <h6 className="card-title text-center">Autocad</h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Intructor Autocad in PSDF (Punjab Skills Development Fund)
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Kamran Ahmad is doing Masters In Architecture from university
-                  of the Punjab Lahore. He graduated ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -1321,7 +1345,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/XpSxwYz/M-ZEESHAN-MOTIWALA.png"
@@ -1329,17 +1353,18 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    M. ZEESHAN MOTIWALA
-                  </h3>
-                  <h6 className="card-title text-center">MS Office</h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      M. ZEESHAN MOTIWALA
+                    </h3>
+                    <h6 className="card-title text-center">MS Office</h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Manager HRBP (Technology) at PTCL.Official
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Mr. Muhammad Zeeshan Motiwala is a well eminent HR
-                  Professional and carries vast ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -1426,7 +1451,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/TPyy5nL/M-ABDUL-QADEER.png"
@@ -1444,8 +1469,10 @@ const Team = () => {
                   </h6>
                 </div>
                 <p className="card-text text-center">
-                  Abdul Qadeer has years of work experience and exposure in ATL
-                  and Digital MARKETING (Media Planning, Media ...
+                  Business Acceleration through Alliances &amp; Partnership;
+                  Brand Evangelist Performance Marketing, APP Growth, Content
+                  and Game Distribution Preload Mobile Advertisement | INFINIX |
+                  ITEL | at Transsion Pakistan
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -1564,7 +1591,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/9rC7hNJ/M-AHSAN-PERVAIZ.png"
@@ -1572,17 +1599,19 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    M. AHSAN PERVAIZ
-                  </h3>
-                  <h6 className="card-title text-center">UI UX Designer</h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      M. AHSAN PERVAIZ
+                    </h3>
+                    <h6 className="card-title text-center">UI UX Designer</h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Working for fortune 500 Companies like PANASONIC &amp; INTEL
+                    and COCA | Trained 61K+ Students Worldwide
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Ahsan Parvez has been teaching UI UX Design from years to more
-                  than 65k students from 175 countries ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -1674,7 +1703,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 pt-3 bg-light" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/P6pPFFY/M-DAWER-SAEED.png"
@@ -1682,17 +1711,20 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center h4">
-                    M. DAWER SAEED
-                  </h3>
-                  <h6 className="card-title text-center">Internet of Things</h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center h4">
+                      M. DAWER SAEED
+                    </h3>
+                    <h6 className="card-title text-center">
+                      Internet of Things
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    IoT Embedded Engineer / PSE at Gourmet Pakistan
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Muhammad Dawer has a diversified experience of 12+ Years in
-                  the field of IoT, currently Heading as IoT ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -1745,7 +1777,7 @@ const Team = () => {
           </div>
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card bg-light pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 bg-light pt-3" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/zst45Nt/MALIK-MAAZ-MEHBOOB.png"
@@ -1753,17 +1785,19 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center">
-                    Malik Maaz
-                  </h3>
-                  <h6 className="card-title text-center">CHFI Trainer</h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center">
+                      Malik Maaz
+                    </h3>
+                    <h6 className="card-title text-center">CHFI Trainer</h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Malik Maaz has 17+ years of experience in Information
+                    Security Domain, his Major Certifications
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Malik Maaz has 17+ years of experience in Information Security
-                  Domain, his Major Certifications
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -1863,7 +1897,7 @@ const Team = () => {
 
           {/* first line 2 */}
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card bg-light pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 bg-light pt-3" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/tDVbSxx/SHOAIB-ALI.png"
@@ -1871,19 +1905,21 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center">
-                    SHOAIB ALI
-                  </h3>
-                  <h6 className="card-title text-center">
-                    3D Maya Max Animation Trainer
-                  </h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center">
+                      SHOAIB ALI
+                    </h3>
+                    <h6 className="card-title text-center">
+                      3D Maya Max Animation Trainer
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Manager | Technical CG Artist (Generalist) At NETSOL
+                    Technologies Inc.
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Shoaib Ali have 20+ years of experience in the animations
-                  industry, currently serving as Manager ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -1948,93 +1984,6 @@ const Team = () => {
             <div className="card bg-light pt-3" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
-                  src="https://i.ibb.co/61PvJ7g/MUHAMMAD-ANWAR.png"
-                  className="card-img-top"
-                  alt="..."
-                />
-              </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center">
-                    Muhammad Anwar
-                  </h3>
-                  <h6 className="card-title text-center">CEH (V10) Trainer</h6>
-                </div>
-                <p className="card-text text-center">
-                  Muhammad Anwar is an official EC Council Instructor having an
-                  experience of 15+ years in the field...
-                </p>
-                <div className="d-flex justify-content-center">
-                  <Button
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#m3"
-                    className="custom-button"
-                    variant="contained"
-                  >
-                    Read More
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Modal */}
-            <div
-              className="modal fade mt"
-              id="m3"
-              tabIndex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="fw-bold modal-title" id="exampleModalLabel">
-                      Shoaib Ali have 20+ years of experience in the animations
-                      industry,
-                    </h5>
-                  </div>
-                  <div className="modal-body">
-                    <li>
-                      Muhammad Anwar is an official EC Council Instructor having
-                      an experience of 15+ years in the field of Information
-                      Security, Telecom, Computing, Networks, Operations,
-                      Technical support, troubleshooting and Maintenance.{" "}
-                    </li>
-                    <li>
-                      He is an information security consultant and penetration
-                      tester by Profession . He is also a EC-Council Certified
-                      Instructor for CEH (Certified Ethical Hacker) and CHFI
-                      (Computer Hacking Forensic Investigator) . He is also an
-                      ISMS Trainer ISO27001:2013 and Lead Auditor ISMS
-                      ISO27001:2013 .
-                    </li>
-                    <p>
-                      <b>Struggling for Excellence</b>
-                    </p>
-                    <p>
-                      <b>Team DigiPAKISTAN</b>
-                    </p>
-                  </div>
-                  <div className="modal-footer">
-                    <Button
-                      type="button"
-                      data-bs-dismiss="modal"
-                      className="custom-button"
-                      variant="contained"
-                    >
-                      Close
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* 3 line end */}
-          <div className="col-md-6 col-lg-4 p-3">
-            <div className="card bg-light pt-3" style={{ width: "100%" }}>
-              <div className="d-flex justify-content-center">
-                <img
                   src="https://i.ibb.co/0s5VH2W/MUHAMMAD-AHMAD.png"
                   className="card-img-top"
                   alt="..."
@@ -2048,8 +1997,9 @@ const Team = () => {
                   <h6 className="card-title text-center">CISSP Trainer</h6>
                 </div>
                 <p className="card-text text-center">
-                  Muhammad Ahmad is a Technically proficient, Business enabler,
-                  Management professional ...
+                  Heeading Information/Cyber Security in one of the leading
+                  Microfinancing Bank of Pakistan (CISSP, CISM, CRISC, CISA,
+                  CGEIT, ITIL)
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -2126,7 +2076,7 @@ const Team = () => {
 
           {/* first line 2 */}
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card bg-light pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 bg-light pt-3" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/SNsXX9Q/SAAD-MOTEN.png"
@@ -2134,19 +2084,21 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center">
-                    SAAD MOTEN
-                  </h3>
-                  <h6 className="card-title text-center">
-                    CISA &amp; CISM Trainer
-                  </h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center">
+                      SAAD MOTEN
+                    </h3>
+                    <h6 className="card-title text-center">
+                      CISA &amp; CISM Trainer
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    20+ Years of Experience | CISSP, CISM, CISA, PMP, CLFE, ISO
+                    27001LA
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Saad Moten is an Innovative and solutions-focused Information
-                  Security Professional with 20+ years ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -2229,7 +2181,7 @@ const Team = () => {
 
           {/* first line 3 */}
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card bg-light pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 bg-light pt-3" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -2237,19 +2189,21 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center">
-                    WAQAS QAMAR
-                  </h3>
-                  <h6 className="card-title text-center">
-                    CompTia IT Fundamentals Trainer
-                  </h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center">
+                      WAQAS QAMAR
+                    </h3>
+                    <h6 className="card-title text-center">
+                      CompTia IT Fundamentals Trainer
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Master in Network System from Swinburne University of
+                    Technology Melbourne Australia | CCNA, CCNP,ITIL and JNCIA
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Waqas Qamar is a Network Engineer with over 8+ years of
-                  experience in routing, switching ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -2329,8 +2283,9 @@ const Team = () => {
                   </h6>
                 </div>
                 <p className="card-text text-center">
-                  Muhammad Ali is serving as a full time Machine Learning
-                  Engineer at Silicon Valley Company, Omdena ...
+                  Machine Learning Engineer at Omdena, a Silicon Valley Company
+                  | Coursera Guided Project Instrutor | Qiskit Translation Lead
+                  (Urdu) for IBM'S Qiskit Project
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -2418,8 +2373,10 @@ const Team = () => {
                   </h6>
                 </div>
                 <p className="card-text text-center">
-                  Usman Khan is a professional Multicloud Corporate trainer
-                  &amp; Consultant. Working on AWS ...
+                  17+ Years of Experience in designing, deployment &
+                  implementation of Cloud & Noncloud technologies like AWS, GCP,
+                  Alibaba, Azure, VMware, Cisco, CWNP, SonicWALL, Dell
+                  infrastructure, Microsoft technologies like AD, Exchange.
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -2518,7 +2475,7 @@ const Team = () => {
           {/* Fourth Container start*/}
 
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card bg-light pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 bg-light pt-3" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/q0ZkGZD/NOMAN-ISLAM.png"
@@ -2526,19 +2483,23 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center">
-                    NOMAN ISLAM
-                  </h3>
-                  <h6 className="card-title text-center">
-                    ML &amp; AI Trainer
-                  </h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center">
+                      NOMAN ISLAM
+                    </h3>
+                    <h6 className="card-title text-center">
+                      ML &amp; AI Trainer
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Lead Trainer President Arif Alvi Ini, Winner of Technology
+                    Award 2020 Head of Department Iqra University, Microsoft
+                    Certified MTA, Python & MCP 50 peer-reviewed research
+                    publications
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Dr. Noman Islam is a Lead Trainer at President of Pakistan
-                  Arif Alvi Initiative, Winner of ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -2612,221 +2573,8 @@ const Team = () => {
             </div>
           </div>
 
-          {/* first line 2 */}
           <div className="col-md-6 col-lg-4 p-3">
-            <div className="card bg-light pt-3" style={{ width: "100%" }}>
-              <div className="d-flex justify-content-center">
-                <img
-                  src="https://i.ibb.co/jySstWz/OZAIR-ZAFAR.png"
-                  className="card-img-top"
-                  alt="..."
-                />
-              </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center">
-                    OZAIR ZAFAR
-                  </h3>
-                  <h6 className="card-title text-center">Big Data Trainer</h6>
-                </div>
-                <p className="card-text text-center">
-                  Ozair Zafar is a proficient individual currently working at
-                  Systems Ltd. with sterling experience ...
-                </p>
-                <div className="d-flex justify-content-center">
-                  <Button
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#mf2"
-                    className="custom-button"
-                    variant="contained"
-                  >
-                    Read More
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Modal */}
-            <div
-              className="modal fade mt"
-              id="mf2"
-              tabIndex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="fw-bold modal-title" id="exampleModalLabel">
-                      Ozair Zafar
-                    </h5>
-                  </div>
-                  <div className="modal-body">
-                    <li>
-                      Ozair Zafar is a proficient individual currently working
-                      at Systems Ltd. with sterling experience in collecting,
-                      managing, analyzing and visualizing large sets of data to
-                      turn information into insights using multiple platforms.
-                      Strong hold on Hadoop ecosystem, adhere to clients
-                      requirements and integrating different set of tools like
-                      ETL, Hive, Data Ingestion, Sqoop-Import and Importing Data
-                      into hive to come up with the best solution. Over years of
-                      experience as Big Data Consultant • Experience in
-                      collecting, managing, analyzing, and visualizing large
-                      sets of data to turn information into insights using
-                      multiple platforms • Stronghold on Hadoop ecosystem •
-                      Worked on different databases and have expertise in SQL
-                      query writing • Hands-on with query optimizations in
-                      various databases • Stronghold on Hadoop ecosystem, adhere
-                      to client’s requirements and integrating a different set
-                      of tools like NIFI, ETL pipelines, Hive, Pentaho, spark,
-                      talent, Data Ingestion, Sqoop-Import, and Importing Data
-                      into the hive to come up with the best solution ETL Design
-                      and Development • Having excellent knowledge of Big Data
-                      tools and administration. • Strong PL/SQL Query writing
-                      skills • Team Leadership and Management capabilities •
-                      Technical problem-solving skills • Understanding client
-                      issues/use-cases to develop strategies to overcome these
-                      issues • Good communication and presentation skills • An
-                      experienced team player with excellent communication and
-                      interpersonal skills who has the ability to work
-                      independently under pressure can lead, motivate and work
-                      as a team player Tools and Technologies: Oracle, sqoop,
-                      SQL Server, Pentaho data integrator, Oracle Data
-                      Integrator Hive Query Language, Installation,
-                      configuration, and management of multi-node cluster
-                      Responsibilities Technical Assistance to Team • Client
-                      Communication • Assuring Development Standards &amp;
-                      Guidelines • Improved deliverable qualities • Cloudera
-                      Cluster Management
-                    </li>
-                    <p>
-                      <b>Struggling for Excellence</b>
-                    </p>
-                    <p>
-                      <b>Team DigiPAKISTAN</b>
-                    </p>
-                  </div>
-                  <div className="modal-footer">
-                    <Button
-                      type="button"
-                      data-bs-dismiss="modal"
-                      className="custom-button"
-                      variant="contained"
-                    >
-                      Close
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* 2 line end */}
-
-          {/* first line 3 */}
-          <div className="col-md-6 col-lg-4 p-3">
-            <div className="card bg-light pt-3" style={{ width: "100%" }}>
-              <div className="d-flex justify-content-center">
-                <img
-                  src="https://i.ibb.co/T4NPfLh/MUHAMMAD-AZEEM-IRSLAN.png"
-                  className="card-img-top"
-                  alt="..."
-                />
-              </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center">
-                    MUHAMMAD AZEEM
-                  </h3>
-                  <h6 className="card-title text-center">
-                    Microsoft Cloud Administrator Trainer
-                  </h6>
-                </div>
-                <p className="card-text text-center">
-                  Azeem Irslan is Microsoft Official Certified Trainer from
-                  Gujranwala. He is multi-certified A Target-Driven ...
-                </p>
-                <div className="d-flex justify-content-center">
-                  <Button
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#mf3"
-                    className="custom-button"
-                    variant="contained"
-                  >
-                    Read More
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Modal */}
-            <div
-              className="modal fade mt"
-              id="mf3"
-              tabIndex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="fw-bold modal-title" id="exampleModalLabel">
-                      MUHAMMAD AZEEM IRSLAN
-                    </h5>
-                  </div>
-                  <div className="modal-body">
-                    <li>
-                      Azeem Irslan is Microsoft Official Certified Trainer from
-                      Gujranwala. He is multi-certified A Target-Driven &amp;
-                      Result-Oriented Azure Solution Architect Expert, Azure
-                      Administrator and Microsoft Multi-Certified Systems
-                      Administrator (MCSA, CCNA, HCIA, MCT, MOS) With Years of
-                      Relevant Experience in Managing Server Infrastructures and
-                      Data Centre Operations on Windows Platform. Ability to
-                      Create and Deliver Solutions tied to Business Growth,
-                      Organizational Development and Systems/Network
-                      Optimization. Skilled Problem Identifier and
-                      Trouble-Shooter Comfortable Managing Systems, Projects,
-                      and Teams in a Range of IT Environments. His International
-                      Certifications Include: Microsoft Certified Trainer
-                      Microsoft Certified Azure Solutions Architect Expert
-                      Microsoft Certified Azure Administrator Associate
-                      HCIA-Routing &amp; Switching Microsoft Office Specialist
-                      Microsoft Certified Solutions Associate Windows Server
-                      Microsoft Certified Professional Cisco Certified Network
-                      Associate Routing and Switching
-                    </li>
-                    <p>
-                      <b>Struggling for Excellence</b>
-                    </p>
-                    <p>
-                      <b>Team DigiPAKISTAN</b>
-                    </p>
-                  </div>
-                  <div className="modal-footer">
-                    <Button
-                      type="button"
-                      data-bs-dismiss="modal"
-                      className="custom-button"
-                      variant="contained"
-                    >
-                      Close
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* 3 line end */}
-
-          {/* Fourth Container End */}
-
-          {/* Fifth Container start*/}
-
-          <div className="col-md-6 col-lg-4 p-3">
-            <div className="card bg-light pt-3" style={{ width: "100%" }}>
+            <div className="card h-100 bg-light pt-3" style={{ width: "100%" }}>
               <div className="d-flex justify-content-center">
                 <img
                   src="https://i.ibb.co/qrFtytB/TAIMOOR-HASSAN.png"
@@ -2834,19 +2582,23 @@ const Team = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body">
-                <div className="title-parent pt-3 pb-1 mb-3 ">
-                  <h3 className="card-title card-title-name text-center">
-                    Taimoor Hassan
-                  </h3>
-                  <h6 className="card-title text-center">
-                    Python For Everyone Trainer
-                  </h6>
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <div className="title-parent pt-3 pb-1 mb-3 ">
+                    <h3 className="card-title card-title-name text-center">
+                      Taimoor Hassan
+                    </h3>
+                    <h6 className="card-title text-center">
+                      Python For Everyone Trainer
+                    </h6>
+                  </div>
+                  <p className="card-text text-center">
+                    Java | Spring Boot | Microservices | Python | API Design &
+                    Integration | Fintech | DevOps | | Python | eRecharge
+                    Systems | Agile Development | SQL & NoSQL | Big Data | Data
+                    Science | ML & AI
+                  </p>
                 </div>
-                <p className="card-text text-center">
-                  Taimoor Hassan have been a Team Lead Core Microfinance Banking
-                  System at Systems Ltd. now working ...
-                </p>
                 <div className="d-flex justify-content-center">
                   <Button
                     type="button"
@@ -2935,8 +2687,7 @@ const Team = () => {
                   <h6 className="card-title text-center">Big Data Trainer</h6>
                 </div>
                 <p className="card-text text-center">
-                  Ozair Zafar is a proficient individual currently working at
-                  Systems Ltd. with sterling experience ...
+                  Consultant Data Analytics at Systems Limited
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button
@@ -3049,8 +2800,7 @@ const Team = () => {
                   </h6>
                 </div>
                 <p className="card-text text-center">
-                  Azeem Irslan is Microsoft Official Certified Trainer from
-                  Gujranwala. He is multi-certified A Target-Driven ...
+                  Microsoft Certified Trainer
                 </p>
                 <div className="d-flex justify-content-center">
                   <Button

@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import ButtonBase from "@material-ui/core/ButtonBase";
 import Copyright from "../components/common/copyright/copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
@@ -36,210 +33,483 @@ const FastTrackNonTechnicalProgram = ({ signOut }) => {
           all you have to do is to enrol yourself in your desired course.
         </p>
       </div>
-      <Container className="d-flex all-programs flex-wrap justify-content-center pb-5">
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/quickBooks")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 border-success align-items-center d-flex"
-          >
-            <i className="fas fa-file-invoice-dollar fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">QuickBooks ERP</p>
-          </Paper>
-        </ButtonBase>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/saperp")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 three-color align-items-center d-flex"
-          >
-            <i className="fas fa-file-invoice-dollar fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">SAP ERP</p>
-          </Paper>
-        </ButtonBase>
+      <div className="container all-programs mb-5">
+        {/* First row 1 */}
+        <div className="row">
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() => go("/fastTrackNonTechnicalProgram/quickBooks")}
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/tZBBkh9/AHMED-YASIR-KHAN.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className=" mt-2">AHMED YASIR KHAN</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() =>
-            go("/fastTrackNonTechnicalProgram/projectManagementProfessional")
-          }
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 four-color align-items-center d-flex"
-          >
-            <i className="fas fa-tasks fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">Project Management Professional</p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  Quick Books ERP
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() => go("/fastTrackNonTechnicalProgram/saperp")}
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/tZBBkh9/AHMED-YASIR-KHAN.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2">AHMED YASIR KHAN</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/amazonFBABusiness")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 five-color align-items-center d-flex"
-          >
-            <i className="fab fa-aws fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">Amazon FBA Business</p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  SAP ERP
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() =>
+                go(
+                  "/fastTrackNonTechnicalProgram/projectManagementProfessional"
+                )
+              }
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/CVCp97m/FARUKH-KHAN.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2">Name</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() =>
-            go("/fastTrackNonTechnicalProgram/searchEngineOptimization")
-          }
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 seven-color align-items-center d-flex"
-          >
-            <i className="fas fa-search fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">
-              Search Engine Optimization (SEO)
-            </p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  Project Management Professional (PMP)
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() =>
+                go("/fastTrackNonTechnicalProgram/amazonFBABusiness")
+              }
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/Y3QSjgx/FAIZA-KHALID.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2 ">FAIZA KHALID</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/digitalMarketing")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 eight-color align-items-center d-flex"
-          >
-            <i className="fas fa-poll fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">Digital Marketing</p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  Amazon FBA Business
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* First row 1 end */}
 
-        <ButtonBase
-          onClick={() =>
-            go("/fastTrackNonTechnicalProgram/socialMediaMarketing")
-          }
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 nine-color align-items-center d-flex"
-          >
-            <i className="fas fa-bullhorn fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">Social Media Marketing (SMM)</p>
-          </Paper>
-        </ButtonBase>
+        {/* second row 2 */}
+        <div className="row">
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() =>
+                go("/fastTrackNonTechnicalProgram/searchEngineOptimization")
+              }
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/vwNwRH7/ASFAND-YAR-JUNEJO.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className=" mt-2">ASFAND YAR JUNEJO</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/graphicDesign")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 thirteen-color align-items-center d-flex"
-          >
-            <i className="fas fa-pencil-ruler fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">Graphic Design</p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  Search Engine Optimization (SEO)
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() =>
+                go("/fastTrackNonTechnicalProgram/digitalMarketing")
+              }
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/TPyy5nL/M-ABDUL-QADEER.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2">M. ABDUL QADEER</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/uiux")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 ten-color align-items-center d-flex"
-          >
-            <i className="fas fa-pencil-ruler fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">UI / UX Design</p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  Digital Marketing
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() =>
+                go("/fastTrackNonTechnicalProgram/socialMediaMarketing")
+              }
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/TPyy5nL/M-ABDUL-QADEER.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2">M. ABDUL QADEER</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/interiorDesigning")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 eleven-color align-items-center d-flex"
-          >
-            <i className="fas fa-pencil-ruler fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">Interior Designing</p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  Social Media Marketing (SMM)
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() => go("/fastTrackNonTechnicalProgram/graphicDesign")}
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/R9zHnxc/AYFAR-KHAN.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2 ">AYFAR KHAN</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/3dMayaMaxAnimation")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 twenty-color align-items-center d-flex"
-          >
-            <i className="fas fa-vr-cardboard fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">3D Maya Max Animation</p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  Graphic Design
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* second row 2 end */}
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/videoEditing")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 twelve-color align-items-center d-flex"
-          >
-            <i className="fas fa-film fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">Video Editing</p>
-          </Paper>
-        </ButtonBase>
+        {/* third 3  */}
+        <div className="row">
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() => go("/fastTrackNonTechnicalProgram/uiux")}
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/9rC7hNJ/M-AHSAN-PERVAIZ.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className=" mt-2">M. AHSAN PERVAIZ</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/autocad")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 fifteen-color align-items-center d-flex"
-          >
-            <i className="fas fa-building fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">AutoCad</p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  UI / UX
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() =>
+                go("/fastTrackNonTechnicalProgram/interiorDesigning")
+              }
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/TPyy5nL/M-ABDUL-QADEER.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2">Name</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/microsoftOffice365")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 fourteen-color align-items-center d-flex"
-          >
-            <i className="fab fa-microsoft fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">Microsoft Office 365</p>
-          </Paper>
-        </ButtonBase>
+                <h5 className="card-title text-center my-card-title-font ">
+                  Interior Designing
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() =>
+                go("/fastTrackNonTechnicalProgram/3dMayaMaxAnimation")
+              }
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/tDVbSxx/SHOAIB-ALI.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2">SHOAIB ALI</h6>
+                </div>
 
-        <ButtonBase
-          onClick={() => go("/fastTrackNonTechnicalProgram/enterpreneurship")}
-          className="box mx-3 outline mt-5 "
-        >
-          <Paper
-            elevation={10}
-            className="h-100 w-100 p-3 paper border-top border-4 sixteen-color align-items-center d-flex"
-          >
-            <i className="fas fa-user-tie fa-2x me-3"></i>
-            <p className="fw-bold mb-0 ms-2">Enterpreneurship</p>
-          </Paper>
-        </ButtonBase>
-      </Container>
+                <h5 className="card-title text-center my-card-title-font ">
+                  3D Maya Max Animation
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() => go("/fastTrackNonTechnicalProgram/videoEditing")}
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/R9zHnxc/AYFAR-KHAN.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2 ">Name</h6>
+                </div>
+
+                <h5 className="card-title text-center my-card-title-font ">
+                  Video Editing
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* third 3 end */}
+
+        {/* fourth 4  */}
+        <div className="row">
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() => go("/fastTrackNonTechnicalProgram/autocad")}
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/sFF7tpt/KAMRAN-AHMAD.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className=" mt-2">KAMRAN AHMAD</h6>
+                </div>
+
+                <h5 className="card-title text-center my-card-title-font ">
+                  AutoCad
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() =>
+                go("/fastTrackNonTechnicalProgram/microsoftOffice365")
+              }
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/XpSxwYz/M-ZEESHAN-MOTIWALA.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2">M. ZEESHAN MOTIWALA</h6>
+                </div>
+
+                <h5 className="card-title text-center my-card-title-font ">
+                  Microsoft Office 365
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1">
+            <div
+              onClick={() =>
+                go("/fastTrackNonTechnicalProgram/enterpreneurship")
+              }
+              className="card cursor w-100"
+            >
+              <img
+                src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
+                className="card-img-top w-100"
+                style={{ borderRadius: 0, height: 130 }}
+                alt="..."
+              />
+              <div className="card-body d-flex flex-column align-items-center">
+                <div className="d-flex flex-column align-items-center img-par">
+                  <div className="image d-flex flex-column align-items-center">
+                    <img
+                      src="https://i.ibb.co/jMFQXsx/IRFAD-AHMED-IMTIAZ.png"
+                      alt=""
+                      width="60"
+                    />
+                  </div>
+                  <h6 className="mt-2">IRFAN AHMED IMTIAZ</h6>
+                </div>
+
+                <h5 className="card-title text-center my-card-title-font ">
+                  Enterpreneurship
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* third 3 end */}
+      </div>
       <Copyright />
     </>
   );
