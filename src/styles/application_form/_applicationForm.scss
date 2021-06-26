@@ -1,4 +1,24 @@
+.bg-application {
+  background: linear-gradient(rgba(2, 163, 155, 0.4), rgba(2, 163, 155, 0.4)),
+    url(https://c0.wallpaperflare.com/preview/932/260/985/bible-biblia-book-book-bindings.jpg);
+  height: 350px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
 .application-form {
+  .box {
+    .circle {
+      border: 1px solid lightgrey;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+    }
+  }
+
   .border-color {
     border-color: grey !important;
   }

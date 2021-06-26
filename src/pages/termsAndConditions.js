@@ -23,7 +23,7 @@ const TermsAndConditions = ({
   // Checking email is verified or not
   if (!emailVerified) return <Redirect to="/apply-now/emailVerification" />;
   // Checking application is submitted or not
-  if (applicationSubmitted) return <Redirect to="/apply-now/admissionStatus" />;
+  if (applicationSubmitted) return <Redirect to="/dashboard" />;
 
   // Going to another page
   const go = (link) => {

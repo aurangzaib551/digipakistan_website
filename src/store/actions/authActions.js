@@ -7,13 +7,8 @@ export const signUp = (formData, setBtnLoading) => {
     const firestore = getFirestore();
 
     // Object Destructuring
-    const {
-      emailAddress,
-      password,
-      firstName,
-      lastName,
-      mobileNumber,
-    } = formData;
+    const { emailAddress, password, firstName, lastName, mobileNumber } =
+      formData;
 
     firebase
       .auth()
@@ -24,7 +19,7 @@ export const signUp = (formData, setBtnLoading) => {
           .doc(res.user.uid)
           .set({
             fullName: `${firstName} ${lastName}`,
-            rollNumber: random(5),
+            rollNumber: random(6),
             initials: firstName[0],
             batch: "Batch 01",
             createdAt: new Date(),

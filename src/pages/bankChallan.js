@@ -12,7 +12,7 @@ const BankChallan = ({ uid, emailVerified, applicationSubmitted, status }) => {
   // Checking application is submitted or not
   if (!applicationSubmitted)
     return <Redirect to="/apply-now/applicationForm" />;
-  if (!status) return <Redirect to="/apply-now/admissionStatus" />;
+  if (!status) return <Redirect to="/dashboard" />;
 
   return (
     <>

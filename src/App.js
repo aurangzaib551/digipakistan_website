@@ -302,17 +302,12 @@ const ArtificialIntelligence = lazy(() =>
   )
 );
 const ApplyNow = lazy(() => import("./pages/applyNow"));
-const AndroidDevelopment = lazy(() =>
-  import(
-    "./components/course_outlines/technical_programs/AndroidAppsDevelopment"
-  )
-);
 const SignUp = lazy(() => import("./pages/signUp"));
 const LogIn = lazy(() => import("./pages/logIn"));
 const TermsAndConditions = lazy(() => import("./pages/termsAndConditions"));
 const ApplicationForm = lazy(() => import("./pages/applicationForm"));
 const EmailVerification = lazy(() => import("./pages/emailVerification"));
-const AdmissionStatus = lazy(() => import("./pages/admissionStatus"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
 const GenerateChallan = lazy(() => import("./pages/generateChallan"));
 const BankChallan = lazy(() => import("./pages/bankChallan"));
 const ForgotPassword = lazy(() => import("./pages/forgotPassword"));
@@ -322,7 +317,7 @@ const PaymentVerification = lazy(() => import("./pages/paymentVerification"));
 const Team = lazy(() => import("./pages/team"));
 
 const App = ({ signOut, uid }) => {
-  // State
+  // ? State
   const [firstLoad, setFirstLoad] = useState(false);
 
   useEffect(() => {
@@ -419,10 +414,6 @@ const App = ({ signOut, uid }) => {
             <Route path="/apply-now/signup" component={SignUp} />
             <Route path="/apply-now/login" component={LogIn} />
             <Route
-              path="/androidAppsDevelopment"
-              component={AndroidDevelopment}
-            />
-            <Route
               path="/apply-now/paymentVerification"
               component={PaymentVerification}
             />
@@ -448,10 +439,7 @@ const App = ({ signOut, uid }) => {
               path="/apply-now/generateChallan/eservicesBanking"
               component={EServicesBanking}
             />
-            <Route
-              path="/apply-now/admissionStatus"
-              component={AdmissionStatus}
-            />
+            <Route path="/dashboard" component={Dashboard} />
             <Route
               path="/apply-now/emailVerification"
               component={EmailVerification}

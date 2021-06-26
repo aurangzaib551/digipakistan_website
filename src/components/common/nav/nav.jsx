@@ -15,7 +15,7 @@ import { signOut } from "../../../store/actions/authActions";
 
 const Nav = ({ firstLoad, signOut, uid }) => {
   // Object Destructuring
-  const { replace } = useHistory();
+  const { replace, push } = useHistory();
 
   // Media Query
   const isLaptop = useMediaQuery({
@@ -37,14 +37,18 @@ const Nav = ({ firstLoad, signOut, uid }) => {
   const closeNav = () => $(".menu-laptop").removeClass("open-nav");
 
   // that function is doing routing for us
-  // const go = (link) => {
-  //   setTimeout(() => {
-  //     push(link);
-  //   }, 400);
-  // };
+  const go = (link) => {
+    setTimeout(() => {
+      push(link);
+    }, 400);
+  };
   return (
     <>
-      <AppBar position="fixed" className="bg-white custom-navbar">
+      <AppBar
+        style={{ zIndex: 1300 }}
+        position="fixed"
+        className="bg-white custom-navbar"
+      >
         <Toolbar className="d-flex h-100 justify-content-between custom-toolbar justify-content-sm-between align-items-center justify-content-xl-evenly justify-content-xxl-around text-dark">
           {isLaptop && (
             <IconButton onClick={handleOpen} className="outline laptop-menus">
@@ -65,22 +69,22 @@ const Nav = ({ firstLoad, signOut, uid }) => {
               Sign Out
             </Button>
           ) : (
-            // <Button
-            //   onClick={() => go("/apply-now")}
-            //   variant="contained"
-            //   className="custom-button"
-            // >
-            //   Log In
-            // </Button>
             <Button
-              onClick={() =>
-                (window.location.href = "https://portal.digipakistan.org/")
-              }
+              onClick={() => go("/apply-now")}
               variant="contained"
               className="custom-button"
             >
-              Login Portal
+              Log In
             </Button>
+            // <Button
+            //   onClick={() =>
+            //     (window.location.href = "https://portal.digipakistan.org/")
+            //   }
+            //   variant="contained"
+            //   className="custom-button"
+            // >
+            //   Login Portal
+            // </Button>
           )}
         </Toolbar>
       </AppBar>

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
-import Tabsi from "@material-ui/core/Tabs";
-import Tabi from "@material-ui/core/Tab";
-import { useMediaQuery } from "react-responsive";
+
 import { Tab, Tabs } from "react-bootstrap";
 
 const Python = () => {

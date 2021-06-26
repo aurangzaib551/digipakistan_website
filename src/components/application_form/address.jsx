@@ -6,7 +6,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Input from "@material-ui/core/TextField";
 import Alert from "@material-ui/lab/Alert";
 
-const Address = ({ handleChange, formData, errors }) => {
+const Address = ({ handleChange, formData }) => {
   return (
     <>
       <div className="heading mt-3">
@@ -34,12 +34,6 @@ const Address = ({ handleChange, formData, errors }) => {
         </Select>
       </FormControl>
 
-      {errors.province && (
-        <Alert severity="error" variant="filled">
-          {errors.province}
-        </Alert>
-      )}
-
       <Input
         name="country"
         onChange={handleChange}
@@ -49,12 +43,6 @@ const Address = ({ handleChange, formData, errors }) => {
         variant="standard"
         className="mt-3"
       />
-
-      {errors.country && (
-        <Alert severity="error" variant="filled">
-          {errors.country}
-        </Alert>
-      )}
 
       <Input
         name="city"
@@ -66,12 +54,6 @@ const Address = ({ handleChange, formData, errors }) => {
         className="mt-3"
       />
 
-      {errors.city && (
-        <Alert severity="error" variant="filled">
-          {errors.city}
-        </Alert>
-      )}
-
       <Input
         name="address"
         onChange={handleChange}
@@ -81,12 +63,6 @@ const Address = ({ handleChange, formData, errors }) => {
         variant="standard"
         className="mt-3"
       />
-
-      {errors.address && (
-        <Alert severity="error" variant="filled">
-          {errors.address}
-        </Alert>
-      )}
     </>
   );
 };

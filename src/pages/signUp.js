@@ -30,7 +30,7 @@ const SignUp = ({ registerUser, msg, clearAll }) => {
   });
   const [errors, setErrors] = useState({});
   const [btnLoading, setBtnLoading] = useState(false);
-  const [status] = useState(false);
+  const [status] = useState(true);
 
   // Object Destructuring
   const { replace } = useHistory();

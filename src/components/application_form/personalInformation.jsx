@@ -9,7 +9,7 @@ import "react-phone-input-2/lib/style.css";
 
 const PersonalInformation = (props) => {
   // Object Destructuring
-  const { formData, handleChange, errors, setFormData } = props;
+  const { formData, handleChange, setFormData } = props;
 
   return (
     <>
@@ -25,11 +25,7 @@ const PersonalInformation = (props) => {
         variant="standard"
         className="mt-3"
       />
-      {errors.fullName && (
-        <Alert severity="error" variant="filled">
-          {errors.fullName}
-        </Alert>
-      )}
+
       <Input
         name="fatherName"
         value={formData.fatherName}
@@ -39,11 +35,7 @@ const PersonalInformation = (props) => {
         variant="standard"
         className="mt-3"
       />
-      {errors.fatherName && (
-        <Alert severity="error" variant="filled">
-          {errors.fatherName}
-        </Alert>
-      )}
+
       <Input
         name="applicant"
         value={formData.applicant}
@@ -57,12 +49,6 @@ const PersonalInformation = (props) => {
         <MenuItem value="Local Pakistani">Local Pakistani</MenuItem>
         <MenuItem value="Overseas">Overseas</MenuItem>
       </Input>
-
-      {errors.applicant && (
-        <Alert severity="error" variant="filled">
-          {errors.applicant}
-        </Alert>
-      )}
 
       {formData.applicant === "Local Pakistani" && (
         <>
@@ -79,11 +65,6 @@ const PersonalInformation = (props) => {
           <HelperText name="cnic" error>
             (Enter your 13 digits CNIC / Form-B No. without hyphenation)
           </HelperText>
-          {errors.cnic && (
-            <Alert severity="error" variant="filled">
-              {errors.cnic}
-            </Alert>
-          )}
 
           <Input
             className="mt-3"
@@ -111,11 +92,6 @@ const PersonalInformation = (props) => {
           <HelperText name="no" error>
             (Enter your phone # in the format e.g. 3001234567)
           </HelperText>
-          {errors.mobileNumber && (
-            <Alert severity="error" variant="filled">
-              {errors.mobileNumber}
-            </Alert>
-          )}
         </>
       )}
 
@@ -136,11 +112,6 @@ const PersonalInformation = (props) => {
               <HelperText name="cnic" error>
                 (Enter your valid CNIC without hyphenation)
               </HelperText>
-              {errors.overseasCNIC && (
-                <Alert severity="error" variant="filled">
-                  {errors.overseasCNIC}
-                </Alert>
-              )}
             </div>
             <div className="col mt-3">
               <PhoneInput
@@ -160,11 +131,6 @@ const PersonalInformation = (props) => {
               <HelperText name="countryCode" className="text-nowrap" error>
                 (Enter your country code before number)
               </HelperText>
-              {errors.overseasMobileNumber && (
-                <Alert severity="error" variant="filled">
-                  {errors.overseasMobileNumber}
-                </Alert>
-              )}
             </div>
           </div>
         </>
@@ -192,11 +158,7 @@ const PersonalInformation = (props) => {
           shrink: true,
         }}
       />
-      {errors.dob && (
-        <Alert severity="error" variant="filled">
-          {errors.dob}
-        </Alert>
-      )}
+
       <Input
         name="gender"
         value={formData.gender}
@@ -210,11 +172,6 @@ const PersonalInformation = (props) => {
         <MenuItem value="Male">Male</MenuItem>
         <MenuItem value="Female">Female</MenuItem>
       </Input>
-      {errors.gender && (
-        <Alert severity="error" variant="filled">
-          {errors.gender}
-        </Alert>
-      )}
     </>
   );
 };

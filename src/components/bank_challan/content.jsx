@@ -116,7 +116,7 @@ const Content = ({
   // Checking application is submitted or not
   if (!applicationSubmitted)
     return <Redirect to="/apply-now/applicationForm" />;
-  if (!status) return <Redirect to="/apply-now/admissionStatus" />;
+  if (!status) return <Redirect to="/dashboard" />;
 
   const handleChallan = () => {
     setTimeout(() => {

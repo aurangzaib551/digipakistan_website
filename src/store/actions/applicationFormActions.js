@@ -13,7 +13,7 @@ export const application = (formData, setBtnLoading, uid) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
 
-    // Date
+    // ? Getting Date
 
     const date = new Date();
 
@@ -54,7 +54,7 @@ export const application = (formData, setBtnLoading, uid) => {
 
     const month = monthNames[getMonth];
 
-    // Time
+    // ? Time function
 
     function time(date) {
       var hours = date.getHours();

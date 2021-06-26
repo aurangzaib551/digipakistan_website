@@ -63,6 +63,8 @@ const ApplicationForm = ({
   });
   const [btnLoading, setBtnLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  // ? Steps in form
+  const [steps, setSteps] = useState(1);
 
   useLayoutEffect(() => {
     if (msg) {
@@ -103,17 +105,17 @@ const ApplicationForm = ({
     }
   }, [emailAddress, clearAll, msg]);
 
-  // User is logged in or not
+  // ! User is logged in or not
   if (!uid) return <Redirect to="/apply-now/login" />;
-  // Checking email is verified or not
+  // ! Checking email is verified or not
   if (!emailVerified) return <Redirect to="/apply-now/emailVerification" />;
-  // Checking Terms & Conditions
+  // ! Checking Terms & Conditions
   if (!termsAndConditions)
     return <Redirect to="/apply-now/termsAndConditions" />;
-  // Checking application is submitted or not
-  if (applicationSubmitted) return <Redirect to="/apply-now/admissionStatus" />;
+  // ! Checking application is submitted or not
+  if (applicationSubmitted) return <Redirect to="/dashboard" />;
 
-  //   Getting Values from input fields
+  // ? Getting Values from input fields
   const handleChange = (event) => {
     setFormData({
       ...formData,
@@ -121,7 +123,7 @@ const ApplicationForm = ({
     });
   };
 
-  //   Getting value from first course title
+  // ? Getting value from first course title
   const handleFirstCourseTitle = (event) => {
     setFormData({
       ...formData,
@@ -131,7 +133,7 @@ const ApplicationForm = ({
     });
   };
 
-  //   Getting value from first course name
+  // ? Getting value from first course name
   const handleFirstCourseName = ({ target }) => {
     const { value } = target;
 
@@ -474,7 +476,7 @@ const ApplicationForm = ({
     }
   };
 
-  //   Getting value from second course title
+  // ? Getting value from second course title
   const handleSecondCourseTitle = (event) => {
     setFormData({
       ...formData,
@@ -484,7 +486,7 @@ const ApplicationForm = ({
     });
   };
 
-  //   Getting value from second course name
+  // ?  Getting value from second course name
   const handleSecondCourseName = ({ target }) => {
     const { value } = target;
     console.log(value);
@@ -827,7 +829,7 @@ const ApplicationForm = ({
     }
   };
 
-  //   Getting value from third course title
+  //  ? Getting value from third course title
   const handleThirdCourseTitle = (event) => {
     setFormData({
       ...formData,
@@ -837,7 +839,7 @@ const ApplicationForm = ({
     });
   };
 
-  //   Getting value from third course name
+  // ?  Getting value from third course name
   const handleThirdCourseName = ({ target }) => {
     const { value } = target;
 
@@ -1180,7 +1182,7 @@ const ApplicationForm = ({
     }
   };
 
-  //   Getting value from qualification field
+  // ?  Getting value from qualification field
   const handleQualification = (event) => {
     setFormData({
       ...formData,
@@ -1189,7 +1191,7 @@ const ApplicationForm = ({
     });
   };
 
-  // Form validation
+  // ? Form is validating from here
   const validate = () => {
     const errors = {};
 
@@ -1324,7 +1326,8 @@ const ApplicationForm = ({
     }
 
     if (formData.knowAboutUs.trim() === "") {
-      errors.knowAboutUs = "This field mustn't be empty";
+      errors.knowAboutUs =
+        "How you get to know about DigiPAKISTAN initiative mustn't be empty";
     }
 
     const marketerCode = referCode.filter(
@@ -1340,6 +1343,7 @@ const ApplicationForm = ({
     return Object.keys(errors).length === 0 ? null : errors;
   };
 
+  // ? Form is submitting through that function
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -1370,73 +1374,500 @@ const ApplicationForm = ({
     submitForm(formData, setBtnLoading, uid);
   };
 
+  // ? Step is going forward
+  const handleNext = () => {
+    setSteps(steps + 1);
+  };
+
+  // ? Step is going backward
+  const handlePrev = () => {
+    setSteps(steps - 1);
+  };
+
+  // ? All steps are here
+  const renderSteps = () => {
+    switch (steps) {
+      case 1:
+        return (
+          <>
+            <div className="d-flex justify-content-lg-between justify-content-center flex-wrap">
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle bg-danger text-white border-danger d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">01</h5>
+                </div>
+                <p className="mb-0 mt-2">Personal Information</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">02</h5>
+                </div>
+                <p className="mb-0 mt-2">Available Programs</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">03</h5>
+                </div>
+                <p className="mb-0 mt-2">Education</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">04</h5>
+                </div>
+                <p className="mb-0 mt-2">Address</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">05</h5>
+                </div>
+                <p className="mb-0 mt-2 w-75 text-center">
+                  Additional Free Course Voucher
+                </p>
+              </div>
+            </div>
+
+            <form className="w-100">
+              <PersonalInformation
+                formData={formData}
+                handleChange={handleChange}
+                setFormData={setFormData}
+              />
+
+              <Button
+                onClick={handleNext}
+                variant="contained"
+                className="custom-button my-3"
+                fullWidth
+              >
+                Next
+              </Button>
+            </form>
+          </>
+        );
+
+      case 2:
+        return (
+          <>
+            <div className="d-flex justify-content-lg-between justify-content-center flex-wrap">
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">01</h5>
+                </div>
+                <p className="mb-0 mt-2">Personal Information</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle bg-danger text-white border-danger d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">02</h5>
+                </div>
+                <p className="mb-0 mt-2">Available Programs</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">03</h5>
+                </div>
+                <p className="mb-0 mt-2">Education</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">04</h5>
+                </div>
+                <p className="mb-0 mt-2">Address</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">05</h5>
+                </div>
+                <p className="mb-0 mt-2 w-75 text-center">
+                  Additional Free Course Voucher
+                </p>
+              </div>
+            </div>
+
+            <form className="w-100">
+              <AvailablePrograms
+                formData={formData}
+                handleChange={handleFirstCourseTitle}
+                handleFirstCourseName={handleFirstCourseName}
+                handleChangeSecond={handleSecondCourseTitle}
+                handleSecondCourseName={handleSecondCourseName}
+                handleChangeThird={handleThirdCourseTitle}
+                handleThirdCourseName={handleThirdCourseName}
+              />
+              <Button
+                onClick={handlePrev}
+                variant="contained"
+                className="custom-button my-3"
+                fullWidth
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={handleNext}
+                variant="contained"
+                className="custom-button mb-3"
+                fullWidth
+              >
+                Next
+              </Button>
+            </form>
+          </>
+        );
+
+      case 3:
+        return (
+          <>
+            <div className="d-flex justify-content-lg-between justify-content-center flex-wrap">
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">01</h5>
+                </div>
+                <p className="mb-0 mt-2">Personal Information</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">02</h5>
+                </div>
+                <p className="mb-0 mt-2">Available Programs</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle bg-danger text-white border-danger d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">03</h5>
+                </div>
+                <p className="mb-0 mt-2">Education</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">04</h5>
+                </div>
+                <p className="mb-0 mt-2">Address</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">05</h5>
+                </div>
+                <p className="mb-0 mt-2 w-75 text-center">
+                  Additional Free Course Voucher
+                </p>
+              </div>
+            </div>
+
+            <form className="w-100">
+              <Education
+                formData={formData}
+                handleChange={handleChange}
+                handleQualification={handleQualification}
+              />
+              <Button
+                onClick={handlePrev}
+                variant="contained"
+                className="custom-button my-3"
+                fullWidth
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={handleNext}
+                variant="contained"
+                className="custom-button mb-3"
+                fullWidth
+              >
+                Next
+              </Button>
+            </form>
+          </>
+        );
+
+      case 4:
+        return (
+          <>
+            <div className="d-flex justify-content-lg-between justify-content-center flex-wrap">
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">01</h5>
+                </div>
+                <p className="mb-0 mt-2">Personal Information</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">02</h5>
+                </div>
+                <p className="mb-0 mt-2">Available Programs</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">03</h5>
+                </div>
+                <p className="mb-0 mt-2">Education</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle bg-danger text-white border-danger d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">04</h5>
+                </div>
+                <p className="mb-0 mt-2">Address</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">05</h5>
+                </div>
+                <p className="mb-0 mt-2 w-75 text-center">
+                  Additional Free Course Voucher
+                </p>
+              </div>
+            </div>
+
+            <form className="w-100">
+              <Address formData={formData} handleChange={handleChange} />
+              <Button
+                onClick={handlePrev}
+                variant="contained"
+                className="custom-button my-3"
+                fullWidth
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={handleNext}
+                variant="contained"
+                className="custom-button mb-3"
+                fullWidth
+              >
+                Next
+              </Button>
+            </form>
+          </>
+        );
+
+      case 5:
+        return (
+          <>
+            <div className="d-flex justify-content-lg-between justify-content-center flex-wrap">
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">01</h5>
+                </div>
+                <p className="mb-0 mt-2">Personal Information</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">02</h5>
+                </div>
+                <p className="mb-0 mt-2">Available Programs</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">03</h5>
+                </div>
+                <p className="mb-0 mt-2">Education</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">04</h5>
+                </div>
+                <p className="mb-0 mt-2">Address</p>
+              </div>
+
+              <div className="box mx-3 mx-lg-0 mt-4 d-flex flex-column align-items-center">
+                <div className="circle bg-danger text-white border-danger d-flex justify-content-center align-items-center">
+                  <h5 className="fw-bold mb-0">05</h5>
+                </div>
+                <p className="mb-0 mt-2 w-75 text-center">
+                  Additional Free Course Voucher
+                </p>
+              </div>
+            </div>
+
+            <form onSubmit={handleSubmit} className="w-100">
+              <AdditionalFreeCourseVoucher
+                formData={formData}
+                handleChange={handleChange}
+              />
+
+              {/* // ! Errors are showing here */}
+              {errors.fullName && (
+                <Alert severity="error" className="mt-4" variant="filled">
+                  {errors.fullName}
+                </Alert>
+              )}
+              {errors.fatherName && (
+                <Alert severity="error" variant="filled">
+                  {errors.fatherName}
+                </Alert>
+              )}
+              {errors.applicant && (
+                <Alert severity="error" variant="filled">
+                  {errors.applicant}
+                </Alert>
+              )}
+              {errors.cnic && (
+                <Alert severity="error" variant="filled">
+                  {errors.cnic}
+                </Alert>
+              )}
+              {errors.mobileNumber && (
+                <Alert severity="error" variant="filled">
+                  {errors.mobileNumber}
+                </Alert>
+              )}
+              {errors.overseasCNIC && (
+                <Alert severity="error" variant="filled">
+                  {errors.overseasCNIC}
+                </Alert>
+              )}
+              {errors.overseasMobileNumber && (
+                <Alert severity="error" variant="filled">
+                  {errors.overseasMobileNumber}
+                </Alert>
+              )}
+              {errors.dob && (
+                <Alert severity="error" variant="filled">
+                  {errors.dob}
+                </Alert>
+              )}
+              {errors.gender && (
+                <Alert severity="error" variant="filled">
+                  {errors.gender}
+                </Alert>
+              )}
+              {errors.firstCourseTitle && (
+                <Alert severity="error" variant="filled">
+                  {errors.firstCourseTitle}
+                </Alert>
+              )}
+              {errors.firstCourseName && (
+                <Alert severity="error" variant="filled">
+                  {errors.firstCourseName}
+                </Alert>
+              )}
+              {errors.secondCourseName && (
+                <Alert severity="error" variant="filled">
+                  {errors.secondCourseName}
+                </Alert>
+              )}
+              {errors.thirdCourseName && (
+                <Alert severity="error" variant="filled">
+                  {errors.thirdCourseName}
+                </Alert>
+              )}
+              {errors.qualification && (
+                <Alert severity="error" variant="filled">
+                  {errors.qualification}
+                </Alert>
+              )}
+              {errors.education && (
+                <Alert severity="error" variant="filled">
+                  {errors.education}
+                </Alert>
+              )}
+              {errors.instituteName && (
+                <Alert severity="error" variant="filled">
+                  {errors.instituteName}
+                </Alert>
+              )}
+              {errors.province && (
+                <Alert severity="error" variant="filled">
+                  {errors.province}
+                </Alert>
+              )}
+              {errors.country && (
+                <Alert severity="error" variant="filled">
+                  {errors.country}
+                </Alert>
+              )}
+              {errors.city && (
+                <Alert severity="error" variant="filled">
+                  {errors.city}
+                </Alert>
+              )}
+              {errors.address && (
+                <Alert severity="error" variant="filled">
+                  {errors.address}
+                </Alert>
+              )}
+              {errors.marketerCode && (
+                <Alert severity="error" variant="filled">
+                  {errors.marketerCode}
+                </Alert>
+              )}
+              {errors.knowAboutUs && (
+                <Alert severity="error" variant="filled">
+                  {errors.knowAboutUs}
+                </Alert>
+              )}
+
+              {Object.keys(errors).length > 0 && (
+                <Alert severity="info" variant="filled" className="mt-3">
+                  Some fields are missing. Check it
+                </Alert>
+              )}
+
+              <Button
+                onClick={handlePrev}
+                variant="contained"
+                className="custom-button my-3"
+                fullWidth
+              >
+                Previous
+              </Button>
+              <Button
+                disabled={btnLoading}
+                type="submit"
+                variant="contained"
+                className="custom-button mb-3"
+                fullWidth
+              >
+                {btnLoading && <CircularProgress className="loader" />}
+                {btnLoading ? (
+                  <span className="ms-3">Sending Application...</span>
+                ) : (
+                  "Send Application"
+                )}
+              </Button>
+            </form>
+          </>
+        );
+
+      default:
+    }
+  };
+
   return (
-    <>
+    <React.Fragment>
+      {/* // ? Additional info about that page */}
       <Helmet>
         <title>Application Form</title>
       </Helmet>
-      <Container className="mt pt-4 application-form">
-        <h1 className="text-center fw-light display-4">
+
+      {/* // ? Header */}
+      <div className="bg-application mt">
+        <h1 className="text-center text-white pt-5 heading fw-light display-4">
           Digi<span className="fw-bold">PAKISTAN</span> Application Form
         </h1>
-        <form onSubmit={handleSubmit} className="w-100">
-          <PersonalInformation
-            formData={formData}
-            handleChange={handleChange}
-            errors={errors}
-            setFormData={setFormData}
-          />
-          <AvailablePrograms
-            formData={formData}
-            handleChange={handleFirstCourseTitle}
-            handleFirstCourseName={handleFirstCourseName}
-            handleChangeSecond={handleSecondCourseTitle}
-            handleSecondCourseName={handleSecondCourseName}
-            handleChangeThird={handleThirdCourseTitle}
-            handleThirdCourseName={handleThirdCourseName}
-            errors={errors}
-          />
-          <Education
-            formData={formData}
-            handleChange={handleChange}
-            handleQualification={handleQualification}
-            errors={errors}
-          />
-          <Address
-            formData={formData}
-            handleChange={handleChange}
-            errors={errors}
-          />
-          <AdditionalFreeCourseVoucher
-            formData={formData}
-            handleChange={handleChange}
-            errors={errors}
-          />
+      </div>
 
-          {Object.keys(errors).length > 0 && (
-            <Alert severity="info" variant="filled" className="mt-3">
-              Some fields are missing. Check it
-            </Alert>
-          )}
+      {/* // ? Rendering Steps Here */}
+      <Container className="application-form">{renderSteps()}</Container>
 
-          <Button
-            disabled={btnLoading}
-            type="submit"
-            variant="contained"
-            className="custom-button my-3"
-            fullWidth
-          >
-            {btnLoading && <CircularProgress className="loader" />}
-            {btnLoading ? (
-              <span className="ms-3">Sending Application...</span>
-            ) : (
-              "Send Application"
-            )}
-          </Button>
-        </form>
-      </Container>
+      {/* // ? Footer */}
       <Copyright />
-    </>
+    </React.Fragment>
   );
 };
 

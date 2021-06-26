@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import ButtonBase from "@material-ui/core/ButtonBase";
 import Copyright from "../components/common/copyright/copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";

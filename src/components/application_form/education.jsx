@@ -6,7 +6,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Input from "@material-ui/core/TextField";
 import Alert from "@material-ui/lab/Alert";
 
-const Education = ({ handleQualification, formData, handleChange, errors }) => {
+const Education = ({ handleQualification, formData, handleChange }) => {
   return (
     <>
       <div className="heading mt-3">
@@ -29,12 +29,6 @@ const Education = ({ handleQualification, formData, handleChange, errors }) => {
           <MenuItem value="Other">Other</MenuItem>
         </Select>
       </FormControl>
-
-      {errors.qualification && (
-        <Alert severity="error" variant="filled">
-          {errors.qualification}
-        </Alert>
-      )}
 
       {formData.qualification === "Matric" && (
         <FormControl fullWidth variant="standard" className="mt-3">
@@ -112,12 +106,6 @@ const Education = ({ handleQualification, formData, handleChange, errors }) => {
         />
       )}
 
-      {errors.education && (
-        <Alert severity="error" variant="filled">
-          {errors.education}
-        </Alert>
-      )}
-
       <Input
         value={formData.instituteName}
         name="instituteName"
@@ -127,12 +115,6 @@ const Education = ({ handleQualification, formData, handleChange, errors }) => {
         onChange={handleChange}
         label="Institute Name *"
       />
-
-      {errors.instituteName && (
-        <Alert severity="error" variant="filled">
-          {errors.instituteName}
-        </Alert>
-      )}
     </>
   );
 };

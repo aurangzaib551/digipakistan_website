@@ -13,7 +13,6 @@ const AvailablePrograms = ({
   handleSecondCourseName,
   handleChangeThird,
   handleThirdCourseName,
-  errors,
 }) => {
   return (
     <>
@@ -39,12 +38,6 @@ const AvailablePrograms = ({
           </MenuItem>
         </Select>
       </FormControl>
-
-      {errors.firstCourseTitle && (
-        <Alert severity="error" variant="filled">
-          {errors.firstCourseTitle}
-        </Alert>
-      )}
 
       {formData.firstCourseTitle === "Fast Track Technical Program" && (
         <FormControl fullWidth className="mt-3" variant="standard">
@@ -211,12 +204,6 @@ const AvailablePrograms = ({
             </MenuItem>
           </Select>
         </FormControl>
-      )}
-
-      {errors.firstCourseName && (
-        <Alert severity="error" variant="filled">
-          {errors.firstCourseName}
-        </Alert>
       )}
 
       {/* Second Course */}
@@ -408,12 +395,6 @@ const AvailablePrograms = ({
         </FormControl>
       )}
 
-      {errors.secondCourseName && (
-        <Alert severity="error" variant="filled">
-          {errors.secondCourseName}
-        </Alert>
-      )}
-
       {/* third Course */}
       <FormControl fullWidth variant="standard" className="mt-3">
         <Label htmlFor="thirdCourse">Third Course (Optional)</Label>
@@ -601,12 +582,6 @@ const AvailablePrograms = ({
             </MenuItem>
           </Select>
         </FormControl>
-      )}
-
-      {errors.thirdCourseName && (
-        <Alert severity="error" variant="filled">
-          {errors.thirdCourseName}
-        </Alert>
       )}
     </>
   );

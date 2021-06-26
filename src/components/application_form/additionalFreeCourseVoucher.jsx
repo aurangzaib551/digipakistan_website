@@ -4,7 +4,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import HelperText from "@material-ui/core/FormHelperText";
 import Alert from "@material-ui/lab/Alert";
 
-const AdditionalFreeCourseVoucher = ({ handleChange, formData, errors }) => {
+const AdditionalFreeCourseVoucher = ({ handleChange, formData }) => {
   return (
     <>
       <div className="heading mt-3">
@@ -31,12 +31,6 @@ const AdditionalFreeCourseVoucher = ({ handleChange, formData, errors }) => {
         code, Please left this field empty.
       </HelperText>
 
-      {errors.marketerCode && (
-        <Alert severity="error" variant="filled">
-          {errors.marketerCode}
-        </Alert>
-      )}
-
       <Input
         name="knowAboutUs"
         onChange={handleChange}
@@ -58,12 +52,6 @@ const AdditionalFreeCourseVoucher = ({ handleChange, formData, errors }) => {
         <MenuItem value="Newspaper">Newspaper</MenuItem>
         <MenuItem value="Other">Other</MenuItem>
       </Input>
-
-      {errors.knowAboutUs && (
-        <Alert severity="error" variant="filled">
-          {errors.knowAboutUs}
-        </Alert>
-      )}
     </>
   );
 };

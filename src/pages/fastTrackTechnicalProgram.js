@@ -258,7 +258,9 @@ const FastTrackTechnicalProgram = ({ signOut }) => {
           </div>
           <div className="col-lg-3 col-sm-6 mt-lg-5 mt-4 p-1 cursor">
             <div
-              onClick={() => go("/androidAppsDevelopment")}
+              onClick={() =>
+                go("/fastTrackTechnicalProgram/androidAppsDevelopment")
+              }
               className="card cursor w-100"
             >
               <img
