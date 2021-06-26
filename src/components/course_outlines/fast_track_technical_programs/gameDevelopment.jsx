@@ -5,17 +5,8 @@ import Button from "@material-ui/core/Button";
 import { Tab, Tabs } from "react-bootstrap";
 
 const GameDevelopment = () => {
-  const [tabValue, setTabValue] = useState(0);
   const [key, setKey] = useState("home");
 
-  const handleTab = (obj, ind) => {
-    setTabValue(ind);
-  };
-
-  //   Media Query
-  const isSmall = useMediaQuery({
-    query: "(max-width: 541px)",
-  });
   return (
     <>
       <div className="course-outlines mt">

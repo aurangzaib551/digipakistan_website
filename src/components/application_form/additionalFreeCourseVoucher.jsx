@@ -2,7 +2,6 @@ import React from "react";
 import Input from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import HelperText from "@material-ui/core/FormHelperText";
-import Alert from "@material-ui/lab/Alert";
 
 const AdditionalFreeCourseVoucher = ({ handleChange, formData }) => {
   return (

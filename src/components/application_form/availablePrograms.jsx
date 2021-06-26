@@ -3,7 +3,6 @@ import FormControl from "@material-ui/core/FormControl";
 import Label from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
-import Alert from "@material-ui/lab/Alert";
 
 const AvailablePrograms = ({
   formData,
