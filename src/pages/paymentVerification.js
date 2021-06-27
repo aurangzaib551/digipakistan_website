@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Nav from "../components/common/nav/nav";
+import Nav from "../components/common/nav/Nav";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import digipakistan from "../config/fbConfig";
 import { Helmet } from "react-helmet";
-import Footer from "../components/common/footer/footer";
+import Footer from "../components/common/footer/Footer";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 import CancelIcon from "@material-ui/icons/Cancel";
 

@@ -9,6 +9,8 @@
 }
 
 .laptop-menu-items {
+  z-index: 1550;
+
   .menu-laptop.open-nav {
     left: 0;
   }
@@ -22,7 +24,7 @@
     height: 100%;
     width: 350px;
     background-color: $primary;
-    z-index: 1150;
+    z-index: 1550;
 
     &::-webkit-scrollbar {
       width: 15px;

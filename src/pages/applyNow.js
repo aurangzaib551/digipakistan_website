@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
-import Copyright from "../components/common/copyright/copyright";
+import Copyright from "../components/common/copyright/Copyright";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
@@ -22,7 +22,7 @@ const ApplyNow = ({ signOut }) => {
   const { push } = useHistory();
 
   useLayoutEffect(() => {
-    return () => { };
+    return () => {};
   }, []);
 
   const go = (link) => {

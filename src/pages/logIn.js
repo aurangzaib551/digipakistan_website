@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container";
 import Input from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Link, useHistory } from "react-router-dom";
-import Copyright from "../components/common/copyright/copyright";
+import Copyright from "../components/common/copyright/Copyright";
 import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";

@@ -3,15 +3,15 @@ import $ from "jquery";
 import { useLocation } from "react-router-dom";
 
 const GoToTop = () => {
-  // Object Destructuring
+  // ? Object Destructuring
   const { pathname } = useLocation();
 
-  // when new route is open then page goes to top of the page
+  // ? when new route is open then page goes to top of the page
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // Setting top btn when scroll goes to 1104px down
+  // ? Setting top btn when scroll goes to 1104px down
   $(window).scroll(function () {
     var height = $(window).scrollTop();
     if (height > 904) {

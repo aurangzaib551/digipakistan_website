@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Banner from "../components/faqs/banner";
-import QuestionsAndAnswers from "../components/faqs/questionsAndAnswers";
-import Copyright from "../components/common/copyright/copyright";
-import Help from "../components/faqs/help";
+import Banner from "../components/faqs/Banner";
+import QuestionsAndAnswers from "../components/faqs/QuestionsAndAnswers";
+import Copyright from "../components/common/copyright/Copyright";
+import Help from "../components/faqs/Help";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
 import { Helmet } from "react-helmet";

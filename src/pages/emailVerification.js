@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import MailIcon from "@material-ui/icons/DraftsOutlined";
-import Copyright from "../components/common/copyright/copyright";
+import Copyright from "../components/common/copyright/Copyright";
 import Button from "@material-ui/core/Button";
 import Alert from "@material-ui/lab/Alert";
 import { connect } from "react-redux";

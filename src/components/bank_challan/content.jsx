@@ -9,7 +9,7 @@ import fontLight from "../../assets/fonts/Montserrat-Light.ttf";
 import { Font } from "@react-pdf/renderer";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-import PDFChallan from "./pdfChallan";
+import PDFChallan from "./PDFChallan";
 import { challanNo } from "../../store/actions/authActions";
 import CircularLoader from "@material-ui/core/CircularProgress";
 

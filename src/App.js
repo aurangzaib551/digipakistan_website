@@ -5,77 +5,77 @@ import { Beforeunload } from "react-beforeunload";
 import { connect } from "react-redux";
 import { signOut } from "./store/actions/authActions";
 import { Helmet } from "react-helmet";
-const Nav = lazy(() => import("./components/common/nav/nav"));
-const HomePage = lazy(() => import("./pages/homePage"));
-const NotFound = lazy(() => import("./pages/notFound"));
-const Message = lazy(() => import("./pages/message"));
-const AdmissionProcess = lazy(() => import("./pages/admissionProcess"));
-const FAQs = lazy(() => import("./pages/faqs"));
-const GoToTop = lazy(() => import("./pages/goToTop"));
-const ContactUs = lazy(() => import("./pages/contactUs"));
+const Nav = lazy(() => import("./components/common/nav/Nav"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Message = lazy(() => import("./pages/Message"));
+const AdmissionProcess = lazy(() => import("./pages/AdmissionProcess"));
+const FAQs = lazy(() => import("./pages/Faqs"));
+const GoToTop = lazy(() => import("./pages/GoToTop"));
+const ContactUs = lazy(() => import("./pages/ContactUs"));
 const ProvincialMinisterMessage = lazy(() =>
-  import("./pages/provincialMinisterMessage")
+  import("./pages/ProvincialMinisterMessage")
 );
 const DirectorGeneralMessage = lazy(() =>
-  import("./pages/directorGeneralMessage")
+  import("./pages/DirectorGeneralMessage")
 );
 const ChairmanHECPunjabMessage = lazy(() =>
-  import("./pages/chairmanHECPunjabMessage")
+  import("./pages/ChairmanHECPunjabMessage")
 );
-const ChairmanPECMessage = lazy(() => import("./pages/chairmanPECMessage"));
-const AboutUs = lazy(() => import("./pages/aboutUs"));
-const AdvisoryBody = lazy(() => import("./pages/advisoryBody"));
-const BecomeAnInstructor = lazy(() => import("./pages/becomeAnInstructor"));
+const ChairmanPECMessage = lazy(() => import("./pages/ChairmanPECMessage"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const AdvisoryBody = lazy(() => import("./pages/AdvisoryBody"));
+const BecomeAnInstructor = lazy(() => import("./pages/BecomeAnInstructor"));
 const FastTrackTechnicalProgram = lazy(() =>
-  import("./pages/fastTrackTechnicalProgram")
+  import("./pages/FastTrackTechnicalProgram")
 );
 const FastTrackNonTechnicalProgram = lazy(() =>
-  import("./pages/fastTrackNonTechnicalProgram")
+  import("./pages/FastTrackNonTechnicalProgram")
 );
 const AssociateCertificationProgram = lazy(() =>
-  import("./pages/associateCertificationProgram")
+  import("./pages/AssociateCertificationProgram")
 );
 const CompTIAItFundamentals = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/compTIAItFundamentals"
+    "./components/course_outlines/fast_track_technical_programs/CompTIAItFundamentals"
   )
 );
 const MicrosoftFrontEndDevelopment = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/microsoftFrontEndDevelopment"
+    "./components/course_outlines/fast_track_technical_programs/MicrosoftFrontEndDevelopment"
   )
 );
 const AspDotNetWebApplications = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/aspDotNetWebApplications"
+    "./components/course_outlines/fast_track_technical_programs/AspDotNetWebApplications"
   )
 );
 const PHPLaravel = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/phpLaravel"
+    "./components/course_outlines/fast_track_technical_programs/PHPLaravel"
   )
 );
 const MERNStack = lazy(() =>
-  import("./components/course_outlines/fast_track_technical_programs/mernStack")
+  import("./components/course_outlines/fast_track_technical_programs/MernStack")
 );
 const SQLServerSpecialist = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/sqlServerSpecialist"
+    "./components/course_outlines/fast_track_technical_programs/SqlServerSpecialist"
   )
 );
 const OracleDatabaseAdministrator = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/orcaleDatabaseAdministrator"
+    "./components/course_outlines/fast_track_technical_programs/OrcaleDatabaseAdministrator"
   )
 );
 const AndroidAppsDevelopment = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/androidAppsDevelopment"
+    "./components/course_outlines/fast_track_technical_programs/AndroidAppsDevelopment"
   )
 );
 const KotlinAppsDevelopment = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/kotlinAppsDevelopment"
+    "./components/course_outlines/fast_track_technical_programs/KotlinAppsDevelopment"
   )
 );
 const IOSAppsDevelopment = lazy(() =>
@@ -85,236 +85,236 @@ const IOSAppsDevelopment = lazy(() =>
 );
 const XamarinAppsDevelopment = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/xamarinAppsDevelopment"
+    "./components/course_outlines/fast_track_technical_programs/XamarinAppsDevelopment"
   )
 );
 const ReactNativeWebAndAppsDevelopment = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/reactNativeWebAndAppsDevelopment"
+    "./components/course_outlines/fast_track_technical_programs/ReactNativeWebAndAppsDevelopment"
   )
 );
 const GameDevelopment = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/gameDevelopment"
+    "./components/course_outlines/fast_track_technical_programs/GameDevelopment"
   )
 );
 const CiscoCCNANetworking = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/ciscoCCNANetworking"
+    "./components/course_outlines/fast_track_technical_programs/CiscoCCNANetworking"
   )
 );
 const ComptiaSecurity = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/comptiaSecurity"
+    "./components/course_outlines/fast_track_technical_programs/ComptiaSecurity"
   )
 );
 const CertifiedEthicalHacking = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/certifiedEthicalHacking"
+    "./components/course_outlines/fast_track_technical_programs/CertifiedEthicalHacking"
   )
 );
 const PenetrationTestingSecurityAnalyst = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/penetrationTestingSecurityAnalyst"
+    "./components/course_outlines/fast_track_technical_programs/PenetrationTestingSecurityAnalyst"
   )
 );
 const CertifiedHackingForensicInvestigator = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/certifiedHackingForensicInvestigator"
+    "./components/course_outlines/fast_track_technical_programs/CertifiedHackingForensicInvestigator"
   )
 );
 const CertifiedInformationSystemsAuditor = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/certifiedInformationSystemsAuditor"
+    "./components/course_outlines/fast_track_technical_programs/CertifiedInformationSystemsAuditor"
   )
 );
 const CertifiedInformationSecurityManager = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/certifiedInformationSecurityManager"
+    "./components/course_outlines/fast_track_technical_programs/CertifiedInformationSecurityManager"
   )
 );
 const AWSPractitioner = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/awsPractitioner"
+    "./components/course_outlines/fast_track_technical_programs/AwsPractitioner"
   )
 );
 const AWSSolutionArchitect = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/awsSolutionArchitect"
+    "./components/course_outlines/fast_track_technical_programs/AwsSolutionArchitect"
   )
 );
 const AWSSysOpsAdministrator = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/awsSysOpsAdministrator"
+    "./components/course_outlines/fast_track_technical_programs/AwsSysOpsAdministrator"
   )
 );
 const AWSDeveloperAssociate = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/awsDeveloperAssociate"
+    "./components/course_outlines/fast_track_technical_programs/AwsDeveloperAssociate"
   )
 );
 const MicrosoftAzureCloudFundamentals = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/microsoftAzureCloudFundamentals"
+    "./components/course_outlines/fast_track_technical_programs/MicrosoftAzureCloudFundamentals"
   )
 );
 const MicrosoftCloudAdministrator = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/microsoftCloudAdministrator"
+    "./components/course_outlines/fast_track_technical_programs/MicrosoftCloudAdministrator"
   )
 );
 const PythonForEveryone = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/pythonForEveryone"
+    "./components/course_outlines/fast_track_technical_programs/PythonForEveryone"
   )
 );
 const MachineLearningAndAI = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/machineLearningAndAI"
+    "./components/course_outlines/fast_track_technical_programs/MachineLearningAndAI"
   )
 );
 const DataScience = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/dataScience"
+    "./components/course_outlines/fast_track_technical_programs/DataScience"
   )
 );
 const BigDataAndHeadoopEcosystem = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/bigDataAndHeadoopEcosystem"
+    "./components/course_outlines/fast_track_technical_programs/BigDataAndHeadoopEcosystem"
   )
 );
 const GoogleCloudEngineer = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_technical_programs/googleCloudEngineer"
+    "./components/course_outlines/fast_track_technical_programs/GoogleCloudEngineer"
   )
 );
 const QuickBooks = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/quickBooks"
+    "./components/course_outlines/fast_track_non_technical_program/QuickBooks"
   )
 );
 const SAPERP = lazy(() =>
-  import("./components/course_outlines/fast_track_non_technical_program/saperp")
+  import("./components/course_outlines/fast_track_non_technical_program/SapErp")
 );
 const ProjectManagementProfessional = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/projectManagementProfessional"
+    "./components/course_outlines/fast_track_non_technical_program/ProjectManagementProfessional"
   )
 );
 const AmazonFBABusiness = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/amazonFBABusiness"
+    "./components/course_outlines/fast_track_non_technical_program/AmazonFBABusiness"
   )
 );
 const SearchEngineOptimization = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/searchEngineOptimzation"
+    "./components/course_outlines/fast_track_non_technical_program/SearchEngineOptimzation"
   )
 );
 const DigitalMarketing = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/digitalMarketing"
+    "./components/course_outlines/fast_track_non_technical_program/DigitalMarketing"
   )
 );
 const SocialMediaMarketing = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/socialMediaMarketing"
+    "./components/course_outlines/fast_track_non_technical_program/SocialMediaMarketing"
   )
 );
 const GraphicDesign = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/graphicDesign"
+    "./components/course_outlines/fast_track_non_technical_program/GraphicDesign"
   )
 );
 const UIANDUX = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/uiAndUx"
+    "./components/course_outlines/fast_track_non_technical_program/UiAndUx"
   )
 );
 const InteriorDesign = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/interiorDesign"
+    "./components/course_outlines/fast_track_non_technical_program/InteriorDesign"
   )
 );
 const MayaMaxAnimation = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/3dMayaMaxAnimation"
+    "./components/course_outlines/fast_track_non_technical_program/3DMayaMaxAnimation"
   )
 );
 const VideoEditing = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/videoEditing"
+    "./components/course_outlines/fast_track_non_technical_program/VideoEditing"
   )
 );
 const AutoCad = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/autocad"
+    "./components/course_outlines/fast_track_non_technical_program/Autocad"
   )
 );
 const MicrosoftOffice365 = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/microsoftOffice365"
+    "./components/course_outlines/fast_track_non_technical_program/MicrosoftOffice365"
   )
 );
 const Enterpreneurship = lazy(() =>
   import(
-    "./components/course_outlines/fast_track_non_technical_program/enterpreneurship"
+    "./components/course_outlines/fast_track_non_technical_program/Enterpreneurship"
   )
 );
 const DigitalForensicCyberSecurity = lazy(() =>
   import(
-    "./components/course_outlines/associate_certifications_programs/digitalForensicCyberSecurity"
+    "./components/course_outlines/associate_certifications_programs/DigitalForensicCyberSecurity"
   )
 );
 const PenetrationTestingCyberSecurity = lazy(() =>
   import(
-    "./components/course_outlines/associate_certifications_programs/penetrationTestingCyberSecurity"
+    "./components/course_outlines/associate_certifications_programs/PenetrationTestingCyberSecurity"
   )
 );
 const CISSP = lazy(() =>
   import(
-    "./components/course_outlines/associate_certifications_programs/certifiedInformationSystemsSecurityProfessional"
+    "./components/course_outlines/associate_certifications_programs/CertifiedInformationSystemsSecurityProfessional"
   )
 );
 const AWSCloudComputing = lazy(() =>
   import(
-    "./components/course_outlines/associate_certifications_programs/awsCloudComputing"
+    "./components/course_outlines/associate_certifications_programs/AwsCloudComputing"
   )
 );
 const BlockChainTechnology = lazy(() =>
   import(
-    "./components/course_outlines/associate_certifications_programs/blockchainTechnology"
+    "./components/course_outlines/associate_certifications_programs/BlockchainTechnology"
   )
 );
 const FullStackWebDevelopment = lazy(() =>
   import(
-    "./components/course_outlines/associate_certifications_programs/fullStackWebDevelopment"
+    "./components/course_outlines/associate_certifications_programs/FullStackWebDevelopment"
   )
 );
 const InternetOfThings = lazy(() =>
   import(
-    "./components/course_outlines/associate_certifications_programs/internetOfThings"
+    "./components/course_outlines/associate_certifications_programs/InternetOfThings"
   )
 );
 const ArtificialIntelligence = lazy(() =>
   import(
-    "./components/course_outlines/associate_certifications_programs/artificialIntelligence"
+    "./components/course_outlines/associate_certifications_programs/ArtificialIntelligence"
   )
 );
-const ApplyNow = lazy(() => import("./pages/applyNow"));
-const SignUp = lazy(() => import("./pages/signUp"));
-const LogIn = lazy(() => import("./pages/logIn"));
-const TermsAndConditions = lazy(() => import("./pages/termsAndConditions"));
-const ApplicationForm = lazy(() => import("./pages/applicationForm"));
-const EmailVerification = lazy(() => import("./pages/emailVerification"));
+const ApplyNow = lazy(() => import("./pages/ApplyNow"));
+const SignUp = lazy(() => import("./pages/SignUp"));
+const LogIn = lazy(() => import("./pages/LogIn"));
+const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
+const ApplicationForm = lazy(() => import("./pages/ApplicationForm"));
+const EmailVerification = lazy(() => import("./pages/EmailVerification"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
-const GenerateChallan = lazy(() => import("./pages/generateChallan"));
-const BankChallan = lazy(() => import("./pages/bankChallan"));
-const ForgotPassword = lazy(() => import("./pages/forgotPassword"));
-const OnlineBanking = lazy(() => import("./pages/onlineBanking"));
-const EServicesBanking = lazy(() => import("./pages/eservicesBanking"));
-const PaymentVerification = lazy(() => import("./pages/paymentVerification"));
-const Team = lazy(() => import("./pages/team"));
+const GenerateChallan = lazy(() => import("./pages/GenerateChallan"));
+const BankChallan = lazy(() => import("./pages/BankChallan"));
+const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
+const OnlineBanking = lazy(() => import("./pages/OnlineBanking"));
+const EServicesBanking = lazy(() => import("./pages/EServicesBanking"));
+const PaymentVerification = lazy(() => import("./pages/PaymentVerification"));
+const Team = lazy(() => import("./pages/Team"));
 
 const App = ({ signOut, uid }) => {
   // ? State

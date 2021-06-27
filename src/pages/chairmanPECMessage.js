@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Container from "@material-ui/core/Container";
-import Copyright from "../components/common/copyright/copyright";
+import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
 import { Helmet } from "react-helmet";

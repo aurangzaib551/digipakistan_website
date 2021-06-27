@@ -1,12 +1,12 @@
 import React, { useState, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
-import PersonalInformation from "../components/application_form/personalInformation";
+import PersonalInformation from "../components/application_form/PersonalInformation";
 import Button from "@material-ui/core/Button";
-import AvailablePrograms from "../components/application_form/availablePrograms";
-import Education from "../components/application_form/education";
-import Address from "../components/application_form/address";
-import AdditionalFreeCourseVoucher from "../components/application_form/additionalFreeCourseVoucher";
-import Copyright from "../components/common/copyright/copyright";
+import AvailablePrograms from "../components/application_form/AvailablePrograms";
+import Education from "../components/application_form/Education";
+import Address from "../components/application_form/Address";
+import AdditionalFreeCourseVoucher from "../components/application_form/AdditionalFreeCourseVoucher";
+import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { application, clearAll } from "../store/actions/applicationFormActions";

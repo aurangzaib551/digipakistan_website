@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import AdmissionProcessImage from "../components/admission_process/admissionProcessImage";
-import Process from "../components/admission_process/process";
-import Copyright from "../components/common/copyright/copyright";
+import AdmissionProcessImage from "../components/admission_process/AdmissionProcessImage";
+import Process from "../components/admission_process/Process";
+import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
 import { signOut } from "../store/actions/authActions";
 import { Helmet } from "react-helmet";

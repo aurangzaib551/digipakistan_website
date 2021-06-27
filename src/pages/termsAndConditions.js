@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import { useHistory, Redirect } from "react-router-dom";
-import Copyright from "../components/common/copyright/copyright";
+import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
 import { termsAndConditions } from "../store/actions/applicationFormActions";
 import Loader from "../loader/loader";

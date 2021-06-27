@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Input from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import Copyright from "../components/common/copyright/copyright";
+import Copyright from "../components/common/copyright/Copyright";
 import Alert from "@material-ui/lab/Alert";
 import { connect } from "react-redux";
 import {

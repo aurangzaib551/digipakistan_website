@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import Content from "../components/bank_challan/content";
+import Content from "../components/bank_challan/Content";
 import { Helmet } from "react-helmet";
 
 const BankChallan = ({ uid, emailVerified, applicationSubmitted, status }) => {
