@@ -11,7 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import $ from "jquery";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { signOut } from "../../../store/actions/authActions";
+import { signOut } from "../../../store/actions/AuthActions";
 
 const Nav = ({ firstLoad, signOut, uid }) => {
   // Object Destructuring

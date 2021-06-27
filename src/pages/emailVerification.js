@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import Alert from "@material-ui/lab/Alert";
 import { connect } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
-import { verifyEmail, clearAll, signOut } from "../store/actions/authActions";
+import { verifyEmail, clearAll, signOut } from "../store/actions/AuthActions";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Helmet } from "react-helmet";
 

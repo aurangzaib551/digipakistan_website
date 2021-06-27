@@ -3,7 +3,7 @@ import AdmissionProcessImage from "../components/admission_process/AdmissionProc
 import Process from "../components/admission_process/Process";
 import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
-import { signOut } from "../store/actions/authActions";
+import { signOut } from "../store/actions/AuthActions";
 import { Helmet } from "react-helmet";
 
 const AdmissionProcess = ({ signOut }) => {

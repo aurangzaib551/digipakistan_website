@@ -7,7 +7,7 @@ import Copyright from "../components/common/copyright/Copyright";
 import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";
-import { logIn, clearAll } from "../store/actions/authActions";
+import { logIn, clearAll } from "../store/actions/AuthActions";
 import ToastServive from "react-material-toast";
 import { Helmet } from "react-helmet";
 

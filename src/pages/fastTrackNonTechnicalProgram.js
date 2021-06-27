@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Copyright from "../components/common/copyright/Copyright";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { signOut } from "../store/actions/authActions";
+import { signOut } from "../store/actions/AuthActions";
 import { Helmet } from "react-helmet";
 
 const FastTrackNonTechnicalProgram = ({ signOut }) => {

@@ -9,11 +9,11 @@ import {
   uploadInstructorCV,
   applicationForInstructor,
   clearAll,
-} from "../store/actions/becomeAnInstructorActions";
+} from "../store/actions/BecomeAnInstructorActions";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import firebase from "../config/fbConfig";
-import { signOut } from "../store/actions/authActions";
+import { signOut } from "../store/actions/AuthActions";
 import { Helmet } from "react-helmet";
 
 const BecomeAnInstructor = ({

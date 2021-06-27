@@ -9,7 +9,7 @@ import AdditionalFreeCourseVoucher from "../components/application_form/Addition
 import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { application, clearAll } from "../store/actions/applicationFormActions";
+import { application, clearAll } from "../store/actions/ApplicationFormActions";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Alert from "@material-ui/lab/Alert";
 import { firestoreConnect } from "react-redux-firebase";

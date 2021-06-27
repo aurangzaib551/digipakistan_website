@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import FadeLoader from "./loader/loader";
 import { Beforeunload } from "react-beforeunload";
 import { connect } from "react-redux";
-import { signOut } from "./store/actions/authActions";
+import { signOut } from "./store/actions/AuthActions";
 import { Helmet } from "react-helmet";
 const Nav = lazy(() => import("./components/common/nav/Nav"));
 const HomePage = lazy(() => import("./pages/HomePage"));

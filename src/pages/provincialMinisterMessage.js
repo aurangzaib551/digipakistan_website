@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
-import { signOut } from "../store/actions/authActions";
+import { signOut } from "../store/actions/AuthActions";
 import { Helmet } from "react-helmet";
 
 const ProvincialMinisterMessage = ({ signOut }) => {

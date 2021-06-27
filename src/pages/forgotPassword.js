@@ -4,7 +4,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/TextField";
 import { connect } from "react-redux";
-import { clearAll, forgotPassword } from "../store/actions/authActions";
+import { clearAll, forgotPassword } from "../store/actions/AuthActions";
 import ToastServive from "react-material-toast";
 import Alert from "@material-ui/lab/Alert";
 import { Helmet } from "react-helmet";

@@ -13,7 +13,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import YoutubeIcon from "@material-ui/icons/YouTube";
 import Alert from "@material-ui/lab/Alert";
 import { connect } from "react-redux";
-import { signOut } from "../store/actions/authActions";
+import { signOut } from "../store/actions/AuthActions";
 import { Helmet } from "react-helmet";
 import TimeIcon from "@material-ui/icons/AccessTimeRounded";
 import BusinessIcon from "@material-ui/icons/BusinessRounded";

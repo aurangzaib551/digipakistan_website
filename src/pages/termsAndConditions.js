@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import { useHistory, Redirect } from "react-router-dom";
 import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
-import { termsAndConditions } from "../store/actions/applicationFormActions";
+import { termsAndConditions } from "../store/actions/ApplicationFormActions";
 import Loader from "../loader/loader";
 import { Helmet } from "react-helmet";
 

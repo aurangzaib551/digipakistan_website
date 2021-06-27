@@ -5,7 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { signOut } from "../store/actions/authActions";
+import { signOut } from "../store/actions/AuthActions";
 import { Helmet } from "react-helmet";
 import Modal from "react-bootstrap/Modal";
 import ApplyNowAds from "../components/home_page/myDigi/myhomeDive/Home_1";

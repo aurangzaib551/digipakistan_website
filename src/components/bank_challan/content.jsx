@@ -10,7 +10,7 @@ import { Font } from "@react-pdf/renderer";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import PDFChallan from "./PDFChallan";
-import { challanNo } from "../../store/actions/authActions";
+import { challanNo } from "../../store/actions/AuthActions";
 import CircularLoader from "@material-ui/core/CircularProgress";
 
 Font.register({

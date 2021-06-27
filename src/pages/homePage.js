@@ -11,7 +11,7 @@ import Supporters from "../components/home_page/Supporters";
 import Footer from "../components/common/footer/Footer";
 import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
-import { signOut } from "../store/actions/authActions";
+import { signOut } from "../store/actions/AuthActions";
 import Home1 from "../components/home_page/myDigi/myhomeDive/Home_1";
 
 const HomePage = ({ signOut }) => {

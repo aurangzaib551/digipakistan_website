@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import { Link, useHistory } from "react-router-dom";
 import Copyright from "../components/common/copyright/Copyright";
 import { connect } from "react-redux";
-import { signUp, clearAll } from "../store/actions/authActions";
+import { signUp, clearAll } from "../store/actions/AuthActions";
 import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ToastServive from "react-material-toast";
