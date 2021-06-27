@@ -60,7 +60,7 @@ const FastTrackTechnicalProgram = ({ signOut }) => {
                       width="60"
                     />
                   </div>
-                  <h6 className=" mt-2">WAQAS QAMAR</h6>
+                  <h6 className="mt-2">WAQAS QAMAR</h6>
                 </div>
 
                 <h5 className="card-title text-center my-card-title-font ">

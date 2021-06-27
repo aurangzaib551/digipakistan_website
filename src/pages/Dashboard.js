@@ -17,6 +17,8 @@ import DollarIcon from "@material-ui/icons/AttachMoney";
 import UserIcon from "@material-ui/icons/PermIdentity";
 import ExitIcon from "@material-ui/icons/ExitToApp";
 import { useMediaQuery } from "react-responsive";
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tab";
 
 const Dashboard = ({
   status,
@@ -30,6 +32,7 @@ const Dashboard = ({
   // ? State
   const [openDrawer, setOpenDrawer] = useState(true);
   const [count, setCount] = useState(1);
+  const [key, setKey] = useState("all");
 
   // ? Object Destructuring
   const { push } = useHistory();
@@ -197,7 +200,14 @@ const Dashboard = ({
 
               <div className="mt-3">
                 <h6 className="fw-bold text-center">MAIN</h6>
-                <ListItem button>
+                <ListItem
+                  button
+                  onClick={() => {
+                    setTimeout(() => {
+                      push("/dashboard");
+                    }, 300);
+                  }}
+                >
                   <ListItemIcon>
                     <BookIcon style={{ color: "#fff" }} />
                   </ListItemIcon>
@@ -211,7 +221,14 @@ const Dashboard = ({
                   <ListItemText primary="How It Works" />
                 </ListItem>
 
-                <ListItem button>
+                <ListItem
+                  button
+                  onClick={() => {
+                    setTimeout(() => {
+                      push("/dashboard/referAndEarn");
+                    }, 300);
+                  }}
+                >
                   <ListItemIcon>
                     <DollarIcon style={{ color: "#fff" }} />
                   </ListItemIcon>
@@ -219,7 +236,14 @@ const Dashboard = ({
                 </ListItem>
 
                 <h6 className="fw-bold text-center mt-2">PERSONAL</h6>
-                <ListItem button>
+                <ListItem
+                  button
+                  onClick={() => {
+                    setTimeout(() => {
+                      push("/dashboard/updateProfile");
+                    }, 300);
+                  }}
+                >
                   <ListItemIcon>
                     <UserIcon style={{ color: "#fff" }} />
                   </ListItemIcon>
@@ -235,6 +259,366 @@ const Dashboard = ({
               </div>
             </List>
           </Drawer>
+        </div>
+
+        {/* // ? Content Right Side */}
+        <div
+          className="px-5"
+          style={{
+            marginLeft: isTab ? 0 : 300,
+            paddingTop: 35,
+          }}
+        >
+          {/* // TODO: Dynamic Name of logged in user */}
+          <h6 className="mb-5 fw-bold">Sajawal Aslam / My Courses</h6>
+          <h3 className="fw-bold mb-5">My Courses</h3>
+
+          {/* // TODO: in all section show all paid and not paid course then show according to tab */}
+          <Tabs
+            id="dashboardTabs"
+            activeKey={key}
+            variant="pills"
+            onSelect={(k) => setKey(k)}
+          >
+            <Tab eventKey="all" title="All">
+              <div className="container-sm">
+                <div className="row">
+                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                    <div
+                      // onClick={() =>
+                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
+                      // }
+                      className="card cursor w-100"
+                    >
+                      <img
+                        src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
+                        className="card-img-top w-100"
+                        style={{ borderRadius: 0, height: 130 }}
+                        alt="..."
+                      />
+                      <div className="card-body d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center img-par">
+                          <div className="image d-flex flex-column align-items-center">
+                            <img
+                              src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                              alt=""
+                              width="60"
+                            />
+                          </div>
+                          <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div>
+
+                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                          CompTIA IT Fundamentals
+                        </h6>
+
+                        <h6 className="fw-bold">
+                          Status:{" "}
+                          <span className="badge bg-danger">UNPAID</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                    <div
+                      // onClick={() =>
+                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
+                      // }
+                      className="card cursor w-100"
+                    >
+                      <img
+                        src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
+                        className="card-img-top w-100"
+                        style={{ borderRadius: 0, height: 130 }}
+                        alt="..."
+                      />
+                      <div className="card-body d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center img-par">
+                          <div className="image d-flex flex-column align-items-center">
+                            <img
+                              src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                              alt=""
+                              width="60"
+                            />
+                          </div>
+                          <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div>
+
+                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                          CompTIA IT Fundamentals
+                        </h6>
+
+                        <h6 className="fw-bold">
+                          Status: <span className="badge bg-success">PAID</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                    <div
+                      // onClick={() =>
+                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
+                      // }
+                      className="card cursor w-100"
+                    >
+                      <img
+                        src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
+                        className="card-img-top w-100"
+                        style={{ borderRadius: 0, height: 130 }}
+                        alt="..."
+                      />
+                      <div className="card-body d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center img-par">
+                          <div className="image d-flex flex-column align-items-center">
+                            <img
+                              src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                              alt=""
+                              width="60"
+                            />
+                          </div>
+                          <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div>
+
+                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                          CompTIA IT Fundamentals
+                        </h6>
+
+                        <h6 className="fw-bold">
+                          Status:{" "}
+                          <span className="badge bg-danger">UNPAID</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Tab>
+            <Tab eventKey="registerationPaid" title="Registeration Paid">
+              <div className="container-sm">
+                <div className="row">
+                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                    <div
+                      // onClick={() =>
+                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
+                      // }
+                      className="card cursor w-100"
+                    >
+                      <img
+                        src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
+                        className="card-img-top w-100"
+                        style={{ borderRadius: 0, height: 130 }}
+                        alt="..."
+                      />
+                      <div className="card-body d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center img-par">
+                          <div className="image d-flex flex-column align-items-center">
+                            <img
+                              src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                              alt=""
+                              width="60"
+                            />
+                          </div>
+                          <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div>
+
+                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                          CompTIA IT Fundamentals
+                        </h6>
+
+                        <h6 className="fw-bold">
+                          Status: <span className="badge bg-success">PAID</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                    <div
+                      // onClick={() =>
+                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
+                      // }
+                      className="card cursor w-100"
+                    >
+                      <img
+                        src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
+                        className="card-img-top w-100"
+                        style={{ borderRadius: 0, height: 130 }}
+                        alt="..."
+                      />
+                      <div className="card-body d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center img-par">
+                          <div className="image d-flex flex-column align-items-center">
+                            <img
+                              src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                              alt=""
+                              width="60"
+                            />
+                          </div>
+                          <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div>
+
+                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                          CompTIA IT Fundamentals
+                        </h6>
+
+                        <h6 className="fw-bold">
+                          Status: <span className="badge bg-success">PAID</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                    <div
+                      // onClick={() =>
+                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
+                      // }
+                      className="card cursor w-100"
+                    >
+                      <img
+                        src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
+                        className="card-img-top w-100"
+                        style={{ borderRadius: 0, height: 130 }}
+                        alt="..."
+                      />
+                      <div className="card-body d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center img-par">
+                          <div className="image d-flex flex-column align-items-center">
+                            <img
+                              src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                              alt=""
+                              width="60"
+                            />
+                          </div>
+                          <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div>
+
+                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                          CompTIA IT Fundamentals
+                        </h6>
+
+                        <h6 className="fw-bold">
+                          Status: <span className="badge bg-success">PAID</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Tab>
+            <Tab eventKey="registerationPending" title="Registeration Pending">
+              <div className="container-sm">
+                <div className="row">
+                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                    <div
+                      // onClick={() =>
+                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
+                      // }
+                      className="card cursor w-100"
+                    >
+                      <img
+                        src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
+                        className="card-img-top w-100"
+                        style={{ borderRadius: 0, height: 130 }}
+                        alt="..."
+                      />
+                      <div className="card-body d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center img-par">
+                          <div className="image d-flex flex-column align-items-center">
+                            <img
+                              src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                              alt=""
+                              width="60"
+                            />
+                          </div>
+                          <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div>
+
+                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                          CompTIA IT Fundamentals
+                        </h6>
+
+                        <h6 className="fw-bold">
+                          Status:{" "}
+                          <span className="badge bg-danger">UNPAID</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                    <div
+                      // onClick={() =>
+                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
+                      // }
+                      className="card cursor w-100"
+                    >
+                      <img
+                        src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
+                        className="card-img-top w-100"
+                        style={{ borderRadius: 0, height: 130 }}
+                        alt="..."
+                      />
+                      <div className="card-body d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center img-par">
+                          <div className="image d-flex flex-column align-items-center">
+                            <img
+                              src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                              alt=""
+                              width="60"
+                            />
+                          </div>
+                          <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div>
+
+                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                          CompTIA IT Fundamentals
+                        </h6>
+
+                        <h6 className="fw-bold">
+                          Status:{" "}
+                          <span className="badge bg-danger">UNPAID</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                    <div
+                      // onClick={() =>
+                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
+                      // }
+                      className="card cursor w-100"
+                    >
+                      <img
+                        src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
+                        className="card-img-top w-100"
+                        style={{ borderRadius: 0, height: 130 }}
+                        alt="..."
+                      />
+                      <div className="card-body d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center img-par">
+                          <div className="image d-flex flex-column align-items-center">
+                            <img
+                              src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
+                              alt=""
+                              width="60"
+                            />
+                          </div>
+                          <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div>
+
+                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                          CompTIA IT Fundamentals
+                        </h6>
+
+                        <h6 className="fw-bold">
+                          Status:{" "}
+                          <span className="badge bg-danger">UNPAID</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Tab>
+          </Tabs>
         </div>
       </div>
 

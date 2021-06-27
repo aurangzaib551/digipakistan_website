@@ -315,6 +315,8 @@ const OnlineBanking = lazy(() => import("./pages/OnlineBanking"));
 const EServicesBanking = lazy(() => import("./pages/EServicesBanking"));
 const PaymentVerification = lazy(() => import("./pages/PaymentVerification"));
 const Team = lazy(() => import("./pages/Team"));
+const ReferAndEarn = lazy(() => import("./pages/ReferAndEarn"));
+const UpdateProfile = lazy(() => import("./pages/UpdateProfile"));
 
 const App = ({ signOut, uid }) => {
   // ? State
@@ -413,6 +415,9 @@ const App = ({ signOut, uid }) => {
             <Route path="/apply-now" exact component={ApplyNow} />
             <Route path="/apply-now/signup" component={SignUp} />
             <Route path="/apply-now/login" component={LogIn} />
+            <Route path="/dashboard" exact component={Dashboard} />
+            <Route path="/dashboard/referAndEarn" component={ReferAndEarn} />
+            <Route path="/dashboard/updateProfile" component={UpdateProfile} />
             <Route
               path="/apply-now/paymentVerification"
               component={PaymentVerification}
@@ -439,7 +444,6 @@ const App = ({ signOut, uid }) => {
               path="/apply-now/generateChallan/eservicesBanking"
               component={EServicesBanking}
             />
-            <Route path="/dashboard" component={Dashboard} />
             <Route
               path="/apply-now/emailVerification"
               component={EmailVerification}

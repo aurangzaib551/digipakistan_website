@@ -22,6 +22,11 @@ body {
   }
 }
 
+// ? Modal Backdrop
+.modal-backdrop.show {
+  z-index: 1300;
+}
+
 // ? Slider Next TXT
 .sr-only {
   display: none;
