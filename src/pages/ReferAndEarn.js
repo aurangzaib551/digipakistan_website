@@ -21,6 +21,8 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Modal from "react-bootstrap/Modal";
+import BoySVG from "../assets/svgs/boy.svg";
+import GirlSVG from "../assets/svgs/girl.svg";
 
 const ReferAndEarn = ({
   status,
@@ -190,15 +192,23 @@ const ReferAndEarn = ({
               />
 
               <div className="profile-dash d-flex align-items-center mt-3">
-                <img
-                  src="https://i.ibb.co/MNGFtFG/516-5167304-transparent-background-white-user-icon-png-png-download.png"
-                  alt="DigiPAKISTAN Dashboard Profile Pic"
-                  className="profile-pic"
-                />
+                {profile.image ? (
+                  <img
+                    src={profile.image}
+                    alt="DigiPAKISTAN Dashboard Profile Pic"
+                    className="profile-pic mx-3 rounded"
+                  />
+                ) : (
+                  <img
+                    src={profile.gender === "Male" ? BoySVG : GirlSVG}
+                    alt="DigiPAKISTAN Dashboard Profile Pic"
+                    className="profile-pic me-1"
+                  />
+                )}
 
                 <div>
-                  <h5 className="fw-bold me-3">Sajawal Aslam</h5>
-                  <Link to="/" className="small">
+                  <h5 className="fw-bold me-3">{profile.fullName}</h5>
+                  <Link to="/dashboard/updateProfile" className="small">
                     Update Profile
                   </Link>
                 </div>
@@ -275,8 +285,9 @@ const ReferAndEarn = ({
             paddingTop: 35,
           }}
         >
-          {/* // TODO: Dynamic Name of logged in user */}
-          <h6 className="mb-5 fw-bold">Sajawal Aslam / Refer &amp; Earn</h6>
+          <h6 className="mb-5 fw-bold">
+            {profile.fullName} / Refer &amp; Earn
+          </h6>
           <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
             <h3 className="fw-bold mb-sm-0">Refer &amp; Earn</h3>
             <Button
@@ -290,12 +301,13 @@ const ReferAndEarn = ({
 
           <div className="d-flex flex-column mt-5 flex-lg-row flex-wrap align-items-center align-items-lg-start">
             {/* // ? Refer # */}
-            {/* // TODO: register refer # when user is registered then show here */}
             <Paper elevation={10} className="border p-3 mt-4 refer me-lg-5">
               <Typography variant="h5" className="fw-bold text-center">
                 Refer #
               </Typography>
-              <Typography variant="body1">123456</Typography>
+              <Typography variant="body1" className="word-break text-center">
+                {profile.referNo}
+              </Typography>
             </Paper>
 
             {/* // ? Total Amount */}

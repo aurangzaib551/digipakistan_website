@@ -19,6 +19,8 @@ import ExitIcon from "@material-ui/icons/ExitToApp";
 import { useMediaQuery } from "react-responsive";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
+import BoySVG from "../assets/svgs/boy.svg";
+import GirlSVG from "../assets/svgs/girl.svg";
 
 const Dashboard = ({
   status,
@@ -30,6 +32,7 @@ const Dashboard = ({
   signOut,
 }) => {
   // ? State
+
   const [openDrawer, setOpenDrawer] = useState(true);
   const [count, setCount] = useState(1);
   const [key, setKey] = useState("all");
@@ -184,15 +187,23 @@ const Dashboard = ({
               />
 
               <div className="profile-dash d-flex align-items-center mt-3">
-                <img
-                  src="https://i.ibb.co/MNGFtFG/516-5167304-transparent-background-white-user-icon-png-png-download.png"
-                  alt="DigiPAKISTAN Dashboard Profile Pic"
-                  className="profile-pic"
-                />
+                {profile.image ? (
+                  <img
+                    src={profile.image}
+                    alt="DigiPAKISTAN Dashboard Profile Pic"
+                    className="profile-pic mx-3 rounded"
+                  />
+                ) : (
+                  <img
+                    src={profile.gender === "Male" ? BoySVG : GirlSVG}
+                    alt="DigiPAKISTAN Dashboard Profile Pic"
+                    className="profile-pic me-1"
+                  />
+                )}
 
                 <div>
-                  <h5 className="fw-bold me-3">Sajawal Aslam</h5>
-                  <Link to="/" className="small">
+                  <h5 className="fw-bold me-3">{profile.fullName}</h5>
+                  <Link to="/dashboard/updateProfile" className="small">
                     Update Profile
                   </Link>
                 </div>
@@ -269,11 +280,9 @@ const Dashboard = ({
             paddingTop: 35,
           }}
         >
-          {/* // TODO: Dynamic Name of logged in user */}
-          <h6 className="mb-5 fw-bold">Sajawal Aslam / My Courses</h6>
+          <h6 className="mb-5 fw-bold">{profile.fullName} / My Courses</h6>
           <h3 className="fw-bold mb-5">My Courses</h3>
 
-          {/* // TODO: in all section show all paid and not paid course then show according to tab */}
           <Tabs
             id="dashboardTabs"
             activeKey={key}
@@ -283,21 +292,17 @@ const Dashboard = ({
             <Tab eventKey="all" title="All">
               <div className="container-sm">
                 <div className="row">
-                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
-                    <div
-                      // onClick={() =>
-                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
-                      // }
-                      className="card cursor w-100"
-                    >
-                      <img
+                  {profile.course[0] && (
+                    <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                      <div className="card w-100">
+                        {/* <img
                         src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
                         className="card-img-top w-100"
                         style={{ borderRadius: 0, height: 130 }}
                         alt="..."
-                      />
-                      <div className="card-body d-flex flex-column align-items-center">
-                        <div className="d-flex flex-column align-items-center img-par">
+                      /> */}
+                        <div className="card-body d-flex flex-column align-items-center">
+                          {/* <div className="d-flex flex-column align-items-center img-par">
                           <div className="image d-flex flex-column align-items-center">
                             <img
                               src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -306,34 +311,39 @@ const Dashboard = ({
                             />
                           </div>
                           <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div> */}
+
+                          <h6 className="card-title fw-bold text-center my-card-title-font mx-3 text-wrap">
+                            {profile.course[0]["First Course Title"]}
+                          </h6>
+
+                          <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                            {profile.course[0]["First Course Name"].name}
+                          </h6>
+
+                          <h6 className="fw-bold">
+                            Status:{" "}
+                            {profile.course[0]["First Course Name"].status ? (
+                              <span className="badge bg-success">PAID</span>
+                            ) : (
+                              <span className="badge bg-danger">UNPAID</span>
+                            )}
+                          </h6>
                         </div>
-
-                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
-                          CompTIA IT Fundamentals
-                        </h6>
-
-                        <h6 className="fw-bold">
-                          Status:{" "}
-                          <span className="badge bg-danger">UNPAID</span>
-                        </h6>
                       </div>
                     </div>
-                  </div>
-                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
-                    <div
-                      // onClick={() =>
-                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
-                      // }
-                      className="card cursor w-100"
-                    >
-                      <img
+                  )}
+                  {profile.course[1] && (
+                    <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                      <div className="card w-100">
+                        {/* <img
                         src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
                         className="card-img-top w-100"
                         style={{ borderRadius: 0, height: 130 }}
                         alt="..."
-                      />
-                      <div className="card-body d-flex flex-column align-items-center">
-                        <div className="d-flex flex-column align-items-center img-par">
+                      /> */}
+                        <div className="card-body d-flex flex-column align-items-center">
+                          {/* <div className="d-flex flex-column align-items-center img-par">
                           <div className="image d-flex flex-column align-items-center">
                             <img
                               src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -342,33 +352,39 @@ const Dashboard = ({
                             />
                           </div>
                           <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div> */}
+
+                          <h6 className="card-title fw-bold text-center my-card-title-font mx-3 text-wrap">
+                            {profile.course[1]["Second Course Title"]}
+                          </h6>
+
+                          <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                            {profile.course[1]["Second Course Name"].name}
+                          </h6>
+
+                          <h6 className="fw-bold">
+                            Status:{" "}
+                            {profile.course[1]["Second Course Name"].status ? (
+                              <span className="badge bg-success">PAID</span>
+                            ) : (
+                              <span className="badge bg-danger">UNPAID</span>
+                            )}
+                          </h6>
                         </div>
-
-                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
-                          CompTIA IT Fundamentals
-                        </h6>
-
-                        <h6 className="fw-bold">
-                          Status: <span className="badge bg-success">PAID</span>
-                        </h6>
                       </div>
                     </div>
-                  </div>
-                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
-                    <div
-                      // onClick={() =>
-                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
-                      // }
-                      className="card cursor w-100"
-                    >
-                      <img
+                  )}
+                  {profile.course[2] && (
+                    <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                      <div className="card w-100">
+                        {/* <img
                         src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
                         className="card-img-top w-100"
                         style={{ borderRadius: 0, height: 130 }}
                         alt="..."
-                      />
-                      <div className="card-body d-flex flex-column align-items-center">
-                        <div className="d-flex flex-column align-items-center img-par">
+                      /> */}
+                        <div className="card-body d-flex flex-column align-items-center">
+                          {/* <div className="d-flex flex-column align-items-center img-par">
                           <div className="image d-flex flex-column align-items-center">
                             <img
                               src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -377,40 +393,46 @@ const Dashboard = ({
                             />
                           </div>
                           <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div> */}
+
+                          <h6 className="card-title fw-bold text-center my-card-title-font mx-3 text-wrap">
+                            {profile.course[2]["Third Course Title"]}
+                          </h6>
+
+                          <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                            {profile.course[2]["Third Course Name"].name}
+                          </h6>
+
+                          <h6 className="fw-bold">
+                            Status:{" "}
+                            {profile.course[2]["Third Course Name"].status ? (
+                              <span className="badge bg-success">PAID</span>
+                            ) : (
+                              <span className="badge bg-danger">UNPAID</span>
+                            )}
+                          </h6>
                         </div>
-
-                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
-                          CompTIA IT Fundamentals
-                        </h6>
-
-                        <h6 className="fw-bold">
-                          Status:{" "}
-                          <span className="badge bg-danger">UNPAID</span>
-                        </h6>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </Tab>
             <Tab eventKey="registerationPaid" title="Registeration Paid">
               <div className="container-sm">
                 <div className="row">
-                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
-                    <div
-                      // onClick={() =>
-                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
-                      // }
-                      className="card cursor w-100"
-                    >
-                      <img
+                  {profile.course[0] &&
+                    profile.course[0]["First Course Name"].status && (
+                      <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                        <div className="card w-100">
+                          {/* <img
                         src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
                         className="card-img-top w-100"
                         style={{ borderRadius: 0, height: 130 }}
                         alt="..."
-                      />
-                      <div className="card-body d-flex flex-column align-items-center">
-                        <div className="d-flex flex-column align-items-center img-par">
+                      /> */}
+                          <div className="card-body d-flex flex-column align-items-center">
+                            {/* <div className="d-flex flex-column align-items-center img-par">
                           <div className="image d-flex flex-column align-items-center">
                             <img
                               src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -419,33 +441,40 @@ const Dashboard = ({
                             />
                           </div>
                           <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div> */}
+
+                            <h6 className="card-title fw-bold text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[0]["First Course Title"]}
+                            </h6>
+
+                            <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[0]["First Course Name"].name}
+                            </h6>
+
+                            <h6 className="fw-bold">
+                              Status:{" "}
+                              {profile.course[0]["First Course Name"].status ? (
+                                <span className="badge bg-success">PAID</span>
+                              ) : (
+                                <span className="badge bg-danger">UNPAID</span>
+                              )}
+                            </h6>
+                          </div>
                         </div>
-
-                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
-                          CompTIA IT Fundamentals
-                        </h6>
-
-                        <h6 className="fw-bold">
-                          Status: <span className="badge bg-success">PAID</span>
-                        </h6>
                       </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
-                    <div
-                      // onClick={() =>
-                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
-                      // }
-                      className="card cursor w-100"
-                    >
-                      <img
+                    )}
+                  {profile.course[1] &&
+                    profile.course[1]["Second Course Name"].status && (
+                      <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                        <div className="card w-100">
+                          {/* <img
                         src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
                         className="card-img-top w-100"
                         style={{ borderRadius: 0, height: 130 }}
                         alt="..."
-                      />
-                      <div className="card-body d-flex flex-column align-items-center">
-                        <div className="d-flex flex-column align-items-center img-par">
+                      /> */}
+                          <div className="card-body d-flex flex-column align-items-center">
+                            {/* <div className="d-flex flex-column align-items-center img-par">
                           <div className="image d-flex flex-column align-items-center">
                             <img
                               src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -454,33 +483,41 @@ const Dashboard = ({
                             />
                           </div>
                           <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div> */}
+
+                            <h6 className="card-title fw-bold text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[1]["Second Course Title"]}
+                            </h6>
+
+                            <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[1]["Second Course Name"].name}
+                            </h6>
+
+                            <h6 className="fw-bold">
+                              Status:{" "}
+                              {profile.course[1]["Second Course Name"]
+                                .status ? (
+                                <span className="badge bg-success">PAID</span>
+                              ) : (
+                                <span className="badge bg-danger">UNPAID</span>
+                              )}
+                            </h6>
+                          </div>
                         </div>
-
-                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
-                          CompTIA IT Fundamentals
-                        </h6>
-
-                        <h6 className="fw-bold">
-                          Status: <span className="badge bg-success">PAID</span>
-                        </h6>
                       </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
-                    <div
-                      // onClick={() =>
-                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
-                      // }
-                      className="card cursor w-100"
-                    >
-                      <img
+                    )}
+                  {profile.course[2] &&
+                    profile.course[2]["Third Course Name"].status && (
+                      <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                        <div className="card w-100">
+                          {/* <img
                         src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
                         className="card-img-top w-100"
                         style={{ borderRadius: 0, height: 130 }}
                         alt="..."
-                      />
-                      <div className="card-body d-flex flex-column align-items-center">
-                        <div className="d-flex flex-column align-items-center img-par">
+                      /> */}
+                          <div className="card-body d-flex flex-column align-items-center">
+                            {/* <div className="d-flex flex-column align-items-center img-par">
                           <div className="image d-flex flex-column align-items-center">
                             <img
                               src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -489,39 +526,46 @@ const Dashboard = ({
                             />
                           </div>
                           <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div> */}
+
+                            <h6 className="card-title fw-bold text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[2]["Third Course Title"]}
+                            </h6>
+
+                            <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[2]["Third Course Name"].name}
+                            </h6>
+
+                            <h6 className="fw-bold">
+                              Status:{" "}
+                              {profile.course[2]["Third Course Name"].status ? (
+                                <span className="badge bg-success">PAID</span>
+                              ) : (
+                                <span className="badge bg-danger">UNPAID</span>
+                              )}
+                            </h6>
+                          </div>
                         </div>
-
-                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
-                          CompTIA IT Fundamentals
-                        </h6>
-
-                        <h6 className="fw-bold">
-                          Status: <span className="badge bg-success">PAID</span>
-                        </h6>
                       </div>
-                    </div>
-                  </div>
+                    )}
                 </div>
               </div>
             </Tab>
             <Tab eventKey="registerationPending" title="Registeration Pending">
               <div className="container-sm">
                 <div className="row">
-                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
-                    <div
-                      // onClick={() =>
-                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
-                      // }
-                      className="card cursor w-100"
-                    >
-                      <img
+                  {profile.course[0] &&
+                    profile.course[0]["First Course Name"].status === false && (
+                      <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                        <div className="card w-100">
+                          {/* <img
                         src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
                         className="card-img-top w-100"
                         style={{ borderRadius: 0, height: 130 }}
                         alt="..."
-                      />
-                      <div className="card-body d-flex flex-column align-items-center">
-                        <div className="d-flex flex-column align-items-center img-par">
+                      /> */}
+                          <div className="card-body d-flex flex-column align-items-center">
+                            {/* <div className="d-flex flex-column align-items-center img-par">
                           <div className="image d-flex flex-column align-items-center">
                             <img
                               src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -530,34 +574,41 @@ const Dashboard = ({
                             />
                           </div>
                           <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div> */}
+
+                            <h6 className="card-title fw-bold text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[0]["First Course Title"]}
+                            </h6>
+
+                            <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[0]["First Course Name"].name}
+                            </h6>
+
+                            <h6 className="fw-bold">
+                              Status:{" "}
+                              {profile.course[0]["First Course Name"].status ? (
+                                <span className="badge bg-success">PAID</span>
+                              ) : (
+                                <span className="badge bg-danger">UNPAID</span>
+                              )}
+                            </h6>
+                          </div>
                         </div>
-
-                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
-                          CompTIA IT Fundamentals
-                        </h6>
-
-                        <h6 className="fw-bold">
-                          Status:{" "}
-                          <span className="badge bg-danger">UNPAID</span>
-                        </h6>
                       </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
-                    <div
-                      // onClick={() =>
-                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
-                      // }
-                      className="card cursor w-100"
-                    >
-                      <img
+                    )}
+                  {profile.course[1] &&
+                    profile.course[1]["Second Course Name"].status ===
+                      false && (
+                      <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                        <div className="card w-100">
+                          {/* <img
                         src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
                         className="card-img-top w-100"
                         style={{ borderRadius: 0, height: 130 }}
                         alt="..."
-                      />
-                      <div className="card-body d-flex flex-column align-items-center">
-                        <div className="d-flex flex-column align-items-center img-par">
+                      /> */}
+                          <div className="card-body d-flex flex-column align-items-center">
+                            {/* <div className="d-flex flex-column align-items-center img-par">
                           <div className="image d-flex flex-column align-items-center">
                             <img
                               src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -566,34 +617,41 @@ const Dashboard = ({
                             />
                           </div>
                           <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div> */}
+
+                            <h6 className="card-title fw-bold text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[1]["Second Course Title"]}
+                            </h6>
+
+                            <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[1]["Second Course Name"].name}
+                            </h6>
+
+                            <h6 className="fw-bold">
+                              Status:{" "}
+                              {profile.course[1]["Second Course Name"]
+                                .status ? (
+                                <span className="badge bg-success">PAID</span>
+                              ) : (
+                                <span className="badge bg-danger">UNPAID</span>
+                              )}
+                            </h6>
+                          </div>
                         </div>
-
-                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
-                          CompTIA IT Fundamentals
-                        </h6>
-
-                        <h6 className="fw-bold">
-                          Status:{" "}
-                          <span className="badge bg-danger">UNPAID</span>
-                        </h6>
                       </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
-                    <div
-                      // onClick={() =>
-                      //   go("/fastTrackTechnicalProgram/comptiaItFundamentals")
-                      // }
-                      className="card cursor w-100"
-                    >
-                      <img
+                    )}
+                  {profile.course[2] &&
+                    profile.course[2]["Third Course Name"].status === false && (
+                      <div className="col-xl-4 mt-4 col-lg-6 col-md-12 col-sm-6">
+                        <div className="card w-100">
+                          {/* <img
                         src="https://i.ibb.co/mzKrn8y/Comp-TIA-IT-Fundamentals.jpg"
                         className="card-img-top w-100"
                         style={{ borderRadius: 0, height: 130 }}
                         alt="..."
-                      />
-                      <div className="card-body d-flex flex-column align-items-center">
-                        <div className="d-flex flex-column align-items-center img-par">
+                      /> */}
+                          <div className="card-body d-flex flex-column align-items-center">
+                            {/* <div className="d-flex flex-column align-items-center img-par">
                           <div className="image d-flex flex-column align-items-center">
                             <img
                               src="https://i.ibb.co/JBRprYC/WAQAS-QAMAR.png"
@@ -602,19 +660,28 @@ const Dashboard = ({
                             />
                           </div>
                           <h6 className="text-center mt-2">WAQAS QAMAR</h6>
+                        </div> */}
+
+                            <h6 className="card-title fw-bold text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[2]["Third Course Title"]}
+                            </h6>
+
+                            <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
+                              {profile.course[2]["Third Course Name"].name}
+                            </h6>
+
+                            <h6 className="fw-bold">
+                              Status:{" "}
+                              {profile.course[2]["Third Course Name"].status ? (
+                                <span className="badge bg-success">PAID</span>
+                              ) : (
+                                <span className="badge bg-danger">UNPAID</span>
+                              )}
+                            </h6>
+                          </div>
                         </div>
-
-                        <h6 className="card-title text-center my-card-title-font mx-3 text-wrap">
-                          CompTIA IT Fundamentals
-                        </h6>
-
-                        <h6 className="fw-bold">
-                          Status:{" "}
-                          <span className="badge bg-danger">UNPAID</span>
-                        </h6>
                       </div>
-                    </div>
-                  </div>
+                    )}
                 </div>
               </div>
             </Tab>

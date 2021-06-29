@@ -290,8 +290,20 @@ export const application = (formData, setBtnLoading, uid) => {
             approvalDate: `${days}, ${month} ${todayDate}, ${year}`,
             course,
             lms: false,
+            uid,
+            cnic: formData.cnic,
+            dob: formData.dob,
+            qualification: formData.qualification,
+            education: formData.education,
+            institute: formData.instituteName,
+            province: formData.province,
+            country: formData.country,
+            city: formData.city,
+            address: formData.address,
+            gender: formData.gender,
             issueDateOfFeeSubmission: `${month} ${todayDate}, ${year}`,
             lastDateOfFeeSubmission: "Mar 5, 2021",
+            createdAt: new Date(),
           });
       })
       .then(() => {

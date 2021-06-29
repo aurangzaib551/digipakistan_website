@@ -489,7 +489,7 @@ const ApplicationForm = ({
   // ?  Getting value from second course name
   const handleSecondCourseName = ({ target }) => {
     const { value } = target;
-    console.log(value);
+
     if (value === "Microsoft Front End Development") {
       setFormData({
         ...formData,
@@ -1837,8 +1837,8 @@ const ApplicationForm = ({
                 {btnLoading ? (
                   <span className="ms-3">Sending Application...</span>
                 ) : (
-                  "Send Application"
-                )}
+                    "Send Application"
+                  )}
               </Button>
             </form>
           </>

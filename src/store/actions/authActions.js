@@ -1,5 +1,6 @@
 import random from "number-uid";
 import axios from "axios";
+import referralCode from "referral-code-generator";
 
 export const signUp = (formData, setBtnLoading) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
@@ -7,8 +8,13 @@ export const signUp = (formData, setBtnLoading) => {
     const firestore = getFirestore();
 
     // Object Destructuring
-    const { emailAddress, password, firstName, lastName, mobileNumber } =
-      formData;
+    const {
+      emailAddress,
+      password,
+      firstName,
+      lastName,
+      mobileNumber,
+    } = formData;
 
     firebase
       .auth()
@@ -24,6 +30,8 @@ export const signUp = (formData, setBtnLoading) => {
             batch: "Batch 01",
             createdAt: new Date(),
             mobileNumber,
+            emailAddress,
+            referNo: referralCode.alphaNumeric("lowercase", 3, 2),
           });
       })
       .then(() => {
@@ -155,5 +163,96 @@ export const challanNo = (uid) => {
         challanNoTwo: random(6),
         challanNoThree: random(6),
       });
+  };
+};
+
+export const updateProfile = (uid, formData, setLoading, setEdit) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+
+    firestore
+      .collection("users")
+      .doc(uid)
+      .update(formData)
+      .then(() => {
+        dispatch({
+          type: "PROFILE_UPDATED",
+          payload: "Successfully Updated",
+        });
+
+        // ? Btn loading
+        setLoading(false);
+        // ? Closing the editting process
+        setEdit(false);
+      })
+      .catch((err) => {
+        dispatch({
+          type: "PROFILE_NOT_UPDATED",
+          payload: err.message,
+        });
+
+        // ? Btn loading
+        setLoading(false);
+      });
+  };
+};
+export const uploadImage = (
+  uid,
+  username,
+  image,
+  setProgress,
+  setLoading,
+  setProgressBarEnable,
+  dob,
+  setEdit
+) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firebase = getFirebase();
+    const firestore = getFirestore();
+
+    // ? File type
+    const metadata = {
+      contentType: image.type,
+    };
+
+    firebase
+      .storage()
+      .ref(`${username + " " + dob}/${username}`)
+      .put(image, metadata)
+      .on(
+        "state_changed",
+        (snapshot) => {
+          const progress = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+
+          setProgress(progress);
+        },
+        (error) => {
+          // error function
+        },
+        () => {
+          firebase
+            .storage()
+            .ref(username + " " + dob)
+            .child(username)
+            .getDownloadURL()
+            .then((url) => {
+              firestore
+                .collection("users")
+                .doc(uid)
+                .update({
+                  image: url,
+                })
+                .then(() => {
+                  setLoading(false);
+                  setProgress(null);
+                  setProgressBarEnable(false);
+                  setEdit(false);
+                })
+                .catch((err) => console.log(err.message));
+            });
+        }
+      );
   };
 };
