@@ -166,7 +166,13 @@ export const challanNo = (uid) => {
   };
 };
 
-export const updateProfile = (uid, formData, setLoading, setEdit) => {
+export const updateProfile = (
+  uid,
+  formData,
+  setLoading,
+  setEdit,
+  setOpenSnacbar
+) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
 
@@ -184,6 +190,8 @@ export const updateProfile = (uid, formData, setLoading, setEdit) => {
         setLoading(false);
         // ? Closing the editting process
         setEdit(false);
+        // ? Showing Msg
+        setOpenSnacbar(true);
       })
       .catch((err) => {
         dispatch({
@@ -193,6 +201,8 @@ export const updateProfile = (uid, formData, setLoading, setEdit) => {
 
         // ? Btn loading
         setLoading(false);
+        // ? Showing Msg
+        setOpenSnacbar(true);
       });
   };
 };

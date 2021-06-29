@@ -3,7 +3,7 @@ const initialState = {
   loginMsg: "",
   verifyEmailMsg: false,
   resetPasswordMsg: "",
-  profileUpdated: ""
+  profileUpdated: "",
 };
 
 const authReducer = (state = initialState, action) => {
@@ -28,6 +28,7 @@ const authReducer = (state = initialState, action) => {
         loginMsg: "",
         verifyEmailMsg: false,
         resetPasswordMsg: "",
+        profileUpdated: "",
       };
     case "LOGIN_SUCCESSFULLY":
       return {
@@ -62,13 +63,13 @@ const authReducer = (state = initialState, action) => {
     case "PROFILE_UPDATED":
       return {
         ...state,
-        profileUpdated: payload
-      }
+        profileUpdated: payload,
+      };
     case "PROFILE_NOT_UPDATED":
       return {
         ...state,
-        profileUpdated: payload
-      }
+        profileUpdated: payload,
+      };
     default:
       return state;
   }

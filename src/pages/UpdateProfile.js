@@ -7,6 +7,7 @@ import {
   signOut,
   updateProfile,
   uploadImage,
+  clearAll,
 } from "../store/actions/AuthActions";
 import { Helmet } from "react-helmet";
 import Drawer from "@material-ui/core/Drawer";
@@ -46,6 +47,7 @@ const UpdateProfile = ({
   updateProfile,
   profileUpdated,
   uploadImage,
+  clearAll,
 }) => {
   // ? State
   const [openDrawer, setOpenDrawer] = useState(true);
@@ -1352,7 +1354,11 @@ const UpdateProfile = ({
 
     setLoading(true);
 
-    updateProfile(uid, data, setLoading, setEdit);
+    updateProfile(uid, data, setLoading, setEdit, setOpenSnacbar);
+
+    setTimeout(() => {
+      clearAll();
+    }, 6001);
   };
 
   return profile.fullName ? (
@@ -2465,8 +2471,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     goingToApproveTheApplication: (uid) => dispatch(statusOfAdmission(uid)),
     signOut: (push) => dispatch(signOut(push)),
-    updateProfile: (uid, formData, setLoading, setEdit) =>
-      dispatch(updateProfile(uid, formData, setLoading, setEdit)),
+    updateProfile: (uid, formData, setLoading, setEdit, setOpenSnacbar) =>
+      dispatch(
+        updateProfile(uid, formData, setLoading, setEdit, setOpenSnacbar)
+      ),
     uploadImage: (
       uid,
       username,
@@ -2489,6 +2497,7 @@ const mapDispatchToProps = (dispatch) => {
           setEdit
         )
       ),
+    clearAll: () => dispatch(clearAll()),
   };
 };
 
