@@ -74,7 +74,7 @@ const Nav = ({ firstLoad, signOut, uid }) => {
               variant="contained"
               className="custom-button"
             >
-              Log In
+              Apply Now
             </Button>
             // <Button
             //   onClick={() =>

@@ -24,7 +24,7 @@ const TermsAndConditions = ({
   if (!emailVerified) return <Redirect to="/apply-now/emailVerification" />;
   // Checking application is submitted or not
   if (applicationSubmitted) return <Redirect to="/dashboard" />;
-
+  console.log(profile);
   // Going to another page
   const go = (link) => {
     setTimeout(() => {
@@ -38,7 +38,7 @@ const TermsAndConditions = ({
     termsAndConditions(true);
     go("/apply-now/applicationForm");
   };
-  return profile.fullName ? (
+  return profile.name ? (
     <>
       <Helmet>
         <title>Terms &amp; Conditions</title>
